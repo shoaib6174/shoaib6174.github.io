@@ -16,6 +16,7 @@ class Education extends Component {
         const technologies = work.description;
         const mainTechnologies = work.mainTech;
 
+        
         var mainTech = mainTechnologies.map((technology, i) => {
           return (
             <Badge pill className="main-badge mr-2 mb-2" key={i}>
