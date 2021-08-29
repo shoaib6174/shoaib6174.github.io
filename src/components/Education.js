@@ -8,13 +8,12 @@ import Badge from "react-bootstrap/Badge";
 
 class Education extends Component {
   render() {
-      console.log('education')
-      console.log(this.props.resumeEducation)
-      console.log(this.props.resumeExperience)
+
+
     if (this.props.resumeEducation && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.education;
       var work = this.props.resumeEducation.map(function (work, i) {
-        const technologies = work.technologies;
+        const technologies = work.description;
         const mainTechnologies = work.mainTech;
 
         var mainTech = mainTechnologies.map((technology, i) => {
@@ -26,9 +25,9 @@ class Education extends Component {
         });
         var tech = technologies.map((technology, i) => {
           return (
-            <Badge pill className="experience-badge mr-2 mb-2" key={i}>
+            <p>
               {technology}
-            </Badge>
+            </p>
           );
         });
         return (
@@ -66,10 +65,10 @@ class Education extends Component {
     }
 
     return (
-      <section id="resume" className="pb-5">
+      <section id="skills" className="pb-5">
         <div className="col-md-12 mx-auto">
           <div className="col-md-12">
-            <h1 className="section-title" style={{ color: "black" }}>
+            <h1 className="section-title" style={{ color: "white" }}>
               <span className="text-black" style={{ textAlign: "center" }}>
                 {sectionName}
               </span>

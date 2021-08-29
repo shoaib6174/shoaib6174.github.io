@@ -6,7 +6,9 @@
         "about": "About me",
         "projects": "Projects",
         "skills": "Skills",
-        "experience": "Experience"
+        "experience": "Experience",
+        "education": "Education",
+        "certification" : "Certifications"
       }
     },
     "projects": [
@@ -116,39 +118,29 @@
       }
     ],
     "education": [
+      
       {
-        "company": "DefOpenSource",
-        "title": "Front-End Developer",
-        "years": "10.2019 - present",
+        "company": "B. Sc. in Engineering",
+        "title": "Bangladesh University of Textiles (BUTEX)",
+        "years": "",
         "mainTech": [
-          "Angular 8/9/10"
+          "January, 2019 - Present"
         ],
-        "technologies": [
-          "REST API",
-          "RxJS",
-          "JavaScript",
-          "Bootstrap",
-          "MDBootstrap",
-          "EF Core",
-          ".NET Core",
-          "SignalR",
-          "Angular Material"
+        "description": [
+          "I am doing my major in Industrial and Production Engieering. I am an active member of different clubs and societies. I have also worked as a Class Reprensative. Due to covid-19, my university was not in session for a few months and our graduation has been delayed. I am expecting to graduate in 2022."
         ]
       },
       {
-        "company": "Serros Solutions",
-        "title": "Intern",
-        "years": "01.2018 - 09.2019",
+        "company": "MicroMasters in Supply Chain Management",
+        "title": "MITx on edX",
+        "years": "",
         "mainTech": [
-          "Angular 7/8"
+          "February, 2020 - May, 2021"
         ],
-        "technologies": [
-          "RxJS",
-          "Django",
-          "PHP",
-          "JavaScript",
-          "DHTMLX Gantt"
+        "description": [
+          "The MicroMasters program credential from MIT Open Learning is a professional and academic credential for online learners from anywhere in the world. MicroMasters program in Supply Chain Management represents the equivalent of one semester of coursework at MIT. I had to complete 5 courses and a final comprehensive exam to earn the credential."
         ]
       }
+      
     ]
   }
