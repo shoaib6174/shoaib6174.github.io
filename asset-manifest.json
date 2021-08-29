@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Shoaib/static/css/main.fcf2461e.chunk.css",
-    "main.js": "/Shoaib/static/js/main.35588e71.chunk.js",
-    "main.js.map": "/Shoaib/static/js/main.35588e71.chunk.js.map",
+    "main.js": "/Shoaib/static/js/main.9d3054be.chunk.js",
+    "main.js.map": "/Shoaib/static/js/main.9d3054be.chunk.js.map",
     "runtime-main.js": "/Shoaib/static/js/runtime-main.5c1a0107.js",
     "runtime-main.js.map": "/Shoaib/static/js/runtime-main.5c1a0107.js.map",
     "static/css/2.d64471e2.chunk.css": "/Shoaib/static/css/2.d64471e2.chunk.css",
     "static/js/2.28b7ac55.chunk.js": "/Shoaib/static/js/2.28b7ac55.chunk.js",
     "static/js/2.28b7ac55.chunk.js.map": "/Shoaib/static/js/2.28b7ac55.chunk.js.map",
     "index.html": "/Shoaib/index.html",
-    "precache-manifest.86405024b7b50d479499f76ad6e06d1e.js": "/Shoaib/precache-manifest.86405024b7b50d479499f76ad6e06d1e.js",
+    "precache-manifest.5858b5cb52c8abe4445c95b4d7e87ac5.js": "/Shoaib/precache-manifest.5858b5cb52c8abe4445c95b4d7e87ac5.js",
     "service-worker.js": "/Shoaib/service-worker.js",
     "static/css/2.d64471e2.chunk.css.map": "/Shoaib/static/css/2.d64471e2.chunk.css.map",
     "static/css/main.fcf2461e.chunk.css.map": "/Shoaib/static/css/main.fcf2461e.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.d64471e2.chunk.css",
     "static/js/2.28b7ac55.chunk.js",
     "static/css/main.fcf2461e.chunk.css",
-    "static/js/main.35588e71.chunk.js"
+    "static/js/main.9d3054be.chunk.js"
   ]
 }

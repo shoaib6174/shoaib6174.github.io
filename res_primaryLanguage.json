@@ -100,46 +100,19 @@
         ]
       },
       {
-        "company": "DefOpenSource",
-        "title": "Front-End Developer",
-        "years": "10.2019 - present",
+        "company": "Serros Solutions",
+        "title": "Intern",
+        "years": "01.2018 - 09.2019",
         "mainTech": [
-          "Angular 8/9/10"
+          "Angular 7/8"
         ],
         "technologies": [
-          "REST API",
           "RxJS",
+          "Django",
+          "PHP",
           "JavaScript",
-          "Bootstrap",
-          "MDBootstrap",
-          "EF Core",
-          ".NET Core",
-          "SignalR",
-          "Angular Material"
+          "DHTMLX Gantt"
         ]
       }
-      
-    ],
-    "education": [
-      {
-        "company": "MITx on edx",
-        "title": "Micromasters in Supply Chain Management",
-        "years": "10.2019 - present",
-        "mainTech": [
-          "Angular 8/9/10"
-        ],
-        "technologies": [
-          "REST API",
-          "RxJS",
-          "JavaScript",
-          "Bootstrap",
-          "MDBootstrap",
-          "EF Core",
-          ".NET Core",
-          "SignalR",
-          "Angular Material"
-        ]
-      }
-      
     ]
   }

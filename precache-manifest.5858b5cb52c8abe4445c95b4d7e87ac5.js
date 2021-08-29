@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2b9da463da1c8845c0ee2fe1df088e7e",
+    "revision": "2372fb07b948e0832670938e131512a7",
     "url": "/Shoaib/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Shoaib/static/css/2.d64471e2.chunk.css"
   },
   {
-    "revision": "371cf7947acd83166a02",
+    "revision": "1456e9e6db87303b4418",
     "url": "/Shoaib/static/css/main.fcf2461e.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Shoaib/static/js/2.28b7ac55.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "371cf7947acd83166a02",
-    "url": "/Shoaib/static/js/main.35588e71.chunk.js"
+    "revision": "1456e9e6db87303b4418",
+    "url": "/Shoaib/static/js/main.9d3054be.chunk.js"
   },
   {
     "revision": "35d1fdea531548742af2",
