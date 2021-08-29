@@ -1,7 +1,7 @@
 {
     "basic_info": {
       "description_header": "Hi",
-      "description": "👋 I'm Davina Griss. Fictional person for preview purposes :) I'm working with newest front-end frameworks like Angular, React and Vue. What you are seeing now is portfolio template from Dorota1997. If you like this portfolio template, make sure to ⭐ the repository to make it more recognizable for other users. Thank you 💜",
+      "description": "👋 Hello!! I am Mohammad Shoaib. I am a third-year student of Bangladesh University of Textiles (BUTEX). I am enthusiastic about Data Science and Business Analytics. I am acquiring knowledge of a wide range of domains, including deep learning, machine learning, data analytics, cloud computing, supply chain management and project management, to become prepared for the challenging future. I also participate in activities of various clubs and communities at university and outside to gain team-work and leadership skills.",
       "section_name": {
         "about": "About me",
         "projects": "Projects",
@@ -11,9 +11,9 @@
     },
     "projects": [
       {
-        "title": "Animal Shelter",
-        "startDate": "2020",
-        "description": "The most expanded application I had opportunity to work with. I've learned many technologies and my code was reviewed by awesome curator. Application handles all adoption processess and allows to store all evidence on adopting animals from animal shelter.",
+        "title": "Extract Text From Images",
+        "startDate": "2021",
+        "description": "In this project I have used Azure’s Computer Vision API to extract text from image. I have developed the interface using flask and deployed it on Heroku",
         "images": [
           "images/portfolio/animal-shelter/p1.jpg",
           "images/portfolio/animal-shelter/p2.jpg"

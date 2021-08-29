@@ -1,16 +1,16 @@
 {
     "basic_info": {
-      "name": "Davina Griss",
-      "titles": [ "Front-end Developer", "Senior Data Engineer", "Dev Team lead", "Mobile App Developer" ],
+      "name": "Mohammad Shoaib",
+      "titles": [ "DeepLearning.AI TensorFlow Developer", "Google IT Support Professional ", "Azure Data Scientist Associate", "Web Developer" ],
       "social": [
         {
           "name": "github",
-          "url": "https://github.com",
+          "url": "https://github.com/shoaib6174",
           "class": "fab fa-github"
         },
         {
           "name": "instagram",
-          "url": "https://www.instagram.com",
+          "url": "https://www.instagram.com/shoaib_himself",
           "class": "fab fa-instagram"
         }
       ],
