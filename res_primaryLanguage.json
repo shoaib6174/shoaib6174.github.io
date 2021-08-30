@@ -17,43 +17,25 @@
         "startDate": "2021",
         "description": "In this project I have used Azure’s Computer Vision API to extract text from image. I have developed the interface using flask and deployed it on Heroku",
         "images": [
-          "images/portfolio/animal-shelter/p1.jpg",
-          "images/portfolio/animal-shelter/p2.jpg"
+          "images/portfolio/extractTextFromImages/p1.jpg",
+          "images/portfolio/extractTextFromImages/p2.jpg"
+          
         ],
-        "url": "",
-        "technologies": [
-          {
-            "class": "devicon-angularjs-plain",
-            "name": "Angular"
-          },
-          {
-            "class": "devicon-typescript-plain",
-            "name": "TypeScript"
-          },
-          {
-            "class": "devicon-csharp-plain",
-            "name": "C#"
-          }
+        "url": "https://github.com/shoaib6174/Extract-Text-from-Image-using-Azure-s-Computer-Vision",
+        "technologies": [ 
         ]
       },
       {
-        "title": "Photography",
-        "startDate": "2018",
-        "description": "Personal project for study subject. I was responsible for testing photography application that optimizes images with popular algorithms used by graphic editors like Pixlr or Adobe Photoshop. I've earned A grade :)",
+        "title": "PhotoHome Price Predictiongraphy",
+        "startDate": "2021",
+        "description": " Developed a ML model for predicting home price of Bengaluru City. Developed backend & interface using Flask, JavaScript, HTML, CSS and deployed it in Digital Ocean using nginx:)",
         "images": [
-          "images/portfolio/photography/p1.jpg",
-          "images/portfolio/photography/p2.jpg"
+          "images/portfolio/housingPrice/p1.jpg",
+          "images/portfolio/housingPrice/p1.jpg"
         ],
-        "url": "https://github.com",
+        "url": "https://github.com/shoaib6174/ML-Projects/tree/main/Home%20Price%20Prediction",
         "technologies": [
-          {
-            "class": "devicon-react-original",
-            "name": "React"
-          },
-          {
-            "class": "devicon-javascript-plain",
-            "name": "JavaScript"
-          }
+          
         ]
       },
       {
