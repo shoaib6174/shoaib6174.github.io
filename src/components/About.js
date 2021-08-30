@@ -82,18 +82,19 @@ class About extends Component {
                   <h1>Contact Me:</h1>
 <br></br>
 
-            <a href='https://www.facebook.com/shoaib6174/' target="_blank">
+            <a href='https://www.linkedin.com/in/shoaib6174/' target="_blank">
               <Icon
                 icon={linkedin}
                 style={{ fontSize: "200%", margin: "9% 5% 0 5%" }}
               />
             </a>
-            <a href='https://www.linkedin.com/in/shoaib6174/' target="_blank">
+            <a href='https://www.facebook.com/shoaib6174/' target="_blank">
               <Icon
                 icon={fb}
                 style={{ fontSize: "200%", margin: "9% 5% 0 5%" }}
               />
             </a>
+            
                 
             </div>
             </div>
