@@ -1,7 +1,7 @@
 {
     "basic_info": {
       "name": "Mohammad Shoaib",
-      "titles": [ "DeepLearning.AI TensorFlow Developer", "Google IT Support Professional ", "Azure Data Scientist Associate", "Web Developer" ],
+      "titles": [ "Data Science Enthusiast", "Web Developer", "Cloud Enthusiast", "Project Management Enthusiast" ],
       "social": [
         {
           "name": "github",
@@ -16,53 +16,10 @@
       ],
       "image": "myProfile.jpg"
     },
-    "skills": {
-      "icons": [
-        {
-          "name": "HTML 5",
-          "class": "devicon-html5-plain",
-          "level": "95"
-        },
-        {
-          "name": "CSS 3",
-          "class": "devicon-css3-plain",
-          "level": "95"
-        },
-        {
-          "name": "Angular",
-          "class": "devicon-angularjs-plain",
-          "level": "80"
-        },
-        {
-          "name": "TypeScript",
-          "class": "devicon-typescript-plain",
-          "level": "90"
-        },
-        {
-          "name": "JavaScript",
-          "class": "devicon-javascript-plain",
-          "level": "70"
-        },
-        {
-          "name": "Sass",
-          "class": "devicon-sass-original",
-          "level": "75"
-        },
-        {
-          "name": "Bootstrap",
-          "class": "devicon-bootstrap-plain",
-          "level": "85"
-        },
-        {
-          "name": "C#",
-          "class": "devicon-csharp-plain",
-          "level": "65"
-        },
-        {
-          "name": "MySql",
-          "class": "devicon-mysql-plain",
-          "level": "60"
-        }
-      ]
-    }
-  }
+    "skills": [
+      {"Data Science" : ["Computer Vision" , " Sequence Modeling" , " Regression" , " Classification" , " Time Series Analysis" , " Feature Engineering" , " PCA" , " TensorFlow" , " Scikit-learn" , " Implementing Data Science Solution" ]},
+      {"Data Analysis" : ["Power BI " , " Tableau" , " Data Exploration" , " Data Cleaning" , "Data Preparation " , "Statistical Analysis" , " Data Visualization" , " Creating Dashboard" , " Python " , "Pandas" , " Matplotlib" , " MySQL " , "Regex"]},
+      {"Web Development" : ["Django" , " React" ,  " git", " JavaScript" , " Rest APIs" , " Google Analytics" , " HTML" , " CSS" , " Bootstrap" ]},
+      {"Cloud Computing" : ["Basics of Managing and deploying solutions on AZURE AWS GCP"]}
+    ]
+}
