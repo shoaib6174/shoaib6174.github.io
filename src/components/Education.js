@@ -80,7 +80,7 @@ class Education extends Component {
             </h1>
           </div>
         </div>
-        <div className="col-md-8 mx-auto">
+        <div className="col-md-12 mx-auto">
           <VerticalTimeline>
             {work}
             <VerticalTimelineElement
