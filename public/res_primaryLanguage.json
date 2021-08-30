@@ -142,5 +142,70 @@
         ]
       }
       
+    ],
+    "certifications": [
+      {
+        "company": "Coursera",
+        "title": "DeepLearning.AI TensorFlow Developer",
+        "years": "",
+        "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/WCX68NWPVQ86",
+        "mainTech": [
+          "July, 2021"
+        ],
+        "description": [
+          "It certifies that I have learned how to build and train neural networks using TensorFlow, how to improve network performance using convolutions as you train it to identify real-world images, how to teach machines to understand, analyze, and respond to human speech with natural language processing systems, and more!"
+        ]
+      },
+      
+      {
+        "company": "Microsoft",
+        "title": "Microsoft Certified: Azure Data Scientist Associate",
+        "years": "",
+        "url": "https://www.credly.com/badges/2c3e8d08-6781-40b1-9911-9eef9479893a",
+        "mainTech": [
+          "June, 2021"
+        ],
+        "description": [
+          "Azure Data Scientist Associate certification validates the skills and knowledge to apply Azure’s machine learning techniques to train, evaluate, and deploy models that solve business problems."
+        ]
+      },
+      {
+        "company": "Microsoft",
+        "title": "Microsoft Certified: Data Analyst Associate",
+        "years": "",
+        "url": "https://www.credly.com/badges/06fc8796-2508-44fe-9a58-a2e0619dc0da",
+        "mainTech": [
+          "April 2021"
+        ],
+        "description": [
+          "Data Analyst Associate certification validates the skills and knowledge required to enable businesses to maximize the value of their data assets by using Microsoft Power BI."
+        ]
+      },
+      {
+        "company": "Google on Coursera",
+        "title": "Google IT Support",
+        "years": "",
+        "url": "https://coursera.org/share/6b4a6ea3958607fa5ed098922935a134",
+        "mainTech": [
+          "December 2020"
+        ],
+        "description": [
+          "oogle IT Support Professional Certificate validates successfull completion of five-courses, developed by Google, that include hands-on, practice-based assessments and are designed to prepare them for entry-level roles in IT support. "
+        ]
+      },
+      
+      {
+        "company": "Google on Coursera",
+        "title": "Architecting with Google Compute Engine",
+        "years": "",
+        "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/G9ZHP4HURYCQ",
+        "mainTech": [
+          "September 2020"
+        ],
+        "description": [
+          "Data Analyst Associate certification validates the skills and knowledge required to enable businesses to maximize the value of their data assets by using Microsoft Power BI."
+        ]
+      }
+      
     ]
   }

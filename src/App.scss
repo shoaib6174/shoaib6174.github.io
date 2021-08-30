@@ -250,6 +250,29 @@ header h1 {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.skill-badge {
+	font-size: 14px !important;
+	text-align: left !important;
+	padding: 5px 8px 0px 8px !important;
+	vertical-align: baseline;
+	background-color: rgb(221, 184, 184) !important;
+	color: rgb(0, 0, 0);
+	font-weight: bold  !important;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.certificate-badge {
+	font-size: 11px !important;
+	text-align: left !important;
+	padding: 5px 8px 5px 8px !important;
+	vertical-align: baseline;
+	background-color: #3f330d !important;
+	color: rgb(221, 207, 207);
+	font-weight: lighter !important;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .vertical-timeline-element-date {
 	padding: 0 !important;
 	margin: 0 !important;
@@ -377,11 +400,10 @@ header h1 {
 }
 
 #skills {
-	background: #1F1F1F;
-	min-height: 200px;
+	background: #5c3c3c;
 	width: 100%;
 	overflow: hidden;
-	padding-bottom: 10%;
+	padding-bottom: 1%;
 }
 
 .section-title {

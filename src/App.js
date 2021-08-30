@@ -8,6 +8,7 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import Certification from "./components/Certification";
 
 class App extends Component {
 
@@ -96,7 +97,7 @@ class App extends Component {
           >
             <span
               className="iconify language-icon mr-5"
-              data-icon="twemoji-flag-for-flag-united-kingdom"
+              //data-icon="twemoji-flag-for-flag-bangladesh"
               data-inline="false"
               id={window.$primaryLanguageIconId}
             ></span>
@@ -112,7 +113,7 @@ class App extends Component {
           >
             <span
               className="iconify language-icon"
-              data-icon="twemoji-flag-for-flag-poland"
+              //data-icon="twemoji-flag-for-flag-bangladesh"
               data-inline="false"
               id={window.$secondaryLanguageIconId}
             ></span>
@@ -122,6 +123,10 @@ class App extends Component {
           resumeBasicInfo={this.state.resumeData.basic_info}
           sharedBasicInfo={this.state.sharedData.basic_info}
         />
+        <Certification 
+        resumeCertification={this.state.resumeData.certifications}
+        resumeBasicInfo={this.state.resumeData.basic_info}
+      />
         <Projects
           resumeProjects={this.state.resumeData.projects}
           resumeBasicInfo={this.state.resumeData.basic_info}

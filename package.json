@@ -1,6 +1,5 @@
 {
   "name": "react-frontend-dev-portfolio",
-  "homepage": "https://shoaib6174.github.io/Shoaib",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -44,7 +43,7 @@
   },
   "devDependencies": {
     "@iconify/icons-logos": "^1.0.12",
-    "@iconify/react": "^1.1.3",
+    "@iconify/react": "^1.1.4",
     "gh-pages": "^3.2.3",
     "node-sass": "^4.14.1"
   }
