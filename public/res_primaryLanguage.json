@@ -26,6 +26,19 @@
         ]
       },
       {
+        "title": "E-commerce web-app using React.js & Django",
+        "startDate": "2021",
+        "description": "In this project I have used Azure’s Computer Vision API to extract text from image. I have developed the interface using flask and deployed it on Heroku",
+        "images": [
+          "images/portfolio/ecommerce/p1.jpg",
+          "images/portfolio/ecommerce/p2.jpg"
+          
+        ],
+        "url": "https://github.com/shoaib6174/E-Commerce-using-React-and-Django",
+        "technologies": [ 
+        ]
+      },
+      {
         "title": "PhotoHome Price Predictiongraphy",
         "startDate": "2021",
         "description": " Developed a ML model for predicting home price of Bengaluru City. Developed backend & interface using Flask, JavaScript, HTML, CSS and deployed it in Digital Ocean using nginx:)",
@@ -37,31 +50,8 @@
         "technologies": [
           
         ]
-      },
-      {
-        "title": "3D Object Viewer",
-        "startDate": "2015",
-        "description": "One of the first apps I was working on my internship. I had to develop front-end implementation for app that shows 3D models of known buildings. This was also my first project in Angular framework. I've learned a lot!",
-        "images": [
-          "images/portfolio/adventure/p1.jpg",
-          "images/portfolio/adventure/p2.jpg"
-        ],
-        "url": "https://github.com",
-        "technologies": [
-          {
-            "class": "devicon-angularjs-plain",
-            "name": "Angular"
-          },
-          {
-            "class": "devicon-typescript-plain",
-            "name": "TypeScript"
-          },
-          {
-            "class": "devicon-csharp-plain",
-            "name": "C#"
-          }
-        ]
       }
+      
     ],
     "experience": [
       {
