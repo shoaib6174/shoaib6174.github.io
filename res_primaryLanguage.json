@@ -17,8 +17,8 @@
         "startDate": "2021",
         "description": "In this project I have used Azure’s Computer Vision API to extract text from image. I have developed the interface using flask and deployed it on Heroku",
         "images": [
-          "images/portfolio/ecommerce/p1.jpg",
-          "images/portfolio/ecommerce/p2.jpg"
+          "images/portfolio/extractTextFromImages/p1.jpg",
+          "images/portfolio/extractTextFromImages/p2.jpg"
           
         ],
         "url": "https://github.com/shoaib6174/Extract-Text-from-Image-using-Azure-s-Computer-Vision",
@@ -26,12 +26,12 @@
         ]
       },
       {
-        "title": "E-commerce (React.js, Django)",
+        "title": "E-commerce Web-app (React.js, Django)",
         "startDate": "2021",
         "description": "In this project I have used Azure’s Computer Vision API to extract text from image. I have developed the interface using flask and deployed it on Heroku",
         "images": [
-          "images/portfolio/extractTextFromImages/p5.jpg",
-          "images/portfolio/extractTextFromImages/p2.jpg"
+          "images/portfolio/ecommerce/p1.jpg",
+          "images/portfolio/ecommerce/p2.jpg"
           
           
         ],
@@ -97,7 +97,7 @@
         "title": "Bangladesh University of Textiles (BUTEX)",
         "years": "",
         "mainTech": [
-          "January, 2019 - Present"
+          "2017 - Present"
         ],
         "description": [
           "I am doing my major in Industrial and Production Engieering. I am an active member of different clubs and societies. I have also worked as a Class Reprensative. Due to covid-19, my university was not in session for a few months and our graduation has been delayed. I am expecting to graduate in 2022."
