@@ -2,7 +2,7 @@
 
 <h3>:eye_speech_bubble: My Portfolio websie:</h3>
 
-Check Here <a href="https://md-shoaib.me"><strong>here</strong></a>
+ <a href="https://md-shoaib.me"><strong>Check Here</strong></a>
 
 Sections:
 - Banner
