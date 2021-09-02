@@ -9,6 +9,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Certification from "./components/Certification";
+import Activities from "./components/Activities";
 
 class App extends Component {
 
@@ -144,6 +145,11 @@ class App extends Component {
 
       <Education
           resumeEducation={this.state.resumeData.education}
+          resumeBasicInfo={this.state.resumeData.basic_info}
+        />
+
+<Activities
+          resumeEducation={this.state.resumeData.activities}
           resumeBasicInfo={this.state.resumeData.basic_info}
         />
         <Footer sharedBasicInfo={this.state.sharedData.basic_info} />

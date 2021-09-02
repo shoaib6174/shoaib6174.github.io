@@ -40,7 +40,7 @@ class Education extends Component {
               color: "#fff",
               textAlign: "center",
             }}
-            icon={<i className="fa fa-graduation-cap experience-icon"></i>}
+            icon={<i className="fa fa-university experience-icon"></i>}
             key={i}
           >
             <div style={{ textAlign: "left", marginBottom: "4px" }}>
@@ -90,7 +90,7 @@ class Education extends Component {
                 textAlign: "center",
               }}
               icon={
-                <i className="fas fa-hourglass-start mx-auto experience-icon"></i>
+                <i className="fas fa-graduation-cap mx-auto experience-icon"></i>
               }
             />
             

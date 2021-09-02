@@ -6,13 +6,13 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import Badge from "react-bootstrap/Badge";
 
-class Certification extends Component {
+class Activities extends Component {
   render() {
 
 
-    if (this.props.resumeCertification && this.props.resumeBasicInfo) {
-      var sectionName = this.props.resumeBasicInfo.section_name.certification;
-      var work = this.props.resumeCertification.map(function (work, i) {
+    if (this.props.resumeEducation && this.props.resumeBasicInfo) {
+      var sectionName = this.props.resumeBasicInfo.section_name.activities;
+      var work = this.props.resumeEducation.map(function (work, i) {
         const technologies = work.description;
         const mainTechnologies = work.mainTech;
 
@@ -26,15 +26,9 @@ class Certification extends Component {
         });
         var tech = technologies.map((technology, i) => {
           return (
-              <div>
-                    <p>
-                        {technology}
-                    </p>
-
-                    
-
-              </div>
-            
+            <p>
+              {technology}
+            </p>
           );
         });
         return (
@@ -46,45 +40,37 @@ class Certification extends Component {
               color: "#fff",
               textAlign: "center",
             }}
-            icon={<i className="fa fa-award experience-icon"></i>}
+            icon={<i className="fa fa-briefcase experience-icon"></i>}
             key={i}
           >
-            
+            <div style={{ textAlign: "left", marginBottom: "4px" }}>
+              {mainTech}
+            </div>
 
             <h3
               className="vertical-timeline-element-title"
               style={{ textAlign: "left" }}
             >
-               
-              <span style={{ textAlign: "left", marginBottom: "4px" }}>
-                  {mainTech}
-              </span>
-              {work.title} 
+              {work.title}
             </h3>
             <h4
-              className="vertical-timeline-element-subtitle "
+              className="vertical-timeline-element-subtitle"
               style={{ textAlign: "left" }}
             >
-              <div className='d-flex justify-content-between'>
-              {work.company}       
-              <span>&nbsp;&nbsp;</span>
-              <a href={work.url} target="_blank">
-                        <Badge pill className="certificate-badge  mr-2 mb-2" key={i}>
-                            <span>View Certificate</span>
-                        </Badge>      
-              </a>
-                    
-              </div>
-              
+              {work.company}
             </h4>
-            <div style={{ textAlign: "left", marginTop: "15px" }}>{tech}</div>
+            <div style={{ textAlign: "left", marginTop: "15px" }}>
+              {tech}
+              
+              
+              </div>
           </VerticalTimelineElement>
         );
       });
     }
 
     return (
-      <section id="resume" className="pb-5">
+      <section id="skills" className="pb-5">
         <div className="col-md-12 mx-auto">
           <div className="col-md-12">
             <h1 className="section-title" style={{ color: "white" }}>
@@ -104,9 +90,10 @@ class Certification extends Component {
                 textAlign: "center",
               }}
               icon={
-                <i className="fas fa-certificate mx-auto experience-icon"></i>
+                <i className="fas fa-user-tie mx-auto experience-icon"></i>
               }
             />
+          
           </VerticalTimeline>
         </div>
       </section>
@@ -114,4 +101,4 @@ class Certification extends Component {
   }
 }
 
-export default Certification;
+export default Activities;
