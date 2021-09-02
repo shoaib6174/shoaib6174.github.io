@@ -11,7 +11,7 @@ class Activities extends Component {
 
 
     if (this.props.resumeActivities && this.props.resumeBasicInfo) {
-      var sectionName = this.props.resumeBasicInfo.section_name.activities;
+      var sectionName = this.props.resumeBasicInfo.section_name["Extra Curricular & Leadership Activities"];
       var work = this.props.resumeActivities.map(function (work, i) {
         const technologies = work.description;
         const mainTechnologies = work.mainTech;
