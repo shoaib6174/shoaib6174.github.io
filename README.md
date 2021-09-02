@@ -4,6 +4,14 @@
 
 Check Here <a href="https://md-shoaib.me"><strong>here</strong></a>
 
+Sections:
+- Banner
+- About Me
+- Certifications
+- Projects
+- Education
+- Footer
+
 <h3>:books: Getting started</h3>
 
 1. Clone or fork project.
