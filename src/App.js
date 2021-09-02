@@ -148,8 +148,8 @@ class App extends Component {
           resumeBasicInfo={this.state.resumeData.basic_info}
         />
 
-<Activities
-          resumeEducation={this.state.resumeData.activities}
+      <Activities
+          resumeActivities={this.state.resumeData.activities}
           resumeBasicInfo={this.state.resumeData.basic_info}
         />
         <Footer sharedBasicInfo={this.state.sharedData.basic_info} />

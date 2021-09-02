@@ -10,9 +10,9 @@ class Activities extends Component {
   render() {
 
 
-    if (this.props.resumeEducation && this.props.resumeBasicInfo) {
+    if (this.props.resumeActivities && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.activities;
-      var work = this.props.resumeEducation.map(function (work, i) {
+      var work = this.props.resumeActivities.map(function (work, i) {
         const technologies = work.description;
         const mainTechnologies = work.mainTech;
 
