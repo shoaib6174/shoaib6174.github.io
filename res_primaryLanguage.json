@@ -8,7 +8,8 @@
         "skills": "Skills",
         "experience": "Experience",
         "education": "Education",
-        "certification" : "Certifications"
+        "certification" : "Certifications",
+        "activities": "Extra Curricular & Leadership Activities"
       }
     },
     "projects": [
@@ -184,5 +185,40 @@
         ]
       }
       
+    ],
+    "activities" : [
+      {
+        "company": "Vice President",
+        "title": "BUTEX Business Club",
+        "years": "",
+        "mainTech": [
+          "2017 - Present"
+        ],
+        "description": [
+          "I am a part of this club since it's foundation. We have arranged 3 national level Business Case Competition and more than 20 workshops and seminar "
+        ]
+      },
+      {
+        "company": "Campus Teams Coordinator",
+        "title": "Young Sustainable Impact, Bangladesh (YSI Bangladesh)",
+        "years": "",
+        "mainTech": [
+          "2018 - 2019"
+        ],
+        "description": [
+          "I co-ordinated with around 200 campus ambassadors from around 50 universities."
+        ]
+      },
+      {
+        "company": "Ambassador of Cuba",
+        "title": "Asian Youth-Model United Nations (AYMUN)",
+        "years": "",
+        "mainTech": [
+          "2017"
+        ],
+        "description": [
+          "I represented Cuba in UNHRC and discussed about invasion of privacy by government’s surveillance programs. I lead a team of ambassadors to propose a resulation. "
+        ]
+      }
     ]
   }
