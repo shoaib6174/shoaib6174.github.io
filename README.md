@@ -4,7 +4,7 @@
 
  <a href="https://md-shoaib.me"><strong>Check Here</strong></a>
 
-Sections:
+<h4> Sections: </h4>
 - Banner
 - About Me
 - Certifications
