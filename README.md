@@ -10,6 +10,7 @@
 - About Me
 - Certifications
 - Projects
+- Skills
 - Education
 - Footer
 
