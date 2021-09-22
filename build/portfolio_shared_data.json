@@ -1,0 +1,25 @@
+{
+    "basic_info": {
+      "name": "Mohammad Shoaib",
+      "titles": [ "Data Science Enthusiast", "Web Developer", "Cloud Enthusiast", "Project Management Enthusiast" ],
+      "social": [
+        {
+          "name": "github",
+          "url": "https://github.com/shoaib6174",
+          "class": "fab fa-github"
+        },
+        {
+          "name": "instagram",
+          "url": "https://www.instagram.com/shoaib_himself",
+          "class": "fab fa-instagram"
+        }
+      ],
+      "image": "myProfile.jpg"
+    },
+    "skills": [
+      {"Data Science" : ["Computer Vision" , " Sequence Modeling" , " Regression" , " Classification" , " Time Series Analysis" , " Feature Engineering" , " PCA" , " TensorFlow" , " Scikit-learn" , " Implementing Data Science Solution" ]},
+      {"Data Analysis" : ["Power BI " , " Tableau" , " Data Exploration" , " Data Cleaning" , "Data Preparation " , "Statistical Analysis" , " Data Visualization" , " Creating Dashboard" , " Python " , "Pandas" , " Matplotlib" , " MySQL " , "Regex"]},
+      {"Web Development" : ["Django" , " React" ,  " git", " JavaScript" , " Rest APIs" , " Google Analytics" , " HTML" , " CSS" , " Bootstrap" ]},
+      {"Cloud Computing" : ["Basics of Managing and deploying solutions on AZURE AWS GCP"]}
+    ]
+}
