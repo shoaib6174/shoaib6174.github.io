@@ -124,6 +124,18 @@
     "certifications": [
       {
         "company": "Coursera",
+        "title": "DeepLearning.AI TensorFlow: Advanced Techniques",
+        "years": "",
+        "url": "https://coursera.org/share/b6cc714f7ccc4ef212c1bad240b45ed2",
+        "mainTech": [
+          "September, 2021"
+        ],
+        "description": [
+          "It certifies that I Understand the underlying basis of the Functional API and build exotic non-sequential model types, custom loss functions, and layers and I have learned  how to use GradientTape & Autograph, optimize training in different environments with multiple processors and chip types."
+        ]
+      },
+      {
+        "company": "Coursera",
         "title": "DeepLearning.AI TensorFlow Developer",
         "years": "",
         "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/WCX68NWPVQ86",
@@ -187,6 +199,17 @@
       
     ],
     "activities" : [
+      {
+        "company": "Z Ambassador",
+        "title": "IBM",
+        "years": "",
+        "mainTech": [
+          " September, 2021 - Present"
+        ],
+        "description": [
+          "I will be connecting with global peers, networking with industry professionals, and more importantly preparing to become career-ready and employable by undergoing a curriculum designed to give me the tools I need to use IBM Z software."
+        ]
+      },
       {
         "company": "Vice President",
         "title": "BUTEX Business Club",
