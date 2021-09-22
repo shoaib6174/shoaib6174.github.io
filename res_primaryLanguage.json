@@ -1,14 +1,15 @@
 {
     "basic_info": {
       "description_header": "Hi",
-      "description": " I am Mohammad Shoaib. I am a third-year student of Bangladesh University of Textiles (BUTEX). I am enthusiastic about Data Science and Business Analytics. I am acquiring knowledge of a wide range of domains, including deep learning, machine learning, data analytics, cloud computing, supply chain management and project management, to become prepared for the challenging future. I also participate in activities of various clubs and communities at university and outside to gain team-work and leadership skills.",
+      "description": " I am Mohammad Shoaib. I am a third-year student of Bangladesh University of Textiles (BUTEX). I am enthusiastic about Data Science, Cloud Computing and Business Analytics. I am acquiring knowledge of a wide range of domains, including deep learning, machine learning, data analytics, cloud computing, supply chain management and project management, to become prepared for the challenging future. I also participate in activities of various clubs and communities at university and outside to gain team-work and leadership skills.",
       "section_name": {
         "about": "About me",
         "projects": "Projects",
         "skills": "Skills",
         "experience": "Experience",
         "education": "Education",
-        "certification" : "Certifications"
+        "certification" : "Certifications",
+        "Extra Curricular & Leadership Activities": "Extra Curricular & Leadership Activities"
       }
     },
     "projects": [
@@ -51,7 +52,7 @@
           "images/portfolio/housingPrice/p1.jpg",
           "images/portfolio/housingPrice/p1.jpg"
         ],
-        "url": "https://github.com/shoaib6174/ML-Projects/tree/main/Home%20Price%20Prediction",
+        "url": "https://github.com/shoaib6174/Home-Price-Prediction",
         "technologies": [
           
         ]
@@ -184,5 +185,40 @@
         ]
       }
       
+    ],
+    "activities" : [
+      {
+        "company": "Vice President",
+        "title": "BUTEX Business Club",
+        "years": "",
+        "mainTech": [
+          "2017 - Present"
+        ],
+        "description": [
+          "I am a part of this club since it's foundation. We have arranged 3 national level Business Case Competition and more than 20 workshops and seminar "
+        ]
+      },
+      {
+        "company": "Campus Teams Coordinator",
+        "title": "Young Sustainable Impact, Bangladesh (YSI Bangladesh)",
+        "years": "",
+        "mainTech": [
+          "2018 - 2019"
+        ],
+        "description": [
+          "I co-ordinated with around 200 campus ambassadors from around 50 universities."
+        ]
+      },
+      {
+        "company": "Ambassador of Cuba",
+        "title": "Asian Youth-Model United Nations (AYMUN)",
+        "years": "",
+        "mainTech": [
+          "2017"
+        ],
+        "description": [
+          "I represented Cuba in UNHRC and discussed about invasion of privacy by government’s surveillance programs. I lead a team of ambassadors to propose a resulation. "
+        ]
+      }
     ]
   }
