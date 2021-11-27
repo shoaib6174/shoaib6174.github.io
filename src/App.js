@@ -124,11 +124,7 @@ class App extends Component {
           resumeBasicInfo={this.state.resumeData.basic_info}
           sharedBasicInfo={this.state.sharedData.basic_info}
         />
-        <Certification 
-        resumeCertification={this.state.resumeData.certifications}
-        resumeBasicInfo={this.state.resumeData.basic_info}
-      />
-        <Projects
+         <Projects
           resumeProjects={this.state.resumeData.projects}
           resumeBasicInfo={this.state.resumeData.basic_info}
         />
@@ -136,6 +132,16 @@ class App extends Component {
           sharedSkills={this.state.sharedData.skills}
           resumeBasicInfo={this.state.resumeData.basic_info}
         />
+        <Certification 
+          resumeCertification={this.state.resumeData.certifications}
+          resumeBasicInfo={this.state.resumeData.basic_info}
+        />
+        <Education
+          resumeEducation={this.state.resumeData.education}
+          resumeBasicInfo={this.state.resumeData.basic_info}
+        />
+        
+       
         {/*<Experience
           resumeExperience={this.state.resumeData.experience}
           resumeBasicInfo={this.state.resumeData.basic_info}
@@ -143,10 +149,7 @@ class App extends Component {
       */
       }
 
-      <Education
-          resumeEducation={this.state.resumeData.education}
-          resumeBasicInfo={this.state.resumeData.basic_info}
-        />
+      
 
       <Activities
           resumeActivities={this.state.resumeData.activities}

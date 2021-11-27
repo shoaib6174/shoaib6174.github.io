@@ -14,6 +14,30 @@
     },
     "projects": [
       {
+        "title": "Intent Classification of the MultiWOZ Dataset",
+        "startDate": "2021",
+        "description": "In this project I Compared the performance of LaBSE and BERT models on English and Translated Russian text by fine tuning using English text only.",
+        "images": [
+          "images/portfolio/MultiWOZ/p1.png"
+          
+        ],
+        "url": "https://github.com/shoaib6174/MultiWOZ-Intent-Classification",
+        "technologies": [ 
+        ]
+      },
+      {
+        "title": "Tracking Pose from Multiple Videos",
+        "startDate": "2021",
+        "description": "In this projct I used MMPose libary to estimate pose of human body after combining 4 videos in a 2x2 grid.",
+        "images": [
+          "images/portfolio/mmpose/p1.png"
+          
+        ],
+        "url": "https://github.com/shoaib6174/Tracking-Pose-from-Videos",
+        "technologies": [ 
+        ]
+      },
+      {
         "title": "Extract Text From Images",
         "startDate": "2021",
         "description": "In this project I have used Azure’s Computer Vision API to extract text from image. I have developed the interface using flask and deployed it on Heroku",
@@ -199,6 +223,16 @@
       
     ],
     "activities" : [
+      {
+        "company": "Microsoft Learn Student Ambassador",
+        "title": "Microsoft Learn",
+        "years": "",
+        "mainTech": [
+          " October, 2021 - Present"
+        ],
+        "description": [
+          "Currenlty I am working on “Intro to Azure” modules with Microsoft’s Product PMs. I am also receving training from Microsoft’s PM and Cloud Advocates on modern technologies, technical writing and community building. "]
+      },
       {
         "company": "Z Ambassador",
         "title": "IBM",
