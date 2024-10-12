@@ -211,6 +211,9 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
+  experiences:
+    output: false
+    permalink: /:collection/:path/
   teaching:
     output: false
     permalink: /:collection/:path/
@@ -249,6 +252,15 @@ defaults:
   - scope:
       path: ""
       type: teaching
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _experiences
+  - scope:
+      path: ""
+      type: experiences
     values:
       layout: single
       author_profile: true
