@@ -1,8 +1,8 @@
 ---
 title: "Jr. AI Engineer"
 collection: experiences
-type: "Company:"
-permalink: /experinces/2024-nitex-experiences-3
+type: "Company"
+permalink: /experiences/2024-nitex-experiences-3
 venue: "NITEX"
 date: December 2023 - July 2024
 location: "Dhaka, Bangladesh"
