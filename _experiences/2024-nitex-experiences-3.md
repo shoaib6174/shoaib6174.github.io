@@ -2,7 +2,8 @@
 title: "Jr. AI Engineer"
 collection: experinces
 
-permalink: /experinces/2024-nitex-experiences-2.md
+permalink: /experinces/2024-nitex-experiences-3.md
+type: "Undergraduate course"
 venue: "NITEX"
 date: 2014-01-01
 location: "Dhaka, Bangladesh"
