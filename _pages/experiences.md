@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Experiences"
+title: "Professional Experiences"
 permalink: /experiences/
 author_profile: true
 redirect_from:
@@ -8,9 +8,6 @@ redirect_from:
 ---
 
 {% include base_path %}
-
-Professional Experiences
-======
 
 ## Jr. AI Engineer, NITEX (Dec 2023 – July 2024)
 
@@ -38,6 +35,8 @@ Professional Experiences
 
 -  Created dialogue graphs from MultiWOZ dataset using tf-idf, topic modeling, xmeans, dbscan etc.
 
+<br>
+<br>
 
 Leadership & Extracurricular Activities
 ======
