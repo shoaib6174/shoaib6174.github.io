@@ -16,6 +16,10 @@ redirect_from:
 Published By: Tamralipi Prokashoni
 
 Year: 2022
+
+Description: This book introduces students to the mathematics that surrounds us, emphasizing the foundational concepts essential for developing mathematical thinking. Through engaging questions and real-world applications, it explores topics such as geometry, number theory, and basic arithmetic, making math relatable and enjoyable. By fostering curiosity and critical thinking, this resource aims to build a solid groundwork for students, encouraging them to appreciate the beauty and relevance of mathematics in everyday life.
+
+
 <br> <br>
 
 
@@ -25,6 +29,9 @@ Year: 2022
 Published By: Oddhoyon Prokashoni 
 
 Year: 2018
+
+Description: Goniter Mojar Proshno O Uttor (Interesting Math Questions and Answers) is an engaging mathematics book designed to introduce students to the fun and intriguing aspects of math. It consists of a variety of questions that explore fundamental concepts such as infinity, geometry, trigonometry, calculus,number theory etc.. The book also includes puzzles that challenge readers and stimulate critical thinking. By presenting these topics in an accessible and enjoyable manner, it aims to foster a love for mathematics and encourage students to appreciate its beauty.
+
 
 # Papers
 
