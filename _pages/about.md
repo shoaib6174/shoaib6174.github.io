@@ -15,7 +15,7 @@ I am an AI Engineer with a strong focus on multi-model models, computer vision, 
 
 Previously, I worked as a **Junior AI Engineer at NITEX**, where I designed and deployed an automated fashion attributes tagging pipeline using multi-modal models. I also developed a service for extracting data from PDFs in JSON format, utilizing various APIs and cloud technologies to ensure efficiency and scalability.
 
-My contributions to the **Google Summer of Code 2022 program with TensorFlow** involved implementing the **Swin Video Transformer** models and converting weights from PyTorch to TensorFlow. Additionally, as a **Research Intern at DeepPavlov.ai**, I created **dialogue graphs** from the MultiWOZ dataset using advanced machine learning techniques.
+My contributions to the **Google Summer of Code'22 with TensorFlow** involved implementing the **Swin Video Transformer** models and converting weights from PyTorch to TensorFlow. Additionally, as a **Research Intern at DeepPavlov.ai**, I created **dialogue graphs** from the MultiWOZ dataset using advanced machine learning techniques.
 
 I am proficient in languages such as **Python**, **C++**, and **CUDA**, with expertise in frameworks like **TensorFlow** and **PyTorch**. In robotics, I am well-versed with **ROS2**, **Gazebo**, **Nav2** and **ros2_control**. My experience extends to DevOps practices using **Docker** and **Kubernetes**, as well as backend development with **FastAPI**, **PostgreSQL** and **ElasticSearch**.
 
