@@ -11,6 +11,12 @@ main:
   - title: "Education & Certifications"
     url: /education/
 
+  - title: "Projects"
+    url: /projects/
+
+  - title: "Writings"
+    url: /writings/
+
   # - title: "Talks"
   #   url: /talks/    
 
