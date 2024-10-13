@@ -11,6 +11,7 @@ redirect_from:
 
 <details open>
 <summary> <h1> Books </h1></summary>
+<br>
   
 <img src='/files/photos/gonit-olympiad-books (1).jpg' width="40%"  alt="Gonit Olympiad Books">
 
@@ -36,7 +37,7 @@ redirect_from:
 
 </details>
 
-<details open>
+<details markdown="1" open >
 <summary> <h1> Research </h1></summary>
 
 ### [3D printing technology for textiles and fashion - Review Paper](https://www.tandfonline.com/doi/full/10.1080/00405167.2021.1978223)
