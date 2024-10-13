@@ -9,9 +9,9 @@ redirect_from:
 
 {% include base_path %}
 
-<details open>
+<details markdown="1" open>
 <summary> <h1> Books </h1></summary>
-<br>
+
   
 <img src='/files/photos/gonit-olympiad-books (1).jpg' width="40%"  alt="Gonit Olympiad Books">
 
@@ -50,7 +50,7 @@ RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th
 
 </details>
 
-<details open>
+<details markdown="1" open>
 <summary> <h1> Blogs </h1></summary>
 
 
