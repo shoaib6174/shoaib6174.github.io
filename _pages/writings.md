@@ -20,7 +20,8 @@ Year: 2022
 
 
 <img src='/files/photos/goniter-mojar-prshon-o-uttar (1).jpg' width="40%"  alt="Interesting Math Questions and Answers">
-#### [Goniter Mojar Prosno O Uttor (Interesting Math Questions and Answers)](https://www.rokomari.com/book/156334/goniter-mojar-proshno-o-uttor)
+
+### [Goniter Mojar Prosno O Uttor (Interesting Math Questions and Answers)](https://www.rokomari.com/book/156334/goniter-mojar-proshno-o-uttor)
 Published By: Oddhoyon Prokashoni 
 
 Year: 2018
