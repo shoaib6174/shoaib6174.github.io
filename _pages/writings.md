@@ -23,9 +23,6 @@ redirect_from:
 **Description:** This book introduces students to the mathematics that surrounds us, emphasizing the foundational concepts essential for developing mathematical thinking. Through engaging questions and real-world applications, it explores topics such as geometry, number theory, and basic arithmetic, making math relatable and enjoyable. By fostering curiosity and critical thinking, this resource aims to build a solid groundwork for students, encouraging them to appreciate the beauty and relevance of mathematics in everyday life.
 
 
-<br> <br>
-
-
 <img src='/files/photos/goniter-mojar-prshon-o-uttar (1).jpg' width="40%"  alt="Interesting Math Questions and Answers">
 
 ### [Goniter Mojar Prosno O Uttor (Interesting Math Questions and Answers)](https://www.rokomari.com/book/156334/goniter-mojar-proshno-o-uttor)
@@ -53,6 +50,11 @@ RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th
 <details markdown="1" open>
 <summary> <h1> Blogs </h1></summary>
 
+### [How to solve QUBO problems using Qiskit](https://medium.com/@shoaib6174/how-to-solve-qubo-problems-using-qiskit-f4eab6cc3061)
+
+**Published:** June 28, 2023
+
+**Overview:** In this blog post, I provide a concise guide on solving Quadratic Unconstrained Binary Optimization (QUBO) problems using the Qiskit framework. I explain the QUBO formulation and its significance in optimization, illustrated through a practical example of scheduling classes. I detail the process of converting the problem into QUBO format, defining an objective function, and using Qiskit's optimization tools, including the implementation of a Variational Quantum Eigensolver (VQE) to find optimal solutions, making these techniques accessible for readers.
 
 
 </details>
