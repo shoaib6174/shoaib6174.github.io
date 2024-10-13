@@ -75,7 +75,22 @@ RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th
 **Overview:** In this article, I walk you through the process of building a web application that extracts text from images using Flask and Azure’s Computer Vision API. I begin by explaining the importance of text recognition and how to set up an Azure subscription to access the necessary resources. I detail the steps for creating a Flask project, including setting up a virtual environment, installing required libraries, and writing the application code. Additionally, I demonstrate how to implement the API to read both printed and handwritten text from images. Finally, I guide you through deploying the app on Heroku, ensuring that your subscription key and endpoint remain secure throughout the process.
 
 
-###
-**Published:**
-**Overview:**
+###  How I have become Microsoft Certified: Azure Data Scientist Associate
+**Published:** July 28, 2021
+**Overview:**  In this article, I share my journey to earning the Azure Data Scientist Associate certification by passing the DP-100 exam. I’ll discuss the skills I developed, the Azure services I explored, and the preparation strategies that led to my success. Whether you’re considering a similar path or simply curious about the certification process, I hope my experience provides valuable insights and inspiration for your own learning journey in data science and cloud computing.
+
+###  How to become a Microsoft Certified: Data Analyst Associate
+**Published:** July 16, 2021
+**Overview:** In this article, I share my experience of passing the DA-100 exam and earning Microsoft’s Data Analyst Associate Certification. Despite initially thinking it would be easy due to my prior Power BI training, I quickly realized I needed to put in significant effort to bridge my knowledge gaps. I’ll outline the free resources and strategies I used for preparation, including recommended learning paths, practice tests, and project ideas to help you succeed in your own exam journey.
+
+
+###  
+**Published:** 
+**Overview:** 
+
+###  
+**Published:** 
+**Overview:** 
+
+
 </details>
