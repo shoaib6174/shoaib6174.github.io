@@ -9,6 +9,21 @@ redirect_from:
 
 {% include base_path %}
 
+<details markdown="1" open >
+<summary> <h1> Research </h1></summary>
+
+### [3D printing technology for textiles and fashion - Review Paper](https://www.tandfonline.com/doi/full/10.1080/00405167.2021.1978223)
+
+Dip, T. M., Emu, A. S., Nafiz, M. N. H., Kundu, P., Rakhi, H. R., Sayam, A., … Sayem, A. S. M. (2020). 3D printing technology for textiles and fashion. Textile Progress, 52(4), 167–260. https://doi.org/10.1080/00405167.2021.1978223
+
+### [Development of Radiation Protective Mobile Case - Conference Paper](https://index.ieomsociety.org/index.cfm/article/view/ID/3683)
+
+RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th North American International Conference on Industrial Engineering and Operations Management, https://doi.org/10.46254/NA07.20220494.
+
+</details>
+
+
+
 <details markdown="1" open>
 <summary> <h1> Books </h1></summary>
 
@@ -34,18 +49,7 @@ redirect_from:
 
 </details>
 
-<details markdown="1" open >
-<summary> <h1> Research </h1></summary>
 
-### [3D printing technology for textiles and fashion - Review Paper](https://www.tandfonline.com/doi/full/10.1080/00405167.2021.1978223)
-
-Dip, T. M., Emu, A. S., Nafiz, M. N. H., Kundu, P., Rakhi, H. R., Sayam, A., … Sayem, A. S. M. (2020). 3D printing technology for textiles and fashion. Textile Progress, 52(4), 167–260. https://doi.org/10.1080/00405167.2021.1978223
-
-### [Development of Radiation Protective Mobile Case - Conference Paper](https://index.ieomsociety.org/index.cfm/article/view/ID/3683)
-
-RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th North American International Conference on Industrial Engineering and Operations Management, https://doi.org/10.46254/NA07.20220494.
-
-</details>
 
 <details markdown="1" open>
 <summary> <h1> Blogs </h1></summary>
