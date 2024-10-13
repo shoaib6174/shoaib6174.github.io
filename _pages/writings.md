@@ -49,6 +49,17 @@ RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th
 
 <details markdown="1" open>
 <summary> <h1> Blogs </h1></summary>
+  
+### [The Rise of AR/VR/MR (XR) in Consumer Tech: Will they replace smartphones?](https://www.linkedin.com/pulse/rise-arvr-consumer-tech-wave-innovation-mohammad-shoaib)
+**Published:** September 22, 2023
+
+**Overview:**  In my article, I explore the potential of augmented reality (AR), virtual reality (VR), and mixed reality (MR) technologies to transform how we interact with the digital world. I discuss the historical context of technological advancements, highlighting how innovations like smartphones have evolved and suggesting that XR could be the next wave of consumer technology. By examining the current state of XR adoption and the challenges it faces—such as screen resolution, rendering capabilities, battery life, and wearability—I aim to provide insights into whether these technologies can replace smartphones as our primary devices for digital interaction.
+
+### [How to Become an IBM Certified Associate Developer — Quantum Computation using Qiskit v0.2X](https://medium.com/@shoaib6174/how-to-become-an-ibm-certified-associate-developer-quantum-computation-using-qiskit-v0-2x-43936bee9d62)
+**Published:** Jul 1, 2023
+
+**Overview:** In this article, I share my journey to becoming an IBM Certified Associate Developer in Quantum Computation using Qiskit. I discuss how my interest in quantum computing was sparked by the works of Richard Feynman and my subsequent enrollment in an introductory course with researchers from MIT and UC Berkeley. I detail the challenges I faced while grasping fundamental concepts and how I prepared for the certification exam by studying various resources, including essential textbooks and online materials.
+
 
 ### [How to solve QUBO problems using Qiskit](https://medium.com/@shoaib6174/how-to-solve-qubo-problems-using-qiskit-f4eab6cc3061)
 
@@ -57,4 +68,14 @@ RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th
 **Overview:** In this blog post, I provide a concise guide on solving Quadratic Unconstrained Binary Optimization (QUBO) problems using the Qiskit framework. I explain the QUBO formulation and its significance in optimization, illustrated through a practical example of scheduling classes. I detail the process of converting the problem into QUBO format, defining an objective function, and using Qiskit's optimization tools, including the implementation of a Variational Quantum Eigensolver (VQE) to find optimal solutions, making these techniques accessible for readers.
 
 
+
+### [Build a web app to Extract Text From Image using Flask and Azure’s Computer Vision API](https://medium.com/@shoaib6174/how-to-become-an-ibm-certified-associate-developer-quantum-computation-using-qiskit-v0-2x-43936bee9d62)
+**Published:** August 26, 2021
+
+**Overview:** In this article, I walk you through the process of building a web application that extracts text from images using Flask and Azure’s Computer Vision API. I begin by explaining the importance of text recognition and how to set up an Azure subscription to access the necessary resources. I detail the steps for creating a Flask project, including setting up a virtual environment, installing required libraries, and writing the application code. Additionally, I demonstrate how to implement the API to read both printed and handwritten text from images. Finally, I guide you through deploying the app on Heroku, ensuring that your subscription key and endpoint remain secure throughout the process.
+
+
+###
+**Published:**
+**Overview:**
 </details>
