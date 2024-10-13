@@ -67,6 +67,10 @@ RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th
 
 **Overview:** In this blog post, I provide a concise guide on solving Quadratic Unconstrained Binary Optimization (QUBO) problems using the Qiskit framework. I explain the QUBO formulation and its significance in optimization, illustrated through a practical example of scheduling classes. I detail the process of converting the problem into QUBO format, defining an objective function, and using Qiskit's optimization tools, including the implementation of a Variational Quantum Eigensolver (VQE) to find optimal solutions, making these techniques accessible for readers.
 
+### [No Code Machine Learning - Blog Series](https://github.com/shoaib6174/No-Code-ML)
+**Published:**: March, 2022
+
+**Overview:** This blog series demonstrate how researchers and students with no coding experience can use machine learning in their projects using Azure Machine Learning Desinger and Azure Automated Machine Learning (AutoML).
 
 
 ### [Build a web app to Extract Text From Image using Flask and Azure’s Computer Vision API](https://medium.com/@shoaib6174/how-to-become-an-ibm-certified-associate-developer-quantum-computation-using-qiskit-v0-2x-43936bee9d62)
@@ -84,7 +88,6 @@ RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th
 **Published:** July 16, 2021
 
 **Overview:** In this article, I share my experience of passing the DA-100 exam and earning Microsoft’s Data Analyst Associate Certification. Despite initially thinking it would be easy due to my prior Power BI training, I quickly realized I needed to put in significant effort to bridge my knowledge gaps. I’ll outline the free resources and strategies I used for preparation, including recommended learning paths, practice tests, and project ideas to help you succeed in your own exam journey.
-
 
 
 </details>
