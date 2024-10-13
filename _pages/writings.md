@@ -9,7 +9,9 @@ redirect_from:
 
 {% include base_path %}
 
-## Books
+<details open>
+<summary> <h1> Books </h1></summary>
+  
 <img src='/files/photos/gonit-olympiad-books (1).jpg' width="40%"  alt="Gonit Olympiad Books">
 
 ### [Chotoder Gonit Olympiad (Children’s Math Olympiad)](https://www.rokomari.com/book/277163/chotoder-gonit-olympiader-complete-package)
@@ -32,8 +34,10 @@ redirect_from:
 
 **Description:** Goniter Mojar Proshno O Uttor (Interesting Math Questions and Answers) is an engaging mathematics book designed to introduce students to the fun and intriguing aspects of math. It consists of a variety of questions that explore fundamental concepts such as infinity, geometry, trigonometry, calculus,number theory etc.. The book also includes puzzles that challenge readers and stimulate critical thinking. By presenting these topics in an accessible and enjoyable manner, it aims to foster a love for mathematics and encourage students to appreciate its beauty.
 
+</details>
 
-# Papers
+<details open>
+<summary> <h1> Research </h1></summary>
 
 ### [3D printing technology for textiles and fashion - Review Paper](https://www.tandfonline.com/doi/full/10.1080/00405167.2021.1978223)
 
@@ -43,6 +47,11 @@ Dip, T. M., Emu, A. S., Nafiz, M. N. H., Kundu, P., Rakhi, H. R., Sayam, A., …
 
 RASHID, M. (2022, June). Development of Radiation Protective Mobile Case. In 7th North American International Conference on Industrial Engineering and Operations Management, https://doi.org/10.46254/NA07.20220494.
 
-Blogs
-=====
-igig
+</details>
+
+<details open>
+<summary> <h1> Blogs </h1></summary>
+
+
+
+</details>
