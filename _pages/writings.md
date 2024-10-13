@@ -13,7 +13,7 @@ redirect_from:
 <img src='/files/photos/gonit-olympiad-books (1).jpg' width="300" height="200" alt="Gonit Olympiad Books">
 
 #### [Chotoder Gonit Olympiad (Children’s Math Olympiad)](https://www.rokomari.com/book/277163/chotoder-gonit-olympiader-complete-package)
-<img src='/files/photos/gonit-olympiad-books (1).jpg' width="50%"  alt="Gonit Olympiad Books">
+<img src='/files/photos/gonit-olympiad-books (1).jpg' width="25%"  alt="Gonit Olympiad Books">
 
 Published By: Tamralipi Prokashoni
 
