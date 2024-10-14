@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Publications"
+title: "Books"
 permalink: /publications/
 author_profile: true
 redirect_from:
@@ -9,8 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-Books
-=====
+
 
   
 <img src='/files/photos/gonit-olympiad-books (1).jpg' width="40%"  alt="Gonit Olympiad Books">
@@ -32,9 +31,9 @@ Books
 
 **Description:** Goniter Mojar Proshno O Uttor (Interesting Math Questions and Answers) is an engaging mathematics book designed to introduce students to the fun and intriguing aspects of math. It consists of a variety of questions that explore fundamental concepts such as infinity, geometry, trigonometry, calculus,number theory etc.. The book also includes puzzles that challenge readers and stimulate critical thinking. By presenting these topics in an accessible and enjoyable manner, it aims to foster a love for mathematics and encourage students to appreciate its beauty.
 
+<br> <br>
+# Research
 
-Research
-=====
 
 ### [3D printing technology for textiles and fashion - Review Paper](https://www.tandfonline.com/doi/full/10.1080/00405167.2021.1978223)
 
