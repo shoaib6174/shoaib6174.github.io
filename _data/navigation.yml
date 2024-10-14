@@ -14,8 +14,11 @@ main:
   - title: "Projects"
     url: /projects/
 
-  - title: "Writings"
-    url: /writings/
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Blogs"
+    url: /blogs/
 
   # - title: "Talks"
   #   url: /talks/    
