@@ -12,7 +12,7 @@ redirect_from:
 
 I am an Engineer with a strong focus on robotics, multi-model models, computer vision, and software development. I have hands-on experience with **LLMs**, **VLLMs**, **ROS 2**, **Gazebo**, and **Nvidia Triton**, and have deployed scalable solutions using **AWS** and **Docker**.
 
-I am currently a Research Assistant at the NSU Intelligent Robotics Lab, where I focus on AI for robotics, robotic software development using ROS2, simulation with NVIDIA Isaac Sim, and reinforcement learning. 
+I am currently a **Research Assistant** at the **NSU Intelligent Robotics Lab**, where I focus on AI for robotics, robotic software development using ROS2, simulation with NVIDIA Isaac Sim, and reinforcement learning. 
 
 Previously, I worked as a **Junior AI Engineer at NITEX**, where I designed and deployed an automated fashion attributes tagging pipeline using multi-modal models. I also developed a service for extracting data from PDFs in JSON format, utilizing various APIs and cloud technologies to ensure efficiency and scalability.
 
