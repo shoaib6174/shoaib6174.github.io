@@ -11,19 +11,19 @@ redirect_from:
 
 ## Research Assistant, NSU Intelligent Robotics (NIRO) Lab (June 2025 – Present)
 
-– Conducting research on Vision-Language-Action Models (VLAMs) and Reinforcement Learning (RL) for robotics
-– Developing and testing robotic control strategies using NVIDIA Isaac Sim and Lab for modeling and simulation
+- Conducting research on Vision-Language-Action Models (VLAMs) and Reinforcement Learning (RL) for robotics
+- Developing and testing robotic control strategies using NVIDIA Isaac Sim and Lab for modeling and simulation
 simulation
-– Developing and deploying AI models on embedded edge devices (Jetson Orin, Raspberry Pi),
+- Developing and deploying AI models on embedded edge devices (Jetson Orin, Raspberry Pi),
 integrating perception and decision-making pipelines for real-time robotic applications.
-– Designing and implementing ROS2-based software systems for robot control, planning, and distributed multi-robot
+- Designing and implementing ROS2-based software systems for robot control, planning, and distributed multi-robot
 communication.
 
 ## Teaching Assistant, North South University (Aug 2024 – Dec 2024)
 
-– Assisting in teaching ”Computer Architechture and Organization” course covering topics of MIPS, assembly language,
+- Assisting in teaching ”Computer Architechture and Organization” course covering topics of MIPS, assembly language,
 verilog and cpu design
-– Holding office-hours and grading assignments and quizzes
+- Holding office-hours and grading assignments and quizzes
 
 ## Jr. AI Engineer, NITEX (Dec 2023 – July 2024)
 
