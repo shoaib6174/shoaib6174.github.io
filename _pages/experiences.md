@@ -21,16 +21,16 @@ communication.
 
 ## Teaching Assistant, North South University (Aug 2024 – Dec 2024)
 
-- Assisting in teaching ”Computer Architechture and Organization” course covering topics of MIPS, assembly language,
+- Assisted in teaching ”Computer Architechture and Organization” course covering topics of MIPS, assembly language,
 verilog and cpu design
-- Holding office-hours and grading assignments and quizzes
+- Held office-hours and graded assignments and quizzes
 
 ## Jr. AI Engineer, NITEX (Dec 2023 – July 2024)
 
-- **Automated Fashion Attributes Tagging**: 
+- **Fashion Trend Research Platform**: 
   - Developed a pipeline to automatically download images from Instagram and tag clothing categories and attributes using multi-modal AI models.
-  - Deployed the solution using **Nvidia Triton** and **FastAPI**.
-  - Leveraged tools such as **OpenAI APIs**, **deepseek-vl**, **Docker**, **PostgreSQL**, and **Elasticsearch** for efficient processing.
+  - Developed downstream analytics that converted raw attribute tags into structured insights by aggregating tag frequencies, modeling temporal shifts, and highlighting upward or declining fashion trends.
+  - Used tools such as  **OpenAI APIs**, **deepseek-vl**,  **Nvidia Triton**, **Docker**, **PostgreSQL**,  and **Elasticsearch** for efficient processing.
 
 - **Automated Data Extraction from PDFs**: 
   - Created a service to extract specific data from PDFs into JSON format, testing and integrating OCR APIs like **Azure Doc Intelligence**, **Google Cloud Vision API**, **Amazon Textract**, and **Tesseract OCR**.
