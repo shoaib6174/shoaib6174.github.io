@@ -12,7 +12,7 @@ redirect_from:
 
 - **Master of Science in Computer Science and Engineering**  
   North South University, Dhaka (July 2023 – Present)  
-  **CGPA**: 4.00/4.00 (18 credits)
+  **CGPA**: 3.92/4.00 (24 credits)
 
 - **Bachelor of Science in Textile Engineering**  
   Bangladesh University of Textiles, Dhaka (Jan 2017 – Dec 2022)  
