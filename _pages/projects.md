@@ -9,6 +9,12 @@ redirect_from:
 
 {% include base_path %}
 
+### [BotForge — AI Chatbot & Voice Agent Platform](https://botforge.fenloai.com/)
+
+**Date:** 2025
+
+**Overview:** BotForge is a production-ready platform for building and deploying AI-powered conversational systems. It features RAGChat for document ingestion with semantic search and citation-backed responses, VoiceBot Pro for AI phone agents with real-time transcription and sentiment analysis via Twilio and Vapi integration, and OmniBot for multi-channel deployment across WhatsApp, website widgets, Telegram, and Zapier with unified inbox management.
+
 ### [TurtleBot3 Patrolling](https://github.com/shoaib6174/TurtleBot3-Patrolling) 
 
 **Date:** April, 2024
