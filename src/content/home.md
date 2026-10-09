@@ -2,7 +2,7 @@
 name: "Mohammad Shoaib"
 location: "Dhaka, Bangladesh"
 masthead: "Research assistant at NSU Intelligent Robotics Lab, where I put language and vision-language models on robots. Co-founder of FenloAI, where we build AI systems for small businesses on contract."
-masthead2: "Robots are where an AI system has to work end to end in the physical world, and that is what I wanted to build before university. Four math books for school students and twenty-one technical articles along the way."
+masthead2: "Robots are where an AI system has to work end to end in the physical world. That is what I wanted to build before university. Four math books for school students and twenty-one technical articles along the way."
 roles:
   - key: build
     title: "I build systems."

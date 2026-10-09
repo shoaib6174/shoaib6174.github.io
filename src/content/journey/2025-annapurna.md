@@ -4,7 +4,7 @@ title: "Annapurna Base Camp, alone"
 threads:
   - "life"
 chose: "To go alone, without a guide."
-result: "Trekked without a guide. Also bungee and the canyon swing."
+result: "Base camp and back. Also bungee and the canyon swing."
 imageSlots:
   - "Photo: Annapurna Base Camp, May 2025"
 ---

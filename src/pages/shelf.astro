@@ -50,7 +50,7 @@ const lines = by('line');
   <section class="section" aria-labelledby="trips-h">
     <h2 id="trips-h" class="section__label">Trips</h2>
     <ul class="shelf-list">
-      {trips.map((t) => (<li><strong>{t.data.title}</strong><span>{t.data.year} · {t.data.country}</span></li>))}
+      {trips.map((t) => (<li><strong>{t.data.title}</strong><span>{t.data.year}, {t.data.country}</span></li>))}
     </ul>
   </section>
 

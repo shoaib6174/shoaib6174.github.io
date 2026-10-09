@@ -11,4 +11,4 @@ result: "The MicroMasters took over a year and gave me the probability and stati
 
 Early 2020. I decided that this time I would take it seriously. The bootcamp was run by an IPE graduate who had switched to software. I finished it. I did not enjoy frontend work, and I had gaps in computer science basics. Google's IT Support certificate filled some of the gaps. I took the cloud specialisation because DevOps was in demand. Finishing it told me DevOps was not for me either.
 
-The MicroMasters mattered most. Five courses over more than a year gave me the mathematics I had never had. One lecture in the fifth course pointed it at machine learning.
+The MicroMasters mattered most. Five courses over more than a year gave me the mathematics I had never had. One lecture in the fifth course pointed me at machine learning.

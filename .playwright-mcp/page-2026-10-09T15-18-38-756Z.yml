@@ -1,0 +1,226 @@
+- generic [active] [ref=f6e1]:
+  - link "Skip to content" [ref=f6e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f6e3]:
+    - navigation "Primary" [ref=f6e4]:
+      - link "Mohammad Shoaib" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=f6e6]:
+        - listitem [ref=f6e7]:
+          - link "Work" [ref=f6e8] [cursor=pointer]:
+            - /url: /work/
+        - listitem [ref=f6e9]:
+          - link "Route" [ref=f6e10] [cursor=pointer]:
+            - /url: /route/
+        - listitem [ref=f6e11]:
+          - link "Writing" [ref=f6e12] [cursor=pointer]:
+            - /url: /writing/
+        - listitem [ref=f6e13]:
+          - link "Skills" [ref=f6e14] [cursor=pointer]:
+            - /url: /skills/
+        - listitem [ref=f6e15]:
+          - link "Shelf" [ref=f6e16] [cursor=pointer]:
+            - /url: /shelf/
+  - main [ref=f6e17]:
+    - generic [ref=f6e18]:
+      - paragraph [ref=f6e19]: 2018 to now
+      - heading "Writing" [level=1] [ref=f6e20]
+      - paragraph [ref=f6e21]: Books for school students, two papers, and the articles I write after learning something.
+    - region [ref=f6e22]:
+      - heading "Books" [level=2] [ref=f6e23]
+      - img "The Chotoder Gonit Olympiad volumes" [ref=f6e24]
+      - list [ref=f6e25]:
+        - listitem [ref=f6e26]:
+          - link [ref=f6e27] [cursor=pointer]:
+            - /url: https://www.rokomari.com/book/156334/goniter-mojar-proshno-o-uttor
+            - strong [ref=f6e28]: Goniter Mojar Prosno O Uttor
+          - generic [ref=f6e29]: Interesting Math Questions and Answers
+          - generic [ref=f6e30]: 2018 · Oddhoyon Prokashoni · Classes 8 to 12
+        - listitem [ref=f6e31]:
+          - link [ref=f6e32] [cursor=pointer]:
+            - /url: https://www.rokomari.com/book/275698/chotoder-gonit-olympiad-1
+            - strong [ref=f6e33]: Chotoder Gonit Olympiad 1
+          - generic [ref=f6e34]: Children's Math Olympiad, volume 1
+          - generic [ref=f6e35]: 2022 · Tamralipi Prokashoni · Classes 2 to 7
+          - generic [ref=f6e36]: One of the best sellers in the math olympiad category on Rokomari.
+        - listitem [ref=f6e37]:
+          - link [ref=f6e38] [cursor=pointer]:
+            - /url: https://www.rokomari.com/book/275706/chotoder-gonit-olympiad-2
+            - strong [ref=f6e39]: Chotoder Gonit Olympiad 2
+          - generic [ref=f6e40]: Children's Math Olympiad, volume 2
+          - generic [ref=f6e41]: 2022 · Tamralipi Prokashoni · Classes 2 to 7
+        - listitem [ref=f6e42]:
+          - link [ref=f6e43] [cursor=pointer]:
+            - /url: https://www.rokomari.com/book/275708/chotoder-gonit-olympiad-3
+            - strong [ref=f6e44]: Chotoder Gonit Olympiad 3
+          - generic [ref=f6e45]: Children's Math Olympiad, volume 3
+          - generic [ref=f6e46]: 2022 · Tamralipi Prokashoni · Classes 2 to 7
+    - region [ref=f6e47]:
+      - heading "Papers" [level=2] [ref=f6e48]
+      - list [ref=f6e49]:
+        - listitem [ref=f6e50]:
+          - strong [ref=f6e51]: 3D printing technology for textiles and fashion
+          - generic [ref=f6e52]: Textile Progress, Taylor & Francis, 2021.
+          - generic [ref=f6e53]: "Wrote the 3D-printed dress section: compiled every known 3D-printed dress and wrote the comparative analysis."
+        - listitem [ref=f6e54]:
+          - strong [ref=f6e55]: Radiation-protective mobile phone cover
+          - generic [ref=f6e56]: Product Design course, BUTEX, 2019.
+          - generic [ref=f6e57]: Team project, later published.
+    - region [ref=f6e58]:
+      - heading "Articles" [level=2] [ref=f6e59]
+      - generic [aria-hidden] [ref=f6e60]:
+        - generic [ref=f6e82]: "2021"
+        - generic [ref=f6e83]: "2026"
+      - paragraph [ref=f6e84]: One mark per article. The clusters are the weeks after I learned something.
+      - generic [ref=f6e85]:
+        - heading "ROS 2" [level=3] [ref=f6e86]
+        - list [ref=f6e87]:
+          - listitem [ref=f6e88]:
+            - 'link "The Anatomy of a ROS2 Project: How Everything Connects" [ref=f6e89] [cursor=pointer]':
+              - /url: https://medium.com/@shoaib6174/the-anatomy-of-a-ros2-project-how-everything-connects-62bb07c59b72
+            - time [ref=f6e91]: Jun 2026
+          - listitem [ref=f6e92]:
+            - 'link "What I Wish I Knew Before Installing ROS2: A Survival Guide to Build Tools, Shells, and Executables" [ref=f6e93] [cursor=pointer]':
+              - /url: https://medium.com/@shoaib6174/what-i-wish-i-knew-before-installing-ros2-a-survival-guide-to-build-tools-shells-and-executables-75e50f08ba33
+            - time [ref=f6e95]: Jun 2026
+          - listitem [ref=f6e96]:
+            - 'link "Where a Robot Lives in Space: The URDF Mental Model I Wish I Had on Day One" [ref=f6e97] [cursor=pointer]':
+              - /url: https://medium.com/@shoaib6174/where-a-robot-lives-in-space-the-urdf-mental-model-i-wish-i-had-on-day-one-537aac323d1e
+            - time [ref=f6e99]: Jun 2026
+          - listitem [ref=f6e100]:
+            - link "What I Got Wrong About ROS2 (And the Mental Model That Finally Clicked)" [ref=f6e101] [cursor=pointer]:
+              - /url: https://medium.com/@shoaib6174/what-i-got-wrong-about-ros2-and-the-mental-model-that-finally-clicked-eea090e69d62
+            - time [ref=f6e103]: Jun 2026
+          - listitem [ref=f6e104]:
+            - 'link "ROS2 from Zero: A No-Code Reference for Beginners" [ref=f6e105] [cursor=pointer]':
+              - /url: https://medium.com/@shoaib6174/ros2-from-zero-a-no-code-reference-for-beginners-d14c0368d53c
+            - time [ref=f6e107]: Jun 2026
+          - listitem [ref=f6e108]:
+            - link "How to Match ROS 2, Gazebo, and PyTorch CUDA Versions for Any Ubuntu and GPU" [ref=f6e109] [cursor=pointer]:
+              - /url: https://medium.com/@shoaib6174/how-to-match-ros-2-gazebo-and-pytorch-cuda-versions-for-any-ubuntu-and-gpu-fbfc7bb8ba23
+            - generic [ref=f6e110]:
+              - time [ref=f6e111]: Mar 2026
+              - generic [ref=f6e112]: 73 views
+      - generic [ref=f6e113]:
+        - heading "CasADi" [level=3] [ref=f6e114]
+        - list [ref=f6e115]:
+          - listitem [ref=f6e116]:
+            - link "An Introduction to CasADi with Python" [ref=f6e117] [cursor=pointer]:
+              - /url: https://medium.com/@shoaib6174/an-introduction-to-casadi-with-python-12055f8e652f
+            - generic [ref=f6e118]:
+              - time [ref=f6e119]: Apr 2025
+              - generic [ref=f6e120]: 1.3K views
+          - listitem [ref=f6e121]:
+            - link "Solving Quadratic NLP with CasADi" [ref=f6e122] [cursor=pointer]:
+              - /url: https://medium.com/@shoaib6174/solving-quadratic-nlp-with-casadi-7a49948d8c64
+            - generic [ref=f6e123]:
+              - time [ref=f6e124]: Apr 2025
+              - generic [ref=f6e125]: 380 views
+          - listitem [ref=f6e126]:
+            - 'link "Implementing NMPC with CasADi: Cart-Pole System" [ref=f6e127] [cursor=pointer]':
+              - /url: https://medium.com/@shoaib6174/implementing-nmpc-with-casadi-cart-pole-system-62f1d72f2efa
+            - generic [ref=f6e128]:
+              - time [ref=f6e129]: Apr 2025
+              - generic [ref=f6e130]: 1.2K views
+          - listitem [ref=f6e131]:
+            - 'link "Modeling Dynamics with CasADi: Simulation of a Simple Pendulum" [ref=f6e132] [cursor=pointer]':
+              - /url: https://medium.com/@shoaib6174/modeling-dynamics-with-casadi-simulation-of-a-simple-pendulum-9c10f72ffae8
+            - generic [ref=f6e133]:
+              - time [ref=f6e134]: Apr 2025
+              - generic [ref=f6e135]: 320 views
+      - generic [ref=f6e136]:
+        - heading "Qiskit" [level=3] [ref=f6e137]
+        - list [ref=f6e138]:
+          - listitem [ref=f6e139]:
+            - link "How to Become an IBM Certified Associate Developer, Quantum Computation Using Qiskit" [ref=f6e140] [cursor=pointer]:
+              - /url: https://medium.com/@shoaib6174/how-to-become-an-ibm-certified-associate-developer-quantum-computation-using-qiskit-v0-2x-43936bee9d62
+            - generic [ref=f6e141]:
+              - time [ref=f6e142]: Jul 2023
+              - generic [ref=f6e143]: 3.6K views
+          - listitem [ref=f6e144]:
+            - generic [ref=f6e145]: How to Solve Graph Coloring Problems Using Qiskit's Grover Algorithm
+            - generic [ref=f6e146]:
+              - time [ref=f6e147]: Jul 2023
+              - generic [ref=f6e148]: 902 views
+              - generic [ref=f6e149]: link to follow
+          - listitem [ref=f6e150]:
+            - link "How to Solve QUBO Problems Using Qiskit" [ref=f6e151] [cursor=pointer]:
+              - /url: https://medium.com/@shoaib6174/how-to-solve-qubo-problems-using-qiskit-f4eab6cc3061
+            - generic [ref=f6e152]:
+              - time [ref=f6e153]: Jun 2023
+              - generic [ref=f6e154]: 2.8K views
+      - generic [ref=f6e155]:
+        - heading "Algorithms" [level=3] [ref=f6e156]
+        - list [ref=f6e157]:
+          - listitem [ref=f6e158]:
+            - generic [ref=f6e159]: A* algorithm in short, for revision
+            - generic [ref=f6e160]:
+              - time [ref=f6e161]: Sep 2023
+              - generic [ref=f6e162]: 469 views
+              - generic [ref=f6e163]: link to follow
+          - listitem [ref=f6e164]:
+            - generic [ref=f6e165]: Dijkstra's algorithm in short, for revision
+            - generic [ref=f6e166]:
+              - time [ref=f6e167]: Sep 2023
+              - generic [ref=f6e168]: 178 views
+              - generic [ref=f6e169]: link to follow
+          - listitem [ref=f6e170]:
+            - generic [ref=f6e171]: Kruskal's algorithm, for revision
+            - generic [ref=f6e172]:
+              - time [ref=f6e173]: Sep 2023
+              - generic [ref=f6e174]: 131 views
+              - generic [ref=f6e175]: link to follow
+      - generic [ref=f6e176]:
+        - heading "Azure" [level=3] [ref=f6e177]
+        - list [ref=f6e178]:
+          - listitem [ref=f6e179]:
+            - link "No-Code Machine Learning, a blog series on Azure ML Designer and AutoML" [ref=f6e180] [cursor=pointer]:
+              - /url: https://github.com/shoaib6174/No-Code-ML
+            - time [ref=f6e182]: Mar 2022
+          - listitem [ref=f6e183]:
+            - link "Build a Web App to Extract Text From Images Using Flask and Azure's Computer Vision API" [ref=f6e184] [cursor=pointer]:
+              - /url: https://medium.com/@shoaib6174/build-a-web-app-to-extract-text-from-image-using-flask-and-azures-computer-vision-api-1ee470b66050
+            - generic [ref=f6e185]:
+              - time [ref=f6e186]: Aug 2021
+              - generic [ref=f6e187]: 1.2K views
+          - listitem [ref=f6e188]:
+            - 'link "How to Become a Microsoft Certified: Data Analyst Associate" [ref=f6e189] [cursor=pointer]':
+              - /url: https://medium.com/@shoaib6174/how-to-become-a-microsoft-certified-data-analyst-associate-f109a2bdf65
+            - generic [ref=f6e190]:
+              - time [ref=f6e191]: Jul 2021
+              - generic [ref=f6e192]: 2K views
+          - listitem [ref=f6e193]:
+            - generic [ref=f6e194]: "How I Became Microsoft Certified: Azure Data Scientist Associate"
+            - generic [ref=f6e195]:
+              - time [ref=f6e196]: Jul 2021
+              - generic [ref=f6e197]: 218 views
+              - generic [ref=f6e198]: link to follow
+      - generic [ref=f6e199]:
+        - heading "Essays" [level=3] [ref=f6e200]
+        - list [ref=f6e201]:
+          - listitem [ref=f6e202]:
+            - 'link "The Rise of AR/VR/MR (XR) in Consumer Tech: Will They Replace Smartphones?" [ref=f6e203] [cursor=pointer]':
+              - /url: https://www.linkedin.com/pulse/rise-arvr-consumer-tech-wave-innovation-mohammad-shoaib
+            - time [ref=f6e205]: Sep 2023
+  - contentinfo [ref=f6e206]:
+    - generic [ref=f6e207]:
+      - list [ref=f6e208]:
+        - listitem [ref=f6e209]:
+          - link "shoaib6174@gmail.com" [ref=f6e210] [cursor=pointer]:
+            - /url: mailto:shoaib6174@gmail.com
+        - listitem [ref=f6e211]:
+          - link "GitHub" [ref=f6e212] [cursor=pointer]:
+            - /url: https://github.com/shoaib6174
+        - listitem [ref=f6e213]:
+          - link "LinkedIn" [ref=f6e214] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/shoaib6174
+        - listitem [ref=f6e215]:
+          - link "Medium" [ref=f6e216] [cursor=pointer]:
+            - /url: https://medium.com/@shoaib6174
+        - listitem [ref=f6e217]:
+          - link "NIRO Lab" [ref=f6e218] [cursor=pointer]:
+            - /url: https://nirolab.github.io/people?m=mohammad-shoaib
+        - listitem [ref=f6e219]:
+          - link "Resume, PDF" [ref=f6e220] [cursor=pointer]:
+            - /url: /files/pdfs/Shoaib_s_Resume.pdf
+      - paragraph [ref=f6e221]: Mohammad Shoaib, Dhaka. Updated October 2026.

@@ -1,6 +1,6 @@
 ---
 date: "2023-07"
-title: "MSc in Computer Science, North South University"
+title: "MSc in Computer Science and Engineering, North South University"
 threads:
   - "studied"
 chose: "To enrol and work with a faculty member doing quantum computing research."
@@ -9,4 +9,4 @@ result: "Stayed for the degree. Left the quantum track."
 onRoute: true
 ---
 
-After one semester I knew. Learning quantum computing had been the best part. The theoretical work was not what I wanted to spend years on.
+The quantum track lasted one semester. Learning quantum computing had been the best part. The theoretical work was not what I wanted to spend years on.

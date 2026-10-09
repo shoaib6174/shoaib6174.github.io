@@ -1,0 +1,68 @@
+- generic [active] [ref=f7e1]:
+  - link "Skip to content" [ref=f7e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f7e3]:
+    - navigation "Primary" [ref=f7e4]:
+      - link "Mohammad Shoaib" [ref=f7e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=f7e6]:
+        - listitem [ref=f7e7]:
+          - link "Work" [ref=f7e8] [cursor=pointer]:
+            - /url: /work/
+        - listitem [ref=f7e9]:
+          - link "Route" [ref=f7e10] [cursor=pointer]:
+            - /url: /route/
+        - listitem [ref=f7e11]:
+          - link "Writing" [ref=f7e12] [cursor=pointer]:
+            - /url: /writing/
+        - listitem [ref=f7e13]:
+          - link "Skills" [ref=f7e14] [cursor=pointer]:
+            - /url: /skills/
+        - listitem [ref=f7e15]:
+          - link "Shelf" [ref=f7e16] [cursor=pointer]:
+            - /url: /shelf/
+  - main [ref=f7e17]:
+    - article [ref=f7e18]:
+      - generic [ref=f7e19]:
+        - paragraph [ref=f7e20]:
+          - generic [ref=f7e21]: "2026"
+          - generic [ref=f7e22]: In progress
+        - heading "LLM robot task planner" [level=1] [ref=f7e23]
+        - paragraph [ref=f7e24]: A language model plans and executes multi-step tasks for a mobile robot with an arm, in simulation.
+      - figure "LLM robot task planner" [ref=f7e25]:
+        - generic [ref=f7e26]: "Demo: the robot fetching the red cube from room A to room B"
+      - paragraph [ref=f7e28]: "I wanted to see how far a local language model could go as the planner for a real robot stack. The answer so far: it can decompose a request, call navigation, perception, and manipulation as tools, and replan when a step fails."
+      - generic [ref=f7e29]:
+        - paragraph [ref=f7e30]: Give it “bring the red cube from room A to room B”. The agent navigates to room A with Nav2, finds the cube with YOLO, picks it up, drives to room B, and places it. If the cube is not where it expected, it searches the other room and replans.
+        - paragraph [ref=f7e31]: Four of five demo scenarios pass. The one that does not, moving all cubes at once, fails on localisation drift after repeated rotation scans. That is a known AMCL limitation and the next thing to fix.
+        - paragraph [ref=f7e32]: The same software and agent architecture is the base for the factory security robot concept. Phase 2 is the physical JetRover.
+      - paragraph [ref=f7e33]: Stack ROS 2, Nav2, YOLO, Gazebo, LangChain, Qwen2.5 via Ollama, JetRover
+      - list [ref=f7e34]:
+        - listitem [ref=f7e35]:
+          - link "Repository" [ref=f7e36] [cursor=pointer]:
+            - /url: https://github.com/shoaib6174/llm_robot_task_planner
+      - paragraph [ref=f7e37]:
+        - link "All work" [ref=f7e38] [cursor=pointer]:
+          - /url: /work/
+  - contentinfo [ref=f7e39]:
+    - generic [ref=f7e40]:
+      - list [ref=f7e41]:
+        - listitem [ref=f7e42]:
+          - link "shoaib6174@gmail.com" [ref=f7e43] [cursor=pointer]:
+            - /url: mailto:shoaib6174@gmail.com
+        - listitem [ref=f7e44]:
+          - link "GitHub" [ref=f7e45] [cursor=pointer]:
+            - /url: https://github.com/shoaib6174
+        - listitem [ref=f7e46]:
+          - link "LinkedIn" [ref=f7e47] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/shoaib6174
+        - listitem [ref=f7e48]:
+          - link "Medium" [ref=f7e49] [cursor=pointer]:
+            - /url: https://medium.com/@shoaib6174
+        - listitem [ref=f7e50]:
+          - link "NIRO Lab" [ref=f7e51] [cursor=pointer]:
+            - /url: https://nirolab.github.io/people?m=mohammad-shoaib
+        - listitem [ref=f7e52]:
+          - link "Resume, PDF" [ref=f7e53] [cursor=pointer]:
+            - /url: /files/pdfs/Shoaib_s_Resume.pdf
+      - paragraph [ref=f7e54]: Mohammad Shoaib, Dhaka. Updated October 2026.

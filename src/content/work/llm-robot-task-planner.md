@@ -26,4 +26,4 @@ Give it "bring the red cube from room A to room B". The agent navigates to room 
 
 Four of five demo scenarios pass. The one that does not, moving all cubes at once, fails on localisation drift after repeated rotation scans. That is a known AMCL limitation and the next thing to fix.
 
-The same software and agent architecture is the base for the factory security robot concept. Phase 2 is the physical JetRover.
+The same software and agent architecture is the base for the factory security robot concept. Next is the physical JetRover.

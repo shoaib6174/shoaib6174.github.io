@@ -28,11 +28,11 @@ const pos = (d: string) => {
 };
 ---
 
-<Base title="Writing" description="Four math books, two papers, and twenty-one articles by Mohammad Shoaib.">
+<Base title="Writing" description="Four math books, a review paper, and twenty-one articles by Mohammad Shoaib.">
   <header class="page-head">
     <p class="page-head__span">2018 to now</p>
     <h1>Writing</h1>
-    <p class="page-head__lead">Books for school students, two papers, and the articles I write after learning something.</p>
+    <p class="page-head__lead">Books for school students, a review paper, and the articles I write after learning something.</p>
   </header>
 
   <section class="section" id="books" aria-labelledby="books-h">
@@ -43,7 +43,7 @@ const pos = (d: string) => {
         <li class="booklist__item">
           <a href={b.data.url}><strong>{b.data.title}</strong></a>
           <span class="booklist__gloss">{b.data.gloss}</span>
-          <span class="booklist__meta">{b.data.year} · {b.data.publisher} · {b.data.audience}</span>
+          <span class="booklist__meta">{b.data.year}, {b.data.publisher}, {b.data.audience}</span>
           {b.data.note && <span class="booklist__note">{b.data.note}</span>}
         </li>
       ))}

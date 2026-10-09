@@ -6,7 +6,7 @@ threads:
   - "explain"
 startedBy: "Surely You're Joking, Mr. Feynman!"
 chose: "A scholarship to Qubit by Qubit's online summer school, then a goal: a PhD in quantum machine learning."
-result: "A goal: a PhD in quantum machine learning. The next year was built around it. IBM Certified Associate Developer in Quantum Computation, Qiskit Advocate from 2023 to now, the Womanium program, articles on QUBO, Grover's algorithm, and the certification, and a card game for teaching gates."
+result: "IBM Certified Associate Developer in Quantum Computation. Qiskit Advocate from 2023 to now. The Womanium program. Articles on QUBO, Grover's algorithm, and the certification exam. A card game for teaching gates."
 proof:
   - label: "Qubit by Qubit"
     href: "https://www.qubitbyqubit.org/"

@@ -11,4 +11,4 @@ proof:
     href: "/work/turtlebot3-patrolling/"
 ---
 
-I went back to NSU to deepen the technical side. The robotics course project, a TurtleBot3 patrolling waypoints with Nav2 and behavior trees, is what led to the lab.
+I went back to NSU to deepen the technical side. The course project was a TurtleBot3 patrolling waypoints with Nav2 and behavior trees. It led to the lab.

@@ -1,0 +1,145 @@
+- generic [active] [ref=f8e1]:
+  - link "Skip to content" [ref=f8e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f8e3]:
+    - navigation "Primary" [ref=f8e4]:
+      - link "Mohammad Shoaib" [ref=f8e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=f8e6]:
+        - listitem [ref=f8e7]:
+          - link "Work" [ref=f8e8] [cursor=pointer]:
+            - /url: /work/
+        - listitem [ref=f8e9]:
+          - link "Route" [ref=f8e10] [cursor=pointer]:
+            - /url: /route/
+        - listitem [ref=f8e11]:
+          - link "Writing" [ref=f8e12] [cursor=pointer]:
+            - /url: /writing/
+        - listitem [ref=f8e13]:
+          - link "Skills" [ref=f8e14] [cursor=pointer]:
+            - /url: /skills/
+        - listitem [ref=f8e15]:
+          - link "Shelf" [ref=f8e16] [cursor=pointer]:
+            - /url: /shelf/
+  - main [ref=f8e17]:
+    - generic [ref=f8e18]:
+      - paragraph [ref=f8e19]: Off the clock
+      - heading "Shelf" [level=1] [ref=f8e20]
+      - paragraph [ref=f8e21]: Other people's work, and where I have been.
+    - region [ref=f8e22]:
+      - heading "Currently learning" [level=2] [ref=f8e23]
+      - list [ref=f8e24]:
+        - listitem [ref=f8e25]: Chinese, toward HSK 2
+        - listitem [ref=f8e26]: Optimal control and model predictive control
+        - listitem [ref=f8e27]: SLAM
+    - region [ref=f8e28]:
+      - heading "Books I would hand to anyone" [level=2] [ref=f8e29]
+      - list [ref=f8e30]:
+        - listitem [ref=f8e31]:
+          - strong [ref=f8e32]: Shoe Dog
+          - generic [ref=f8e33]: Phil Knight
+        - listitem [ref=f8e34]:
+          - strong [ref=f8e35]: Notes from Underground
+          - generic [ref=f8e36]: Fyodor Dostoevsky
+        - listitem [ref=f8e37]:
+          - strong [ref=f8e38]: Sapiens
+          - generic [ref=f8e39]: Yuval Noah Harari
+        - listitem [ref=f8e40]:
+          - strong [ref=f8e41]: Fooled by Randomness
+          - generic [ref=f8e42]: Nassim Nicholas Taleb
+        - listitem [ref=f8e43]:
+          - strong [ref=f8e44]: Life 3.0
+          - generic [ref=f8e45]: Max Tegmark
+          - emphasis [ref=f8e46]: Where the interest in AI started, 2017.
+        - listitem [ref=f8e47]:
+          - strong [ref=f8e48]: Surely You're Joking, Mr. Feynman!
+          - generic [ref=f8e49]: Richard Feynman
+          - emphasis [ref=f8e50]: Where the year of quantum computing started, 2022.
+        - listitem [ref=f8e51]:
+          - strong [ref=f8e52]: No Longer Human
+          - generic [ref=f8e53]: Osamu Dazai
+    - region [ref=f8e54]:
+      - heading "Films and series" [level=2] [ref=f8e55]
+      - group "Sort films" [ref=f8e56]:
+        - button "By year" [pressed] [ref=f8e57] [cursor=pointer]
+        - button "By country" [ref=f8e58] [cursor=pointer]
+      - list [ref=f8e59]:
+        - listitem [ref=f8e60]:
+          - strong [ref=f8e61]: "Sore: A Wife from the Future"
+          - generic [ref=f8e62]: Indonesia
+        - listitem [ref=f8e63]:
+          - strong [ref=f8e64]: It's a Wonderful Life
+          - generic [ref=f8e65]: 1946, United States
+        - listitem [ref=f8e66]:
+          - strong [ref=f8e67]: Rashomon
+          - generic [ref=f8e68]: 1950, Japan
+        - listitem [ref=f8e69]:
+          - strong [ref=f8e70]: Friends
+          - generic [ref=f8e71]: 1994, United States, series
+        - listitem [ref=f8e72]:
+          - strong [ref=f8e73]: A Beautiful Mind
+          - generic [ref=f8e74]: 2001, United States
+        - listitem [ref=f8e75]:
+          - strong [ref=f8e76]: The Big Bang Theory
+          - generic [ref=f8e77]: 2007, United States, series
+        - listitem [ref=f8e78]:
+          - strong [ref=f8e79]: Person of Interest
+          - generic [ref=f8e80]: 2011, United States, series
+        - listitem [ref=f8e81]:
+          - strong [ref=f8e82]: Attack on Titan
+          - generic [ref=f8e83]: 2013, Japan, anime
+        - listitem [ref=f8e84]:
+          - strong [ref=f8e85]: Yeh Jawaani Hai Deewani
+          - generic [ref=f8e86]: 2013, India
+        - listitem [ref=f8e87]:
+          - strong [ref=f8e88]: Silicon Valley
+          - generic [ref=f8e89]: 2014, United States, series
+        - listitem [ref=f8e90]:
+          - strong [ref=f8e91]: Wild Tales
+          - generic [ref=f8e92]: 2014, Argentina
+        - listitem [ref=f8e93]:
+          - strong [ref=f8e94]: The Banshees of Inisherin
+          - generic [ref=f8e95]: 2022, Ireland
+        - listitem [ref=f8e96]:
+          - strong [ref=f8e97]: Perfect Days
+          - generic [ref=f8e98]: 2023, Japan
+    - region [ref=f8e99]:
+      - heading "Trips" [level=2] [ref=f8e100]
+      - list [ref=f8e101]:
+        - listitem [ref=f8e102]:
+          - strong [ref=f8e103]: Annapurna Base Camp, solo, no guide
+          - generic [ref=f8e104]: 2025 · Nepal
+        - listitem [ref=f8e105]:
+          - strong [ref=f8e106]: Two weeks at Yunnan University, China-South Asia Bridge program
+          - generic [ref=f8e107]: 2024 · China
+        - listitem [ref=f8e108]:
+          - strong [ref=f8e109]: Shimla, Manali, Agra, Delhi, Kolkata
+          - generic [ref=f8e110]: 2018 · India
+    - region [ref=f8e111]:
+      - heading "Also" [level=2] [ref=f8e112]
+      - list [ref=f8e113]:
+        - listitem [ref=f8e114]: I support Barcelona and Argentina, and play as Real Madrid in FIFA, because I am not artistic enough to play as Barcelona.
+        - listitem [ref=f8e115]: Ghazals, classical blues, Bengali Baul and folk songs, old Bangladeshi band songs. I listen for the lyrics first.
+        - listitem [ref=f8e116]: Films and series from any country with subtitles, any decade from the 1940s on.
+  - contentinfo [ref=f8e117]:
+    - generic [ref=f8e118]:
+      - list [ref=f8e119]:
+        - listitem [ref=f8e120]:
+          - link "shoaib6174@gmail.com" [ref=f8e121] [cursor=pointer]:
+            - /url: mailto:shoaib6174@gmail.com
+        - listitem [ref=f8e122]:
+          - link "GitHub" [ref=f8e123] [cursor=pointer]:
+            - /url: https://github.com/shoaib6174
+        - listitem [ref=f8e124]:
+          - link "LinkedIn" [ref=f8e125] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/shoaib6174
+        - listitem [ref=f8e126]:
+          - link "Medium" [ref=f8e127] [cursor=pointer]:
+            - /url: https://medium.com/@shoaib6174
+        - listitem [ref=f8e128]:
+          - link "NIRO Lab" [ref=f8e129] [cursor=pointer]:
+            - /url: https://nirolab.github.io/people?m=mohammad-shoaib
+        - listitem [ref=f8e130]:
+          - link "Resume, PDF" [ref=f8e131] [cursor=pointer]:
+            - /url: /files/pdfs/Shoaib_s_Resume.pdf
+      - paragraph [ref=f8e132]: Mohammad Shoaib, Dhaka. Updated October 2026.
