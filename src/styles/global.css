@@ -218,7 +218,7 @@ ul, ol { margin: 0; padding: 0; }
 .journey__threads { grid-column: 2; }
 .entries { grid-column: 1 / -1; display: grid; grid-template-columns: var(--margin) minmax(0, var(--measure)); column-gap: var(--gap); position: relative; margin-top: 18px; }
 .entries::before { content: ''; position: absolute; left: calc(var(--margin) - 24px); top: 0; bottom: 0; width: 1px; background: var(--rule); }
-.entry { display: contents; }
+.entry { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--gap); scroll-margin-top: 88px; }
 .entry__date { grid-column: 1; position: relative; padding: 28px 0 0; font-family: var(--display); font-size: var(--fs-small); color: var(--graphite); transition: color 0.2s ease; }
 .entry__date time { display: inline-block; }
 .entry__date::after { content: ''; position: absolute; left: calc(var(--margin) - 27px); top: 36px; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1px solid var(--graphite); transition: background 0.2s ease, border-color 0.2s ease; }
