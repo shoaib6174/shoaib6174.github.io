@@ -10,8 +10,10 @@ interface Props {
   linked?: boolean;
   /** Render the body inline (index) or leave it to the detail page. */
   withBody?: boolean;
+  headingLevel?: 'h1' | 'h2' | 'h3';
 }
-const { entry, linked = true, withBody = true } = Astro.props;
+const { entry, linked = true, withBody = true, headingLevel = 'h3' } = Astro.props;
+const H = headingLevel;
 const d = entry.data;
 const { Content } = await render(entry);
 const year = d.date.slice(0, 4);
@@ -23,9 +25,9 @@ const hasDetail = d.images.length > 0 || d.imageSlots.length > 0 || d.proof.leng
     <time datetime={d.date}>{formatDate(d.date)}</time>
   </div>
   <div class="entry__body">
-    <h3 class="entry__title">
+    <H class="entry__title">
       {linked && hasDetail ? <a href={`/route/${entry.id}/`}>{d.title}</a> : d.title}
-    </h3>
+    </H>
     {withBody && (
       <div class="entry__text">
         <Content />

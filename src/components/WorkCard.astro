@@ -5,15 +5,17 @@ import StatusTag from './StatusTag.astro';
 interface Props {
   item: CollectionEntry<'work'>;
   compact?: boolean;
+  headingLevel?: 'h2' | 'h3';
 }
-const { item, compact = false } = Astro.props;
+const { item, compact = false, headingLevel = 'h3' } = Astro.props;
+const H = headingLevel;
 const d = item.data;
 ---
 
 <article class="row" data-area={d.area} data-role={d.role}>
   <p class="row__years">{d.years}</p>
   <div class="row__body">
-    <h3 class="row__title"><a href={`/work/${item.id}/`}>{d.title}</a></h3>
+    <H class="row__title"><a href={`/work/${item.id}/`}>{d.title}</a></H>
     <p class="row__summary">{d.summary}</p>
     {!compact && <p class="row__why">{d.why}</p>}
     <div class="row__foot">

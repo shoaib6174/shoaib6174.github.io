@@ -13,6 +13,6 @@ const skills = (await getCollection('skills')).sort((a, b) => a.data.order - b.d
     <p class="page-head__lead">Each group links to the work that shows it. If there is no proof, it is not listed.</p>
   </header>
   <div class="skills">
-    {skills.map((s) => <SkillRow skill={s} />)}
+    {skills.map((s) => <SkillRow skill={s} headingLevel="h2" />)}
   </div>
 </Base>

@@ -25,6 +25,14 @@ const series = [
 ---
 
 <Base title="Mohammad Shoaib" description={home.masthead} bodyClass="home">
+  <script is:inline>
+    // Before first paint: hide the plan so the typed sequence does not flash its finished state.
+    try {
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && sessionStorage.getItem('hero-played') !== '1') {
+        document.currentScript.nextElementSibling.classList.add('is-animating', 'is-pre');
+      }
+    } catch (e) {}
+  </script>
   <section class="hero" data-hero aria-label="An instruction and the robot's plan">
     <p class="hero__m">One instruction, in simulation</p>
     <p class="hero__prompt"><span class="hero__ghost" aria-hidden="true">bring the red cube from room A to room B</span><span class="hero__live"><span data-typed>bring the red cube from room A to room B</span><span class="hero__caret" aria-hidden="true"></span></span></p>
@@ -56,7 +64,7 @@ const series = [
     <h2 id="roles" class="section__label">What I do</h2>
     <div class="roles" data-roles>
       {home.roles.map((r: { key: string; title: string; text: string }) => (
-        <div class="role" data-role={r.key} tabindex="0">
+        <div class="role" data-role={r.key}>
           <h3 class="role__title">{r.title}</h3>
           <p class="role__text">{r.text}</p>
         </div>

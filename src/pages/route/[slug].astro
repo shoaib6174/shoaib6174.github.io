@@ -16,7 +16,7 @@ const d = entry.data;
 <Base title={d.title} description={`${formatDate(d.date)}. ${d.result ?? d.chose ?? ''}`}>
   <article class="detail detail--journey">
     <div class="entries">
-      <JourneyEntry entry={entry} linked={false} />
+      <JourneyEntry entry={entry} linked={false} headingLevel="h1" />
     </div>
     {d.imageSlots.length > 0 && (
       <div class="entry__figures">

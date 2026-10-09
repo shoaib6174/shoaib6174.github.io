@@ -3,13 +3,15 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   skill: CollectionEntry<'skills'>;
+  headingLevel?: 'h2' | 'h3';
 }
-const { skill } = Astro.props;
+const { skill, headingLevel = 'h3' } = Astro.props;
+const H = headingLevel;
 const d = skill.data;
 ---
 
 <div class="skill" id={`skill-${skill.id}`}>
-  <h3 class="skill__group">{d.group}</h3>
+  <H class="skill__group">{d.group}</H>
   <p class="skill__tools">{d.tools.join(', ')}</p>
   <p class="skill__proof">
     <span class="skill__proof-label">Proof</span>

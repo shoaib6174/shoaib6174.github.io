@@ -6,17 +6,18 @@ function init() {
   const hero = document.querySelector<HTMLElement>('[data-hero]');
   if (!hero || hero.dataset.played === '1') return;
   hero.dataset.played = '1';
-  if (reducedMotion()) return;
+  if (reducedMotion()) { hero.classList.remove('is-animating', 'is-pre'); return; }
   // Once per browser session; a return visit within the session sees the finished plan.
   let seen = false;
   try { seen = sessionStorage.getItem('hero-played') === '1'; sessionStorage.setItem('hero-played', '1'); } catch { /* storage unavailable: play */ }
-  if (seen) return;
+  if (seen) { hero.classList.remove('is-animating', 'is-pre'); return; }
 
   const typed = hero.querySelector<HTMLElement>('[data-typed]');
   const steps = [...hero.querySelectorAll<HTMLElement>('.hero__plan li')];
   if (!typed) return;
   const text = typed.textContent ?? '';
   typed.textContent = '';
+  hero.classList.remove('is-pre');
   hero.classList.add('is-animating', 'is-typing');
 
   let i = 0;

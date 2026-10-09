@@ -1,9 +1,15 @@
 import { activeYear } from '../lib/ui';
 
 // Route: the dimension line points at the entry under the reading line; thread buttons dim the rest.
+let controller: AbortController | null = null;
+
 function init() {
+  controller?.abort();
+  controller = null;
   const root = document.querySelector<HTMLElement>('[data-journey]');
   if (!root) return;
+  controller = new AbortController();
+  const { signal } = controller;
   const entries = [...root.querySelectorAll<HTMLElement>('.entry')];
   const buttons = [...root.querySelectorAll<HTMLButtonElement>('[data-thread]')];
 
@@ -30,19 +36,23 @@ function init() {
   if (target && target.classList.contains('entry') && window.scrollY === 0) {
     target.scrollIntoView({ block: 'start' });
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
+  window.addEventListener('scroll', onScroll, { passive: true, signal });
+  window.addEventListener('resize', onScroll, { signal });
 
   let active: string | null = null;
   buttons.forEach((b) =>
-    b.addEventListener('click', () => {
-      active = active === b.dataset.thread ? null : (b.dataset.thread ?? null);
-      buttons.forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.thread === active)));
-      entries.forEach((e) => {
-        const mine = (e.dataset.threads ?? '').split(' ');
-        e.classList.toggle('is-dim', active !== null && !mine.includes(active));
-      });
-    }),
+    b.addEventListener(
+      'click',
+      () => {
+        active = active === b.dataset.thread ? null : (b.dataset.thread ?? null);
+        buttons.forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.thread === active)));
+        entries.forEach((e) => {
+          const mine = (e.dataset.threads ?? '').split(' ');
+          e.classList.toggle('is-dim', active !== null && !mine.includes(active));
+        });
+      },
+      { signal },
+    ),
   );
 }
 

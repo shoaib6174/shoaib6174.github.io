@@ -22,7 +22,7 @@ const next = d.ledTo ? all.find((w) => w.id === d.ledTo) : undefined;
       <h1>{d.title}</h1>
       <p class="detail__lead">{d.summary}</p>
     </header>
-    <Figure src={d.cover} alt={d.coverAlt ?? d.title} slot={d.coverSlot ?? `Image: ${d.title}`} />
+    {(d.cover || d.coverSlot) && <Figure src={d.cover} alt={d.coverAlt ?? d.title} slot={d.coverSlot} />}
     <p class="detail__why">{d.why}</p>
     <div class="prose">
       <Content />

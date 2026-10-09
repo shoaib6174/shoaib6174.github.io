@@ -22,14 +22,15 @@ const areas = [
     <p class="page-head__lead">Everything I have built that I can show. Status on each; links where they exist.</p>
   </header>
 
-  <nav class="chips" aria-label="Filter by area" data-filter>
+  <div class="chips" role="group" aria-label="Filter by area" data-filter hidden>
     {areas.map((a) => (
-      <a href={a.key === 'all' ? '/work/' : `/work/?area=${a.key}`} data-area={a.key} aria-pressed={a.key === 'all' ? 'true' : 'false'}>{a.label}</a>
+      <button type="button" data-area={a.key} aria-pressed={a.key === 'all' ? 'true' : 'false'}>{a.label}</button>
     ))}
-  </nav>
+  </div>
+  <p class="visually-hidden" aria-live="polite" data-filter-live></p>
 
   <div class="rows" data-filter-target>
-    {items.map((item) => <WorkCard item={item} />)}
+    {items.map((item) => <WorkCard item={item} headingLevel="h2" />)}
   </div>
 
   <script src="../../scripts/filter.ts"></script>
