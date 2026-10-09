@@ -9,4 +9,4 @@ imageSlots:
   - "Photo: Annapurna Base Camp, May 2025"
 ---
 
-Nepal, May 2025. To base camp and back.
+Nepal, May 2025.

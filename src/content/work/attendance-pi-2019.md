@@ -8,7 +8,6 @@ summary: "A facial-recognition attendance system on a Raspberry Pi, built in the
 why: "It was the first thing with machine learning in it that I built and that worked."
 stack:
   - "Raspberry Pi"
-  - "Python"
 links:
   - label: "The 2019 entry"
     href: "/route/2019-attendance/"

@@ -5,7 +5,7 @@ area: "llm"
 role: "build"
 status: "shipped"
 summary: "Extracts structured order data from PDFs for twenty-plus fashion brands, each with its own document format, and returns JSON."
-why: "Every brand sent orders as a differently laid-out PDF. I tested four OCR services against the real documents, integrated the ones that worked, and shipped it as a service the operations team could call."
+why: "Every brand sent orders as a differently laid-out PDF. I tested four OCR services against the real documents, integrated them, and shipped it as a service the operations team could call."
 stack:
   - "Azure Document Intelligence"
   - "Google Cloud Vision"

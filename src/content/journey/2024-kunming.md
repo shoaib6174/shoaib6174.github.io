@@ -5,7 +5,7 @@ threads:
   - "life"
 startedBy: "Robotics papers from Chinese universities"
 chose: "The China-South Asia Bridge program in Kunming: classes on Chinese culture, traditions, the political system, and development, plus lab tours and museums."
-result: "Started learning Chinese. HSK 1 passed."
+result: "HSK 1 passed."
 proof:
   - label: "HSK vocabulary trainer, 2026"
     href: "/work/hsk-vocabs/"

@@ -9,7 +9,7 @@ why: "I did my degree at a textile engineering school. Factory floors in Banglad
 stack:
   - "ROS 2"
   - "Nav2"
-  - "Gas and thermal sensors"
+  - "Fire and gas hazard sensors"
   - "LLM task planner"
 links:
   - label: "Lab project page"

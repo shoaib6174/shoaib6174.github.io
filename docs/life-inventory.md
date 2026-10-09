@@ -379,3 +379,17 @@ Full audit with keep / archive / delete verdicts: `docs/github-audit.md`. Lab pr
 - GitHub repositories under shoaib6174 referenced by the site were each opened during the GitHub audit.
 - **Exact article titles** are taken from Shoaib's pasted Medium stats (2026-10-09) and the old site's Blogs page; `articles.json` uses them verbatim, including Medium's own punctuation.
 - **TurtleBot3 patrolling** is a finished course project, status "closed" on the site.
+
+## Verified in pass 3 (2026-10-09), so later readers need not re-check
+
+- "Next, the physical JetRover": `PRD_llm_robot_task_planner.md`, Phase 2 notes (Hiwonder JetRover, Jetson Orin NX).
+- The red-cube scenario, the five plan steps used in the home hero, and replanning: `docs/demo_results.md`, scenarios 1 and 2 (S11 run).
+- Pursuit-evasion environment (unicycle, obstacles, field of view) and best-response tests against frozen snapshots: `safe-rl-pe` README.
+- LaBSE vs BERT on Russian translations: `MultiWOZ-Intent-Classification` README.
+- Video Swin: UCF101 fine-tuning, cosine decay with warm-up, TF Hub feature extractors: `GSOC-22-Video-Swin-Transformers` README.
+- BotForge stack FastAPI and PostgreSQL: `fenlo-bot` README.
+- GuardShield: spaCy, token bucket, Hugging Face classifiers, "built as a learning project", status line: `guard-shield` README.
+- Qiskit Treasure Hunt created 2023-06-27 (GitHub API).
+- No-Code ML covers Azure ML Designer and AutoML: `No-Code-ML` README.
+- LinkedIn XR essay URL returns 200.
+- Still open, from Shoaib: FenloAI founding month; whether the GetAudio cluster is still down; the HSK app motive line; when Chinese study started relative to the Kunming trip.

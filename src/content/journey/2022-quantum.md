@@ -18,4 +18,4 @@ proof:
     href: "/work/qiskit-treasure-hunt/"
 ---
 
-I read the Feynman memoir during Google Summer of Code and went looking for a course. The summer school ran with researchers from MIT and Berkeley. By the end of it I had a goal, and the next year was built around it.
+I read the Feynman memoir during Google Summer of Code and went looking for a course. The summer school ran with researchers from MIT and Berkeley.
