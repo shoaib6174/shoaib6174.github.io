@@ -7,6 +7,10 @@ function init() {
   if (!hero || hero.dataset.played === '1') return;
   hero.dataset.played = '1';
   if (reducedMotion()) return;
+  // Once per browser session; a return visit within the session sees the finished plan.
+  let seen = false;
+  try { seen = sessionStorage.getItem('hero-played') === '1'; sessionStorage.setItem('hero-played', '1'); } catch { /* storage unavailable: play */ }
+  if (seen) return;
 
   const typed = hero.querySelector<HTMLElement>('[data-typed]');
   const steps = [...hero.querySelectorAll<HTMLElement>('.hero__plan li')];
