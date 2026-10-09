@@ -25,6 +25,11 @@ function init() {
     }
   };
   update();
+  // Fragment links from the home page: make sure the entry is in view even when scroll is restored.
+  const target = location.hash && document.getElementById(location.hash.slice(1));
+  if (target && target.classList.contains('entry') && window.scrollY === 0) {
+    target.scrollIntoView({ block: 'start' });
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
 
