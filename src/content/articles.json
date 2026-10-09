@@ -36,7 +36,7 @@
   },
   {
     "id": "ros2-versions",
-    "title": "How to Match ROS 2, Gazebo, and PyTorch CUDA Versions for Any Ubuntu and GPU",
+    "title": "How to Match ROS 2, Gazebo, and PyTorch CUDA Versions - For Any Ubuntu and GPU",
     "url": "https://medium.com/@shoaib6174/how-to-match-ros-2-gazebo-and-pytorch-cuda-versions-for-any-ubuntu-and-gpu-fbfc7bb8ba23",
     "date": "2026-03",
     "series": "ROS 2",
@@ -72,7 +72,7 @@
   },
   {
     "id": "casadi-intro",
-    "title": "An Introduction to CasADi with Python",
+    "title": "An Introduction to CasAdi with Python",
     "url": "https://medium.com/@shoaib6174/an-introduction-to-casadi-with-python-12055f8e652f",
     "date": "2025-04",
     "series": "CasADi",
@@ -81,7 +81,7 @@
   },
   {
     "id": "algo-astar",
-    "title": "A* algorithm in short, for revision",
+    "title": "A* algorithm in short for revision",
     "date": "2023-09",
     "series": "Algorithms",
     "views": 469,
@@ -89,7 +89,7 @@
   },
   {
     "id": "algo-dijkstra",
-    "title": "Dijkstra's algorithm in short, for revision",
+    "title": "Dijkstra's Algorithm in short for revision",
     "date": "2023-09",
     "series": "Algorithms",
     "views": 178,
@@ -97,7 +97,7 @@
   },
   {
     "id": "algo-kruskal",
-    "title": "Kruskal's algorithm, for revision",
+    "title": "Kruskal's algorithm is a greedy algorithm used to find the minimum spanning tree (MST)",
     "date": "2023-09",
     "series": "Algorithms",
     "views": 131,
@@ -105,14 +105,14 @@
   },
   {
     "id": "xr-essay",
-    "title": "The Rise of AR/VR/MR (XR) in Consumer Tech: Will They Replace Smartphones?",
+    "title": "The Rise of AR/VR/MR (XR) in Consumer Tech: Will they replace smartphones?",
     "url": "https://www.linkedin.com/pulse/rise-arvr-consumer-tech-wave-innovation-mohammad-shoaib",
     "date": "2023-09",
     "series": "Essays"
   },
   {
     "id": "qiskit-grover",
-    "title": "How to Solve Graph Coloring Problems Using Qiskit's Grover Algorithm",
+    "title": "How to solve the Graph Coloring Problems using Qiskit's Grover algorithm",
     "date": "2023-07",
     "series": "Qiskit",
     "views": 902,
@@ -120,7 +120,7 @@
   },
   {
     "id": "qiskit-cert",
-    "title": "How to Become an IBM Certified Associate Developer, Quantum Computation Using Qiskit",
+    "title": "How to Become an IBM Certified Associate Developer — Quantum Computation using Qiskit v0.2X",
     "url": "https://medium.com/@shoaib6174/how-to-become-an-ibm-certified-associate-developer-quantum-computation-using-qiskit-v0-2x-43936bee9d62",
     "date": "2023-07",
     "series": "Qiskit",
@@ -145,7 +145,7 @@
   },
   {
     "id": "azure-ocr",
-    "title": "Build a Web App to Extract Text From Images Using Flask and Azure's Computer Vision API",
+    "title": "Build a web app to Extract Text From Image using Flask and Azure’s Computer Vision API",
     "url": "https://medium.com/@shoaib6174/build-a-web-app-to-extract-text-from-image-using-flask-and-azures-computer-vision-api-1ee470b66050",
     "date": "2021-08",
     "series": "Azure",
@@ -154,7 +154,7 @@
   },
   {
     "id": "azure-ds",
-    "title": "How I Became Microsoft Certified: Azure Data Scientist Associate",
+    "title": "How I have become Microsoft Certified: Azure Data Scientist Associate",
     "date": "2021-07",
     "series": "Azure",
     "views": 218,
@@ -162,7 +162,7 @@
   },
   {
     "id": "azure-da",
-    "title": "How to Become a Microsoft Certified: Data Analyst Associate",
+    "title": "How to become a Microsoft Certified: Data Analyst Associate",
     "url": "https://medium.com/@shoaib6174/how-to-become-a-microsoft-certified-data-analyst-associate-f109a2bdf65",
     "date": "2021-07",
     "series": "Azure",

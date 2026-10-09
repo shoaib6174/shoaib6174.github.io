@@ -5,7 +5,7 @@ threads:
   - "build"
   - "explain"
 chose: "To leave NITEX when faculty I had taken courses with asked me to work as a research assistant."
-result: "High-performance computing with Dr. Mohammad Abdul Qayum, and his Computer Architecture course as teaching assistant: MIPS, assembly, Verilog, CPU design. Alongside it, a robotics course with Dr. Shahnewaz Siddique, whose project was the TurtleBot3 patrol. The same year, UC Berkeley's LLM Agents course."
+result: "High-performance computing with Dr. Mohammad Abdul Qayum, and his Computer Architecture course as teaching assistant: MIPS, assembly, Verilog, CPU design. Earlier that year, a robotics course with Dr. Shahnewaz Siddique, whose project was the TurtleBot3 patrol. Also UC Berkeley's LLM Agents course."
 proof:
   - label: "TurtleBot3 patrolling"
     href: "/work/turtlebot3-patrolling/"

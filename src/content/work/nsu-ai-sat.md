@@ -5,7 +5,7 @@ area: "robots"
 role: "build"
 status: "running"
 summary: "A 3U CubeSat for on-board detection and tracking of space-resident objects in low Earth orbit. I work on the on-board software and the AI payload."
-why: "Inference has to happen on the satellite, on a power budget far below a Jetson's."
+why: "Inference has to happen on the satellite, within its power budget."
 stack:
   - "Edge inference"
   - "On-board software"

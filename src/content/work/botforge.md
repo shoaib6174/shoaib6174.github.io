@@ -5,7 +5,7 @@ area: "llm"
 role: "build"
 status: "shipped"
 summary: "An AI chatbot and voice-agent platform: document chat with citations, phone agents over Twilio and Vapi, and one inbox across WhatsApp, Telegram, web, and Zapier."
-why: "Small businesses kept asking FenloAI for the same things: answer questions from our documents, answer the phone, and do it on every channel we use. BotForge puts them on one backend."
+why: "A FenloAI client needed three things: answers from their documents, a phone agent, and one inbox for every channel they used. BotForge puts them on one backend."
 stack:
   - "RAG"
   - "Twilio"

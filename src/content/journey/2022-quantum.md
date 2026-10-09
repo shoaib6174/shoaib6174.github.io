@@ -5,7 +5,7 @@ threads:
   - "studied"
   - "explain"
 startedBy: "Surely You're Joking, Mr. Feynman!"
-chose: "A scholarship to Qubit by Qubit's online summer school, then a goal: a PhD in quantum machine learning."
+chose: "A scholarship to Qubit by Qubit's online summer school, then a year aimed at a PhD in quantum machine learning."
 result: "IBM Certified Associate Developer in Quantum Computation. Qiskit Advocate from 2023 to now. The Womanium program. Articles on QUBO, Grover's algorithm, and the certification exam. A card game for teaching gates."
 proof:
   - label: "Qubit by Qubit"
@@ -18,4 +18,4 @@ proof:
     href: "/work/qiskit-treasure-hunt/"
 ---
 
-I read the Feynman memoir during Google Summer of Code and went looking for a course. The summer school ran with researchers from MIT and Berkeley. By the end of it I had decided to aim for a PhD in quantum machine learning. The next year was built around that.
+I read the Feynman memoir during Google Summer of Code and went looking for a course. The summer school ran with researchers from MIT and Berkeley. By the end of it I had a goal, and the next year was built around it.

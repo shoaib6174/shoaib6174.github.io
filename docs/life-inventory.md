@@ -377,3 +377,5 @@ Full audit with keep / archive / delete verdicts: `docs/github-audit.md`. Lab pr
 - https://nirolab.github.io/projects and /people render in a browser (single-page app); verified by rendering.
 - https://www.linkedin.com/company/nitex returns 200.
 - GitHub repositories under shoaib6174 referenced by the site were each opened during the GitHub audit.
+- **Exact article titles** are taken from Shoaib's pasted Medium stats (2026-10-09) and the old site's Blogs page; `articles.json` uses them verbatim, including Medium's own punctuation.
+- **TurtleBot3 patrolling** is a finished course project, status "closed" on the site.

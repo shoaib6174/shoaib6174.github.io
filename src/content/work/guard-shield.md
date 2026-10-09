@@ -5,7 +5,7 @@ area: "llm"
 role: "build"
 status: "running"
 summary: "Safety middleware for language-model applications: an ordered pipeline of guards, circuit breakers per guard, and graceful degradation."
-why: "Every LLM product I built for a client needed the same input checks. I wanted to build the general version once and understand the failure modes properly."
+why: "Every LLM system needs the same input checks. I built the general version once, as a learning project, to understand the failure modes properly."
 stack:
   - "Python"
   - "Hugging Face classifiers"

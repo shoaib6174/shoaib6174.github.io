@@ -3,7 +3,7 @@ title: "TurtleBot3 patrolling"
 years: "2024"
 area: "robots"
 role: "build"
-status: "shipped"
+status: "closed"
 summary: "A TurtleBot3 patrols four waypoints in Gazebo using Nav2, with behavior trees in C++ for decision-making."
 why: "The course project for a robotics class with Dr. Shahnewaz Siddique. It led to the offer to join his lab."
 stack:

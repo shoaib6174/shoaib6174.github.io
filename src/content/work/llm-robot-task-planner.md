@@ -24,6 +24,6 @@ coverSlot: "Demo: the robot fetching the red cube from room A to room B"
 
 Give it "bring the red cube from room A to room B". The agent navigates to room A with Nav2, finds the cube with YOLO, picks it up, drives to room B, and places it. If the cube is not where it expected, it searches the other room and replans.
 
-Four of five demo scenarios pass. The one that does not, moving all cubes at once, fails on localisation drift after repeated rotation scans. That is a known AMCL limitation and the next thing to fix.
+Four of five demo scenarios pass. The one that only partly passes, moving all cubes at once, loses localisation after after repeated rotation scans. That is a known AMCL limitation and the next thing to fix.
 
 The same software and agent architecture is the base for the factory security robot concept. Next is the physical JetRover.
