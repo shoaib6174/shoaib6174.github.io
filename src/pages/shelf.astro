@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const all = await getCollection('shelf');
+const by = (k: string) => all.filter((s) => s.data.kind === k).sort((a, b) => a.data.order - b.data.order);
+const learning = by('learning');
+const books = by('book');
+const films = by('film').sort((a, b) => (a.data.year ?? 0) - (b.data.year ?? 0));
+const trips = by('trip').sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+const lines = by('line');
+---
+
+<Base title="Shelf" description="What Mohammad Shoaib is learning, reading, watching, and where he has been.">
+  <header class="page-head">
+    <h1>Shelf</h1>
+    <p class="page-head__lead">Other people's work, and where I have been.</p>
+  </header>
+
+  <section class="section" aria-labelledby="learning-h">
+    <h2 id="learning-h" class="section__label">Currently learning</h2>
+    <ul class="plain">{learning.map((s) => <li>{s.data.title}</li>)}</ul>
+  </section>
+
+  <section class="section" aria-labelledby="books-h">
+    <h2 id="books-h" class="section__label">Books I would hand to anyone</h2>
+    <ul class="shelf-list">
+      {books.map((b) => (
+        <li><strong>{b.data.title}</strong><span>{b.data.author}</span>{b.data.note && <em>{b.data.note}</em>}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="films-h">
+    <h2 id="films-h" class="section__label">Films and series</h2>
+    <div class="chips chips--sort" role="group" aria-label="Sort films">
+      <button type="button" data-sort="year" aria-pressed="true">By year</button>
+      <button type="button" data-sort="country" aria-pressed="false">By country</button>
+    </div>
+    <ul class="shelf-list" data-films>
+      {films.map((f) => (
+        <li data-year={f.data.year} data-country={f.data.country}>
+          <strong>{f.data.title}</strong><span>{f.data.year} · {f.data.country}{f.data.note ? ` · ${f.data.note}` : ''}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="trips-h">
+    <h2 id="trips-h" class="section__label">Trips</h2>
+    <ul class="shelf-list">
+      {trips.map((t) => (<li><strong>{t.data.title}</strong><span>{t.data.year} · {t.data.country}</span></li>))}
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="lines-h">
+    <h2 id="lines-h" class="section__label">Also</h2>
+    <ul class="plain">{lines.map((l) => <li>{l.data.title}</li>)}</ul>
+  </section>
+
+  <script src="../scripts/shelf.ts"></script>
+</Base>

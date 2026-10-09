@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src?: ImageMetadata;
+  alt: string;
+  caption?: string;
+  /** Text shown inside the placeholder when there is no image yet. */
+  slot?: string;
+  widths?: number[];
+  sizes?: string;
+  class?: string;
+}
+const {
+  src,
+  alt,
+  caption,
+  slot,
+  widths = [480, 800, 1200],
+  sizes = '(max-width: 760px) 100vw, 720px',
+  class: cls = '',
+} = Astro.props;
+---
+
+{
+  src ? (
+    <figure class:list={['figure', cls]}>
+      <Image src={src} alt={alt} widths={widths} sizes={sizes} />
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
+  ) : (
+    <figure class:list={['figure placeholder', cls]} aria-label={alt}>
+      <div class="figure__slot">
+        <span>{slot ?? alt}</span>
+      </div>
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
+  )
+}

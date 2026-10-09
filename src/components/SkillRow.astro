@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  skill: CollectionEntry<'skills'>;
+}
+const { skill } = Astro.props;
+const d = skill.data;
+---
+
+<div class="skill" id={`skill-${skill.id}`}>
+  <h3 class="skill__group">{d.group}</h3>
+  <p class="skill__tools">{d.tools.join(', ')}</p>
+  <p class="skill__proof">
+    <span class="skill__proof-label">Proof</span>
+    {d.proof.map((p, i) => (
+      <>
+        <a href={p.href}>{p.label}</a>{i < d.proof.length - 1 ? ', ' : ''}
+      </>
+    ))}
+  </p>
+</div>

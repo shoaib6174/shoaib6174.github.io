@@ -1,0 +1,22 @@
+---
+const links = [
+  { href: 'mailto:shoaib6174@gmail.com', label: 'shoaib6174@gmail.com' },
+  { href: 'https://github.com/shoaib6174', label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/shoaib6174', label: 'LinkedIn' },
+  { href: 'https://medium.com/@shoaib6174', label: 'Medium' },
+  { href: 'https://nirolab.github.io/people?m=mohammad-shoaib', label: 'NIRO Lab' },
+  { href: '/files/pdfs/Shoaib_s_Resume.pdf', label: 'Resume, PDF' },
+];
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__inner">
+    <ul class="footer__links">
+      {links.map((l) => (
+        <li><a href={l.href}>{l.label}</a></li>
+      ))}
+    </ul>
+    <p class="footer__meta">Mohammad Shoaib, Dhaka. Updated October {year}.</p>
+  </div>
+</footer>

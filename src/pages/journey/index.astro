@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import JourneyEntry from '../../components/JourneyEntry.astro';
+import { sortKey } from '../../lib/dates';
+
+const entries = (await getCollection('journey')).sort(
+  (a, b) => sortKey(a.data.date) - sortKey(b.data.date),
+);
+const years = [...new Set(entries.map((e) => e.data.date.slice(0, 4)))];
+const threads = [
+  { key: 'build', label: 'Built' },
+  { key: 'explain', label: 'Wrote' },
+  { key: 'organise', label: 'Organised' },
+  { key: 'studied', label: 'Studied' },
+];
+---
+
+<Base title="Journey" description="What Mohammad Shoaib did, in order, and why. 2014 to now." wide>
+  <header class="page-head">
+    <h1>Journey</h1>
+    <p class="page-head__lead">What I did, in order, and why. Each entry says what I chose, what I ruled out, and what came of it.</p>
+  </header>
+
+  <div class="journey" data-journey>
+    <aside class="rail" aria-hidden="true">
+      <ol class="rail__years">
+        {years.map((y) => <li data-year={y}>{y}</li>)}
+      </ol>
+    </aside>
+
+    <div class="journey__main">
+      <div class="chips chips--threads" role="group" aria-label="Dim entries by thread">
+        {threads.map((t) => (
+          <button type="button" data-thread={t.key} aria-pressed="false">{t.label}</button>
+        ))}
+      </div>
+      <div class="entries">
+        {entries.map((e) => <JourneyEntry entry={e} />)}
+      </div>
+    </div>
+  </div>
+
+  <script src="../../scripts/rail.ts"></script>
+</Base>

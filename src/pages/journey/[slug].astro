@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import JourneyEntry from '../../components/JourneyEntry.astro';
+import Figure from '../../components/Figure.astro';
+import { formatDate } from '../../lib/dates';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('journey');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+---
+
+<Base title={d.title} description={`${formatDate(d.date)}. ${d.result ?? d.chose ?? ''}`}>
+  <article class="detail detail--journey">
+    <JourneyEntry entry={entry} linked={false} />
+    {d.imageSlots.length > 0 && (
+      <div class="entry__figures">
+        {d.imageSlots.map((s) => <Figure alt={s} slot={s} />)}
+      </div>
+    )}
+    <p class="detail__back"><a href={`/journey/#${entry.id}`}>Back to the Journey</a></p>
+  </article>
+</Base>

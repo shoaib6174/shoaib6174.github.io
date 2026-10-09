@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import WorkCard from '../../components/WorkCard.astro';
+
+const items = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const areas = [
+  { key: 'all', label: 'All' },
+  { key: 'robots', label: 'Robots' },
+  { key: 'llm', label: 'LLM systems' },
+  { key: 'ml', label: 'Machine learning' },
+  { key: 'infra', label: 'Infrastructure' },
+  { key: 'quantum', label: 'Quantum' },
+  { key: 'product', label: 'Products' },
+];
+---
+
+<Base title="Work" description="Every system Mohammad Shoaib has built, with status and links." wide>
+  <header class="page-head">
+    <h1>Work</h1>
+    <p class="page-head__lead">Everything I have built that I can show. Status on each; links where they exist.</p>
+  </header>
+
+  <nav class="chips" aria-label="Filter by area" data-filter>
+    {areas.map((a) => (
+      <a href={a.key === 'all' ? '/work/' : `/work/?area=${a.key}`} data-area={a.key} aria-pressed={a.key === 'all' ? 'true' : 'false'}>{a.label}</a>
+    ))}
+  </nav>
+
+  <div class="cards cards--grid" data-filter-target>
+    {items.map((item) => <WorkCard item={item} />)}
+  </div>
+
+  <script src="../../scripts/filter.ts"></script>
+</Base>

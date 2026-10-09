@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import { formatDate } from '../lib/dates';
+import Figure from './Figure.astro';
+
+interface Props {
+  entry: CollectionEntry<'journey'>;
+  /** When true, the title links to the detail page. */
+  linked?: boolean;
+  /** Render the body inline (index) or leave it to the detail page. */
+  withBody?: boolean;
+}
+const { entry, linked = true, withBody = true } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const year = d.date.slice(0, 4);
+const hasDetail = d.images.length > 0 || d.imageSlots.length > 0 || d.proof.length > 0;
+---
+
+<article class="entry" id={entry.id} data-year={year} data-threads={d.threads.join(' ')}>
+  <div class="entry__date">
+    <time datetime={d.date}>{formatDate(d.date)}</time>
+  </div>
+  <div class="entry__body">
+    <h3 class="entry__title">
+      {linked && hasDetail ? <a href={`/journey/${entry.id}/`}>{d.title}</a> : d.title}
+    </h3>
+    {withBody && (
+      <div class="entry__text">
+        <Content />
+      </div>
+    )}
+    <dl class="entry__facts">
+      {d.startedBy && (<><dt>Started by</dt><dd>{d.startedBy}</dd></>)}
+      {d.chose && (<><dt>Chose</dt><dd>{d.chose}</dd></>)}
+      {d.ruledOut && (<><dt>Ruled out</dt><dd>{d.ruledOut}</dd></>)}
+      {d.result && (<><dt>Result</dt><dd>{d.result}</dd></>)}
+    </dl>
+    {d.images.length > 0 && (
+      <div class="entry__figures">
+        {d.images.map((im) => <Figure src={im.src} alt={im.alt} caption={im.caption} />)}
+      </div>
+    )}
+    {d.proof.length > 0 && (
+      <ul class="entry__proof">
+        {d.proof.map((p) => (<li><a href={p.href}>{p.label}</a></li>))}
+      </ul>
+    )}
+  </div>
+</article>

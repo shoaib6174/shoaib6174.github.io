@@ -1,0 +1,95 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { formatDate, sortKey } from '../lib/dates';
+import booksPhoto from '../assets/photos/gonit-olympiad-books.jpg';
+
+const books = (await getCollection('books')).sort((a, b) => a.data.year - b.data.year);
+const papers = (await getCollection('papers')).sort((a, b) => b.data.year - a.data.year);
+const articles = (await getCollection('articles')).sort(
+  (a, b) => sortKey(b.data.date) - sortKey(a.data.date),
+);
+const seriesOrder = ['ROS 2', 'CasADi', 'Qiskit', 'Algorithms', 'Azure', 'Essays'];
+const bySeries = seriesOrder.map((s) => ({
+  name: s,
+  id: s.toLowerCase().replace(/\s+/g, '-'),
+  items: articles.filter((a) => a.data.series === s),
+}));
+const profile = 'https://medium.com/@shoaib6174';
+const fmt = (n?: number) => (n == null ? '' : n >= 1000 ? `${(n / 1000).toFixed(1).replace(/\.0$/, '')}K` : String(n));
+const minDate = Math.min(...articles.map((a) => sortKey(a.data.date)));
+const maxDate = Math.max(...articles.map((a) => sortKey(a.data.date)));
+const pos = (d: string) => {
+  const [y, m] = d.split('-').map(Number);
+  const months = y * 12 + (m ? m - 1 : 6);
+  const lo = Math.floor(minDate / 100) * 12;
+  const hi = Math.floor(maxDate / 100) * 12 + 12;
+  return ((months - lo) / (hi - lo)) * 100;
+};
+---
+
+<Base title="Writing" description="Four math books, two papers, and twenty-one articles by Mohammad Shoaib.">
+  <header class="page-head">
+    <h1>Writing</h1>
+    <p class="page-head__lead">Books for school students, two papers, and the articles I write after learning something.</p>
+  </header>
+
+  <section class="section" id="books" aria-labelledby="books-h">
+    <h2 id="books-h" class="section__label">Books</h2>
+    <Image class="books__photo" src={booksPhoto} alt="The Chotoder Gonit Olympiad volumes" widths={[480, 800]} sizes="(max-width: 760px) 100vw, 720px" />
+    <ul class="booklist">
+      {books.map((b) => (
+        <li class="booklist__item">
+          <a href={b.data.url}><strong>{b.data.title}</strong></a>
+          <span class="booklist__gloss">{b.data.gloss}</span>
+          <span class="booklist__meta">{b.data.year} · {b.data.publisher} · {b.data.audience}</span>
+          {b.data.note && <span class="booklist__note">{b.data.note}</span>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section" id="papers" aria-labelledby="papers-h">
+    <h2 id="papers-h" class="section__label">Papers</h2>
+    <ul class="papers">
+      {papers.map((p) => (
+        <li>
+          <strong>{p.data.url ? <a href={p.data.url}>{p.data.title}</a> : p.data.title}</strong>
+          <span>{p.data.venue}, {p.data.year}.</span>
+          <span>{p.data.role}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section" id="articles" aria-labelledby="articles-h">
+    <h2 id="articles-h" class="section__label">Articles</h2>
+    <div class="ticks" aria-hidden="true" data-ticks>
+      {articles.map((a) => (
+        <span class="tick" data-series={a.data.series.toLowerCase().replace(/\s+/g, '-')} style={`left:${pos(a.data.date).toFixed(2)}%`} title={`${formatDate(a.data.date)} · ${a.data.title}`}></span>
+      ))}
+      <span class="ticks__start">{Math.floor(minDate / 100)}</span>
+      <span class="ticks__end">{Math.floor(maxDate / 100)}</span>
+    </div>
+    <p class="ticks__caption">One mark per article. The clusters are the weeks after I learned something.</p>
+
+    {bySeries.map((s) => (
+      <div class="series-group" id={s.id}>
+        <h3 class="series-group__name">{s.name}</h3>
+        <ul class="articles">
+          {s.items.map((a) => (
+            <li class="article">
+              <a href={a.data.url}>{a.data.title}</a>
+              <span class="article__meta">
+                <time datetime={a.data.date}>{formatDate(a.data.date)}</time>
+                {a.data.views != null && <span>{fmt(a.data.views)} views</span>}
+                {a.data.url === profile && <span class="article__note">link to follow</span>}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+</Base>

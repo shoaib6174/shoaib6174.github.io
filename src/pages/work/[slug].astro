@@ -1,0 +1,43 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Figure from '../../components/Figure.astro';
+import StatusTag from '../../components/StatusTag.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('work');
+  return items.map((item) => ({ params: { slug: item.id }, props: { item } }));
+}
+const { item } = Astro.props;
+const d = item.data;
+const { Content } = await render(item);
+const all = await getCollection('work');
+const next = d.ledTo ? all.find((w) => w.id === d.ledTo) : undefined;
+---
+
+<Base title={d.title} description={d.summary}>
+  <article class="detail">
+    <header class="detail__head">
+      <p class="detail__meta"><span>{d.years}</span> <StatusTag status={d.status} /></p>
+      <h1>{d.title}</h1>
+      <p class="detail__lead">{d.summary}</p>
+    </header>
+    <Figure src={d.cover} alt={d.coverAlt ?? d.title} slot={d.coverSlot ?? `Image: ${d.title}`} />
+    <p class="detail__why">{d.why}</p>
+    <div class="prose">
+      <Content />
+    </div>
+    {d.stack.length > 0 && (
+      <p class="detail__stack"><span>Stack</span> {d.stack.join(', ')}</p>
+    )}
+    {d.links.length > 0 && (
+      <ul class="detail__links">
+        {d.links.map((l) => (<li><a href={l.href}>{l.label}</a></li>))}
+      </ul>
+    )}
+    {next && (
+      <p class="detail__next">Led to <a href={`/work/${next.id}/`}>{next.data.title}</a></p>
+    )}
+    <p class="detail__back"><a href="/work/">All work</a></p>
+  </article>
+</Base>

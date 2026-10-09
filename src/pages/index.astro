@@ -1,0 +1,122 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import WorkCard from '../components/WorkCard.astro';
+import { frontmatter as home } from '../content/home.md';
+import headshot from '../assets/photos/headshot.jpeg';
+import { formatDate, sortKey } from '../lib/dates';
+
+const work = (await getCollection('work', ({ data }) => data.featured)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const skills = (await getCollection('skills', ({ data }) => data.home)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const books = (await getCollection('books')).sort((a, b) => a.data.year - b.data.year);
+const route = (await getCollection('journey', ({ data }) => data.onRoute)).sort(
+  (a, b) => sortKey(a.data.date) - sortKey(b.data.date),
+);
+const series = [
+  { id: 'ros-2', label: 'ROS 2', line: 'Five articles in June 2026, plus the version-matching guide.' },
+  { id: 'casadi', label: 'CasADi', line: 'Four articles on optimal control, April 2025.' },
+  { id: 'qiskit', label: 'Qiskit', line: 'QUBO, Grover, and the certification, 2023.' },
+];
+---
+
+<Base title="Mohammad Shoaib" description={home.masthead} bodyClass="home">
+  <section class="masthead" aria-labelledby="name">
+    <Image class="masthead__photo" src={headshot} alt="Mohammad Shoaib" width="160" densities={[1, 2]} />
+    <h1 id="name" class="masthead__name">{home.name}</h1>
+    <p class="masthead__lead">{home.masthead}</p>
+    <p class="masthead__sub">{home.masthead2} {home.location}.</p>
+  </section>
+
+  <section class="section" aria-labelledby="now">
+    <h2 id="now" class="section__label">Now</h2>
+    <ul class="now">
+      {home.now.map((n: string) => <li>{n}</li>)}
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="roles">
+    <h2 id="roles" class="section__label">What I do</h2>
+    <div class="roles" data-roles>
+      {home.roles.map((r: { key: string; title: string; text: string }) => (
+        <div class="role" data-role={r.key} tabindex="0">
+          <h3 class="role__title">{r.title}</h3>
+          <p class="role__text">{r.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="selected">
+    <h2 id="selected" class="section__label">Selected work</h2>
+    <div class="cards" data-dimmable>
+      {work.map((item) => <WorkCard item={item} />)}
+    </div>
+    <p class="section__more"><a href="/work/">All work</a></p>
+  </section>
+
+  <section class="section" aria-labelledby="skills">
+    <h2 id="skills" class="section__label">Skills, with proof</h2>
+    <div class="skills skills--compact">
+      {skills.map((s) => (
+        <div class="skill" data-role={s.id === 'writing' ? 'explain' : 'build'}>
+          <h3 class="skill__group">{s.data.group}</h3>
+          <p class="skill__tools">{s.data.tools.join(', ')}</p>
+          <p class="skill__proof">
+            {s.data.proof.map((p, i) => (
+              <>
+                <a href={p.href}>{p.label}</a>{i < s.data.proof.length - 1 ? ', ' : ''}
+              </>
+            ))}
+          </p>
+        </div>
+      ))}
+    </div>
+    <p class="section__more"><a href="/skills/">All skills</a></p>
+  </section>
+
+  <section class="section" aria-labelledby="writing" data-role="explain">
+    <h2 id="writing" class="section__label">Writing</h2>
+    <ul class="books">
+      {books.map((b) => (
+        <li class="book">
+          <a href={b.data.url}>
+            <span class="book__title">{b.data.title}</span>
+            <span class="book__meta">{b.data.year} · {b.data.audience}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <ul class="series">
+      {series.map((s) => (
+        <li><a href={`/writing/#${s.id}`}>{s.label}</a> <span>{s.line}</span></li>
+      ))}
+    </ul>
+    <p class="section__more"><a href="/writing/">All writing</a></p>
+  </section>
+
+  <section class="section" aria-labelledby="route">
+    <h2 id="route" class="section__label">How I got here</h2>
+    <ol class="route">
+      {route.map((e) => (
+        <li>
+          <time datetime={e.data.date}>{formatDate(e.data.date)}</time>
+          <a href={`/journey/#${e.id}`}>{e.data.title}</a>
+        </li>
+      ))}
+    </ol>
+    <p class="section__more"><a href="/journey/">The full account, with the decisions</a></p>
+  </section>
+
+  <section class="section" aria-labelledby="offclock">
+    <h2 id="offclock" class="section__label">Off the clock</h2>
+    <p class="prose">{home.offclock}</p>
+    <p class="section__more"><a href="/shelf/">Books, films, trips</a></p>
+  </section>
+
+  <script src="../scripts/roles.ts"></script>
+</Base>

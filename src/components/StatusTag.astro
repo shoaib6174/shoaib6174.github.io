@@ -1,0 +1,17 @@
+---
+interface Props {
+  status: string;
+}
+const { status } = Astro.props;
+const labels: Record<string, string> = {
+  running: 'In progress',
+  shipped: 'Shipped',
+  'paper-in-preparation': 'Paper in preparation',
+  'waiting-for-funding': 'Waiting for funding',
+  planned: 'Planned',
+  concept: 'Concept',
+  closed: 'Done',
+};
+---
+
+<span class="status" data-status={status}>{labels[status] ?? status}</span>
