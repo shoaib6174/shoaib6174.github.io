@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site skeleton v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f5f0;--ink:#15130f;--mute:#6b665c;--line:#e2ddd3;--accent:#b4531a;--card:#fff;}
+  @media (prefers-color-scheme:dark){:root{--bg:#121110;--ink:#f1ede6;--mute:#9a938a;--line:#2a2724;--accent:#e8894a;--card:#1b1917;}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55}
+  .wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+  h1{font-family:Fraunces,serif;font-weight:600;font-size:34px;margin:0 0 6px}
+  .sub{color:var(--mute);margin:0 0 28px;max-width:760px}
+  .label{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+  .map{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 44px}
+  .map span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;background:var(--card)}
+  .map span.home{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .screen{margin:0 0 56px}
+  .screen h2{font-family:Fraunces,serif;font-weight:600;font-size:22px;margin:0 0 4px}
+  .screen p.note{color:var(--mute);font-size:14px;margin:0 0 14px;max-width:760px}
+  .frame{border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+  .bar{height:34px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 14px}
+  .bar i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+  .bar em{margin-left:auto;font-style:normal;font-size:11px;color:var(--mute)}
+  .scroll{height:680px;overflow:auto;position:relative}
+  .nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 48px;font-size:13px;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--card) 72%,transparent);border-bottom:1px solid var(--line)}
+  .nav b{font-family:Fraunces,serif;font-weight:600;font-size:15px}
+  .nav span{color:var(--mute);margin-left:16px}
+  .page{padding:0 48px 48px;max-width:760px}
+  .sec{padding:44px 0 8px;border-top:1px solid var(--line)}
+  .sec:first-of-type{border-top:0;padding-top:72px}
+  .sec .label{display:block;margin-bottom:14px}
+  .sec h3{font-family:Fraunces,serif;font-weight:400;font-size:30px;line-height:1.25;margin:0 0 16px;letter-spacing:-.005em}
+  .sec h3.small{font-size:24px;font-weight:600}
+  .sec p{font-size:15.5px;margin:0 0 12px;max-width:640px}
+  .photo{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#d9d2c5,#9a938a);margin-bottom:24px}
+  .roles{display:grid;gap:16px;margin:4px 0 12px}
+  .role b{display:block;font-weight:600;margin-bottom:3px}
+  .role p{margin:0;color:var(--mute);font-size:14.5px}
+  .now{display:grid;gap:14px}
+  .now div{border-left:2px solid var(--line);padding-left:16px}
+  .now b{display:block;font-weight:600;margin-bottom:2px}
+  .now p{margin:0;font-size:14.5px;color:var(--mute)}
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;margin:4px 0 14px}
+  .sk b{display:block;font-weight:600;font-size:14px}
+  .sk span{display:block;font-size:13.5px;margin:2px 0}
+  .sk i{display:block;font-style:normal;font-size:12.5px;color:var(--accent)}
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0 14px}
+  .w{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg);font-size:13.5px}
+  .w b{display:block;font-weight:600;margin-bottom:3px}
+  .w small{display:block;color:var(--mute);margin-top:6px;font-family:"JetBrains Mono",monospace;font-size:11px}
+  .books{display:flex;gap:10px;margin:4px 0 16px}
+  .books div{width:84px;height:118px;border-radius:6px;background:linear-gradient(160deg,#cfc6b6,#9a8f7c);display:flex;align-items:end;padding:8px;font-size:10px;color:#2a2620;line-height:1.2}
+  .arts{display:grid;gap:0}
+  .arts div{display:grid;grid-template-columns:1fr 70px;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+  .arts div span:last-child{text-align:right;color:var(--mute);font-family:"JetBrains Mono",monospace;font-size:12px}
+  .path{display:grid;gap:10px;margin:4px 0 14px}
+  .path div{display:grid;grid-template-columns:56px 1fr;gap:14px;font-size:14.5px}
+  .path .y{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mute);padding-top:3px}
+  a{color:var(--accent);text-decoration:none;font-weight:500;font-size:14px}
+  .foot{padding:28px 0 0;border-top:1px solid var(--line);font-size:13px;color:var(--mute);display:flex;gap:22px;margin-top:40px}
+  .fig{height:220px;border-radius:14px;background:linear-gradient(135deg,#e6e0d4,#c9c1b2);margin:14px 0 6px;display:flex;align-items:end;padding:12px;font-size:12px;color:#5a544a}
+
+  /* journey */
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+  .chips span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:12px;cursor:pointer}
+  .chips span.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .j{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--line);transition:opacity .3s}
+  .j.hide{opacity:.15}
+  .j .y{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mute);padding-top:4px}
+  .j b{display:block;font-weight:600;margin-bottom:4px;font-size:15px}
+  .j p{margin:0;font-size:14.5px;max-width:600px}
+  .j .f{display:inline-block;margin-top:8px;font-size:11px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
+
+  /* facet */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:8px 0 24px}
+  .cardx{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--bg);font-size:13px}
+  .cardx .demo{height:110px;border-radius:10px;background:repeating-linear-gradient(45deg,var(--line) 0 6px,transparent 6px 14px);margin-bottom:10px;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:12px}
+  .cardx b{display:block;font-weight:600;margin-bottom:4px}
+  .stack{font-size:13px;color:var(--mute);margin:0 0 20px}
+
+  .options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+  .option{border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;background:var(--card)}
+  .option.selected{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+  .option h3{margin:0 0 4px;font-size:15px}
+  .option p{margin:0;font-size:13px;color:var(--mute)}
+  @media (max-width:760px){.skills,.work,.grid,.options{grid-template-columns:1fr}.page,.nav{padding-left:20px;padding-right:20px}.sec h3{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Site skeleton, v2</h1>
+  <p class="sub">Same structure, rewritten content. First person, no slogans. Skills with proof on the home page. The timeline is now Journey, with a decision note on each entry. Scroll inside the frames.</p>
+
+  <span class="label">Nine pages</span>
+  <div class="map">
+    <span class="home">Home</span><span>Robots</span><span>Building</span><span>Quantum</span><span>Writing</span><span>University</span><span>Off the clock</span><span>Skills</span><span>Journey</span>
+  </div>
+
+  <!-- ================= HOME ================= -->
+  <div class="screen">
+    <h2>1 · Home</h2>
+    <p class="note">Identity, three roles, what is happening now, skills with proof, selected work, writing, the path in six lines, one paragraph off the clock.</p>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><em>shoaib6174.github.io</em></div>
+      <div class="scroll">
+        <div class="nav"><b>Mohammad Shoaib</b><div><span>Robots</span><span>Building</span><span>Quantum</span><span>Writing</span><span>University</span><span>Off the clock</span><span>Skills</span><span>Journey</span></div></div>
+        <div class="page">
+
+          <div class="sec">
+            <div class="photo"></div>
+            <h3>Mohammad Shoaib. Research assistant at NSU Intelligent Robotics Lab, where I work on robot control software and reinforcement learning. Co-founder of FenloAI, where I build AI systems for small businesses.</h3>
+            <p>I have written four math books for school students and about twenty technical articles. I live in Dhaka, Bangladesh.</p>
+          </div>
+
+          <div class="sec">
+            <span class="label">What I do</span>
+            <div class="roles">
+              <div class="role"><b>I build systems.</b><p>Robot control stacks, data pipelines, products for clients. I prefer building to theory, and found that out by trying theory for a year.</p></div>
+              <div class="role"><b>I explain what I learn.</b><p>Two math books and a three-volume olympiad series for school students. Nineteen articles, most written in the week after I learned the thing. A semester as a teaching assistant.</p></div>
+              <div class="role"><b>I organise people.</b><p>A university business club from its first year to vice president. A national competition. Campus teams across fifty universities. A company with two co-founders.</p></div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <span class="label">Now</span>
+            <div class="now">
+              <div><b>NSU Intelligent Robotics Lab, since June 2025</b><p>Multi-agent pursuit-evasion with reinforcement learning; paper in preparation for CoRL 2026. An LLM agent that plans and executes tasks for a mobile robot with an arm. On-board software and the AI payload for NSU AI SAT, a 3U CubeSat.</p></div>
+              <div><b>FenloAI, since 2025</b><p>Contract work with two co-founders. An AI chatbot and voice-agent platform, a workforce management platform, a research tool for LinkedIn data.</p></div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <span class="label">Skills, with proof</span>
+            <div class="skills">
+              <div class="sk"><b>Robotics</b><span>ROS 2, Nav2, MoveIt, ros2_control, Gazebo, Isaac Sim and Lab, URDF, SLAM</span><i>TurtleBot3 patrol · LLM task planner · ROS 2 series</i></div>
+              <div class="sk"><b>Control and RL</b><span>NMPC with CasADi, Stable-Baselines3, Gymnasium, PettingZoo, self-play</span><i>safe-rl-pe · CasADi series</i></div>
+              <div class="sk"><b>Perception and models</b><span>PyTorch, TensorFlow, YOLO, Video Swin, vision-language models, Triton</span><i>GSoC 2022 · NITEX trend platform</i></div>
+              <div class="sk"><b>LLM systems</b><span>LangChain, local models with Ollama, RAG with ChromaDB and BM25, tool-calling agents, guard pipelines</span><i>BotForge · legal-document-processor · guard-shield</i></div>
+              <div class="sk"><b>Backend and cloud</b><span>Python, C++, CUDA, TypeScript, FastAPI, PostgreSQL, Elasticsearch, Docker, Kubernetes, AWS, Azure, n8n</span><i>GetAudio · NITEX extraction pipeline</i></div>
+              <div class="sk"><b>Edge devices</b><span>Jetson Orin and Xavier, Raspberry Pi, OpenCR</span><i>NIRO Lab deployments · 2019 attendance system</i></div>
+              <div class="sk"><b>Quantum</b><span>Qiskit, QSVM, VQE and QAOA, Grover</span><i>QMLHEP tasks · Qiskit Treasure Hunt</i></div>
+              <div class="sk"><b>Communication</b><span>Technical writing, teaching, public speaking</span><i>Four books · 14.8K article views · best speaker ×2</i></div>
+            </div>
+            <a href="#">All skills, with the operations and language ones →</a>
+          </div>
+
+          <div class="sec">
+            <span class="label">Selected work</span>
+            <div class="work">
+              <div class="w"><b>Multi-agent pursuit-evasion</b>Adversarial self-play under partial observability. Three stabilisation mechanisms, best-response exploitability tests. Paper in preparation.<small>2025–26 · safe-rl-pe · 736 tests</small></div>
+              <div class="w"><b>LLM robot task planner</b>Natural-language commands decomposed into Nav2, YOLO, and arm pick-and-place calls. Local qwen2.5. Gazebo, JetRover.<small>2026 · ROS 2 · LangChain</small></div>
+              <div class="w"><b>Video Swin Transformer in TensorFlow 2</b>Ported from PyTorch during Google Summer of Code, published on TF Hub, later moved to Kaggle Models.<small>2022 · 2,636 downloads</small></div>
+              <div class="w"><b>BotForge</b>RAG chat, voice agents over Twilio and Vapi, WhatsApp and Telegram channels, one inbox.<small>2025 · FenloAI</small></div>
+              <div class="w"><b>Fashion trend research platform</b>Instagram ingestion, attribute tagging with a locally deployed vision-language model, trend analytics over time.<small>2024 · NITEX</small></div>
+              <div class="w"><b>GetAudio</b>Audio extraction as microservices on Azure Kubernetes: gateway, auth, converter, RabbitMQ, persistent volumes.<small>2023 · Kubernetes</small></div>
+            </div>
+            <a href="#">More on the Robots and Building pages →</a>
+          </div>
+
+          <div class="sec">
+            <span class="label">Writing</span>
+            <div class="books">
+              <div>Goniter Mojar Prosno O Uttor · 2018</div><div>Chotoder Gonit Olympiad 1 · 2022</div><div>Chotoder Gonit Olympiad 2 · 2022</div><div>Chotoder Gonit Olympiad 3 · 2022</div>
+            </div>
+            <p>The 2018 book is for classes 8 to 12. The 2022 series is for classes 2 to 7 and was a best seller in its category on Rokomari.</p>
+            <div class="arts">
+              <div><span>How to become an IBM Certified Associate Developer, Qiskit</span><span>3.6K views</span></div>
+              <div><span>How to solve QUBO problems using Qiskit</span><span>2.8K</span></div>
+              <div><span>An introduction to CasADi with Python</span><span>1.3K</span></div>
+              <div><span>Implementing NMPC with CasADi: cart-pole</span><span>1.2K</span></div>
+              <div><span>ROS 2 series, five articles, June 2026</span><span>new</span></div>
+            </div>
+            <a href="#">All nineteen →</a>
+          </div>
+
+          <div class="sec">
+            <span class="label">How I got here</span>
+            <div class="path">
+              <div><span class="y">2014</span><span>First code at 16, from a downloaded book on C. Stopped for board exams.</span></div>
+              <div><span class="y">2017</span><span>Industrial engineering at BUTEX. Read <i>Life 3.0</i>. Several attempts at learning to code and AI did not hold.</span></div>
+              <div><span class="y">2020</span><span>Decided to take it seriously. A bootcamp, an MITx MicroMasters, Google and Microsoft certifications. Learned what I did not want to do as much as what I did.</span></div>
+              <div><span class="y">2022</span><span>Google Summer of Code with TensorFlow. Then a year on quantum computing, ending in a GSoC proposal the organisation accepted and could not fund.</span></div>
+              <div><span class="y">2023</span><span>Found I preferred building to theory. Junior AI engineer at NITEX; two platforms in seven months.</span></div>
+              <div><span class="y">2025</span><span>Back at NSU as a research assistant, then the robotics lab. FenloAI alongside.</span></div>
+            </div>
+            <a href="#">The full account, with the decisions → Journey</a>
+          </div>
+
+          <div class="sec">
+            <span class="label">Off the clock</span>
+            <p>I read, mostly literature and philosophy now, biographies always. I watch films from anywhere with subtitles. I trekked to Annapurna Base Camp alone in 2025. I am learning Chinese because the robotics papers I read kept coming from China. I support Barcelona and play as Real Madrid in FIFA, because I am not artistic enough to play as Barcelona.</p>
+            <a href="#">Books, films, trips →</a>
+          </div>
+
+          <div class="foot"><span>shoaib6174@gmail.com</span><span>GitHub</span><span>LinkedIn</span><span>Medium</span><span>Resume, PDF</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JOURNEY ================= -->
+  <div class="screen">
+    <h2>2 · Journey</h2>
+    <p class="note">Every entry has a decision note: what I chose and what it taught me. Filter chips work. The four items you chose to keep are in. The ones marked private are not.</p>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><em>/journey</em></div>
+      <div class="scroll">
+        <div class="page" style="padding-top:40px">
+          <span class="label">Journey · 2014 → now</span>
+          <h3 style="font-family:Fraunces,serif;font-weight:400;font-size:28px;margin:8px 0 18px">What I did, in order, and why.</h3>
+          <div class="chips" id="chips"><span class="on" data-f="all">All</span><span data-f="robots">Robots</span><span data-f="building">Building</span><span data-f="quantum">Quantum</span><span data-f="writing">Writing</span><span data-f="university">University</span><span data-f="life">Life</span></div>
+
+          <div class="j" data-f="robots"><span class="y">2025</span><div><b>Joined NSU Intelligent Robotics Lab</b><p>Dr. Shahnewaz Siddique offered me a place after a course project with him. I spent the first months on fundamentals I had skipped: control theory, reinforcement learning, SLAM, hardware. Then the arm robot, the pursuit-evasion work, and the CubeSat.</p><span class="f">robots</span></div></div>
+          <div class="j" data-f="building"><span class="y">2025</span><div><b>Co-founded FenloAI</b><p>Contract product work alongside the lab, on purpose. Research alone does not keep me in contact with people who need things built.</p><span class="f">building</span></div></div>
+          <div class="j" data-f="life"><span class="y">2025</span><div><b>Annapurna Base Camp, alone</b><p>No guide. Also bungee and the canyon swing. In October 2024 I had spent two weeks at Yunnan University on a China-South Asia Bridge program.</p><span class="f">life</span></div></div>
+          <div class="j" data-f="robots"><span class="y">2024</span><div><b>Left NITEX for NSU</b><p>Faculty I had taken courses with asked me to work as a research assistant. I went, first on high-performance computing with Dr. Mohammad Abdul Qayum, then as his teaching assistant in computer architecture.</p><span class="f">robots</span></div></div>
+          <div class="j" data-f="building"><span class="y">2023</span><div><b>Junior AI engineer at NITEX</b><p>After one semester of the MSc I knew I preferred building systems to theoretical research. At NITEX I built two platforms in seven months: an order-data extraction pipeline for twenty-plus brands, and a fashion trend research platform using a locally deployed vision-language model.</p><span class="f">building</span></div></div>
+          <div class="j" data-f="quantum"><span class="y">2023</span><div><b>GSoC 2023 proposal, accepted and unfunded</b><p>I spent a year preparing for the QMLHEP organisation: the IBM Qiskit certification, Qiskit Advocate, the evaluation tasks, a research proposal. GSoC did not select it. A faculty member later wrote to say the organisation had chosen it, but Google had cut their funded slots that year.</p><span class="f">quantum</span></div></div>
+          <div class="j" data-f="quantum"><span class="y">2022</span><div><b>Quantum computing</b><p>Read <i>Surely You're Joking, Mr. Feynman!</i> during GSoC, got a scholarship to Qubit by Qubit's summer school, and decided to aim for a PhD in quantum machine learning. I enjoyed the learning. The theoretical research, when I got to it, I did not.</p><span class="f">quantum</span></div></div>
+          <div class="j" data-f="robots"><span class="y">2022</span><div><b>Google Summer of Code, TensorFlow</b><p>Video Swin Transformer in TensorFlow 2, weights converted from PyTorch, fine-tuning notebooks, published on TF Hub. Mentors Luiz Gustavo Martins and Sayak Paul. The models were later moved to Kaggle Models and have 2,636 downloads.</p><span class="f">robots</span></div></div>
+          <div class="j" data-f="writing"><span class="y">2022</span><div><b>Chotoder Gonit Olympiad, three volumes</b><p>For classes 2 to 7. A best seller in the math olympiad category on Rokomari. I was never an olympiad competitor. I liked math when most people around me did not, and wanted to pass that on.</p><span class="f">writing</span></div></div>
+          <div class="j" data-f="building"><span class="y">2020</span><div><b>Decided to take it seriously</b><p>A web development bootcamp: finished it, and learned I did not enjoy frontend work. Google's IT and cloud tracks: learned the same about DevOps. The MITx MicroMasters in supply chain took over a year and gave me the probability and statistics I needed for machine learning. The fifth course had a lecture on ML in supply chains, and this time I had the prerequisites.</p><span class="f">building</span></div></div>
+          <div class="j" data-f="robots"><span class="y">2019</span><div><b>First thing that worked</b><p>A friend's group had a facial-recognition attendance system as their product design project and was stuck. I built it with them on a Raspberry Pi at the last minute. The same year, my own product design team developed a radiation-protective phone cover that was later published.</p><span class="f">robots</span></div></div>
+          <div class="j" data-f="university"><span class="y">2017</span><div><b>Industrial engineering at BUTEX</b><p>The track had mechanical, electrical, and product design courses, which is what I wanted. The textile courses I did not enjoy, and my grades show it. I read <i>Life 3.0</i> that year. Several attempts at learning to code and AI between 2017 and 2019 did not hold.</p><span class="f">university</span></div></div>
+          <div class="j" data-f="university"><span class="y">2017</span><div><b>Debate, and the business club</b><p>Runner-up in the intra-university debate championship with a three-person team, best speaker in two rounds. Joined the BUTEX Business Club in its first year and helped organise TEXBIZ, the university's first national competition. Vice president by 2021. Campus teams coordinator for YSI Bangladesh across fifty universities in between.</p><span class="f">university</span></div></div>
+          <div class="j" data-f="writing"><span class="y">2018</span><div><b>Goniter Mojar Prosno O Uttor</b><p>A math book for classes 8 to 12, written in my second year.</p><span class="f">writing</span></div></div>
+          <div class="j" data-f="life"><span class="y">2014</span><div><b>A book on C, at 16</b><p>A PC and a slow connection. I downloaded a book on C and worked through it. Then the board exams took over and it stopped.</p><span class="f">life</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FACET ================= -->
+  <div class="screen">
+    <h2>3 · A facet page (Robots)</h2>
+    <p class="note">Same shape on every facet page: two paragraphs on why, the stack, the work as cards with demos where they exist, then the writing from that facet.</p>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><em>/robots</em></div>
+      <div class="page" style="padding-top:36px;max-width:none">
+        <span class="label">Robots · 2019 → now</span>
+        <h3 style="font-family:Fraunces,serif;font-weight:400;font-size:28px;margin:8px 0 14px">Robot control software, reinforcement learning, and the systems around them.</h3>
+        <p style="font-size:15px;max-width:640px">I wanted to do mechanical engineering before university and chose the industrial engineering track at BUTEX for its mechanical and product design courses. The route back to robots went through machine learning, a year of quantum computing, and a startup. A robotics course project in 2024 led to the lab offer in 2025.</p>
+        <p class="stack"><b>Stack.</b> ROS 2, Nav2, MoveIt, ros2_control, Gazebo, Isaac Sim and Lab, URDF, SLAM, CasADi, Stable-Baselines3, PyTorch, Jetson Orin and Xavier.</p>
+        <div class="grid">
+          <div class="cardx"><div class="demo">▶ pursuit-evasion, plays while in view</div><b>Multi-agent pursuit-evasion</b>Adversarial self-play under partial observability. CoRL 2026 target.</div>
+          <div class="cardx"><div class="demo">▶ arm robot demo</div><b>LLM robot task planner</b>Natural language to Nav2, YOLO, and pick-and-place. JetRover.</div>
+          <div class="cardx"><div class="demo">image</div><b>NSU AI SAT</b>3U CubeSat, on-board software and AI payload. Engineering model next.</div>
+          <div class="cardx"><div class="demo">image</div><b>Video Swin Transformer</b>GSoC 2022. 2,636 downloads on Kaggle Models.</div>
+          <div class="cardx"><div class="demo">▶ turtlebot patrol</div><b>TurtleBot3 patrolling</b>Nav2 waypoints, behavior trees in C++. The course project.</div>
+          <div class="cardx"><div class="demo">concept</div><b>Factory security robot</b>Patrol with fire and gas detection. Built on the arm robot's stack. Waiting on funding.</div>
+        </div>
+        <span class="label">Writing from this facet</span>
+        <div class="arts" style="max-width:640px">
+          <div><span>ROS 2 series: mental model, zero-to-first-node, build tools, project anatomy, URDF</span><span>Jun 2026</span></div>
+          <div><span>How to match ROS 2, Gazebo, and PyTorch CUDA versions</span><span>Mar 2026</span></div>
+          <div><span>CasADi series: intro, quadratic NLP, pendulum, NMPC cart-pole</span><span>Apr 2025</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen">
+    <h2>Does v2 hold?</h2>
+    <div class="options">
+      <div class="option" data-choice="yes" onclick="toggleSelect(this)"><h3>Yes, build on this</h3><p>Write the spec next.</p></div>
+      <div class="option" data-choice="tweak" onclick="toggleSelect(this)"><h3>Right shape, tweak</h3><p>I'll say what in the terminal.</p></div>
+      <div class="option" data-choice="rethink" onclick="toggleSelect(this)"><h3>Still off</h3><p>Something structural.</p></div>
+    </div>
+  </div>
+</div>
+<script>
+  const chips=document.getElementById('chips');
+  chips.addEventListener('click',e=>{const s=e.target.closest('span');if(!s)return;
+    [...chips.children].forEach(c=>c.classList.toggle('on',c===s));
+    const f=s.dataset.f;document.querySelectorAll('.j').forEach(r=>r.classList.toggle('hide',f!=='all'&&r.dataset.f!==f));});
+  if(typeof toggleSelect!=='function'){window.toggleSelect=el=>{el.parentElement.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected')}}
+</script>
+</body>
+</html>

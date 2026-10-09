@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site skeleton</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f5f0;--ink:#15130f;--mute:#6b665c;--line:#e2ddd3;--accent:#c2410c;--card:#fff;}
+  @media (prefers-color-scheme:dark){:root{--bg:#121110;--ink:#f1ede6;--mute:#9a938a;--line:#2a2724;--accent:#fb923c;--card:#1b1917;}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55}
+  .wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+  h1{font-family:Fraunces,serif;font-weight:600;font-size:34px;margin:0 0 6px}
+  .sub{color:var(--mute);margin:0 0 28px}
+  .label{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+  .map{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 44px}
+  .map span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;background:var(--card)}
+  .map span.home{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .screen{margin:0 0 56px}
+  .screen h2{font-family:Fraunces,serif;font-weight:600;font-size:22px;margin:0 0 4px}
+  .screen p.note{color:var(--mute);font-size:14px;margin:0 0 14px;max-width:720px}
+  .frame{border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+  .bar{height:34px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 14px}
+  .bar i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+  .bar em{margin-left:auto;font-style:normal;font-size:11px;color:var(--mute)}
+
+  /* ---------- HOME (scrolls inside its frame) ---------- */
+  .home{height:640px;overflow:auto;position:relative;scroll-behavior:smooth}
+  .nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 40px;font-size:13px;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--card) 70%,transparent);border-bottom:1px solid var(--line)}
+  .nav b{font-family:Fraunces,serif;font-weight:600;font-size:15px}
+  .nav span{color:var(--mute);margin-left:18px}
+  .hero{padding:110px 40px 90px;max-width:720px}
+  .hero .photo{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#d9d2c5,#9a938a);margin-bottom:28px}
+  .hero h3{font-family:Fraunces,serif;font-weight:400;font-size:44px;line-height:1.1;margin:0 0 22px;letter-spacing:-.01em}
+  .hero h3 em{font-style:italic;color:var(--accent)}
+  .hero p{font-size:17px;color:var(--mute);max-width:560px;margin:0 0 10px}
+  .story{display:grid;grid-template-columns:150px 1fr;padding:0 40px 80px;gap:0 32px}
+  .thread{position:sticky;top:60px;align-self:start;height:0}
+  .thread .line{position:absolute;left:5px;top:0;width:1px;height:520px;background:var(--line)}
+  .thread .dot{position:absolute;left:2px;top:0;width:7px;height:7px;border-radius:50%;background:var(--accent);transition:top .3s}
+  .thread .yr{position:absolute;left:22px;top:-6px;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mute);white-space:nowrap;transition:opacity .3s}
+  .chapters{max-width:600px}
+  .ch{padding:48px 0;border-top:1px solid var(--line);opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .ch.in{opacity:1;transform:none}
+  .ch .label{display:block;margin-bottom:10px}
+  .ch h4{font-family:Fraunces,serif;font-weight:600;font-size:26px;margin:0 0 12px;line-height:1.2}
+  .ch p{margin:0 0 12px;font-size:15.5px}
+  .ch .hl{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13.5px;background:var(--bg);margin:6px 0 10px}
+  .ch .hl b{display:block;font-weight:600}
+  .ch .fig{height:200px;border-radius:14px;background:linear-gradient(135deg,#e6e0d4,#c9c1b2);margin:14px 0 6px;display:flex;align-items:end;padding:12px;font-size:12px;color:#5a544a}
+  .ch a{color:var(--accent);text-decoration:none;font-size:14px;font-weight:500}
+  .foot{padding:40px;border-top:1px solid var(--line);font-size:13px;color:var(--mute);display:flex;gap:24px}
+
+  /* ---------- wireframes ---------- */
+  .wire{padding:32px 40px;min-height:380px}
+  .wire h3{font-family:Fraunces,serif;font-weight:600;font-size:30px;margin:0 0 8px}
+  .wire .lead{color:var(--mute);max-width:560px;margin:0 0 24px;font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+  .cardx{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--bg);font-size:13px}
+  .cardx .demo{height:110px;border-radius:10px;background:repeating-linear-gradient(45deg,var(--line) 0 6px,transparent 6px 14px);margin-bottom:10px;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:12px}
+  .cardx b{display:block;font-weight:600;margin-bottom:4px}
+  .strip{display:flex;gap:0;border-top:1px solid var(--line);padding-top:14px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mute)}
+  .strip span{flex:1}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+  .chips span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:12px;cursor:pointer}
+  .chips span.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .rows{display:grid;gap:0}
+  .row{display:grid;grid-template-columns:70px 1fr 110px;gap:16px;padding:12px 0;border-top:1px solid var(--line);font-size:14px;align-items:baseline;transition:opacity .3s,transform .3s}
+  .row .y{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mute)}
+  .row .f{font-size:11px;color:var(--mute);text-align:right;letter-spacing:.06em;text-transform:uppercase}
+  .row.hide{opacity:.15}
+
+  /* ---------- choice ---------- */
+  .options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+  .option{border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;background:var(--card)}
+  .option.selected{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+  .option h3{margin:0 0 4px;font-size:15px}
+  .option p{margin:0;font-size:13px;color:var(--mute)}
+  @media (max-width:760px){.story{grid-template-columns:1fr}.thread{display:none}.grid,.options{grid-template-columns:1fr}.hero h3{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Site skeleton</h1>
+  <p class="sub">Eight pages. Three shown below: the home story, one facet page, and the Everything page. Wireframe fidelity, real copy where it matters. Scroll inside the first frame.</p>
+
+  <span class="label">Site map</span>
+  <div class="map">
+    <span class="home">Home · the story</span><span>Robots</span><span>Building</span><span>Quantum</span><span>Writing</span><span>University</span><span>Off the clock</span><span>Everything</span><span style="opacity:.55">Resume (PDF)</span>
+  </div>
+
+  <!-- ================= HOME ================= -->
+  <div class="screen">
+    <h2>1 · Home: the story in one scroll</h2>
+    <p class="note">Intro, then six short chapters newest-first after the origin. The thread on the left tracks where you are. Each chapter is three or four sentences, one highlight card, one link to the facet page. Photos appear where they belong in the story.</p>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><em>shoaib6174.github.io</em></div>
+      <div class="home" id="home">
+        <div class="nav"><b>Mohammad Shoaib</b><div><span>Robots</span><span>Building</span><span>Quantum</span><span>Writing</span><span>University</span><span>Off the clock</span><span>Everything</span></div></div>
+
+        <div class="hero">
+          <div class="photo"></div>
+          <h3>I build machines that <em>sense, decide, and act.</em><br>I got here by reading my way in.</h3>
+          <p>AI &amp; robotics engineer at NSU Intelligent Robotics Lab. Co-founder at FenloAI. Author of four math books for kids. Dhaka.</p>
+          <p style="font-size:14px">Every chapter below started with a book. Then a few failed attempts. Then something built, and a write-up.</p>
+        </div>
+
+        <div class="story">
+          <div class="thread"><div class="line"></div><div class="dot" id="dot"></div><div class="yr" id="yr">2014</div></div>
+          <div class="chapters">
+
+            <div class="ch" data-yr="2014 · age 16">
+              <span class="label">Origin</span>
+              <h4>A C book on a slow connection.</h4>
+              <p>First code at 16, from a downloaded book, worked through end to end. Then board exams took over. First year at university, <i>Life 3.0</i> lit the AI spark. Four runs at learning to code fizzled before one stuck.</p>
+              <a href="#">Full chapter →</a>
+            </div>
+
+            <div class="ch" data-yr="2017 – 2022">
+              <span class="label">The detour</span>
+              <h4>Textiles, because mechanical engineering cost too much.</h4>
+              <p>Admitted to IUT for mechanical, couldn't afford it. BUTEX's industrial engineering track was the closest public route. The textile half never clicked. The rest of university did: debate, the business club, a national competition, two math books.</p>
+              <div class="fig">photo · best speaker, intra-university debate 2017</div>
+              <div class="hl"><b>Two books, class 2 to 12</b>Goniter Mojar Prosno O Uttor (2018) · Chotoder Gonit Olympiad, 3 vols (2022), category best seller</div><br>
+              <a href="#">University →</a>
+            </div>
+
+            <div class="ch" data-yr="2020 – 2022">
+              <span class="label">The rebuild</span>
+              <h4>Two things tried to find out I didn't like them.</h4>
+              <p>Early 2020, a low point. A bootcamp ruled out frontend. A cloud track ruled out DevOps. An MITx MicroMasters quietly built the math. Then Andrew Ng, two certifications, a research internship, and Google Summer of Code with TensorFlow.</p>
+              <div class="hl"><b>Video Swin Transformer in TensorFlow 2</b>GSoC 2022 · now on Kaggle Models, 2,636 downloads</div><br>
+              <a href="#">Robots →</a>
+            </div>
+
+            <div class="ch" data-yr="2022 – 2023">
+              <span class="label">Quantum</span>
+              <h4>A Feynman memoir, then a year aimed at CERN.</h4>
+              <p>Summer school scholarship, IBM certification, Qiskit Advocate, a research proposal the organisation accepted and Google couldn't fund. Enrolled at NSU to do quantum research and learned something more useful: I prefer building systems to theory.</p>
+              <a href="#">Quantum →</a>
+            </div>
+
+            <div class="ch" data-yr="2023 – 2025">
+              <span class="label">Building</span>
+              <h4>Two platforms in seven months.</h4>
+              <p>A fashion-tech startup, then faculty who'd seen my coursework asked me back. A robotics course project turned into a lab offer. FenloAI keeps one foot in the business world.</p>
+              <div class="fig">demo · LLM-driven arm robot, Gazebo</div>
+              <a href="#">Building →</a>
+            </div>
+
+            <div class="ch" data-yr="2025 – now">
+              <span class="label">Now</span>
+              <h4>Machines that sense, decide, and act.</h4>
+              <p>NSU Intelligent Robotics Lab. Adversarial RL for pursuit-evasion, a paper targeting CoRL 2026. An LLM agent that turns "bring the red cube to room B" into robot actions. A CubeSat's AI payload. Nineteen articles along the way.</p>
+              <div class="hl"><b>safe-rl-pe</b>736 tests · 40+ training runs · two GPU machines</div><br>
+              <a href="#">Robots →</a>
+            </div>
+
+            <div class="ch" data-yr="off the clock">
+              <span class="label">Off the clock</span>
+              <h4>Annapurna solo. Dostoevsky. Real Madrid in FIFA.</h4>
+              <p>Reading is where every chapter began. Films from any country with subtitles. Learning Chinese because the best robotics papers kept coming from there. Not artistic enough to play as Barcelona.</p>
+              <div class="fig">photo · Annapurna Base Camp, May 2025</div>
+              <a href="#">Off the clock →</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="foot"><span>Email</span><span>GitHub</span><span>LinkedIn</span><span>Medium</span><span>Resume</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FACET ================= -->
+  <div class="screen">
+    <h2>2 · A facet page (Robots)</h2>
+    <p class="note">Every facet page has the same shape: a title, the why in two paragraphs, the work as cards with inline demos, then that facet's slice of the timeline. Quantum and University drop the demos and keep the photos.</p>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><em>/robots</em></div>
+      <div class="wire">
+        <span class="label">Facet · 2019 → now</span>
+        <h3>Robots</h3>
+        <p class="lead">Wanted mechanical engineering at 17. Got there by way of textiles, a bootcamp, a MicroMasters, and a quantum detour. Two paragraphs on why, in first person.</p>
+        <div class="grid">
+          <div class="cardx"><div class="demo">▶ pursuit-evasion GIF, plays in view</div><b>safe-rl-pe</b>Adversarial self-play under partial observability. CoRL 2026 target.</div>
+          <div class="cardx"><div class="demo">▶ arm robot demo</div><b>LLM robot task planner</b>Natural language → Nav2, YOLO, pick-and-place. JetRover.</div>
+          <div class="cardx"><div class="demo">image</div><b>NSU AI SAT</b>3U CubeSat, AI payload. Engineering model next.</div>
+          <div class="cardx"><div class="demo">image</div><b>Video Swin Transformer</b>GSoC 2022 · 2,636 Kaggle downloads</div>
+          <div class="cardx"><div class="demo">▶ turtlebot patrol</div><b>TurtleBot3 Patrolling</b>The course project that led to the lab.</div>
+          <div class="cardx"><div class="demo">text</div><b>Writing on robotics</b>CasADi series · ROS 2 series · version matching guide</div>
+        </div>
+        <span class="label">This facet on the timeline</span>
+        <div class="strip"><span>2019 · Pi attendance</span><span>2022 · GSoC</span><span>2024 · TurtleBot</span><span>2025 · NIRO Lab</span><span>2026 · CoRL</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= EVERYTHING ================= -->
+  <div class="screen">
+    <h2>3 · Everything</h2>
+    <p class="note">Replaces CV, Experiences, Education, and Publications. One list, every item tagged. Click a chip to try the filter; on the real site the rows reorder with a transition instead of dimming.</p>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><em>/everything</em></div>
+      <div class="wire">
+        <h3>Everything, 2014 → now</h3>
+        <div class="chips" id="chips"><span class="on" data-f="all">All</span><span data-f="robots">Robots</span><span data-f="building">Building</span><span data-f="quantum">Quantum</span><span data-f="writing">Writing</span><span data-f="university">University</span><span data-f="life">Life</span></div>
+        <div class="rows">
+          <div class="row" data-f="robots"><span class="y">2026</span><span>Multi-agent pursuit-evasion, paper targeting CoRL 2026</span><span class="f">robots</span></div>
+          <div class="row" data-f="writing"><span class="y">2026</span><span>ROS 2 series, five articles in three days</span><span class="f">writing</span></div>
+          <div class="row" data-f="robots"><span class="y">2025</span><span>Research Assistant, NSU Intelligent Robotics Lab</span><span class="f">robots</span></div>
+          <div class="row" data-f="building"><span class="y">2025</span><span>Co-founder, FenloAI · BotForge, Jonvexa</span><span class="f">building</span></div>
+          <div class="row" data-f="life"><span class="y">2025</span><span>Annapurna Base Camp, solo, no guide</span><span class="f">life</span></div>
+          <div class="row" data-f="life"><span class="y">2024</span><span>China-South Asia Bridge, Yunnan University</span><span class="f">life</span></div>
+          <div class="row" data-f="building"><span class="y">2023</span><span>Jr. AI Engineer, NITEX · two platforms in seven months</span><span class="f">building</span></div>
+          <div class="row" data-f="quantum"><span class="y">2023</span><span>Qiskit Advocate, IBM · QMLHEP proposal accepted, unfunded</span><span class="f">quantum</span></div>
+          <div class="row" data-f="robots"><span class="y">2022</span><span>Google Summer of Code, TensorFlow</span><span class="f">robots</span></div>
+          <div class="row" data-f="writing"><span class="y">2022</span><span>Chotoder Gonit Olympiad, 3 volumes</span><span class="f">writing</span></div>
+          <div class="row" data-f="university"><span class="y">2021</span><span>Vice President, BUTEX Business Club</span><span class="f">university</span></div>
+          <div class="row" data-f="university"><span class="y">2017</span><span>Runner-up, intra-university debate · best speaker ×2</span><span class="f">university</span></div>
+          <div class="row" data-f="life"><span class="y">2014</span><span>A C book, age 16</span><span class="f">life</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen">
+    <h2>Does this skeleton hold?</h2>
+    <p class="note">Pick one, then tell me in the terminal what to change.</p>
+    <div class="options">
+      <div class="option" data-choice="yes" onclick="toggleSelect(this)"><h3>Yes, build on this</h3><p>Structure and tone are right. Next: section-by-section detail.</p></div>
+      <div class="option" data-choice="tweak" onclick="toggleSelect(this)"><h3>Right shape, tweak things</h3><p>Keep the structure, change what I'll describe.</p></div>
+      <div class="option" data-choice="rethink" onclick="toggleSelect(this)"><h3>Rethink</h3><p>Something about the structure is off.</p></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // chapter reveal + thread tracking, scoped to the home frame
+  const home=document.getElementById('home'),dot=document.getElementById('dot'),yr=document.getElementById('yr');
+  const chs=[...home.querySelectorAll('.ch')];
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{root:home,threshold:.2});
+  chs.forEach(c=>io.observe(c));
+  home.addEventListener('scroll',()=>{
+    const mid=home.getBoundingClientRect().top+home.clientHeight*.45;
+    let cur=chs[0],i=0;
+    chs.forEach((c,k)=>{if(c.getBoundingClientRect().top<mid){cur=c;i=k}});
+    yr.textContent=cur.dataset.yr;
+    const t=i/(chs.length-1)*500; dot.style.top=t+'px'; yr.style.top=(t-6)+'px';
+  },{passive:true});
+  // filter chips
+  const chips=document.getElementById('chips');
+  chips.addEventListener('click',e=>{const s=e.target.closest('span');if(!s)return;
+    [...chips.children].forEach(c=>c.classList.toggle('on',c===s));
+    const f=s.dataset.f;document.querySelectorAll('.row').forEach(r=>r.classList.toggle('hide',f!=='all'&&r.dataset.f!==f));});
+  if(typeof toggleSelect!=='function'){window.toggleSelect=el=>{el.parentElement.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected')}}
+</script>
+</body>
+</html>
