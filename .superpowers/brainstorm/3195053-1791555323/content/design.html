@@ -1,0 +1,44 @@
+<h2>The site, as built</h2>
+<p class="subtitle">Drafting-paper surface, Bricolage Grotesque for display, Literata for reading, one signal colour. The live preview is at <a href="http://localhost:4321/" target="_blank" rel="noopener">localhost:4321</a> (run <code>npm run dev</code> in the repo if it is not up). Screens below are from the build at 1440 px and 390 px.</p>
+
+<div class="section">
+  <h3>Home, desktop</h3>
+  <p>The hero is the real output of the task planner: one instruction typed in, the plan completing step by step, once. Then the name and the two-sentence masthead.</p>
+  <div class="mockup"><div class="mockup-header">/ at 1440 px</div><div class="mockup-body"><img src="files/home-top.png" alt="Home page, desktop, top" style="width:100%;display:block"></div></div>
+</div>
+
+<div class="section">
+  <h3>Route, desktop</h3>
+  <p>Dated decisions with a dimension line in the margin. The orange tick and line follow the entry you are reading.</p>
+  <div class="mockup"><div class="mockup-header">/route at 1440 px</div><div class="mockup-body"><img src="files/route-top.png" alt="Route page, desktop" style="width:100%;display:block"></div></div>
+</div>
+
+<div class="section">
+  <h3>Work, desktop</h3>
+  <p>Rows, not cards. Filters are plain words. Status is a word, never a pill.</p>
+  <div class="mockup"><div class="mockup-header">/work at 1440 px</div><div class="mockup-body"><img src="files/work-top.png" alt="Work page, desktop" style="width:100%;display:block"></div></div>
+</div>
+
+<div class="section">
+  <h3>A detail page</h3>
+  <p>Every work item and route entry has one. The dashed box is a slot for a photo or demo you add later.</p>
+  <div class="mockup"><div class="mockup-header">/work/llm-robot-task-planner</div><div class="mockup-body"><img src="files/work-detail.png" alt="Work detail page" style="width:100%;display:block"></div></div>
+</div>
+
+<div class="section">
+  <h3>Phone</h3>
+  <p>Margin column folds above the text. The rail becomes a plain year label.</p>
+  <div class="split">
+    <div class="mockup"><div class="mockup-header">/ at 390 px</div><div class="mockup-body"><img src="files/home-mobile.png" alt="Home page, phone" style="width:100%;display:block"></div></div>
+    <div class="mockup"><div class="mockup-header">/route at 390 px</div><div class="mockup-body"><img src="files/route-mobile.png" alt="Route page, phone" style="width:100%;display:block"></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>What do you think of the direction?</h3>
+  <div class="options">
+    <div class="option" data-choice="keep" onclick="toggleSelect(this)"><div class="letter">A</div><div class="content"><h3>Keep it, polish from here</h3><p>Direction is right. Tell me the details to change in the terminal.</p></div></div>
+    <div class="option" data-choice="warmer" onclick="toggleSelect(this)"><div class="letter">B</div><div class="content"><h3>Right bones, different feel</h3><p>Keep the layout and hero, change type or colour. Say which in the terminal.</p></div></div>
+    <div class="option" data-choice="rethink" onclick="toggleSelect(this)"><div class="letter">C</div><div class="content"><h3>Try a different direction</h3><p>Describe what is missing and I will build an alternative.</p></div></div>
+  </div>
+</div>

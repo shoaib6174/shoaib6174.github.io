@@ -27,7 +27,7 @@ const series = [
 <Base title="Mohammad Shoaib" description={home.masthead} bodyClass="home">
   <section class="hero" data-hero aria-label="An instruction and the robot's plan">
     <p class="hero__m">One instruction, in simulation</p>
-    <p class="hero__prompt"><span data-typed>bring the red cube from room A to room B</span><span class="hero__caret" aria-hidden="true"></span></p>
+    <p class="hero__prompt"><span class="hero__ghost" aria-hidden="true">bring the red cube from room A to room B</span><span class="hero__live"><span data-typed>bring the red cube from room A to room B</span><span class="hero__caret" aria-hidden="true"></span></span></p>
     <ol class="hero__plan" aria-label="Plan">
       <li><span class="act">navigate</span><span>room A</span><span class="ok">done</span></li>
       <li><span class="act">detect</span><span>red cube</span><span class="ok">found</span></li>

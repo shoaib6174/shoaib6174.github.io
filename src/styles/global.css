@@ -1,3 +1,29 @@
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('/fonts/BricolageGrotesque-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/Literata-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/Literata-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ------------------------------------------------------------------
    Tokens. See docs/superpowers/specs/2026-10-09-design-direction.md
    ------------------------------------------------------------------ */
@@ -9,6 +35,7 @@
   --rule: #d5dbe0;
   --signal: #ff5a1f;
   --moss: #2e7d5b;
+  --signal-text: #d94e12; /* signal, darkened only where it is text, for 3:1 on paper */
 
   --display: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
   --text: 'Literata', Georgia, 'Times New Roman', serif;
@@ -90,8 +117,12 @@ ul, ol { margin: 0; padding: 0; }
 .hero { display: grid; grid-template-columns: var(--margin) minmax(0, var(--measure)); column-gap: var(--gap); padding: 72px 0 0; font-family: var(--display); }
 .hero > * { grid-column: 2; }
 .hero__m { grid-column: 1; font-size: var(--fs-small); color: var(--graphite); padding-top: 14px; }
-.hero__prompt { font-size: clamp(26px, 3.6vw, 40px); font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; min-height: 1.2em; }
-.hero__prompt::before { content: '>'; color: var(--signal); margin-right: 0.35em; font-weight: 400; }
+.hero__prompt { font-size: clamp(26px, 3.6vw, 40px); font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; position: relative; }
+.hero__ghost { visibility: hidden; }
+.hero__live { position: absolute; left: 0; top: 0; right: 0; }
+.hero__live::before { content: '>'; color: var(--signal-text); margin-right: 0.35em; font-weight: 400; }
+.hero__prompt::before { visibility: hidden; }
+.hero__prompt::before { content: '>'; color: var(--signal-text); margin-right: 0.35em; font-weight: 400; }
 .hero__caret { display: inline-block; width: 0.08em; height: 0.95em; background: var(--signal); vertical-align: -0.12em; margin-left: 0.08em; opacity: 0; }
 .hero.is-typing .hero__caret { opacity: 1; animation: blink 0.9s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
@@ -191,7 +222,7 @@ ul, ol { margin: 0; padding: 0; }
 .entry__date { grid-column: 1; position: relative; padding: 28px 0 0; font-family: var(--display); font-size: var(--fs-small); color: var(--graphite); transition: color 0.2s ease; }
 .entry__date time { display: inline-block; }
 .entry__date::after { content: ''; position: absolute; left: calc(var(--margin) - 27px); top: 36px; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1px solid var(--graphite); transition: background 0.2s ease, border-color 0.2s ease; }
-.entry.is-active .entry__date { color: var(--signal); }
+.entry.is-active .entry__date { color: var(--ink); }
 .entry.is-active .entry__date::after { background: var(--signal); border-color: var(--signal); }
 .entry.is-active .entry__date::before { content: ''; position: absolute; left: calc(var(--margin) - 20px); top: 39px; width: calc(20px + var(--gap) - 12px); height: 1px; background: var(--signal); }
 .entry__body { grid-column: 2; padding: 24px 0 28px; border-top: 1px solid var(--rule); transition: opacity 0.3s ease; }
@@ -292,7 +323,6 @@ ul, ol { margin: 0; padding: 0; }
   .section > .section__label, .section > *:not(.section__label), .page-head > *, .page-head__span,
   .hero > *, .hero__m, .masthead > *, .masthead__photo, .detail > *, .detail__meta, .detail h1, .detail__lead,
   .journey__threads, .entries, .entry__date, .entry__body, .footer__links, .footer__meta { grid-column: 1; }
-  .section > .section__label { color: var(--signal); }
 }
 
 @media (prefers-reduced-motion: reduce) {
