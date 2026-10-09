@@ -18,7 +18,8 @@ A preview server may still be running from last night on the same address. The c
 - Design per `docs/superpowers/specs/2026-10-09-design-direction.md`: drafting-paper surface, Bricolage Grotesque and Literata, a margin column, one signal colour used only for lines and underlines, rows instead of cards, the robot-instruction hero, a dimension-line rail on Route, a separate phone layout.
 - Lighthouse on the home page, mobile: accessibility 100, best practices 100, SEO 100, no layout shift. Shipped script under 20 KB.
 - Old URLs redirect to the new pages. The Jekyll theme and its sample content are gone; git history keeps them.
-- `npm run build` fails on a broken internal link, a skills row without proof, or a malformed content file. `npm test` runs the unit tests.
+- `npm run build` fails on a broken internal link, a skills row without proof, or a malformed content file. `npm run check` type-checks the pages, `npm test` runs the unit tests. The deploy workflow runs all three before publishing.
+- A code review pass fixed the Work filter's Back-button behaviour, scoped every scroll and pointer listener, gave each detail page an h1, and made the hero play once per browser session.
 
 ## How to publish
 
