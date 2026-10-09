@@ -13,7 +13,6 @@ export default defineConfig({
     '/blogs/': '/writing/',
     '/cv/': '/files/pdfs/Shoaib_s_Resume.pdf',
     '/resume': '/files/pdfs/Shoaib_s_Resume.pdf',
-    '/resume/': '/files/pdfs/Shoaib_s_Resume.pdf',
     '/journey/': '/route/',
   },
 });
