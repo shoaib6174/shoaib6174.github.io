@@ -5,7 +5,7 @@ threads:
   - "studied"
 onRoute: true
 chose: "To treat learning to code as the main thing. A web development bootcamp with Programming Hero, and the MITx MicroMasters in Supply Chain Management."
-ruledOut: "Frontend work, after finishing the bootcamp. DevOps, after Google's Compute Engine specialisation."
+ruledOut: "Frontend work, after finishing the bootcamp. DevOps, after the Architecting with Google Compute Engine specialisation."
 result: "The MicroMasters took over a year and gave me the probability and statistics I needed for machine learning. Its fifth course had a lecture on machine learning in supply chains. This time I had the prerequisites."
 ---
 

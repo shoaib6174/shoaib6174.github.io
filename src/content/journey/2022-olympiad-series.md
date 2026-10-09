@@ -4,7 +4,7 @@ title: "Chotoder Gonit Olympiad, three volumes"
 threads:
   - "explain"
 chose: "A three-book series for classes 2 to 7."
-result: "Published by Tamralipi Prokashoni. A best seller in the math olympiad category on Rokomari."
+result: "Published by Tamralipi Prokashoni. One of the best sellers in the math olympiad category on Rokomari."
 proof:
   - label: "Volume 1"
     href: "https://www.rokomari.com/book/275698/chotoder-gonit-olympiad-1"

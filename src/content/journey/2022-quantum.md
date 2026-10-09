@@ -12,6 +12,8 @@ proof:
     href: "https://www.qubitbyqubit.org/"
   - label: "QUBO with Qiskit"
     href: "https://medium.com/@shoaib6174/how-to-solve-qubo-problems-using-qiskit-f4eab6cc3061"
+  - label: "QSVM feature-map study"
+    href: "https://github.com/shoaib6174/QOSF-Cohort-7"
   - label: "Qiskit Treasure Hunt"
     href: "/work/qiskit-treasure-hunt/"
 ---
