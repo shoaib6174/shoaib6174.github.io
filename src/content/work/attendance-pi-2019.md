@@ -15,4 +15,4 @@ links:
 order: 15
 ---
 
-A friend's group had this as their Product Design course project and could not get it working. I built it with them over the final days. No repository survives. The 2019 entry has the account.
+A friend's group had this as their Product Design course project and could not get it working. I built it with them over the final days. The 2019 entry has the account.

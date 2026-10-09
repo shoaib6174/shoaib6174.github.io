@@ -18,8 +18,8 @@ stack:
   - "Lambda"
   - "Docker"
 links:
-  - label: "NITEX"
-    href: "https://www.linkedin.com/company/nitex"
+  - label: "NITEX, 2023 to 2024"
+    href: "/route/2023-nitex/"
 order: 8
 ---
 

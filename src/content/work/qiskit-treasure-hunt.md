@@ -5,7 +5,7 @@ area: "quantum"
 role: "explain"
 status: "closed"
 summary: "A card game that teaches how single-qubit gates and measurement change a quantum state."
-why: "Students could recite the gates and still not see what they did to a state. A map you navigate with gate cards makes the state visible."
+why: "A map you navigate with gate cards makes a quantum state visible in a way the matrices do not."
 stack:
   - "Qiskit"
   - "Python"
