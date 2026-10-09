@@ -1,0 +1,417 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f1e3]:
+    - navigation "Primary" [ref=f1e4]:
+      - link "Mohammad Shoaib" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=f1e6]:
+        - listitem [ref=f1e7]:
+          - link "Work" [ref=f1e8] [cursor=pointer]:
+            - /url: /work/
+        - listitem [ref=f1e9]:
+          - link "Route" [ref=f1e10] [cursor=pointer]:
+            - /url: /route/
+        - listitem [ref=f1e11]:
+          - link "Writing" [ref=f1e12] [cursor=pointer]:
+            - /url: /writing/
+        - listitem [ref=f1e13]:
+          - link "Skills" [ref=f1e14] [cursor=pointer]:
+            - /url: /skills/
+        - listitem [ref=f1e15]:
+          - link "Shelf" [ref=f1e16] [cursor=pointer]:
+            - /url: /shelf/
+  - main [ref=f1e17]:
+    - generic [ref=f1e18]:
+      - paragraph [ref=f1e19]: 2014 to now
+      - heading "Route" [level=1] [ref=f1e20]
+      - paragraph [ref=f1e21]: What I did, in order, and why. Each entry says what I chose, what I ruled out, and what came of it.
+    - generic [ref=f1e22]:
+      - group "Show one thread" [ref=f1e23]:
+        - button "Built" [ref=f1e24] [cursor=pointer]
+        - button "Wrote" [ref=f1e25] [cursor=pointer]
+        - button "Organised" [ref=f1e26] [cursor=pointer]
+        - button "Studied" [ref=f1e27] [cursor=pointer]
+        - button "Life" [ref=f1e28] [cursor=pointer]
+      - generic [ref=f1e29]:
+        - article [ref=f1e30]:
+          - time [ref=f1e32]: "2014"
+          - generic [ref=f1e33]:
+            - heading "A book on C, at 16" [level=3] [ref=f1e34]
+            - paragraph [ref=f1e36]: I grew up in a small town and had seen only a few computers before I had my own. A few months after getting it, I decided programmers were cool and I wanted to be one. I downloaded a book on C over a slow connection and worked through it end to end.
+            - generic [ref=f1e37]:
+              - term [ref=f1e38]: Started by
+              - definition [ref=f1e39]: A downloaded book on C
+              - term [ref=f1e40]: Chose
+              - definition [ref=f1e41]: To learn programming a few months after getting my first computer.
+              - term [ref=f1e42]: Result
+              - definition [ref=f1e43]: Worked through the whole book. Then the board exams took over and it stopped.
+        - article [ref=f1e44]:
+          - time [ref=f1e46]: "2017"
+          - generic [ref=f1e47]:
+            - heading "Textile Engineering at BUTEX, majoring in Industrial and Production Engineering" [level=3] [ref=f1e48]
+            - generic [ref=f1e49]:
+              - paragraph [ref=f1e50]: "Every term mixed two kinds of courses. One half was engineering: programming, electrical, mechanical, automation and control, instrumentation, product design, SolidWorks and CATIA, operations research, simulation. The other half was textiles. I liked the first half."
+              - paragraph [ref=f1e51]:
+                - text: In first year I read
+                - emphasis [ref=f1e52]: Life 3.0
+                - text: . That is where the interest in AI started.
+            - generic [ref=f1e53]:
+              - term [ref=f1e54]: Chose
+              - definition [ref=f1e55]: The IPE track at Bangladesh University of Textiles, for its mechanical, electrical, automation, and product design courses.
+              - term [ref=f1e56]: Ruled out
+              - definition [ref=f1e57]: The textile half of the degree. Yarn, fabric, wet processing, apparel. Not the engineering I had wanted.
+              - term [ref=f1e58]: Result
+              - definition [ref=f1e59]: Graduated in 2022. Tried JavaScript, Java, C++, and competitive programming along the way, then CS50 after reading Life 3.0. None of it held yet.
+        - article [ref=f1e60]:
+          - time [ref=f1e62]: "2017"
+          - generic [ref=f1e63]:
+            - heading [level=3] [ref=f1e64]:
+              - link "Debate, and the BUTEX Business Club" [ref=f1e65] [cursor=pointer]:
+                - /url: /route/2017-debate-and-club/
+            - paragraph [ref=f1e67]: The debate team and the Business Club were where I learned to put an argument together and to run things with other people. TEXBIZ was the club’s first national-level competition and the first time I had organised something that size.
+            - generic [ref=f1e68]:
+              - term [ref=f1e69]: Chose
+              - definition [ref=f1e70]: Class representative in first year. Joined the Business Club the year it was founded.
+              - term [ref=f1e71]: Result
+              - definition [ref=f1e72]: Runner-up in the intra-university debate championship with a three-person team, best speaker in two rounds. Helped organise TEXBIZ, the university's first national competition. Vice president of the club by 2021.
+        - article [ref=f1e73]:
+          - time [ref=f1e75]: "2018"
+          - generic [ref=f1e76]:
+            - heading [level=3] [ref=f1e77]:
+              - link "Goniter Mojar Prosno O Uttor" [ref=f1e78] [cursor=pointer]:
+                - /url: /route/2018-first-book/
+            - paragraph [ref=f1e80]:
+              - emphasis [ref=f1e81]: Interesting Math Questions and Answers.
+              - text: I was never a math olympiad competitor. I liked math when most people around me did not, and wanted to pass that on.
+            - generic [ref=f1e82]:
+              - term [ref=f1e83]: Chose
+              - definition [ref=f1e84]: To write a math book for classes 8 to 12, in second year.
+              - term [ref=f1e85]: Result
+              - definition [ref=f1e86]: Published by Oddhoyon Prokashoni.
+            - list [ref=f1e87]:
+              - listitem [ref=f1e88]:
+                - link "On Rokomari" [ref=f1e89] [cursor=pointer]:
+                  - /url: https://www.rokomari.com/book/156334/goniter-mojar-proshno-o-uttor
+        - article [ref=f1e90]:
+          - time [ref=f1e92]: "2018"
+          - generic [ref=f1e93]:
+            - heading "Campus teams coordinator, YSI Bangladesh" [level=3] [ref=f1e94]
+            - paragraph [ref=f1e96]: YSI Bangladesh ran campus teams at universities across the country. I coordinated them. It was the first time I had worked with people in fifty places at once.
+            - generic [ref=f1e97]:
+              - term [ref=f1e98]: Chose
+              - definition [ref=f1e99]: A coordinating role in a youth entrepreneurship network, alongside the degree.
+              - term [ref=f1e100]: Result
+              - definition [ref=f1e101]: Managed campus teams across fifty-plus universities in Bangladesh, 2018 to 2019. Took part in entrepreneurship trainings and idea competitions through the same years.
+        - article [ref=f1e102]:
+          - time [ref=f1e104]: "2019"
+          - generic [ref=f1e105]:
+            - heading [level=3] [ref=f1e106]:
+              - link "A facial-recognition attendance system, on a Raspberry Pi" [ref=f1e107] [cursor=pointer]:
+                - /url: /route/2019-attendance/
+            - paragraph [ref=f1e109]: A friend’s group had it as their Product Design project and could not get it working. I built it with them on a Raspberry Pi over the final days before the deadline. Not my assignment, but the first time code I wrote recognised something in the real world.
+            - generic [ref=f1e110]:
+              - term [ref=f1e111]: Chose
+              - definition [ref=f1e112]: To build it with them over the final days before their deadline.
+              - term [ref=f1e113]: Result
+              - definition [ref=f1e114]: The first thing I built with machine learning in it that worked.
+            - list [ref=f1e115]:
+              - listitem [ref=f1e116]:
+                - link "Work entry" [ref=f1e117] [cursor=pointer]:
+                  - /url: /work/attendance-pi-2019/
+        - article [ref=f1e118]:
+          - time [ref=f1e120]: "2019"
+          - generic [ref=f1e121]:
+            - heading [level=3] [ref=f1e122]:
+              - link "Radiation-protective phone cover, Product Design course" [ref=f1e123] [cursor=pointer]:
+                - /url: /route/2019-mobile-cover/
+            - paragraph [ref=f1e125]: My own Product Design course project. We worked through the design process properly, from requirements to prototype, and the result was published.
+            - generic [ref=f1e126]:
+              - term [ref=f1e127]: Result
+              - definition [ref=f1e128]: Developed with a methodical design process as a team. Later published.
+        - article [ref=f1e129]:
+          - time [ref=f1e131]: "2020"
+          - generic [ref=f1e132]:
+            - heading "A bootcamp, a MicroMasters, two tracks ruled out" [level=3] [ref=f1e133]
+            - generic [ref=f1e134]:
+              - paragraph [ref=f1e135]: Early 2020. I decided that this time I would take it seriously. The bootcamp was run by an IPE graduate who had switched to software. I finished it. I did not enjoy frontend work, and I had gaps in computer science basics. Google’s IT Support certificate filled some of the gaps. I took the cloud specialisation because DevOps was in demand. Finishing it told me DevOps was not for me either.
+              - paragraph [ref=f1e136]: The MicroMasters mattered most. Five courses over more than a year gave me the mathematics I had never had. One lecture in the fifth course pointed it at machine learning.
+            - generic [ref=f1e137]:
+              - term [ref=f1e138]: Chose
+              - definition [ref=f1e139]: To treat learning to code as the main thing. A web development bootcamp with Programming Hero, and the MITx MicroMasters in Supply Chain Management.
+              - term [ref=f1e140]: Ruled out
+              - definition [ref=f1e141]: Frontend work, after finishing the bootcamp. DevOps, after the Architecting with Google Compute Engine specialisation.
+              - term [ref=f1e142]: Result
+              - definition [ref=f1e143]: The MicroMasters took over a year and gave me the probability and statistics I needed for machine learning. Its fifth course had a lecture on machine learning in supply chains. This time I had the prerequisites.
+        - article [ref=f1e144]:
+          - time [ref=f1e146]: "2021"
+          - generic [ref=f1e147]:
+            - heading [level=3] [ref=f1e148]:
+              - link "Data analytics, then machine learning" [ref=f1e149] [cursor=pointer]:
+                - /url: /route/2021-certifications-and-ml/
+            - paragraph [ref=f1e151]: Microsoft Learn Student Ambassador from 2021, and IBM Z Ambassador for a term the same year. The ambassador program came with an exam voucher. I spent it on data analytics, the skill closest to the supply chain work I was studying. Machine learning followed from Andrew Ng’s course and a lot of YouTube, then the Data Scientist exam. I wrote up each one as I went, which became a habit.
+            - generic [ref=f1e152]:
+              - term [ref=f1e153]: Chose
+              - definition [ref=f1e154]: Microsoft's Data Analyst Associate exam, on a voucher from the Student Ambassador program, because it fit supply chain work. Then Andrew Ng's course, and the Azure Data Scientist Associate exam.
+              - term [ref=f1e155]: Result
+              - definition [ref=f1e156]: "First formal machine learning. First articles: how I passed each exam, and a Flask app that reads text from images with Azure's vision API."
+            - list [ref=f1e157]:
+              - listitem [ref=f1e158]:
+                - link "Data Analyst Associate article" [ref=f1e159] [cursor=pointer]:
+                  - /url: https://medium.com/@shoaib6174/how-to-become-a-microsoft-certified-data-analyst-associate-f109a2bdf65
+              - listitem [ref=f1e160]:
+                - link "Text extraction web app" [ref=f1e161] [cursor=pointer]:
+                  - /url: https://medium.com/@shoaib6174/build-a-web-app-to-extract-text-from-image-using-flask-and-azures-computer-vision-api-1ee470b66050
+        - article [ref=f1e162]:
+          - time [ref=f1e164]: Dec 2021
+          - generic [ref=f1e165]:
+            - heading [level=3] [ref=f1e166]:
+              - link "Research intern, DeepPavlov.ai" [ref=f1e167] [cursor=pointer]:
+                - /url: /route/2021-deeppavlov/
+            - paragraph [ref=f1e169]: "My first research role, in natural language processing. The task was to build dialogue graphs from the MultiWOZ corpus: cluster utterances, find intents, connect the states. I also compared LaBSE and BERT on intent classification and tested both on Russian translations without retraining."
+            - generic [ref=f1e170]:
+              - term [ref=f1e171]: Chose
+              - definition [ref=f1e172]: A research internship in natural language processing, my first research role.
+              - term [ref=f1e173]: Result
+              - definition [ref=f1e174]: Dialogue graphs from the MultiWOZ dataset using tf-idf, topic modeling, x-means, and DBSCAN.
+            - list [ref=f1e175]:
+              - listitem [ref=f1e176]:
+                - link "Intent classification" [ref=f1e177] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/MultiWOZ-Intent-Classification
+              - listitem [ref=f1e178]:
+                - link "Clustering" [ref=f1e179] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/MultiWOZ-Clustering
+        - article [ref=f1e180]:
+          - time [ref=f1e182]: "2022"
+          - generic [ref=f1e183]:
+            - heading [level=3] [ref=f1e184]:
+              - link "Google Summer of Code, TensorFlow" [ref=f1e185] [cursor=pointer]:
+                - /url: /route/2022-gsoc/
+            - paragraph [ref=f1e187]: Mentored by Luiz Gustavo Martins and Sayak Paul. Eight years after the C book, this was the first time something I built was used by people I had never met.
+            - generic [ref=f1e188]:
+              - term [ref=f1e189]: Chose
+              - definition [ref=f1e190]: To apply. Two TensorFlow specialisations on Coursera to prepare.
+              - term [ref=f1e191]: Result
+              - definition [ref=f1e192]: Selected. Video Swin Transformer models in TensorFlow 2, weights converted from PyTorch, published on TF Hub. Now on Kaggle Models with 2,636 downloads.
+            - list [ref=f1e193]:
+              - listitem [ref=f1e194]:
+                - link "Repository" [ref=f1e195] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/GSOC-22-Video-Swin-Transformers
+              - listitem [ref=f1e196]:
+                - link "Kaggle Models" [ref=f1e197] [cursor=pointer]:
+                  - /url: https://www.kaggle.com/models/kaggle/video-swin-transformer
+        - article [ref=f1e198]:
+          - time [ref=f1e200]: "2022"
+          - generic [ref=f1e201]:
+            - heading [level=3] [ref=f1e202]:
+              - link "Chotoder Gonit Olympiad, three volumes" [ref=f1e203] [cursor=pointer]:
+                - /url: /route/2022-olympiad-series/
+            - paragraph [ref=f1e205]:
+              - emphasis [ref=f1e206]: Children’s Math Olympiad.
+              - text: The second book was for younger students than the first, and it needed three volumes to do it properly.
+            - generic [ref=f1e207]:
+              - term [ref=f1e208]: Chose
+              - definition [ref=f1e209]: A three-book series for classes 2 to 7.
+              - term [ref=f1e210]: Result
+              - definition [ref=f1e211]: Published by Tamralipi Prokashoni. One of the best sellers in the math olympiad category on Rokomari.
+            - list [ref=f1e212]:
+              - listitem [ref=f1e213]:
+                - link "Volume 1" [ref=f1e214] [cursor=pointer]:
+                  - /url: https://www.rokomari.com/book/275698/chotoder-gonit-olympiad-1
+              - listitem [ref=f1e215]:
+                - link "Volume 2" [ref=f1e216] [cursor=pointer]:
+                  - /url: https://www.rokomari.com/book/275706/chotoder-gonit-olympiad-2
+              - listitem [ref=f1e217]:
+                - link "Volume 3" [ref=f1e218] [cursor=pointer]:
+                  - /url: https://www.rokomari.com/book/275708/chotoder-gonit-olympiad-3
+        - article [ref=f1e219]:
+          - time [ref=f1e221]: Aug 2022
+          - generic [ref=f1e222]:
+            - heading [level=3] [ref=f1e223]:
+              - link "Quantum computing" [ref=f1e224] [cursor=pointer]:
+                - /url: /route/2022-quantum/
+            - paragraph [ref=f1e226]: I read the Feynman memoir during Google Summer of Code and went looking for a course. The summer school ran with researchers from MIT and Berkeley. By the end of it I had decided to aim for a PhD in quantum machine learning. The next year was built around that.
+            - generic [ref=f1e227]:
+              - term [ref=f1e228]: Started by
+              - definition [ref=f1e229]: Surely You're Joking, Mr. Feynman!
+              - term [ref=f1e230]: Chose
+              - definition [ref=f1e231]: "A scholarship to Qubit by Qubit's online summer school, then a goal: a PhD in quantum machine learning."
+              - term [ref=f1e232]: Result
+              - definition [ref=f1e233]: "A goal: a PhD in quantum machine learning. The next year was built around it. IBM Certified Associate Developer in Quantum Computation, Qiskit Advocate from 2023 to now, the Womanium program, articles on QUBO, Grover's algorithm, and the certification, and a card game for teaching gates."
+            - list [ref=f1e234]:
+              - listitem [ref=f1e235]:
+                - link "Qubit by Qubit" [ref=f1e236] [cursor=pointer]:
+                  - /url: https://www.qubitbyqubit.org/
+              - listitem [ref=f1e237]:
+                - link "QUBO with Qiskit" [ref=f1e238] [cursor=pointer]:
+                  - /url: https://medium.com/@shoaib6174/how-to-solve-qubo-problems-using-qiskit-f4eab6cc3061
+              - listitem [ref=f1e239]:
+                - link "QSVM feature-map study" [ref=f1e240] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/QOSF-Cohort-7
+              - listitem [ref=f1e241]:
+                - link "Qiskit Treasure Hunt" [ref=f1e242] [cursor=pointer]:
+                  - /url: /work/qiskit-treasure-hunt/
+        - article [ref=f1e243]:
+          - time [ref=f1e245]: "2023"
+          - generic [ref=f1e246]:
+            - heading [level=3] [ref=f1e247]:
+              - link "GSoC 2023 proposal to QMLHEP" [ref=f1e248] [cursor=pointer]:
+                - /url: /route/2023-gsoc-2023/
+            - paragraph [ref=f1e250]: The certification, the Advocate role, and the tasks in early 2023 were all aimed at this application.
+            - generic [ref=f1e251]:
+              - term [ref=f1e252]: Chose
+              - definition [ref=f1e253]: To apply to ML4SCI's quantum machine learning for high energy physics group, which works with CERN. Completed their evaluation tasks and submitted a research proposal.
+              - term [ref=f1e254]: Result
+              - definition [ref=f1e255]: Not selected. A faculty member later wrote to say the organisation had chosen the proposal, but it fell outside that year's funded slots.
+            - list [ref=f1e256]:
+              - listitem [ref=f1e257]:
+                - link "Evaluation tasks" [ref=f1e258] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/QMLHEP-tasks-2023
+        - article [ref=f1e259]:
+          - time [ref=f1e261]: Jul 2023
+          - generic [ref=f1e262]:
+            - heading "MSc in Computer Science, North South University" [level=3] [ref=f1e263]
+            - paragraph [ref=f1e265]: After one semester I knew. Learning quantum computing had been the best part. The theoretical work was not what I wanted to spend years on.
+            - generic [ref=f1e266]:
+              - term [ref=f1e267]: Chose
+              - definition [ref=f1e268]: To enrol and work with a faculty member doing quantum computing research.
+              - term [ref=f1e269]: Ruled out
+              - definition [ref=f1e270]: Theoretical research, after one semester. I had enjoyed learning quantum computing. Doing the research, I found I wanted to build systems instead.
+              - term [ref=f1e271]: Result
+              - definition [ref=f1e272]: Stayed for the degree. Left the quantum track.
+        - article [ref=f1e273]:
+          - time [ref=f1e275]: Dec 2023
+          - generic [ref=f1e276]:
+            - heading [level=3] [ref=f1e277]:
+              - link "Junior AI engineer, NITEX" [ref=f1e278] [cursor=pointer]:
+                - /url: /route/2023-nitex/
+            - paragraph [ref=f1e280]: The first job where the thing I built ran for a business every day.
+            - generic [ref=f1e281]:
+              - term [ref=f1e282]: Chose
+              - definition [ref=f1e283]: A fashion-tech company, after the first MSc semester.
+              - term [ref=f1e284]: Result
+              - definition [ref=f1e285]: "Two platforms in seven months: an order-data extraction pipeline for twenty-plus brands, and a trend research platform using a locally deployed vision-language model."
+            - list [ref=f1e286]:
+              - listitem [ref=f1e287]:
+                - link "Trend platform" [ref=f1e288] [cursor=pointer]:
+                  - /url: /work/nitex-trend-platform/
+              - listitem [ref=f1e289]:
+                - link "Extraction pipeline" [ref=f1e290] [cursor=pointer]:
+                  - /url: /work/nitex-extraction-pipeline/
+        - article [ref=f1e291]:
+          - time [ref=f1e293]: "2024"
+          - generic [ref=f1e294]:
+            - heading [level=3] [ref=f1e295]:
+              - link "Research assistant and TA, North South University" [ref=f1e296] [cursor=pointer]:
+                - /url: /route/2024-back-to-nsu/
+            - paragraph [ref=f1e298]: I went back to NSU to deepen the technical side. The robotics course project, a TurtleBot3 patrolling waypoints with Nav2 and behavior trees, is what led to the lab.
+            - generic [ref=f1e299]:
+              - term [ref=f1e300]: Chose
+              - definition [ref=f1e301]: To leave NITEX when faculty I had taken courses with asked me to work as a research assistant.
+              - term [ref=f1e302]: Result
+              - definition [ref=f1e303]: "High-performance computing with Dr. Mohammad Abdul Qayum, and his Computer Architecture course as teaching assistant: MIPS, assembly, Verilog, CPU design. Alongside it, a robotics course with Dr. Shahnewaz Siddique, whose project was the TurtleBot3 patrol. The same year, UC Berkeley's LLM Agents course."
+            - list [ref=f1e304]:
+              - listitem [ref=f1e305]:
+                - link "TurtleBot3 patrolling" [ref=f1e306] [cursor=pointer]:
+                  - /url: /work/turtlebot3-patrolling/
+        - article [ref=f1e307]:
+          - time [ref=f1e309]: Oct 2024
+          - generic [ref=f1e310]:
+            - heading [level=3] [ref=f1e311]:
+              - link "Two weeks at Yunnan University" [ref=f1e312] [cursor=pointer]:
+                - /url: /route/2024-kunming/
+            - paragraph [ref=f1e314]: "A large share of the newest robotics work I was reading came from Chinese universities. That led to reading about China: the longest continuously running civilisation, characters traceable back three thousand years, a long record of invention. Learning the language is how I am trying to understand the people behind the papers."
+            - generic [ref=f1e315]:
+              - term [ref=f1e316]: Started by
+              - definition [ref=f1e317]: Robotics papers from Chinese universities
+              - term [ref=f1e318]: Chose
+              - definition [ref=f1e319]: "The China-South Asia Bridge program in Kunming: classes on Chinese culture, traditions, the political system, and development, plus lab tours and museums."
+              - term [ref=f1e320]: Result
+              - definition [ref=f1e321]: Started learning Chinese. HSK 1 passed.
+            - list [ref=f1e322]:
+              - listitem [ref=f1e323]:
+                - link "HSK vocabulary trainer, 2026" [ref=f1e324] [cursor=pointer]:
+                  - /url: /work/hsk-vocabs/
+        - article [ref=f1e325]:
+          - time [ref=f1e327]: "2025"
+          - generic [ref=f1e328]:
+            - heading [level=3] [ref=f1e329]:
+              - link "Co-founder, FenloAI" [ref=f1e330] [cursor=pointer]:
+                - /url: /route/2025-fenloai/
+            - paragraph [ref=f1e332]: We build automation, custom software, and AI agents for small businesses, at fixed prices. Research alone does not keep me in contact with people who need something built by Friday.
+            - generic [ref=f1e333]:
+              - term [ref=f1e334]: Chose
+              - definition [ref=f1e335]: To co-found a company for contract AI work, to stay in contact with businesses that need things built.
+              - term [ref=f1e336]: Result
+              - definition [ref=f1e337]: An AI chatbot and voice-agent platform, a workforce management platform, a data-collection tool for LinkedIn. All for clients.
+            - list [ref=f1e338]:
+              - listitem [ref=f1e339]:
+                - link "fenloai.com" [ref=f1e340] [cursor=pointer]:
+                  - /url: https://fenloai.com
+              - listitem [ref=f1e341]:
+                - link "BotForge" [ref=f1e342] [cursor=pointer]:
+                  - /url: /work/botforge/
+        - article [ref=f1e343]:
+          - time [ref=f1e345]: May 2025
+          - generic [ref=f1e346]:
+            - heading [level=3] [ref=f1e347]:
+              - link "Annapurna Base Camp, alone" [ref=f1e348] [cursor=pointer]:
+                - /url: /route/2025-annapurna/
+            - paragraph [ref=f1e350]: Nepal, May 2025. Solo, no guide, to base camp and back.
+            - generic [ref=f1e351]:
+              - term [ref=f1e352]: Chose
+              - definition [ref=f1e353]: To go alone, without a guide.
+              - term [ref=f1e354]: Result
+              - definition [ref=f1e355]: Trekked without a guide. Also bungee and the canyon swing.
+        - article [ref=f1e356]:
+          - time [ref=f1e358]: Jun 2025
+          - generic [ref=f1e359]:
+            - heading [level=3] [ref=f1e360]:
+              - link "NSU Intelligent Robotics Lab" [ref=f1e361] [cursor=pointer]:
+                - /url: /route/2025-niro-lab/
+            - paragraph [ref=f1e363]: I had wanted to work on robots since before university. The lab is the first place the work matched that.
+            - generic [ref=f1e364]:
+              - term [ref=f1e365]: Chose
+              - definition [ref=f1e366]: Dr. Shahnewaz Siddique's offer to join the lab and work on robotics software and AI.
+              - term [ref=f1e367]: Result
+              - definition [ref=f1e368]: "Fundamentals first: control theory, reinforcement learning, SLAM, hardware. Then an LLM agent for a mobile robot with an arm, and vision-language models on Jetson boards. A pursuit-evasion paper in preparation for CoRL 2026. The AI payload for a CubeSat."
+            - list [ref=f1e369]:
+              - listitem [ref=f1e370]:
+                - link "LLM robot task planner" [ref=f1e371] [cursor=pointer]:
+                  - /url: /work/llm-robot-task-planner/
+              - listitem [ref=f1e372]:
+                - link "Pursuit-evasion" [ref=f1e373] [cursor=pointer]:
+                  - /url: /work/safe-rl-pe/
+              - listitem [ref=f1e374]:
+                - link "NSU AI SAT" [ref=f1e375] [cursor=pointer]:
+                  - /url: /work/nsu-ai-sat/
+        - article [ref=f1e376]:
+          - time [ref=f1e378]: "2026"
+          - generic [ref=f1e379]:
+            - heading "Now" [level=3] [ref=f1e380]
+            - paragraph [ref=f1e382]: Updated October 2026.
+            - generic [ref=f1e383]:
+              - term [ref=f1e384]: Result
+              - definition [ref=f1e385]: "Lab: four of the task planner's five demo scenarios pass in simulation. The pursuit-evasion paper is in preparation. The CubeSat goes to engineering model next. A security robot waits for funding. A fixed-wing payload drone is planned. FenloAI: client work continues. Writing: a five-part ROS 2 series in June. Learning: Chinese toward HSK 2."
+  - contentinfo [ref=f1e386]:
+    - generic [ref=f1e387]:
+      - list [ref=f1e388]:
+        - listitem [ref=f1e389]:
+          - link "shoaib6174@gmail.com" [ref=f1e390] [cursor=pointer]:
+            - /url: mailto:shoaib6174@gmail.com
+        - listitem [ref=f1e391]:
+          - link "GitHub" [ref=f1e392] [cursor=pointer]:
+            - /url: https://github.com/shoaib6174
+        - listitem [ref=f1e393]:
+          - link "LinkedIn" [ref=f1e394] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/shoaib6174
+        - listitem [ref=f1e395]:
+          - link "Medium" [ref=f1e396] [cursor=pointer]:
+            - /url: https://medium.com/@shoaib6174
+        - listitem [ref=f1e397]:
+          - link "NIRO Lab" [ref=f1e398] [cursor=pointer]:
+            - /url: https://nirolab.github.io/people?m=mohammad-shoaib
+        - listitem [ref=f1e399]:
+          - link "Resume, PDF" [ref=f1e400] [cursor=pointer]:
+            - /url: /files/pdfs/Shoaib_s_Resume.pdf
+      - paragraph [ref=f1e401]: Mohammad Shoaib, Dhaka. Updated October 2026.

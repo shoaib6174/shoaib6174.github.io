@@ -25,8 +25,21 @@ const series = [
 ---
 
 <Base title="Mohammad Shoaib" description={home.masthead} bodyClass="home">
+  <section class="hero" data-hero aria-label="An instruction and the robot's plan">
+    <p class="hero__m">One instruction, in simulation</p>
+    <p class="hero__prompt"><span data-typed>bring the red cube from room A to room B</span><span class="hero__caret" aria-hidden="true"></span></p>
+    <ol class="hero__plan" aria-label="Plan">
+      <li><span class="act">navigate</span><span>room A</span><span class="ok">done</span></li>
+      <li><span class="act">detect</span><span>red cube</span><span class="ok">found</span></li>
+      <li><span class="act">pick up</span><span>red cube</span><span class="ok">done</span></li>
+      <li><span class="act">navigate</span><span>doorway, then room B</span><span class="ok">done</span></li>
+      <li><span class="act">place</span><span>room B</span><span class="ok">done</span></li>
+    </ol>
+    <p class="hero__note">What a local language model did with that sentence as the planner for a mobile robot with an arm. <a href="/work/llm-robot-task-planner/">The task planner</a>.</p>
+  </section>
+
   <section class="masthead" aria-labelledby="name">
-    <Image class="masthead__photo" src={headshot} alt="Mohammad Shoaib" width="160" densities={[1, 2]} />
+    <Image class="masthead__photo" src={headshot} alt="Mohammad Shoaib" width="224" height="280" densities={[1, 2]} />
     <h1 id="name" class="masthead__name">{home.name}</h1>
     <p class="masthead__lead">{home.masthead}</p>
     <p class="masthead__sub">{home.masthead2} {home.location}.</p>
@@ -66,7 +79,7 @@ const series = [
 
   <section class="section" aria-labelledby="selected">
     <h2 id="selected" class="section__label">Selected work</h2>
-    <div class="cards" data-dimmable>
+    <div class="rows" data-dimmable>
       {work.map((item) => <WorkCard item={item} />)}
     </div>
     <p class="section__more"><a href="/work/">All work</a></p>
@@ -118,5 +131,6 @@ const series = [
     <p class="section__more"><a href="/shelf/">Books, films, trips</a></p>
   </section>
 
+  <script src="../scripts/hero.ts"></script>
   <script src="../scripts/roles.ts"></script>
 </Base>

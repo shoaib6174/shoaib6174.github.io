@@ -28,7 +28,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta name="theme-color" content="#f4f1ea" />
+    <meta name="theme-color" content="#f6f7f4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..600&display=swap"
+    />
     <ClientRouter />
   </head>
   <body class={bodyClass}>

@@ -17,6 +17,7 @@ const areas = [
 
 <Base title="Work" description="Every system Mohammad Shoaib has built, with status and links." wide>
   <header class="page-head">
+    <p class="page-head__span">2019 to now</p>
     <h1>Work</h1>
     <p class="page-head__lead">Everything I have built that I can show. Status on each; links where they exist.</p>
   </header>
@@ -27,7 +28,7 @@ const areas = [
     ))}
   </nav>
 
-  <div class="cards cards--grid" data-filter-target>
+  <div class="rows" data-filter-target>
     {items.map((item) => <WorkCard item={item} />)}
   </div>
 

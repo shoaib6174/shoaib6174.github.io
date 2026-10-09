@@ -15,7 +15,9 @@ const d = entry.data;
 
 <Base title={d.title} description={`${formatDate(d.date)}. ${d.result ?? d.chose ?? ''}`}>
   <article class="detail detail--journey">
-    <JourneyEntry entry={entry} linked={false} />
+    <div class="entries">
+      <JourneyEntry entry={entry} linked={false} />
+    </div>
     {d.imageSlots.length > 0 && (
       <div class="entry__figures">
         {d.imageSlots.map((s) => <Figure alt={s} slot={s} />)}

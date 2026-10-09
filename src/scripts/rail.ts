@@ -1,24 +1,33 @@
-import { activeYear, reducedMotion } from '../lib/ui';
+import { activeYear } from '../lib/ui';
 
-// Journey: the year rail follows scroll, thread buttons dim non-matching entries, entries reveal once.
+// Route: the dimension line points at the entry under the reading line; thread buttons dim the rest.
 function init() {
   const root = document.querySelector<HTMLElement>('[data-journey]');
   if (!root) return;
   const entries = [...root.querySelectorAll<HTMLElement>('.entry')];
-  const years = [...root.querySelectorAll<HTMLElement>('.rail__years li')];
   const buttons = [...root.querySelectorAll<HTMLButtonElement>('[data-thread]')];
 
-  // Year rail
+  let ticking = false;
   const update = () => {
-    const line = window.scrollY + window.innerHeight * 0.35;
-    const tops = entries.map((e) => ({ year: e.dataset.year ?? '', top: e.getBoundingClientRect().top + window.scrollY }));
-    const y = activeYear(tops, line);
-    years.forEach((li) => li.classList.toggle('is-active', li.dataset.year === y));
+    ticking = false;
+    const line = window.scrollY + window.innerHeight * 0.38;
+    const tops = entries.map((e) => ({
+      year: e.id,
+      top: (e.querySelector('.entry__body') as HTMLElement).getBoundingClientRect().top + window.scrollY,
+    }));
+    const id = activeYear(tops, line);
+    entries.forEach((e) => e.classList.toggle('is-active', e.id === id));
+  };
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
   };
   update();
-  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
 
-  // Thread dimming
   let active: string | null = null;
   buttons.forEach((b) =>
     b.addEventListener('click', () => {
@@ -30,17 +39,6 @@ function init() {
       });
     }),
   );
-
-  // Reveal once
-  if (reducedMotion() || !('IntersectionObserver' in window)) {
-    entries.forEach((e) => e.classList.add('is-in'));
-    return;
-  }
-  const io = new IntersectionObserver(
-    (list) => list.forEach((x) => { if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } }),
-    { rootMargin: '0px 0px -10% 0px', threshold: 0.1 },
-  );
-  entries.forEach((e) => io.observe(e));
 }
 
 init();

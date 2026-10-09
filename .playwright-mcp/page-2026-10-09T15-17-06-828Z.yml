@@ -1,0 +1,282 @@
+- generic [active] [ref=f2e1]:
+  - link "Skip to content" [ref=f2e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f2e3]:
+    - navigation "Primary" [ref=f2e4]:
+      - link "Mohammad Shoaib" [ref=f2e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=f2e6]:
+        - listitem [ref=f2e7]:
+          - link "Work" [ref=f2e8] [cursor=pointer]:
+            - /url: /work/
+        - listitem [ref=f2e9]:
+          - link "Route" [ref=f2e10] [cursor=pointer]:
+            - /url: /route/
+        - listitem [ref=f2e11]:
+          - link "Writing" [ref=f2e12] [cursor=pointer]:
+            - /url: /writing/
+        - listitem [ref=f2e13]:
+          - link "Skills" [ref=f2e14] [cursor=pointer]:
+            - /url: /skills/
+        - listitem [ref=f2e15]:
+          - link "Shelf" [ref=f2e16] [cursor=pointer]:
+            - /url: /shelf/
+  - main [ref=f2e17]:
+    - generic [ref=f2e18]:
+      - paragraph [ref=f2e19]: 2019 to now
+      - heading "Work" [level=1] [ref=f2e20]
+      - paragraph [ref=f2e21]: Everything I have built that I can show. Status on each; links where they exist.
+    - navigation "Filter by area" [ref=f2e22]:
+      - link "All" [ref=f2e23] [cursor=pointer]:
+        - /url: /work/
+      - link "Robots" [ref=f2e24] [cursor=pointer]:
+        - /url: /work/?area=robots
+      - link "LLM systems" [ref=f2e25] [cursor=pointer]:
+        - /url: /work/?area=llm
+      - link "Machine learning" [ref=f2e26] [cursor=pointer]:
+        - /url: /work/?area=ml
+      - link "Infrastructure" [ref=f2e27] [cursor=pointer]:
+        - /url: /work/?area=infra
+      - link "Quantum" [ref=f2e28] [cursor=pointer]:
+        - /url: /work/?area=quantum
+      - link "Products" [ref=f2e29] [cursor=pointer]:
+        - /url: /work/?area=product
+    - generic [ref=f2e30]:
+      - article [ref=f2e31]:
+        - paragraph [ref=f2e32]: "2026"
+        - generic [ref=f2e33]:
+          - heading [level=3] [ref=f2e34]:
+            - link "LLM robot task planner" [ref=f2e35] [cursor=pointer]:
+              - /url: /work/llm-robot-task-planner/
+          - paragraph [ref=f2e36]: A language model plans and executes multi-step tasks for a mobile robot with an arm, in simulation.
+          - paragraph [ref=f2e37]: "I wanted to see how far a local language model could go as the planner for a real robot stack. The answer so far: it can decompose a request, call navigation, perception, and manipulation as tools, and replan when a step fails."
+          - generic [ref=f2e38]:
+            - generic [ref=f2e39]: In progress
+            - list [ref=f2e40]:
+              - listitem [ref=f2e41]:
+                - link "Repository" [ref=f2e42] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/llm_robot_task_planner
+      - article [ref=f2e43]:
+        - paragraph [ref=f2e44]: 2025 to now
+        - generic [ref=f2e45]:
+          - heading [level=3] [ref=f2e46]:
+            - link "Vision-language models on robot hardware" [ref=f2e47] [cursor=pointer]:
+              - /url: /work/vlm-perception-edge/
+          - paragraph [ref=f2e48]: Perception and decision pipelines built on vision-language and vision-language-action models, deployed on edge devices.
+          - paragraph [ref=f2e49]: Most of the recent robotics results I read use vision-language models for perception and VLA models for control. The lab's robots run on Jetson boards, so the work is getting those models to run where the robot is, within its power budget.
+          - generic [ref=f2e50]:
+            - generic [ref=f2e51]: In progress
+            - list [ref=f2e52]:
+              - listitem [ref=f2e53]:
+                - link "NIRO Lab" [ref=f2e54] [cursor=pointer]:
+                  - /url: https://nirolab.github.io/
+      - article [ref=f2e55]:
+        - paragraph [ref=f2e56]: 2025 to now
+        - generic [ref=f2e57]:
+          - heading [level=3] [ref=f2e58]:
+            - link "Multi-agent pursuit-evasion with reinforcement learning" [ref=f2e59] [cursor=pointer]:
+              - /url: /work/safe-rl-pe/
+          - paragraph [ref=f2e60]: Adversarial self-play for one-on-one pursuit-evasion under partial observability, with the mechanisms that keep it from collapsing.
+          - paragraph [ref=f2e61]: Standard self-play collapses when the agents cannot see each other. We wanted to know which ingredients keep both policies improving, and whether the result is an equilibrium or only looks like one.
+          - generic [ref=f2e62]:
+            - generic [ref=f2e63]: Paper in preparation
+            - list [ref=f2e64]:
+              - listitem [ref=f2e65]:
+                - link "Repository" [ref=f2e66] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/safe-rl-pe
+              - listitem [ref=f2e67]:
+                - link "Lab project page" [ref=f2e68] [cursor=pointer]:
+                  - /url: https://nirolab.github.io/projects
+      - article [ref=f2e69]:
+        - paragraph [ref=f2e70]: "2024"
+        - generic [ref=f2e71]:
+          - heading [level=3] [ref=f2e72]:
+            - link "Fashion trend research platform" [ref=f2e73] [cursor=pointer]:
+              - /url: /work/nitex-trend-platform/
+          - paragraph [ref=f2e74]: Ingests Instagram photos, tags clothing categories and attributes with a locally deployed vision-language model, and turns tag frequencies into trend signals over time.
+          - paragraph [ref=f2e75]: NITEX wanted trend signals from what people were actually wearing in photos. The hard part was running a vision-language model locally at the volume the pipeline needed, and turning raw tags into something a merchandiser could read.
+          - generic [ref=f2e76]:
+            - generic [ref=f2e77]: Shipped
+            - list [ref=f2e78]:
+              - listitem [ref=f2e79]:
+                - link "NITEX, 2023 to 2024" [ref=f2e80] [cursor=pointer]:
+                  - /url: /route/2023-nitex/
+      - article [ref=f2e81]:
+        - paragraph [ref=f2e82]: "2025"
+        - generic [ref=f2e83]:
+          - heading [level=3] [ref=f2e84]:
+            - link "BotForge" [ref=f2e85] [cursor=pointer]:
+              - /url: /work/botforge/
+          - paragraph [ref=f2e86]: "An AI chatbot and voice-agent platform: document chat with citations, phone agents over Twilio and Vapi, and one inbox across WhatsApp, Telegram, web, and Zapier."
+          - paragraph [ref=f2e87]: "Small businesses kept asking FenloAI for the same things: answer questions from our documents, answer the phone, and do it on every channel we use. BotForge puts them on one backend."
+          - generic [ref=f2e88]:
+            - generic [ref=f2e89]: Shipped
+            - list [ref=f2e90]:
+              - listitem [ref=f2e91]:
+                - link "Repository" [ref=f2e92] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/fenlo-bot
+      - article [ref=f2e93]:
+        - paragraph [ref=f2e94]: "2022"
+        - generic [ref=f2e95]:
+          - heading [level=3] [ref=f2e96]:
+            - link "Video Swin Transformer in TensorFlow 2" [ref=f2e97] [cursor=pointer]:
+              - /url: /work/video-swin-tf2/
+          - paragraph [ref=f2e98]: TensorFlow 2 implementations of the Video Swin Transformer models, weights converted from PyTorch, published on TF Hub and later moved to Kaggle Models.
+          - paragraph [ref=f2e99]: Google Summer of Code 2022 with TensorFlow, mentored by Luiz Gustavo Martins and Sayak Paul. A model that only existed in PyTorch now runs in TensorFlow with the original weights.
+          - generic [ref=f2e100]:
+            - generic [ref=f2e101]: Shipped
+            - list [ref=f2e102]:
+              - listitem [ref=f2e103]:
+                - link "Repository" [ref=f2e104] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/GSOC-22-Video-Swin-Transformers
+              - listitem [ref=f2e105]:
+                - link "Kaggle Models" [ref=f2e106] [cursor=pointer]:
+                  - /url: https://www.kaggle.com/models/kaggle/video-swin-transformer
+      - article [ref=f2e107]:
+        - paragraph [ref=f2e108]: "2023"
+        - generic [ref=f2e109]:
+          - heading [level=3] [ref=f2e110]:
+            - link "GetAudio" [ref=f2e111] [cursor=pointer]:
+              - /url: /work/getaudio/
+          - paragraph [ref=f2e112]: Audio extraction from video as a set of microservices on Azure Kubernetes Service.
+          - paragraph [ref=f2e113]: I wanted to understand Kubernetes by running something real on it.
+          - generic [ref=f2e114]:
+            - generic [ref=f2e115]: Done
+            - list [ref=f2e116]:
+              - listitem [ref=f2e117]:
+                - link "Repository" [ref=f2e118] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/GetAudio
+      - article [ref=f2e119]:
+        - paragraph [ref=f2e120]: "2024"
+        - generic [ref=f2e121]:
+          - heading [level=3] [ref=f2e122]:
+            - link "Order-data extraction pipeline" [ref=f2e123] [cursor=pointer]:
+              - /url: /work/nitex-extraction-pipeline/
+          - paragraph [ref=f2e124]: Extracts structured order data from PDFs for twenty-plus fashion brands, each with its own document format, and returns JSON.
+          - paragraph [ref=f2e125]: Every brand sent orders as a differently laid-out PDF. I tested four OCR services against the real documents, chose one per layout, and shipped it as a service the operations team could call.
+          - generic [ref=f2e126]:
+            - generic [ref=f2e127]: Shipped
+            - list [ref=f2e128]:
+              - listitem [ref=f2e129]:
+                - link "NITEX, 2023 to 2024" [ref=f2e130] [cursor=pointer]:
+                  - /url: /route/2023-nitex/
+      - article [ref=f2e131]:
+        - paragraph [ref=f2e132]: 2025 to now
+        - generic [ref=f2e133]:
+          - heading [level=3] [ref=f2e134]:
+            - link "NSU AI SAT" [ref=f2e135] [cursor=pointer]:
+              - /url: /work/nsu-ai-sat/
+          - paragraph [ref=f2e136]: A 3U CubeSat for on-board detection and tracking of space-resident objects in low Earth orbit. I work on the on-board software and the AI payload.
+          - paragraph [ref=f2e137]: Inference has to happen on the satellite, on a power budget far below a Jetson's.
+          - generic [ref=f2e138]:
+            - generic [ref=f2e139]: In progress
+            - list [ref=f2e140]:
+              - listitem [ref=f2e141]:
+                - link "Lab project page" [ref=f2e142] [cursor=pointer]:
+                  - /url: https://nirolab.github.io/projects
+      - article [ref=f2e143]:
+        - paragraph [ref=f2e144]: "2026"
+        - generic [ref=f2e145]:
+          - heading [level=3] [ref=f2e146]:
+            - link "GuardShield" [ref=f2e147] [cursor=pointer]:
+              - /url: /work/guard-shield/
+          - paragraph [ref=f2e148]: "Safety middleware for language-model applications: an ordered pipeline of guards, circuit breakers per guard, and graceful degradation."
+          - paragraph [ref=f2e149]: Every LLM product I built for a client needed the same input checks. I wanted to build the general version once and understand the failure modes properly.
+          - generic [ref=f2e150]:
+            - generic [ref=f2e151]: In progress
+            - list [ref=f2e152]:
+              - listitem [ref=f2e153]:
+                - link "Repository" [ref=f2e154] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/guard-shield
+      - article [ref=f2e155]:
+        - paragraph [ref=f2e156]: "2024"
+        - generic [ref=f2e157]:
+          - heading [level=3] [ref=f2e158]:
+            - link "TurtleBot3 patrolling" [ref=f2e159] [cursor=pointer]:
+              - /url: /work/turtlebot3-patrolling/
+          - paragraph [ref=f2e160]: A TurtleBot3 patrols four waypoints in Gazebo using Nav2, with behavior trees in C++ for decision-making.
+          - paragraph [ref=f2e161]: The course project for a robotics class with Dr. Shahnewaz Siddique. It led to the offer to join his lab.
+          - generic [ref=f2e162]:
+            - generic [ref=f2e163]: Shipped
+            - list [ref=f2e164]:
+              - listitem [ref=f2e165]:
+                - link "Repository" [ref=f2e166] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/TurtleBot3-Patrolling
+      - article [ref=f2e167]:
+        - paragraph [ref=f2e168]: "2026"
+        - generic [ref=f2e169]:
+          - heading [level=3] [ref=f2e170]:
+            - link "Autonomous security robot for factories" [ref=f2e171] [cursor=pointer]:
+              - /url: /work/security-robot/
+          - paragraph [ref=f2e172]: A patrol robot with fire and gas hazard detection for factory floors, built on the task-planner stack.
+          - paragraph [ref=f2e173]: I did my degree at a textile engineering school. Factory floors in Bangladesh are the first customer I know how to describe.
+          - generic [ref=f2e174]:
+            - generic [ref=f2e175]: Waiting for funding
+            - list [ref=f2e176]:
+              - listitem [ref=f2e177]:
+                - link "Lab project page" [ref=f2e178] [cursor=pointer]:
+                  - /url: https://nirolab.github.io/projects
+      - article [ref=f2e179]:
+        - paragraph [ref=f2e180]: "2023"
+        - generic [ref=f2e181]:
+          - heading [level=3] [ref=f2e182]:
+            - link "Qiskit Treasure Hunt" [ref=f2e183] [cursor=pointer]:
+              - /url: /work/qiskit-treasure-hunt/
+          - paragraph [ref=f2e184]: A card game that teaches how single-qubit gates and measurement change a quantum state.
+          - paragraph [ref=f2e185]: A map you navigate with gate cards makes a quantum state visible in a way the matrices do not.
+          - generic [ref=f2e186]:
+            - generic [ref=f2e187]: Done
+            - list [ref=f2e188]:
+              - listitem [ref=f2e189]:
+                - link "Repository" [ref=f2e190] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/Qiskit-Treasure-Hunt
+      - article [ref=f2e191]:
+        - paragraph [ref=f2e192]: "2026"
+        - generic [ref=f2e193]:
+          - heading [level=3] [ref=f2e194]:
+            - link "HSK vocabulary trainer" [ref=f2e195] [cursor=pointer]:
+              - /url: /work/hsk-vocabs/
+          - paragraph [ref=f2e196]: "A web app for HSK 1 and 2 vocabulary: filter by level, lesson, and topic, flashcards, and quizzes."
+          - paragraph [ref=f2e197]: I am learning Chinese and the apps I tried did not let me drill exactly the lesson I was on. So I built one for myself.
+          - generic [ref=f2e198]:
+            - generic [ref=f2e199]: In progress
+            - list [ref=f2e200]:
+              - listitem [ref=f2e201]:
+                - link "Repository" [ref=f2e202] [cursor=pointer]:
+                  - /url: https://github.com/shoaib6174/hsk-vocabs
+      - article [ref=f2e203]:
+        - paragraph [ref=f2e204]: "2019"
+        - generic [ref=f2e205]:
+          - heading [level=3] [ref=f2e206]:
+            - link "Facial-recognition attendance on a Raspberry Pi" [ref=f2e207] [cursor=pointer]:
+              - /url: /work/attendance-pi-2019/
+          - paragraph [ref=f2e208]: A facial-recognition attendance system on a Raspberry Pi, built in the final days for a friend's Product Design project that was not working.
+          - paragraph [ref=f2e209]: It was the first thing with machine learning in it that I built and that worked.
+          - generic [ref=f2e210]:
+            - generic [ref=f2e211]: Done
+            - list [ref=f2e212]:
+              - listitem [ref=f2e213]:
+                - link "The 2019 entry" [ref=f2e214] [cursor=pointer]:
+                  - /url: /route/2019-attendance/
+  - contentinfo [ref=f2e215]:
+    - generic [ref=f2e216]:
+      - list [ref=f2e217]:
+        - listitem [ref=f2e218]:
+          - link "shoaib6174@gmail.com" [ref=f2e219] [cursor=pointer]:
+            - /url: mailto:shoaib6174@gmail.com
+        - listitem [ref=f2e220]:
+          - link "GitHub" [ref=f2e221] [cursor=pointer]:
+            - /url: https://github.com/shoaib6174
+        - listitem [ref=f2e222]:
+          - link "LinkedIn" [ref=f2e223] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/shoaib6174
+        - listitem [ref=f2e224]:
+          - link "Medium" [ref=f2e225] [cursor=pointer]:
+            - /url: https://medium.com/@shoaib6174
+        - listitem [ref=f2e226]:
+          - link "NIRO Lab" [ref=f2e227] [cursor=pointer]:
+            - /url: https://nirolab.github.io/people?m=mohammad-shoaib
+        - listitem [ref=f2e228]:
+          - link "Resume, PDF" [ref=f2e229] [cursor=pointer]:
+            - /url: /files/pdfs/Shoaib_s_Resume.pdf
+      - paragraph [ref=f2e230]: Mohammad Shoaib, Dhaka. Updated October 2026.

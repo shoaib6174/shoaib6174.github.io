@@ -1,0 +1,361 @@
+- generic [active] [ref=f4e1]:
+  - link "Skip to content" [ref=f4e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f4e3]:
+    - navigation "Primary" [ref=f4e4]:
+      - link "Mohammad Shoaib" [ref=f4e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=f4e6]:
+        - listitem [ref=f4e7]:
+          - link "Work" [ref=f4e8] [cursor=pointer]:
+            - /url: /work/
+        - listitem [ref=f4e9]:
+          - link "Route" [ref=f4e10] [cursor=pointer]:
+            - /url: /route/
+        - listitem [ref=f4e11]:
+          - link "Writing" [ref=f4e12] [cursor=pointer]:
+            - /url: /writing/
+        - listitem [ref=f4e13]:
+          - link "Skills" [ref=f4e14] [cursor=pointer]:
+            - /url: /skills/
+        - listitem [ref=f4e15]:
+          - link "Shelf" [ref=f4e16] [cursor=pointer]:
+            - /url: /shelf/
+  - main [ref=f4e17]:
+    - region "An instruction and the robot's plan" [ref=f4e18]:
+      - paragraph [ref=f4e19]: One instruction, in simulation
+      - paragraph [ref=f4e20]: ">"
+      - list "Plan" [ref=f4e22]:
+        - listitem [ref=f4e23]:
+          - generic [ref=f4e24]: navigate
+          - generic [ref=f4e25]: room A
+          - generic [ref=f4e26]: done
+        - listitem [ref=f4e27]:
+          - generic [ref=f4e28]: detect
+          - generic [ref=f4e29]: red cube
+          - generic [ref=f4e30]: found
+        - listitem [ref=f4e31]:
+          - generic [ref=f4e32]: pick up
+          - generic [ref=f4e33]: red cube
+          - generic [ref=f4e34]: done
+        - listitem [ref=f4e35]:
+          - generic [ref=f4e36]: navigate
+          - generic [ref=f4e37]: doorway, then room B
+          - generic [ref=f4e38]: done
+        - listitem [ref=f4e39]:
+          - generic [ref=f4e40]: place
+          - generic [ref=f4e41]: room B
+          - generic [ref=f4e42]: done
+      - paragraph [ref=f4e43]:
+        - text: What a local language model did with that sentence as the planner for a mobile robot with an arm.
+        - link "The task planner" [ref=f4e44] [cursor=pointer]:
+          - /url: /work/llm-robot-task-planner/
+        - text: .
+    - region [ref=f4e45]:
+      - img "Mohammad Shoaib" [ref=f4e46]
+      - heading "Mohammad Shoaib" [level=1] [ref=f4e47]
+      - paragraph [ref=f4e48]: Research assistant at NSU Intelligent Robotics Lab, where I put language and vision-language models on robots. Co-founder of FenloAI, where we build AI systems for small businesses on contract.
+      - paragraph [ref=f4e49]: Robots are where an AI system has to work end to end in the physical world, and that is what I wanted to build before university. Four math books for school students and twenty-one technical articles along the way. Dhaka, Bangladesh.
+    - region [ref=f4e50]:
+      - heading "Now" [level=2] [ref=f4e51]
+      - list [ref=f4e52]:
+        - listitem [ref=f4e53]: "LLM robot task planner: four of its five demo scenarios pass in simulation. Next, the physical JetRover."
+        - listitem [ref=f4e54]: Vision-language and vision-language-action models on the lab's Jetson boards.
+        - listitem [ref=f4e55]: "Pursuit-evasion with reinforcement learning: paper in preparation for CoRL 2026."
+        - listitem [ref=f4e56]: "NSU AI SAT: the CubeSat's AI payload goes to engineering model next."
+        - listitem [ref=f4e57]: "Learning: Chinese toward HSK 2, optimal control, SLAM."
+    - region [ref=f4e58]:
+      - heading "What I do" [level=2] [ref=f4e59]
+      - generic [ref=f4e60]:
+        - generic [ref=f4e61]:
+          - heading "I build systems." [level=3] [ref=f4e62]
+          - paragraph [ref=f4e63]: Robot stacks, perception on the boards the robots carry, two data platforms for a fashion company, products for clients. I prefer building to theory, and found that out by doing a semester of quantum research.
+        - generic [ref=f4e64]:
+          - heading "I write down what I learn." [level=3] [ref=f4e65]
+          - paragraph [ref=f4e66]: A math book for classes 8 to 12 and a three-volume olympiad series for classes 2 to 7. Twenty-one articles, most written in the week after I learned the thing. A semester as a teaching assistant in computer architecture.
+        - generic [ref=f4e67]:
+          - heading "I bring people together." [level=3] [ref=f4e68]
+          - paragraph [ref=f4e69]: A company I co-founded, and a Qiskit Advocate role since 2023. Before that, a university business club from its first year to vice president, a national competition, and campus teams across fifty universities.
+    - region [ref=f4e70]:
+      - heading "How I got here" [level=2] [ref=f4e71]
+      - list [ref=f4e72]:
+        - listitem [ref=f4e73]:
+          - time [ref=f4e74]: "2017"
+          - link "Textile Engineering at BUTEX, majoring in Industrial and Production Engineering" [ref=f4e75] [cursor=pointer]:
+            - /url: /route/#2017-butex
+        - listitem [ref=f4e76]:
+          - time [ref=f4e77]: "2020"
+          - link "A bootcamp, a MicroMasters, two tracks ruled out" [ref=f4e78] [cursor=pointer]:
+            - /url: /route/#2020-take-it-seriously
+        - listitem [ref=f4e79]:
+          - time [ref=f4e80]: "2022"
+          - link "Google Summer of Code, TensorFlow" [ref=f4e81] [cursor=pointer]:
+            - /url: /route/#2022-gsoc
+        - listitem [ref=f4e82]:
+          - time [ref=f4e83]: Jul 2023
+          - link "MSc in Computer Science, North South University" [ref=f4e84] [cursor=pointer]:
+            - /url: /route/#2023-nsu-msc
+        - listitem [ref=f4e85]:
+          - time [ref=f4e86]: Dec 2023
+          - link "Junior AI engineer, NITEX" [ref=f4e87] [cursor=pointer]:
+            - /url: /route/#2023-nitex
+        - listitem [ref=f4e88]:
+          - time [ref=f4e89]: Jun 2025
+          - link "NSU Intelligent Robotics Lab" [ref=f4e90] [cursor=pointer]:
+            - /url: /route/#2025-niro-lab
+      - paragraph [ref=f4e91]:
+        - link "The full account, with the decisions" [ref=f4e92] [cursor=pointer]:
+          - /url: /route/
+    - region [ref=f4e93]:
+      - heading "Selected work" [level=2] [ref=f4e94]
+      - generic [ref=f4e95]:
+        - article [ref=f4e96]:
+          - paragraph [ref=f4e97]: "2026"
+          - generic [ref=f4e98]:
+            - heading [level=3] [ref=f4e99]:
+              - link "LLM robot task planner" [ref=f4e100] [cursor=pointer]:
+                - /url: /work/llm-robot-task-planner/
+            - paragraph [ref=f4e101]: A language model plans and executes multi-step tasks for a mobile robot with an arm, in simulation.
+            - paragraph [ref=f4e102]: "I wanted to see how far a local language model could go as the planner for a real robot stack. The answer so far: it can decompose a request, call navigation, perception, and manipulation as tools, and replan when a step fails."
+            - generic [ref=f4e103]:
+              - generic [ref=f4e104]: In progress
+              - list [ref=f4e105]:
+                - listitem [ref=f4e106]:
+                  - link "Repository" [ref=f4e107] [cursor=pointer]:
+                    - /url: https://github.com/shoaib6174/llm_robot_task_planner
+        - article [ref=f4e108]:
+          - paragraph [ref=f4e109]: 2025 to now
+          - generic [ref=f4e110]:
+            - heading [level=3] [ref=f4e111]:
+              - link "Vision-language models on robot hardware" [ref=f4e112] [cursor=pointer]:
+                - /url: /work/vlm-perception-edge/
+            - paragraph [ref=f4e113]: Perception and decision pipelines built on vision-language and vision-language-action models, deployed on edge devices.
+            - paragraph [ref=f4e114]: Most of the recent robotics results I read use vision-language models for perception and VLA models for control. The lab's robots run on Jetson boards, so the work is getting those models to run where the robot is, within its power budget.
+            - generic [ref=f4e115]:
+              - generic [ref=f4e116]: In progress
+              - list [ref=f4e117]:
+                - listitem [ref=f4e118]:
+                  - link "NIRO Lab" [ref=f4e119] [cursor=pointer]:
+                    - /url: https://nirolab.github.io/
+        - article [ref=f4e120]:
+          - paragraph [ref=f4e121]: 2025 to now
+          - generic [ref=f4e122]:
+            - heading [level=3] [ref=f4e123]:
+              - link "Multi-agent pursuit-evasion with reinforcement learning" [ref=f4e124] [cursor=pointer]:
+                - /url: /work/safe-rl-pe/
+            - paragraph [ref=f4e125]: Adversarial self-play for one-on-one pursuit-evasion under partial observability, with the mechanisms that keep it from collapsing.
+            - paragraph [ref=f4e126]: Standard self-play collapses when the agents cannot see each other. We wanted to know which ingredients keep both policies improving, and whether the result is an equilibrium or only looks like one.
+            - generic [ref=f4e127]:
+              - generic [ref=f4e128]: Paper in preparation
+              - list [ref=f4e129]:
+                - listitem [ref=f4e130]:
+                  - link "Repository" [ref=f4e131] [cursor=pointer]:
+                    - /url: https://github.com/shoaib6174/safe-rl-pe
+                - listitem [ref=f4e132]:
+                  - link "Lab project page" [ref=f4e133] [cursor=pointer]:
+                    - /url: https://nirolab.github.io/projects
+        - article [ref=f4e134]:
+          - paragraph [ref=f4e135]: "2024"
+          - generic [ref=f4e136]:
+            - heading [level=3] [ref=f4e137]:
+              - link "Fashion trend research platform" [ref=f4e138] [cursor=pointer]:
+                - /url: /work/nitex-trend-platform/
+            - paragraph [ref=f4e139]: Ingests Instagram photos, tags clothing categories and attributes with a locally deployed vision-language model, and turns tag frequencies into trend signals over time.
+            - paragraph [ref=f4e140]: NITEX wanted trend signals from what people were actually wearing in photos. The hard part was running a vision-language model locally at the volume the pipeline needed, and turning raw tags into something a merchandiser could read.
+            - generic [ref=f4e141]:
+              - generic [ref=f4e142]: Shipped
+              - list [ref=f4e143]:
+                - listitem [ref=f4e144]:
+                  - link "NITEX, 2023 to 2024" [ref=f4e145] [cursor=pointer]:
+                    - /url: /route/2023-nitex/
+        - article [ref=f4e146]:
+          - paragraph [ref=f4e147]: "2025"
+          - generic [ref=f4e148]:
+            - heading [level=3] [ref=f4e149]:
+              - link "BotForge" [ref=f4e150] [cursor=pointer]:
+                - /url: /work/botforge/
+            - paragraph [ref=f4e151]: "An AI chatbot and voice-agent platform: document chat with citations, phone agents over Twilio and Vapi, and one inbox across WhatsApp, Telegram, web, and Zapier."
+            - paragraph [ref=f4e152]: "Small businesses kept asking FenloAI for the same things: answer questions from our documents, answer the phone, and do it on every channel we use. BotForge puts them on one backend."
+            - generic [ref=f4e153]:
+              - generic [ref=f4e154]: Shipped
+              - list [ref=f4e155]:
+                - listitem [ref=f4e156]:
+                  - link "Repository" [ref=f4e157] [cursor=pointer]:
+                    - /url: https://github.com/shoaib6174/fenlo-bot
+        - article [ref=f4e158]:
+          - paragraph [ref=f4e159]: "2022"
+          - generic [ref=f4e160]:
+            - heading [level=3] [ref=f4e161]:
+              - link "Video Swin Transformer in TensorFlow 2" [ref=f4e162] [cursor=pointer]:
+                - /url: /work/video-swin-tf2/
+            - paragraph [ref=f4e163]: TensorFlow 2 implementations of the Video Swin Transformer models, weights converted from PyTorch, published on TF Hub and later moved to Kaggle Models.
+            - paragraph [ref=f4e164]: Google Summer of Code 2022 with TensorFlow, mentored by Luiz Gustavo Martins and Sayak Paul. A model that only existed in PyTorch now runs in TensorFlow with the original weights.
+            - generic [ref=f4e165]:
+              - generic [ref=f4e166]: Shipped
+              - list [ref=f4e167]:
+                - listitem [ref=f4e168]:
+                  - link "Repository" [ref=f4e169] [cursor=pointer]:
+                    - /url: https://github.com/shoaib6174/GSOC-22-Video-Swin-Transformers
+                - listitem [ref=f4e170]:
+                  - link "Kaggle Models" [ref=f4e171] [cursor=pointer]:
+                    - /url: https://www.kaggle.com/models/kaggle/video-swin-transformer
+      - paragraph [ref=f4e172]:
+        - link "All work" [ref=f4e173] [cursor=pointer]:
+          - /url: /work/
+    - region [ref=f4e174]:
+      - heading "Skills, with proof" [level=2] [ref=f4e175]
+      - generic [ref=f4e176]:
+        - generic [ref=f4e177]:
+          - heading "Agentic AI on robots" [level=3] [ref=f4e178]
+          - paragraph [ref=f4e179]: LLM task planning, tool-calling agents, LangChain, local models with Ollama, ROS 2 integration, replanning on failure
+          - paragraph [ref=f4e180]:
+            - link "LLM robot task planner" [ref=f4e181] [cursor=pointer]:
+              - /url: /work/llm-robot-task-planner/
+            - text: ","
+            - link "ROS 2 series" [ref=f4e182] [cursor=pointer]:
+              - /url: /writing/#ros-2
+        - generic [ref=f4e183]:
+          - heading "Vision-language models and perception" [level=3] [ref=f4e184]
+          - paragraph [ref=f4e185]: VLM and VLA models, DeepSeek-VL, YOLO, Video Swin, PyTorch, TensorFlow, NVIDIA Triton
+          - paragraph [ref=f4e186]:
+            - link "On robot hardware" [ref=f4e187] [cursor=pointer]:
+              - /url: /work/vlm-perception-edge/
+            - text: ","
+            - link "Trend platform" [ref=f4e188] [cursor=pointer]:
+              - /url: /work/nitex-trend-platform/
+            - text: ","
+            - link "Video Swin in TF2" [ref=f4e189] [cursor=pointer]:
+              - /url: /work/video-swin-tf2/
+        - generic [ref=f4e190]:
+          - heading "Robot software" [level=3] [ref=f4e191]
+          - paragraph [ref=f4e192]: ROS 2, Nav2, MoveIt, ros2_control, Gazebo, Isaac Sim and Isaac Lab, URDF, SLAM, Behavior trees
+          - paragraph [ref=f4e193]:
+            - link "TurtleBot3 patrolling" [ref=f4e194] [cursor=pointer]:
+              - /url: /work/turtlebot3-patrolling/
+            - text: ","
+            - link "Task planner" [ref=f4e195] [cursor=pointer]:
+              - /url: /work/llm-robot-task-planner/
+        - generic [ref=f4e196]:
+          - heading "Control and reinforcement learning" [level=3] [ref=f4e197]
+          - paragraph [ref=f4e198]: NMPC with CasADi, Stable-Baselines3, Gymnasium, PettingZoo, self-play, ablation studies
+          - paragraph [ref=f4e199]:
+            - link "Pursuit-evasion" [ref=f4e200] [cursor=pointer]:
+              - /url: /work/safe-rl-pe/
+            - text: ","
+            - link "CasADi series" [ref=f4e201] [cursor=pointer]:
+              - /url: /writing/#casadi
+        - generic [ref=f4e202]:
+          - heading "Edge devices" [level=3] [ref=f4e203]
+          - paragraph [ref=f4e204]: Jetson Orin, Jetson Xavier NX, Raspberry Pi, OpenCR, on-board inference
+          - paragraph [ref=f4e205]:
+            - link "On robot hardware" [ref=f4e206] [cursor=pointer]:
+              - /url: /work/vlm-perception-edge/
+            - text: ","
+            - link "NSU AI SAT" [ref=f4e207] [cursor=pointer]:
+              - /url: /work/nsu-ai-sat/
+            - text: ","
+            - link "2019 attendance system" [ref=f4e208] [cursor=pointer]:
+              - /url: /work/attendance-pi-2019/
+        - generic [ref=f4e209]:
+          - heading "LLM systems for businesses" [level=3] [ref=f4e210]
+          - paragraph [ref=f4e211]: RAG with citations, voice agents over Twilio and Vapi, guard pipelines, document extraction, n8n and Make automations
+          - paragraph [ref=f4e212]:
+            - link "BotForge" [ref=f4e213] [cursor=pointer]:
+              - /url: /work/botforge/
+            - text: ","
+            - link "GuardShield" [ref=f4e214] [cursor=pointer]:
+              - /url: /work/guard-shield/
+            - text: ","
+            - link "Extraction pipeline" [ref=f4e215] [cursor=pointer]:
+              - /url: /work/nitex-extraction-pipeline/
+        - generic [ref=f4e216]:
+          - heading "Backend and cloud" [level=3] [ref=f4e217]
+          - paragraph [ref=f4e218]: Python, C++, CUDA, TypeScript, FastAPI, PostgreSQL, Elasticsearch, Docker, Kubernetes, AWS ECS, Fargate, Lambda, Azure
+          - paragraph [ref=f4e219]:
+            - link "GetAudio" [ref=f4e220] [cursor=pointer]:
+              - /url: /work/getaudio/
+            - text: ","
+            - link "Extraction pipeline" [ref=f4e221] [cursor=pointer]:
+              - /url: /work/nitex-extraction-pipeline/
+        - generic [ref=f4e222]:
+          - heading "Writing and teaching" [level=3] [ref=f4e223]
+          - paragraph [ref=f4e224]: technical articles, books for school students, teaching assistant, public speaking
+          - paragraph [ref=f4e225]:
+            - link "Four books" [ref=f4e226] [cursor=pointer]:
+              - /url: /writing/#books
+            - text: ","
+            - link "Twenty-one articles" [ref=f4e227] [cursor=pointer]:
+              - /url: /writing/#articles
+            - text: ","
+            - link "Debate, 2017" [ref=f4e228] [cursor=pointer]:
+              - /url: /route/2017-debate-and-club/
+      - paragraph [ref=f4e229]:
+        - link "All skills" [ref=f4e230] [cursor=pointer]:
+          - /url: /skills/
+    - region [ref=f4e231]:
+      - heading "Writing" [level=2] [ref=f4e232]
+      - list [ref=f4e233]:
+        - listitem [ref=f4e234]:
+          - link "Goniter Mojar Prosno O Uttor 2018 · Classes 8 to 12" [ref=f4e235] [cursor=pointer]:
+            - /url: https://www.rokomari.com/book/156334/goniter-mojar-proshno-o-uttor
+            - generic [ref=f4e236]: Goniter Mojar Prosno O Uttor
+            - generic [ref=f4e237]: 2018 · Classes 8 to 12
+        - listitem [ref=f4e238]:
+          - link "Chotoder Gonit Olympiad 1 2022 · Classes 2 to 7" [ref=f4e239] [cursor=pointer]:
+            - /url: https://www.rokomari.com/book/275698/chotoder-gonit-olympiad-1
+            - generic [ref=f4e240]: Chotoder Gonit Olympiad 1
+            - generic [ref=f4e241]: 2022 · Classes 2 to 7
+        - listitem [ref=f4e242]:
+          - link "Chotoder Gonit Olympiad 2 2022 · Classes 2 to 7" [ref=f4e243] [cursor=pointer]:
+            - /url: https://www.rokomari.com/book/275706/chotoder-gonit-olympiad-2
+            - generic [ref=f4e244]: Chotoder Gonit Olympiad 2
+            - generic [ref=f4e245]: 2022 · Classes 2 to 7
+        - listitem [ref=f4e246]:
+          - link "Chotoder Gonit Olympiad 3 2022 · Classes 2 to 7" [ref=f4e247] [cursor=pointer]:
+            - /url: https://www.rokomari.com/book/275708/chotoder-gonit-olympiad-3
+            - generic [ref=f4e248]: Chotoder Gonit Olympiad 3
+            - generic [ref=f4e249]: 2022 · Classes 2 to 7
+      - list [ref=f4e250]:
+        - listitem [ref=f4e251]:
+          - link "ROS 2" [ref=f4e252] [cursor=pointer]:
+            - /url: /writing/#ros-2
+          - text: Five articles in June 2026, plus the version-matching guide.
+        - listitem [ref=f4e253]:
+          - link "CasADi" [ref=f4e254] [cursor=pointer]:
+            - /url: /writing/#casadi
+          - text: Four articles on optimal control, April 2025.
+        - listitem [ref=f4e255]:
+          - link "Qiskit" [ref=f4e256] [cursor=pointer]:
+            - /url: /writing/#qiskit
+          - text: QUBO, Grover, and the certification, 2023.
+      - paragraph [ref=f4e257]:
+        - link "All writing" [ref=f4e258] [cursor=pointer]:
+          - /url: /writing/
+    - region [ref=f4e259]:
+      - heading "Off the clock" [level=2] [ref=f4e260]
+      - paragraph [ref=f4e261]: I read, mostly literature and philosophy now, biographies always. I watch films from anywhere with subtitles. I trekked to Annapurna Base Camp alone in 2025. I am learning Chinese because the robotics papers I read kept coming from China. I support Barcelona and play as Real Madrid in FIFA, because I am not artistic enough to play as Barcelona.
+      - paragraph [ref=f4e262]:
+        - link "Books, films, trips" [ref=f4e263] [cursor=pointer]:
+          - /url: /shelf/
+  - contentinfo [ref=f4e264]:
+    - generic [ref=f4e265]:
+      - list [ref=f4e266]:
+        - listitem [ref=f4e267]:
+          - link "shoaib6174@gmail.com" [ref=f4e268] [cursor=pointer]:
+            - /url: mailto:shoaib6174@gmail.com
+        - listitem [ref=f4e269]:
+          - link "GitHub" [ref=f4e270] [cursor=pointer]:
+            - /url: https://github.com/shoaib6174
+        - listitem [ref=f4e271]:
+          - link "LinkedIn" [ref=f4e272] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/shoaib6174
+        - listitem [ref=f4e273]:
+          - link "Medium" [ref=f4e274] [cursor=pointer]:
+            - /url: https://medium.com/@shoaib6174
+        - listitem [ref=f4e275]:
+          - link "NIRO Lab" [ref=f4e276] [cursor=pointer]:
+            - /url: https://nirolab.github.io/people?m=mohammad-shoaib
+        - listitem [ref=f4e277]:
+          - link "Resume, PDF" [ref=f4e278] [cursor=pointer]:
+            - /url: /files/pdfs/Shoaib_s_Resume.pdf
+      - paragraph [ref=f4e279]: Mohammad Shoaib, Dhaka. Updated October 2026.

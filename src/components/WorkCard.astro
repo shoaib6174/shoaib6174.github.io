@@ -10,17 +10,19 @@ const { item, compact = false } = Astro.props;
 const d = item.data;
 ---
 
-<article class:list={['card', { 'card--compact': compact }]} data-area={d.area} data-role={d.role}>
-  <div class="card__head">
-    <span class="card__years">{d.years}</span>
-    <StatusTag status={d.status} />
+<article class="row" data-area={d.area} data-role={d.role}>
+  <p class="row__years">{d.years}</p>
+  <div class="row__body">
+    <h3 class="row__title"><a href={`/work/${item.id}/`}>{d.title}</a></h3>
+    <p class="row__summary">{d.summary}</p>
+    {!compact && <p class="row__why">{d.why}</p>}
+    <div class="row__foot">
+      <StatusTag status={d.status} />
+      <ul>
+        {d.links.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </div>
   </div>
-  <h3 class="card__title"><a href={`/work/${item.id}/`}>{d.title}</a></h3>
-  <p class="card__summary">{d.summary}</p>
-  {!compact && <p class="card__why">{d.why}</p>}
-  <ul class="card__links">
-    {d.links.map((l) => (
-      <li><a href={l.href}>{l.label}</a></li>
-    ))}
-  </ul>
 </article>
