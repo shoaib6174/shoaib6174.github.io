@@ -1,6 +1,6 @@
 ---
 title: "Vision-language models on robot hardware"
-years: "2025 \u2013 now"
+years: "2025 to now"
 area: "robots"
 role: "build"
 status: "running"
@@ -22,6 +22,6 @@ order: 2
 coverSlot: "Photo: a lab robot with a Jetson board"
 ---
 
-At NSU Intelligent Robotics Lab I work on perception and decision-making pipelines that run on the robot: vision-language models for scene understanding, vision-language-action models for control, and the ROS 2 plumbing between them and the hardware. Simulation in Isaac Sim and Isaac Lab, deployment on Jetson Orin, Xavier NX, Raspberry Pi, and OpenCR boards.
+At NSU Intelligent Robotics Lab I work on perception and decision-making pipelines that run on the robot. Vision-language models for scene understanding, vision-language-action models for control, and the ROS 2 plumbing between them and the hardware. Simulation in Isaac Sim and Isaac Lab, deployment on Jetson Orin, Xavier NX, Raspberry Pi, and OpenCR boards.
 
 Before any of this I spent the first months in the lab on fundamentals I had skipped: control theory and optimal control, reinforcement learning, SLAM, and the hardware itself.

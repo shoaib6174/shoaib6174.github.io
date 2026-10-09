@@ -15,4 +15,4 @@ links:
 order: 13
 ---
 
-The player starts at the zero state and uses a hand of cards, each a gate or a measurement, to reach a target state as many times as possible in a hundred plays. The target moves when reached. Built during the year I spent on quantum computing.
+The player starts at the zero state and holds a hand of cards, each a gate or a measurement. The aim is to reach a target state as many times as possible in a hundred plays. The target moves when reached. Built during the year I spent on quantum computing.

@@ -51,6 +51,19 @@ const series = [
     </div>
   </section>
 
+  <section class="section" aria-labelledby="route">
+    <h2 id="route" class="section__label">How I got here</h2>
+    <ol class="route">
+      {route.map((e) => (
+        <li>
+          <time datetime={e.data.date}>{formatDate(e.data.date)}</time>
+          <a href={`/route/#${e.id}`}>{e.data.title}</a>
+        </li>
+      ))}
+    </ol>
+    <p class="section__more"><a href="/route/">The full account, with the decisions</a></p>
+  </section>
+
   <section class="section" aria-labelledby="selected">
     <h2 id="selected" class="section__label">Selected work</h2>
     <div class="cards" data-dimmable>
@@ -97,19 +110,6 @@ const series = [
       ))}
     </ul>
     <p class="section__more"><a href="/writing/">All writing</a></p>
-  </section>
-
-  <section class="section" aria-labelledby="route">
-    <h2 id="route" class="section__label">How I got here</h2>
-    <ol class="route">
-      {route.map((e) => (
-        <li>
-          <time datetime={e.data.date}>{formatDate(e.data.date)}</time>
-          <a href={`/journey/#${e.id}`}>{e.data.title}</a>
-        </li>
-      ))}
-    </ol>
-    <p class="section__more"><a href="/journey/">The full account, with the decisions</a></p>
   </section>
 
   <section class="section" aria-labelledby="offclock">

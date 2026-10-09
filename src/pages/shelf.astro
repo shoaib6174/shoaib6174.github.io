@@ -40,7 +40,7 @@ const lines = by('line');
     <ul class="shelf-list" data-films>
       {films.map((f) => (
         <li data-year={f.data.year} data-country={f.data.country}>
-          <strong>{f.data.title}</strong><span>{f.data.year} · {f.data.country}{f.data.note ? ` · ${f.data.note}` : ''}</span>
+          <strong>{f.data.title}</strong><span>{[f.data.year, f.data.country, f.data.note].filter(Boolean).join(', ')}</span>
         </li>
       ))}
     </ul>

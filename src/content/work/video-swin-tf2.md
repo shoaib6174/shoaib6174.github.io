@@ -20,4 +20,4 @@ featured: true
 order: 6
 ---
 
-The work covered the model implementations, a weight-conversion notebook from the PyTorch checkpoints, fine-tuning notebooks on UCF101, and a cosine-decay-with-warm-up learning rate schedule. TF Hub published the feature extractors; when TF Hub moved to Kaggle Models the collection moved with it, under the Kaggle account. 2,636 downloads as of October 2026.
+The work covered the model implementations, a weight-conversion notebook from the PyTorch checkpoints, fine-tuning notebooks on UCF101, and a cosine-decay-with-warm-up learning rate schedule. TF Hub published the feature extractors. When TF Hub moved to Kaggle Models, the collection moved with it under the Kaggle account. 2,636 downloads as of October 2026.

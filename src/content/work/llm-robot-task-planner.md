@@ -5,14 +5,14 @@ area: "robots"
 role: "build"
 status: "running"
 summary: "A language model plans and executes multi-step tasks for a mobile robot with an arm, in simulation."
-why: "I wanted to see how far a local language model could go as the planner for a real robot stack, not a toy. The answer so far: it can decompose a request, call navigation, perception, and manipulation as tools, and replan when a step fails."
+why: "I wanted to see how far a local language model could go as the planner for a real robot stack. The answer so far: it can decompose a request, call navigation, perception, and manipulation as tools, and replan when a step fails."
 stack:
   - "ROS 2"
   - "Nav2"
   - "YOLO"
   - "Gazebo"
   - "LangChain"
-  - "qwen2.5 via Ollama"
+  - "Qwen2.5 via Ollama"
   - "JetRover"
 links:
   - label: "Repository"
@@ -22,8 +22,8 @@ order: 1
 coverSlot: "Demo: the robot fetching the red cube from room A to room B"
 ---
 
-Give it "bring the red cube from room A to room B" and the agent navigates to room A with Nav2, finds the cube with YOLO, picks it up, drives to room B, and places it. If the cube is not where it expected, it searches the other room and replans.
+Give it "bring the red cube from room A to room B". The agent navigates to room A with Nav2, finds the cube with YOLO, picks it up, drives to room B, and places it. If the cube is not where it expected, it searches the other room and replans.
 
-Four of five demo scenarios pass. The one that does not, moving all cubes at once, fails on localisation drift after repeated rotation scans, which is a known AMCL limitation and the next thing to fix.
+Four of five demo scenarios pass. The one that does not, moving all cubes at once, fails on localisation drift after repeated rotation scans. That is a known AMCL limitation and the next thing to fix.
 
 The same software and agent architecture is the base for the factory security robot concept. Phase 2 is the physical JetRover.

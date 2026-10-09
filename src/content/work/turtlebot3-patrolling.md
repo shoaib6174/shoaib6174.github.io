@@ -19,4 +19,4 @@ links:
 order: 11
 ---
 
-A practical introduction to autonomous navigation in ROS 2: launch files for the simulation, Nav2 for path planning, a behavior tree for the patrol logic, and both Python and C++ packages in one workspace.
+Launch files for the simulation, Nav2 for path planning, a behavior tree for the patrol logic, and Python and C++ packages in one workspace.

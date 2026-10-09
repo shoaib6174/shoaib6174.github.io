@@ -78,7 +78,7 @@ Spent a deliberate stretch getting the fundamentals right before building: onlin
 | Multi-Agent Pursuit-Evasion Game (lab project, Oct 2025 – present) | Adversarial self-play RL under partial observability. Paper targeting CoRL 2026. Repo: `safe-rl-pe`, 736+ tests, 40+ runs across two lab GPU machines. Listed on the lab site with Shoaib on it. |
 | Autonomous security robot for factories | Concept done, patrols with fire and gas hazard detection. **Waiting for funding.** Textile-factory floors are the obvious first customer, which closes a loop with facet 4. |
 | NSU AI SAT, a 3U CubeSat for on-board detection and tracking of space-resident objects in LEO | On-board software and AI payload. Detailed design phase done. **Moving to engineering model soon.** `[?]` partner institutions (lab site mentions APSCO in news)? |
-| Fixed-wing payload drone | **Planned.** Likely the lab's Agriculture Monitoring UAV. `[?]` confirm |
+| Fixed-wing payload drone | **Planned**, per Shoaib (2026-10-09). Possibly the lab's Agriculture Monitoring UAV; the site says only that it is planned. |
 | Edge deployment | AI models on Jetson Orin, Xavier NX, Raspberry Pi, OpenCR. |
 
 **Why robots.** Not a single decision. The realisation at NSU that he prefers building systems to theory, plus a robotics course that turned into a project, plus a faculty member who noticed. Robotics is where AI becomes a system you can watch move, which is the "build things" preference and the 2017 mechanical engineering wish landing in the same place.
@@ -354,3 +354,26 @@ All URLs in this file were fetched. Results:
 ## GitHub
 
 Full audit with keep / archive / delete verdicts: `docs/github-audit.md`. Lab profile at https://nirolab.github.io/people lists him as Research Assistant with tags Multi-modal Models, Computer Vision, Reinforcement Learning, Robotic Manipulation.
+
+## Numbers sourced from repositories (verified 2026-10-09)
+
+- **Four of five demo scenarios pass** for the LLM robot task planner: `docs/demo_results.md` in `shoaib6174/llm_robot_task_planner`. Scenarios 1, 2, 4, 5 pass; scenario 3 (multi-step cleanup) is partial, AMCL drift after repeated rotation scans.
+- **Self-play stable past 10 million steps** and **capture rate collapses to 0% without the visibility reward**: README of `shoaib6174/safe-rl-pe`, sections "Stabilization Mechanisms" and "Results Snapshot" (ABL-1).
+- **736+ unit tests, 40+ training runs, two lab GPU machines, 36 papers reviewed, paper targeting CoRL 2026**: same README.
+- **A hundred plays of cards** in Qiskit Treasure Hunt: README of `shoaib6174/Qiskit-Treasure-Hunt`.
+- **Local model qwen2.5:7b via Ollama** for the task planner: `docs/demo_results.md`, config column.
+
+- **Twenty-one articles** is the site's count: 19 on Medium plus the LinkedIn essay and the No-Code ML series on GitHub.
+- **TurtleBot3 patrols four waypoints**: README of `shoaib6174/TurtleBot3-Patrolling`.
+- **GuardShield guard order and three degradation levels**: README of `shoaib6174/guard-shield`.
+- **BotForge features** (citations and knowledge-gap flag, transcription, sentiment, escalation, tracing and evaluation): README of `shoaib6174/fenlo-bot`.
+- **GetAudio services** (gateway, auth, converter, JWT, RabbitMQ, PVC): README of `shoaib6174/GetAudio`.
+- **HSK vocabulary trainer** (HSK 1 and 2, filters, flashcards, quiz, React/TypeScript/Vite/Tailwind): README of `shoaib6174/hsk-vocabs`.
+- **Qiskit Treasure Hunt** gameplay: README of `shoaib6174/Qiskit-Treasure-Hunt`.
+- **NITEX extraction pipeline OCR services** (Azure Document Intelligence, Google Cloud Vision, Amazon Textract, Tesseract) and trend platform tools (NVIDIA Triton, Elasticsearch, Instaloader): the old site's Experiences page, written by Shoaib.
+
+## Link check additions (2026-10-09)
+
+- https://nirolab.github.io/projects and /people render in a browser (single-page app); verified by rendering.
+- https://www.linkedin.com/company/nitex returns 200.
+- GitHub repositories under shoaib6174 referenced by the site were each opened during the GitHub audit.

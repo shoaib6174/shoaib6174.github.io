@@ -5,7 +5,7 @@ threads:
   - "build"
 onRoute: true
 chose: "Dr. Shahnewaz Siddique's offer to join the lab and work on robotics software and AI."
-result: "Fundamentals first: control theory, reinforcement learning, SLAM, hardware. Then an LLM agent for a mobile robot with an arm, vision-language models on Jetson boards, a pursuit-evasion paper in preparation for CoRL 2026, and the AI payload for a CubeSat."
+result: "Fundamentals first: control theory, reinforcement learning, SLAM, hardware. Then an LLM agent for a mobile robot with an arm, and vision-language models on Jetson boards. A pursuit-evasion paper in preparation for CoRL 2026. The AI payload for a CubeSat."
 proof:
   - label: "LLM robot task planner"
     href: "/work/llm-robot-task-planner/"
@@ -15,4 +15,4 @@ proof:
     href: "/work/nsu-ai-sat/"
 ---
 
-The work I had wanted to do since before university, by a long route.
+I had wanted to work on robots since before university. The lab is the first place the work matched that.

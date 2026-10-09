@@ -35,7 +35,7 @@
       "Video Swin",
       "PyTorch",
       "TensorFlow",
-      "Nvidia Triton"
+      "NVIDIA Triton"
     ],
     "proof": [
       {
@@ -226,7 +226,7 @@
     "proof": [
       {
         "label": "Teaching assistant, 2024",
-        "href": "/journey/2024-back-to-nsu/"
+        "href": "/route/2024-back-to-nsu/"
       }
     ]
   },
@@ -252,7 +252,7 @@
       },
       {
         "label": "Debate, 2017",
-        "href": "/journey/2017-debate-and-club/"
+        "href": "/route/2017-debate-and-club/"
       }
     ]
   },
@@ -270,8 +270,8 @@
     ],
     "proof": [
       {
-        "label": "2020 on the Journey page",
-        "href": "/journey/2020-take-it-seriously/"
+        "label": "The 2020 entry",
+        "href": "/route/2020-take-it-seriously/"
       }
     ]
   },
@@ -284,7 +284,7 @@
       "Bengali, native",
       "English",
       "Chinese, HSK 1",
-      "Hindi, understanding"
+      "Hindi, proficient understanding"
     ],
     "proof": [
       {
@@ -293,7 +293,7 @@
       },
       {
         "label": "Yunnan University, 2024",
-        "href": "/journey/2024-kunming/"
+        "href": "/route/2024-kunming/"
       }
     ]
   }

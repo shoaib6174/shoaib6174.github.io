@@ -7,7 +7,7 @@ const dateStr = z.string().regex(/^\d{4}(-\d{2})?$/, 'date must be YYYY or YYYY-
 
 export const AREAS = ['robots', 'llm', 'ml', 'infra', 'quantum', 'product'] as const;
 export const ROLES = ['build', 'explain', 'organise'] as const;
-export const THREADS = ['build', 'explain', 'organise', 'studied'] as const;
+export const THREADS = ['build', 'explain', 'organise', 'studied', 'life'] as const;
 export const STATUSES = [
   'running', 'shipped', 'paper-in-preparation', 'waiting-for-funding', 'planned', 'concept', 'closed',
 ] as const;
@@ -63,7 +63,7 @@ const articles = defineCollection({
   schema: z.object({
     id: z.string(),
     title: z.string(),
-    url: z.string().url(),
+    url: z.string().url().optional(),
     date: dateStr,
     series: z.string(),
     views: z.number().optional(),

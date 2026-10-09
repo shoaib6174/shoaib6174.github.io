@@ -24,7 +24,7 @@ const hasDetail = d.images.length > 0 || d.imageSlots.length > 0 || d.proof.leng
   </div>
   <div class="entry__body">
     <h3 class="entry__title">
-      {linked && hasDetail ? <a href={`/journey/${entry.id}/`}>{d.title}</a> : d.title}
+      {linked && hasDetail ? <a href={`/route/${entry.id}/`}>{d.title}</a> : d.title}
     </h3>
     {withBody && (
       <div class="entry__text">

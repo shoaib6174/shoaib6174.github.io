@@ -16,7 +16,6 @@ const bySeries = seriesOrder.map((s) => ({
   id: s.toLowerCase().replace(/\s+/g, '-'),
   items: articles.filter((a) => a.data.series === s),
 }));
-const profile = 'https://medium.com/@shoaib6174';
 const fmt = (n?: number) => (n == null ? '' : n >= 1000 ? `${(n / 1000).toFixed(1).replace(/\.0$/, '')}K` : String(n));
 const minDate = Math.min(...articles.map((a) => sortKey(a.data.date)));
 const maxDate = Math.max(...articles.map((a) => sortKey(a.data.date)));
@@ -80,11 +79,11 @@ const pos = (d: string) => {
         <ul class="articles">
           {s.items.map((a) => (
             <li class="article">
-              <a href={a.data.url}>{a.data.title}</a>
+              {a.data.url ? <a href={a.data.url}>{a.data.title}</a> : <span>{a.data.title}</span>}
               <span class="article__meta">
                 <time datetime={a.data.date}>{formatDate(a.data.date)}</time>
                 {a.data.views != null && <span>{fmt(a.data.views)} views</span>}
-                {a.data.url === profile && <span class="article__note">link to follow</span>}
+                {!a.data.url && <span class="article__note">link to follow</span>}
               </span>
             </li>
           ))}

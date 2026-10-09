@@ -18,4 +18,4 @@ links:
 order: 10
 ---
 
-Guards run cheapest first: rate limiting, regex patterns, toxicity and prompt-injection classifiers, PII detection, then zero-shot topic filtering. The pipeline short-circuits on the first block. Each guard has a circuit breaker and a fail-open or fail-closed setting, and the whole thing degrades in three levels when models are unhealthy. Core pipeline and ML guards are implemented; production hardening is in progress.
+Guards run cheapest first: rate limiting, regex patterns, toxicity and prompt-injection classifiers, PII detection, then zero-shot topic filtering. The pipeline short-circuits on the first block. Each guard has a circuit breaker and a fail-open or fail-closed setting, and the whole thing degrades in three levels when models are unhealthy. The core pipeline and ML guards are implemented. Production hardening is in progress.

@@ -36,7 +36,7 @@
   },
   {
     "id": "ros2-versions",
-    "title": "How to Match ROS 2, Gazebo, and PyTorch CUDA Versions, for Any Ubuntu and GPU",
+    "title": "How to Match ROS 2, Gazebo, and PyTorch CUDA Versions for Any Ubuntu and GPU",
     "url": "https://medium.com/@shoaib6174/how-to-match-ros-2-gazebo-and-pytorch-cuda-versions-for-any-ubuntu-and-gpu-fbfc7bb8ba23",
     "date": "2026-03",
     "series": "ROS 2",
@@ -82,7 +82,6 @@
   {
     "id": "algo-astar",
     "title": "A* algorithm in short, for revision",
-    "url": "https://medium.com/@shoaib6174",
     "date": "2023-09",
     "series": "Algorithms",
     "views": 469,
@@ -91,7 +90,6 @@
   {
     "id": "algo-dijkstra",
     "title": "Dijkstra's algorithm in short, for revision",
-    "url": "https://medium.com/@shoaib6174",
     "date": "2023-09",
     "series": "Algorithms",
     "views": 178,
@@ -100,7 +98,6 @@
   {
     "id": "algo-kruskal",
     "title": "Kruskal's algorithm, for revision",
-    "url": "https://medium.com/@shoaib6174",
     "date": "2023-09",
     "series": "Algorithms",
     "views": 131,
@@ -116,7 +113,6 @@
   {
     "id": "qiskit-grover",
     "title": "How to Solve Graph Coloring Problems Using Qiskit's Grover Algorithm",
-    "url": "https://medium.com/@shoaib6174",
     "date": "2023-07",
     "series": "Qiskit",
     "views": 902,
@@ -159,7 +155,6 @@
   {
     "id": "azure-ds",
     "title": "How I Became Microsoft Certified: Azure Data Scientist Associate",
-    "url": "https://medium.com/@shoaib6174",
     "date": "2021-07",
     "series": "Azure",
     "views": 218,

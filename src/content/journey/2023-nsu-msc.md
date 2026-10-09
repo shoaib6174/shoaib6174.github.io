@@ -6,6 +6,7 @@ threads:
 chose: "To enrol and work with a faculty member doing quantum computing research."
 ruledOut: "Theoretical research, after one semester. I had enjoyed learning quantum computing. Doing the research, I found I wanted to build systems instead."
 result: "Stayed for the degree. Left the quantum track."
+onRoute: true
 ---
 
-One semester was enough to know. The learning phase of quantum computing and quantum machine learning had been the best part; the theoretical work was not what I wanted to spend years on.
+After one semester I knew. Learning quantum computing had been the best part. The theoretical work was not what I wanted to spend years on.

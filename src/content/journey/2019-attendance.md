@@ -1,8 +1,9 @@
 ---
 date: "2019"
-title: "A face-recognition attendance system, on a Raspberry Pi"
+title: "A facial-recognition attendance system, on a Raspberry Pi"
 threads:
   - "build"
+chose: "To build it with them over the final days before their deadline."
 result: "The first thing I built with machine learning in it that worked."
 proof:
   - label: "Work entry"

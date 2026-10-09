@@ -2,12 +2,12 @@
 date: "2024-10"
 title: "Two weeks at Yunnan University"
 threads:
-  - "studied"
+  - "life"
 startedBy: "Robotics papers from Chinese universities"
-chose: "The China-South Asia Bridge program in Kunming: classes on Chinese culture, traditions, the political system, and development; lab tours; museums."
-result: "Started learning Chinese. HSK 1 passed. Built a vocabulary trainer for HSK 2."
+chose: "The China-South Asia Bridge program in Kunming: classes on Chinese culture, traditions, the political system, and development, plus lab tours and museums."
+result: "Started learning Chinese. HSK 1 passed."
 proof:
-  - label: "HSK vocabulary trainer"
+  - label: "HSK vocabulary trainer, 2026"
     href: "/work/hsk-vocabs/"
 imageSlots:
   - "Photo: Kunming, Yunnan University"

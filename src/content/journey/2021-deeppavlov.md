@@ -3,7 +3,8 @@ date: "2021-12"
 title: "Research intern, DeepPavlov.ai"
 threads:
   - "build"
-result: "Dialogue graphs from the MultiWOZ dataset using tf-idf, topic modeling, x-means, and DBSCAN. Four months, December 2021 to April 2022."
+chose: "A research internship in natural language processing, my first research role."
+result: "Dialogue graphs from the MultiWOZ dataset using tf-idf, topic modeling, x-means, and DBSCAN."
 proof:
   - label: "Intent classification"
     href: "https://github.com/shoaib6174/MultiWOZ-Intent-Classification"

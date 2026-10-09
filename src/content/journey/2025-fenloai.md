@@ -4,8 +4,8 @@ title: "Co-founder, FenloAI"
 threads:
   - "organise"
   - "build"
-chose: "Contract AI work with two co-founders, alongside the lab, to stay in contact with businesses that need things built."
-result: "An AI chatbot and voice-agent platform, a workforce management platform, a research tool for LinkedIn data. All for clients."
+chose: "Contract AI work with two co-founders, to stay in contact with businesses that need things built."
+result: "An AI chatbot and voice-agent platform, a workforce management platform, a data-collection tool for LinkedIn. All for clients."
 proof:
   - label: "fenloai.com"
     href: "https://fenloai.com"
