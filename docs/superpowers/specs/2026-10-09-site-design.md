@@ -77,6 +77,10 @@ Governed by `docs/story/portrayal.md` and `docs/story/evaluation-guide.md`. In s
 - Performance: no framework, under 60 KB of script total, Lighthouse performance 95+ on mobile.
 - Accessibility: keyboard reachable interactions, visible focus, alt on every image, colour contrast AA.
 
+## Mobile
+
+Designed as a separate pass after the desktop direction is chosen. The phone layout may differ from desktop in section order, navigation, and which interactions survive. Breakpoint at 760 px. Every page must work at 390 px with a 16 px gutter and no horizontal scroll.
+
 ## Out of scope for the first version
 
 Dark mode, blog hosting (articles stay on Medium), comments, analytics, search, a Bengali version.

@@ -55,9 +55,22 @@ The persona stays: builds systems, explains what he learns, brings people togeth
 
 Weighting avoids the trap plan C named: three verbs in the nav become a tagline.
 
+## Traits to convey, by showing only (Shoaib, 2026-10-09)
+
+Never named on the page. Each has a device that makes a reader conclude it.
+
+| Trait | Weight | How the site shows it |
+|---|---|---|
+| **Curiosity** | strong | Every turn began with something read: the C book, *Life 3.0*, Feynman, the robotics papers that led to Chinese. The Journey entries name the book or paper that started each one. A **"Currently learning"** block on Home (Chinese toward HSK 2, control theory, SLAM, whatever is true that quarter) is the live signal. The Shelf page is in the main nav, not a footer link. Films from seven countries and eight decades, listed. Quantum summer school on a scholarship. Two weeks at Yunnan University. |
+| **Range of knowledge** | medium | The skills table spans robot stacks, cloud, LLM systems, quantum, supply chain, and a second language, each with proof. Work filters show six areas. The Shelf's non-fiction list runs from Taleb to Dazai. Never summarised as "broad"; the reader counts. |
+| **Entrepreneurial spirit** | medium | Business club from founding to vice president, TEXBIZ, YSI across fifty universities, then FenloAI with real clients and fixed pricing. Presented as a continuous line on Journey and as the third role on Home. NITEX described by what shipped for the business. |
+| **Analytical mind** | medium | Eliminations written as experiments with outcomes (tried, learned, ruled out). Research described by ablations, test counts, and decision logs. The Writing page's tick strip shows learn-then-write as a method. The 2023 MSc decision stated as a conclusion from evidence. |
+
+Rule: if a reviewer finds the word curious, broad, entrepreneurial, or analytical describing Shoaib anywhere on the site, it is a hard fail. The devices above do the work.
+
 ## What he is, in one paragraph, for internal use only
 
-An engineer who learned mostly outside the curriculum, who tries things to find out whether they fit and drops them when they do not, who has shipped real systems for a startup, a lab, and clients, who writes down what he learns for the next person, and who is now applying LLM and vision-language models to robots on real hardware. The site must make a careful reader arrive at that paragraph without the site ever saying it.
+An engineer who reads his way into things and then learns them properly, who learned mostly outside the curriculum, who tries things to find out whether they fit and drops them when they do not, who has shipped real systems for a startup, a lab, and clients, who writes down what he learns for the next person, and who is now applying LLM and vision-language models to robots on real hardware. The site must make a careful reader arrive at that paragraph without the site ever saying it.
 
 ## Wording to avoid, and the replacement
 

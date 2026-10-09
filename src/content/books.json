@@ -1,0 +1,39 @@
+[
+  {
+    "id": "gmpu-2018",
+    "title": "Goniter Mojar Prosno O Uttor",
+    "gloss": "Interesting Math Questions and Answers",
+    "year": 2018,
+    "publisher": "Oddhoyon Prokashoni",
+    "url": "https://www.rokomari.com/book/156334/goniter-mojar-proshno-o-uttor",
+    "audience": "Classes 8 to 12"
+  },
+  {
+    "id": "cgo-1",
+    "title": "Chotoder Gonit Olympiad 1",
+    "gloss": "Children's Math Olympiad, volume 1",
+    "year": 2022,
+    "publisher": "Tamralipi Prokashoni",
+    "url": "https://www.rokomari.com/book/275698/chotoder-gonit-olympiad-1",
+    "audience": "Classes 2 to 7",
+    "note": "A best seller in the math olympiad category on Rokomari."
+  },
+  {
+    "id": "cgo-2",
+    "title": "Chotoder Gonit Olympiad 2",
+    "gloss": "Children's Math Olympiad, volume 2",
+    "year": 2022,
+    "publisher": "Tamralipi Prokashoni",
+    "url": "https://www.rokomari.com/book/275706/chotoder-gonit-olympiad-2",
+    "audience": "Classes 2 to 7"
+  },
+  {
+    "id": "cgo-3",
+    "title": "Chotoder Gonit Olympiad 3",
+    "gloss": "Children's Math Olympiad, volume 3",
+    "year": 2022,
+    "publisher": "Tamralipi Prokashoni",
+    "url": "https://www.rokomari.com/book/275708/chotoder-gonit-olympiad-3",
+    "audience": "Classes 2 to 7"
+  }
+]

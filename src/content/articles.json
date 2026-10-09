@@ -1,0 +1,177 @@
+[
+  {
+    "id": "ros2-urdf",
+    "title": "Where a Robot Lives in Space: The URDF Mental Model I Wish I Had on Day One",
+    "url": "https://medium.com/@shoaib6174/where-a-robot-lives-in-space-the-urdf-mental-model-i-wish-i-had-on-day-one-537aac323d1e",
+    "date": "2026-06",
+    "series": "ROS 2"
+  },
+  {
+    "id": "ros2-anatomy",
+    "title": "The Anatomy of a ROS2 Project: How Everything Connects",
+    "url": "https://medium.com/@shoaib6174/the-anatomy-of-a-ros2-project-how-everything-connects-62bb07c59b72",
+    "date": "2026-06",
+    "series": "ROS 2"
+  },
+  {
+    "id": "ros2-survival",
+    "title": "What I Wish I Knew Before Installing ROS2: A Survival Guide to Build Tools, Shells, and Executables",
+    "url": "https://medium.com/@shoaib6174/what-i-wish-i-knew-before-installing-ros2-a-survival-guide-to-build-tools-shells-and-executables-75e50f08ba33",
+    "date": "2026-06",
+    "series": "ROS 2"
+  },
+  {
+    "id": "ros2-zero",
+    "title": "ROS2 from Zero: A No-Code Reference for Beginners",
+    "url": "https://medium.com/@shoaib6174/ros2-from-zero-a-no-code-reference-for-beginners-d14c0368d53c",
+    "date": "2026-06",
+    "series": "ROS 2"
+  },
+  {
+    "id": "ros2-wrong",
+    "title": "What I Got Wrong About ROS2 (And the Mental Model That Finally Clicked)",
+    "url": "https://medium.com/@shoaib6174/what-i-got-wrong-about-ros2-and-the-mental-model-that-finally-clicked-eea090e69d62",
+    "date": "2026-06",
+    "series": "ROS 2"
+  },
+  {
+    "id": "ros2-versions",
+    "title": "How to Match ROS 2, Gazebo, and PyTorch CUDA Versions, for Any Ubuntu and GPU",
+    "url": "https://medium.com/@shoaib6174/how-to-match-ros-2-gazebo-and-pytorch-cuda-versions-for-any-ubuntu-and-gpu-fbfc7bb8ba23",
+    "date": "2026-03",
+    "series": "ROS 2",
+    "views": 73,
+    "reads": 30
+  },
+  {
+    "id": "casadi-nmpc",
+    "title": "Implementing NMPC with CasADi: Cart-Pole System",
+    "url": "https://medium.com/@shoaib6174/implementing-nmpc-with-casadi-cart-pole-system-62f1d72f2efa",
+    "date": "2025-04",
+    "series": "CasADi",
+    "views": 1200,
+    "reads": 711
+  },
+  {
+    "id": "casadi-pendulum",
+    "title": "Modeling Dynamics with CasADi: Simulation of a Simple Pendulum",
+    "url": "https://medium.com/@shoaib6174/modeling-dynamics-with-casadi-simulation-of-a-simple-pendulum-9c10f72ffae8",
+    "date": "2025-04",
+    "series": "CasADi",
+    "views": 320,
+    "reads": 141
+  },
+  {
+    "id": "casadi-nlp",
+    "title": "Solving Quadratic NLP with CasADi",
+    "url": "https://medium.com/@shoaib6174/solving-quadratic-nlp-with-casadi-7a49948d8c64",
+    "date": "2025-04",
+    "series": "CasADi",
+    "views": 380,
+    "reads": 198
+  },
+  {
+    "id": "casadi-intro",
+    "title": "An Introduction to CasADi with Python",
+    "url": "https://medium.com/@shoaib6174/an-introduction-to-casadi-with-python-12055f8e652f",
+    "date": "2025-04",
+    "series": "CasADi",
+    "views": 1300,
+    "reads": 663
+  },
+  {
+    "id": "algo-astar",
+    "title": "A* algorithm in short, for revision",
+    "url": "https://medium.com/@shoaib6174",
+    "date": "2023-09",
+    "series": "Algorithms",
+    "views": 469,
+    "reads": 205
+  },
+  {
+    "id": "algo-dijkstra",
+    "title": "Dijkstra's algorithm in short, for revision",
+    "url": "https://medium.com/@shoaib6174",
+    "date": "2023-09",
+    "series": "Algorithms",
+    "views": 178,
+    "reads": 56
+  },
+  {
+    "id": "algo-kruskal",
+    "title": "Kruskal's algorithm, for revision",
+    "url": "https://medium.com/@shoaib6174",
+    "date": "2023-09",
+    "series": "Algorithms",
+    "views": 131,
+    "reads": 34
+  },
+  {
+    "id": "xr-essay",
+    "title": "The Rise of AR/VR/MR (XR) in Consumer Tech: Will They Replace Smartphones?",
+    "url": "https://www.linkedin.com/pulse/rise-arvr-consumer-tech-wave-innovation-mohammad-shoaib",
+    "date": "2023-09",
+    "series": "Essays"
+  },
+  {
+    "id": "qiskit-grover",
+    "title": "How to Solve Graph Coloring Problems Using Qiskit's Grover Algorithm",
+    "url": "https://medium.com/@shoaib6174",
+    "date": "2023-07",
+    "series": "Qiskit",
+    "views": 902,
+    "reads": 514
+  },
+  {
+    "id": "qiskit-cert",
+    "title": "How to Become an IBM Certified Associate Developer, Quantum Computation Using Qiskit",
+    "url": "https://medium.com/@shoaib6174/how-to-become-an-ibm-certified-associate-developer-quantum-computation-using-qiskit-v0-2x-43936bee9d62",
+    "date": "2023-07",
+    "series": "Qiskit",
+    "views": 3600,
+    "reads": 1920
+  },
+  {
+    "id": "qiskit-qubo",
+    "title": "How to Solve QUBO Problems Using Qiskit",
+    "url": "https://medium.com/@shoaib6174/how-to-solve-qubo-problems-using-qiskit-f4eab6cc3061",
+    "date": "2023-06",
+    "series": "Qiskit",
+    "views": 2800,
+    "reads": 1500
+  },
+  {
+    "id": "nocode-ml",
+    "title": "No-Code Machine Learning, a blog series on Azure ML Designer and AutoML",
+    "url": "https://github.com/shoaib6174/No-Code-ML",
+    "date": "2022-03",
+    "series": "Azure"
+  },
+  {
+    "id": "azure-ocr",
+    "title": "Build a Web App to Extract Text From Images Using Flask and Azure's Computer Vision API",
+    "url": "https://medium.com/@shoaib6174/build-a-web-app-to-extract-text-from-image-using-flask-and-azures-computer-vision-api-1ee470b66050",
+    "date": "2021-08",
+    "series": "Azure",
+    "views": 1200,
+    "reads": 533
+  },
+  {
+    "id": "azure-ds",
+    "title": "How I Became Microsoft Certified: Azure Data Scientist Associate",
+    "url": "https://medium.com/@shoaib6174",
+    "date": "2021-07",
+    "series": "Azure",
+    "views": 218,
+    "reads": 128
+  },
+  {
+    "id": "azure-da",
+    "title": "How to Become a Microsoft Certified: Data Analyst Associate",
+    "url": "https://medium.com/@shoaib6174/how-to-become-a-microsoft-certified-data-analyst-associate-f109a2bdf65",
+    "date": "2021-07",
+    "series": "Azure",
+    "views": 2000,
+    "reads": 1000
+  }
+]

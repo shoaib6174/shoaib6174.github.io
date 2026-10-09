@@ -7,7 +7,7 @@ Used by every review pass. Score each criterion 1–5 and quote the offending te
 - Private items present: IUT admission or finances, family circumstances around the PhD, undergraduate CGPA, faith, only child.
 - A claim not supported by `docs/life-inventory.md`.
 - Pitch language: passion, journey, spark, chapter, story, relentless, driven, dynamic, results-driven, leverage, empower, seamless, cutting-edge, next-generation, "I am a X who Y".
-- Adjectives about his own character (persistent, curious, passionate, dedicated) stated rather than shown.
+- Adjectives about his own character (persistent, curious, broad, entrepreneurial, analytical, passionate, dedicated) stated rather than shown. See the traits table in `portrayal.md` for how each is shown instead.
 - A number that is not in the inventory, or a number without a source.
 - A broken or unverified link (see the Link check section of the inventory).
 

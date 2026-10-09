@@ -1,0 +1,206 @@
+[
+  {
+    "id": "learning-chinese",
+    "kind": "learning",
+    "title": "Chinese, toward HSK 2",
+    "order": 1
+  },
+  {
+    "id": "learning-control",
+    "kind": "learning",
+    "title": "Optimal control and model predictive control",
+    "order": 2
+  },
+  {
+    "id": "learning-slam",
+    "kind": "learning",
+    "title": "SLAM",
+    "order": 3
+  },
+  {
+    "id": "b-shoe-dog",
+    "kind": "book",
+    "title": "Shoe Dog",
+    "author": "Phil Knight",
+    "order": 1
+  },
+  {
+    "id": "b-underground",
+    "kind": "book",
+    "title": "Notes from Underground",
+    "author": "Fyodor Dostoevsky",
+    "order": 2
+  },
+  {
+    "id": "b-sapiens",
+    "kind": "book",
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "order": 3
+  },
+  {
+    "id": "b-fooled",
+    "kind": "book",
+    "title": "Fooled by Randomness",
+    "author": "Nassim Nicholas Taleb",
+    "order": 4
+  },
+  {
+    "id": "b-life3",
+    "kind": "book",
+    "title": "Life 3.0",
+    "author": "Max Tegmark",
+    "note": "Where the interest in AI started, 2017.",
+    "order": 5
+  },
+  {
+    "id": "b-feynman",
+    "kind": "book",
+    "title": "Surely You're Joking, Mr. Feynman!",
+    "author": "Richard Feynman",
+    "note": "Where the year of quantum computing started, 2022.",
+    "order": 6
+  },
+  {
+    "id": "b-dazai",
+    "kind": "book",
+    "title": "No Longer Human",
+    "author": "Osamu Dazai",
+    "order": 7
+  },
+  {
+    "id": "f-perfect-days",
+    "kind": "film",
+    "title": "Perfect Days",
+    "year": 2023,
+    "country": "Japan"
+  },
+  {
+    "id": "f-wonderful-life",
+    "kind": "film",
+    "title": "It's a Wonderful Life",
+    "year": 1946,
+    "country": "United States"
+  },
+  {
+    "id": "f-beautiful-mind",
+    "kind": "film",
+    "title": "A Beautiful Mind",
+    "year": 2001,
+    "country": "United States"
+  },
+  {
+    "id": "f-yjhd",
+    "kind": "film",
+    "title": "Yeh Jawaani Hai Deewani",
+    "year": 2013,
+    "country": "India"
+  },
+  {
+    "id": "f-banshees",
+    "kind": "film",
+    "title": "The Banshees of Inisherin",
+    "year": 2022,
+    "country": "Ireland"
+  },
+  {
+    "id": "f-wild-tales",
+    "kind": "film",
+    "title": "Wild Tales",
+    "year": 2014,
+    "country": "Argentina"
+  },
+  {
+    "id": "f-sore",
+    "kind": "film",
+    "title": "Sore: A Wife from the Future",
+    "year": 2025,
+    "country": "Indonesia"
+  },
+  {
+    "id": "f-rashomon",
+    "kind": "film",
+    "title": "Rashomon",
+    "year": 1950,
+    "country": "Japan"
+  },
+  {
+    "id": "f-tbbt",
+    "kind": "film",
+    "title": "The Big Bang Theory",
+    "year": 2007,
+    "country": "United States",
+    "note": "series"
+  },
+  {
+    "id": "f-friends",
+    "kind": "film",
+    "title": "Friends",
+    "year": 1994,
+    "country": "United States",
+    "note": "series"
+  },
+  {
+    "id": "f-poi",
+    "kind": "film",
+    "title": "Person of Interest",
+    "year": 2011,
+    "country": "United States",
+    "note": "series"
+  },
+  {
+    "id": "f-silicon-valley",
+    "kind": "film",
+    "title": "Silicon Valley",
+    "year": 2014,
+    "country": "United States",
+    "note": "series"
+  },
+  {
+    "id": "f-aot",
+    "kind": "film",
+    "title": "Attack on Titan",
+    "year": 2013,
+    "country": "Japan",
+    "note": "anime"
+  },
+  {
+    "id": "t-nepal",
+    "kind": "trip",
+    "title": "Annapurna Base Camp, solo, no guide",
+    "year": 2025,
+    "country": "Nepal"
+  },
+  {
+    "id": "t-china",
+    "kind": "trip",
+    "title": "Two weeks at Yunnan University, China-South Asia Bridge program",
+    "year": 2024,
+    "country": "China"
+  },
+  {
+    "id": "t-india",
+    "kind": "trip",
+    "title": "Shimla, Manali, Agra, Delhi, Kolkata",
+    "year": 2018,
+    "country": "India"
+  },
+  {
+    "id": "l-football",
+    "kind": "line",
+    "title": "I support Barcelona and Argentina, and play as Real Madrid in FIFA, because I am not artistic enough to play as Barcelona.",
+    "order": 1
+  },
+  {
+    "id": "l-music",
+    "kind": "line",
+    "title": "Ghazals, classical blues, Bengali Baul and folk songs, old Bangladeshi band songs. I listen for the lyrics first.",
+    "order": 2
+  },
+  {
+    "id": "l-films",
+    "kind": "line",
+    "title": "Films and series from any country with subtitles, any decade from the 1940s on.",
+    "order": 3
+  }
+]
