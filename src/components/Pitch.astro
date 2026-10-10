@@ -27,11 +27,13 @@ const right = groups.filter((g) => g.side === 'right');
     ))}
   </div>
   <h1 class="pitch__sentence" id="pitch-sentence">
-    <span class="pitch__phrase" data-phrase="ai">{byId.ai.phrase}</span>{' '}<br class="pitch__br" />
-    who also knows{' '}<br class="pitch__br" />
-    <span class="pitch__phrase" data-phrase="floor">{byId.floor.phrase}</span>,{' '}<br class="pitch__br" />
-    <span class="pitch__phrase" data-phrase="costs">{byId.costs.phrase}</span>, and <span class="pitch__phrase" data-phrase="people">{byId.people.phrase}</span>{' '}<br class="pitch__br" />
-    a machine is for.
+    I design and build{' '}<br class="pitch__br" />
+    production systems, from{' '}<br class="pitch__br" />
+    <span class="pitch__phrase" data-phrase="robots">{byId.robots.phrase}</span>{' '}<br class="pitch__br" />
+    to <span class="pitch__phrase" data-phrase="platforms">the platforms{' '}<br class="pitch__br" />a business runs on</span>,{' '}<br class="pitch__br" />
+    and I know <span class="pitch__phrase" data-phrase="operations">{byId.operations.phrase}</span>,{' '}<br class="pitch__br" />
+    <span class="pitch__phrase" data-phrase="supply">{byId.supply.phrase}</span>, and <span class="pitch__phrase" data-phrase="people">{byId.people.phrase}</span>{' '}<br class="pitch__br" />
+    who have to use them.
   </h1>
   <div class="pitch__col pitch__col--r">
     {right.map((g) => (
@@ -87,14 +89,17 @@ const right = groups.filter((g) => g.side === 'right');
         const group = groupOf(id);
         if (!group) return;
         const label = group.querySelector('.pitch__label')!;
-        const pr = ph.getBoundingClientRect();
-        const lr = label.getBoundingClientRect();
         const onLeft = group.parentElement!.classList.contains('pitch__col--l');
+        // A phrase may wrap; anchor on the line nearest its group.
+        const rects = ph.getClientRects();
+        const pr = onLeft ? rects[0] : rects[rects.length - 1];
+        const lr = label.getBoundingClientRect();
+        const k = [...group.parentElement!.children].indexOf(group);
         const ax = (onLeft ? pr.left : pr.right) - sr.left;
         const ay = pr.bottom - sr.top + 2;
         const dx = (onLeft ? lr.right + 12 : lr.left - 12) - sr.left;
         const dy = lr.top + lr.height / 2 - sr.top;
-        const gx = onLeft ? hr.left - sr.left - 22 : hr.right - sr.left + 22;
+        const gx = onLeft ? hr.left - sr.left - 22 - k * 9 : hr.right - sr.left + 22 + k * 9;
         const path = document.createElementNS(NS, 'path');
         path.setAttribute('d', `M${ax},${ay} L${gx},${ay} L${gx},${dy} L${dx},${dy}`);
         path.dataset.lead = id;

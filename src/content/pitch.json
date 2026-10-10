@@ -1,33 +1,45 @@
 {
+  "sentence": "I design and build production systems, from AI on robots to the platforms a business runs on, and I know operations, supply chains, and the people who have to use them.",
   "groups": [
     {
-      "id": "ai",
-      "phrase": "AI and robotics engineer",
-      "label": "AI and robotics",
+      "id": "robots",
+      "phrase": "AI on robots",
+      "label": "AI on robots",
       "side": "left",
       "items": [
         { "title": "NSU Intelligent Robotics Lab", "meta": "Research assistant, 2025 to now", "href": "/route/2025-niro-lab/" },
-        { "title": "MSc in Computer Science and Engineering", "meta": "North South University, 2023 to now", "href": "/route/2023-nsu-msc/" },
-        { "title": "Google Summer of Code with TensorFlow", "meta": "2022. Video Swin Transformer, 2,636 downloads", "href": "/work/video-swin-tf2/" },
-        { "title": "Jonvexa, a workforce platform for a care group", "meta": "Sole developer, six weeks, 2026", "href": "/work/jonvexa/" },
+        { "title": "LLM task planner for a mobile robot with an arm", "meta": "Four of five scenarios pass in simulation", "href": "/work/llm-robot-task-planner/" },
+        { "title": "Vision-language models on Jetson boards", "meta": "Perception on the hardware the robots carry", "href": "/work/vlm-perception-edge/" },
+        { "title": "NSU AI SAT, a CubeSat's AI payload", "meta": "Detailed design done, engineering model next", "href": "/work/nsu-ai-sat/" },
+        { "title": "MSc in Computer Science and Engineering", "meta": "North South University, 2023 to now", "href": "/route/2023-nsu-msc/" }
+      ]
+    },
+    {
+      "id": "platforms",
+      "phrase": "the platforms a business runs on",
+      "label": "Platforms a business runs on",
+      "side": "right",
+      "items": [
+        { "title": "Jonvexa, a workforce platform for a care group", "meta": "Sole developer, six weeks, 2,900 tests as a deploy gate, 2026", "href": "/work/jonvexa/" },
+        { "title": "BotForge, chatbots and voice agents", "meta": "At FenloAI, 2025", "href": "/work/botforge/" },
+        { "title": "Two platforms in seven months at NITEX", "meta": "Jr. AI Engineer, 2023 to 2024", "href": "/route/2023-nitex/" },
         { "title": "Co-founder, FenloAI", "meta": "2025 to now. AI systems for small businesses", "href": "/route/2025-fenloai/" }
       ]
     },
     {
-      "id": "floor",
-      "phrase": "the factory floor",
-      "label": "The factory floor",
+      "id": "operations",
+      "phrase": "operations",
+      "label": "Operations",
       "side": "right",
       "items": [
         { "title": "BSc Textile Engineering, BUTEX", "meta": "2017 to 2023. 73 of 166 credits in industrial engineering and management", "href": "/route/2017-butex/" },
-        { "title": "Internship on a factory floor", "meta": "During the degree", "href": "/route/2017-butex/" },
-        { "title": "Jr. AI Engineer, NITEX", "meta": "2023 to 2024. Two platforms for a fashion company", "href": "/route/2023-nitex/" }
+        { "title": "Internship on a factory floor", "meta": "During the degree", "href": "/route/2017-butex/" }
       ]
     },
     {
-      "id": "costs",
-      "phrase": "the costs",
-      "label": "The costs",
+      "id": "supply",
+      "phrase": "supply chains",
+      "label": "Supply chains",
       "side": "left",
       "items": [
         { "title": "MITx MicroMasters in Supply Chain Management", "meta": "2020 to 2021. Five graduate-level courses", "href": "/route/2020-take-it-seriously/" },

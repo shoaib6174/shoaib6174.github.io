@@ -1,7 +1,7 @@
 ---
 name: "Mohammad Shoaib"
 location: "Dhaka, Bangladesh"
-masthead: "I learn a field to working level, then build where it meets another. Right now that is language and vision models on robots, at NSU Intelligent Robotics Lab and FenloAI."
+masthead: "I design and build production systems, from AI on robots to the platforms a business runs on, and I know operations, supply chains, and the people who have to use them."
 statement:
   - "I put language and vision models on robots at NSU Intelligent Robotics Lab, and build AI systems for small businesses at FenloAI. I am finishing an MSc in Computer Science and Engineering at North South University."
   - "Before that I learned several fields to working level: textile and industrial engineering, supply chain and its finance, quantum computing, and the machine-learning stack from training to deployment."
