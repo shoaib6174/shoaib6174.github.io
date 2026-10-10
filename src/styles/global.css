@@ -128,19 +128,35 @@ ul, ol { margin: 0; padding: 0; }
 .lmap__band rect.is-alt { fill: var(--paper-deep); }
 .lmap__band { outline: none; cursor: default; }
 .lmap__band:hover rect, .lmap__band:focus-visible rect { stroke: var(--rule); stroke-width: 1; }
-.lmap__bandlabel { font-family: var(--display); font-size: 13px; font-weight: 600; fill: var(--graphite); }
-.lmap__edges path { fill: none; stroke: var(--graphite); stroke-opacity: 0.4; stroke-width: 1.5; transition: stroke 0.2s ease, stroke-opacity 0.2s ease, stroke-width 0.2s ease; }
+.lmap__bandlabel { font-family: var(--display); font-size: 15px; font-weight: 600; fill: var(--ink); }
+.lmap__bandnote { font-family: var(--display); font-size: 12.5px; font-weight: 500; fill: var(--graphite); }
+.lmap__direction { color: var(--graphite); }
+.lmap__direction line, .lmap__direction path { stroke: currentColor; stroke-width: 1; stroke-opacity: 0.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.lmap__dirlabel { font-family: var(--display); font-size: 11.5px; font-weight: 500; fill: var(--graphite); letter-spacing: 0.02em; }
+.lmap__edge { cursor: pointer; outline: none; }
+.lmap__hit { fill: none; stroke: transparent; stroke-width: 14; }
+.lmap__line { fill: none; stroke: var(--graphite); stroke-opacity: 0.42; stroke-width: 1.6; transition: stroke 0.2s ease, stroke-opacity 0.2s ease, stroke-width 0.2s ease; }
+.lmap__edge.is-about .lmap__line { stroke-dasharray: 3 5; stroke-linecap: round; }
 .lmap__node circle { fill: var(--ink); stroke: var(--paper); stroke-width: 3; transition: fill 0.2s ease, opacity 0.2s ease; }
 .lmap__node.is-isolated circle { fill: var(--paper); stroke: var(--graphite); stroke-width: 1.5; }
 .lmap__node text { font-family: var(--display); font-size: 14.5px; font-weight: 500; fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; transition: opacity 0.2s ease; }
 .lmap__node { cursor: pointer; outline: none; text-decoration: none; }
-.lmap__node:focus-visible circle { stroke: var(--signal); stroke-width: 3; }
-.lmap.is-focused .lmap__edges path:not(.is-hot) { stroke-opacity: 0.12; }
-.lmap.is-focused .lmap__node:not(.is-hot) circle, .lmap.is-focused .lmap__node:not(.is-hot) text { opacity: 0.3; }
-.lmap__edges path.is-hot { stroke: var(--signal); stroke-opacity: 1; stroke-width: 2.5; }
+.lmap__node:focus-visible circle, .lmap__edge:focus-visible .lmap__line { stroke: var(--signal); }
+.lmap.is-focused .lmap__edge:not(.is-hot) .lmap__line { stroke-opacity: 0.1; }
+.lmap.is-focused .lmap__node:not(.is-hot) circle, .lmap.is-focused .lmap__node:not(.is-hot) text { opacity: 0.28; }
+.lmap__edge.is-hot .lmap__line { stroke: var(--signal); stroke-opacity: 1; stroke-width: 2.6; }
 .lmap__node.is-hot circle { fill: var(--signal); }
 .lmap__node.is-isolated.is-hot circle { fill: var(--paper); stroke: var(--signal); }
-.lmap__caption { margin-top: 12px; min-height: 2.4em; font-family: var(--display); font-size: var(--fs-small); color: var(--graphite); max-width: 90ch; }
+/* Arrival: curves draw themselves from the floor upward, once per session. */
+.lmap.is-drawing .lmap__line { stroke-dasharray: 0 1; }
+.lmap.is-drawing .lmap__node circle, .lmap.is-drawing .lmap__node text { animation: lmap-fade 0.5s ease-out both; animation-delay: 0.1s; }
+@keyframes lmap-fade { from { opacity: 0; } to { opacity: 1; } }
+.lmap__foot { display: flex; justify-content: space-between; gap: 24px; align-items: baseline; margin-top: 12px; flex-wrap: wrap; }
+.lmap__key { font-family: var(--display); font-size: var(--fs-tiny); color: var(--graphite); display: flex; gap: 8px; align-items: center; white-space: nowrap; }
+.lmap__key .k { display: inline-block; width: 22px; height: 0; border-top: 2px solid var(--graphite); margin-left: 10px; }
+.lmap__key .k--about { border-top-style: dashed; }
+.lmap__key .k--studied { width: 9px; height: 9px; border: 1.5px solid var(--graphite); border-radius: 50%; }
+.lmap__caption { min-height: 2.4em; font-family: var(--display); font-size: var(--fs-small); color: var(--graphite); max-width: 70ch; flex: 1; }
 .lmap__caption strong { color: var(--ink); font-weight: 600; }
 .lmap__caption a { color: var(--ink); }
 .lmap__caption span { color: var(--graphite); }
@@ -386,5 +402,5 @@ ul, ol { margin: 0; padding: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .role, .row, .entry__body, .entry__date, [data-dimmable] > *, [data-role] { transition: none; }
-  .lmap__edges path, .lmap__node circle, .lmap__node text { transition: none; }
+  .lmap__line, .lmap__node circle, .lmap__node text { transition: none; animation: none; }
 }

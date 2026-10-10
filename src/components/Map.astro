@@ -2,71 +2,92 @@
 import map from '../content/map.json';
 
 const W = 1000;
-const BAND = 92;
-const TOP = 10;
-const H = TOP + map.bands.length * BAND + 10;
+const BAND = 96;
+const TOP = 8;
+const LEFT = 44;
+const H = TOP + map.bands.length * BAND + 8;
 const bandIndex = Object.fromEntries(map.bands.map((b, i) => [b.id, i]));
 const byId = Object.fromEntries(map.nodes.map((n) => [n.id, n]));
-// Bands are drawn top to bottom in reverse order, so the floor sits at the bottom.
+// Floor at the bottom, people at the top.
 const bandY = (id: string) => TOP + (map.bands.length - 1 - bandIndex[id]) * BAND;
-const nodeY = (id: string) => bandY(byId[id].band) + BAND / 2 + 6;
+const nodeY = (id: string) => bandY(byId[id].band) + BAND / 2 + 8;
 const degree: Record<string, number> = {};
 for (const e of map.edges) {
   degree[e.from] = (degree[e.from] ?? 0) + 1;
   degree[e.to] = (degree[e.to] ?? 0) + 1;
 }
-const path = (a: { x: number; id: string }, b: { x: number; id: string }) => {
+// A curve between two fields. Same band: a low arc. Across bands: an S-curve that bows
+// sideways in proportion to how many bands it spans, so it never runs through a point between.
+const curve = (a: { x: number; id: string; band: string }, b: { x: number; id: string; band: string }) => {
   const y1 = nodeY(a.id);
   const y2 = nodeY(b.id);
-  if (y1 === y2) {
-    const lift = 22;
+  if (a.band === b.band) {
+    const lift = 26;
     return `M${a.x},${y1} C${a.x},${y1 - lift} ${b.x},${y2 - lift} ${b.x},${y2}`;
   }
+  const span = Math.abs(bandIndex[a.band] - bandIndex[b.band]);
+  const bow = span > 1 ? (a.x <= b.x ? -1 : 1) * Math.min(span * 28, 110) : 0;
   const my = (y1 + y2) / 2;
-  return `M${a.x},${y1} C${a.x},${my} ${b.x},${my} ${b.x},${y2}`;
+  return `M${a.x},${y1} C${a.x + bow},${my} ${b.x + bow},${my} ${b.x},${y2}`;
 };
-// Labels alternate above and below in crowded bands.
-const labelAbove = (n: { id: string; band: string; x: number }) => {
+// Draw order for the arrival animation: lowest span first, so the map grows upward.
+const edgesOrdered = [...map.edges].sort(
+  (p, q) => Math.min(bandIndex[byId[p.from].band], bandIndex[byId[p.to].band]) - Math.min(bandIndex[byId[q.from].band], bandIndex[byId[q.to].band]),
+);
+const labelAbove = (n: { id: string; band: string }) => {
   const siblings = map.nodes.filter((m) => m.band === n.band);
-  if (siblings.length < 4) return false;
-  return siblings.indexOf(n) % 2 === 1;
+  return siblings.length >= 4 && siblings.indexOf(n) % 2 === 1;
 };
-const anchor = (x: number) => (x < 140 ? 'start' : x > 860 ? 'end' : 'middle');
+const anchor = (x: number) => (x < 160 ? 'start' : x > 840 ? 'end' : 'middle');
 ---
 
 <figure class="lmap" data-map>
+  <script is:inline>
+    try {
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && sessionStorage.getItem('map-drawn') !== '1') {
+        document.currentScript.parentElement.classList.add('is-drawing');
+        sessionStorage.setItem('map-drawn', '1');
+      }
+    } catch (e) {}
+  </script>
   <svg class="lmap__svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="map-title map-desc">
     <title id="map-title">Fourteen fields in seven layers, joined by the work that connected them</title>
-    <desc id="map-desc">Each curve between two fields is one project. Hover or focus a field or a layer to see its projects.</desc>
+    <desc id="map-desc">Each curve between two fields is one piece of work. Solid curves are things built, dashed curves are writing or teaching. Hover or focus a field, a layer, or a curve to see the work.</desc>
     <g class="lmap__bands">
       {map.bands.map((b, i) => (
         <g class="lmap__band" data-band={b.id} tabindex="0">
-          <rect x="0" y={bandY(b.id)} width={W} height={BAND - 4} rx="6" class:list={{ 'is-alt': i % 2 === 1 }} />
-          <text x="14" y={bandY(b.id) + 20} class="lmap__bandlabel">{b.label}</text>
+          <rect x={LEFT} y={bandY(b.id)} width={W - LEFT} height={BAND - 4} rx="6" class:list={{ 'is-alt': i % 2 === 1 }} />
+          <text x={LEFT + 16} y={bandY(b.id) + 24} class="lmap__bandlabel">{b.label}</text>
+          {b.note && <text x={W - 16} y={bandY(b.id) + 24} text-anchor="end" class="lmap__bandnote">{b.note}</text>}
         </g>
       ))}
     </g>
+    <g class="lmap__direction" aria-hidden="true">
+      <line x1="16" y1={H - 24} x2="16" y2={TOP + 40} />
+      <path d={`M10,${TOP + 46} L16,${TOP + 36} L22,${TOP + 46}`} />
+      <text x="30" y={H - 26} transform={`rotate(-90 30 ${H - 26})`} class="lmap__dirlabel">a problem travels up, from the floor to the people</text>
+    </g>
     <g class="lmap__edges">
-      {map.edges.map((e) => (
-        <path
-          d={path(byId[e.from], byId[e.to])}
-          data-from={e.from} data-to={e.to} data-label={e.label} data-href={e.href}
-          data-bands={`${byId[e.from].band} ${byId[e.to].band}`}
-        />
+      {edgesOrdered.map((e, i) => (
+        <g class:list={['lmap__edge', `is-${e.kind}`]} data-from={e.from} data-to={e.to} data-label={e.label} data-href={e.href} data-bands={`${byId[e.from].band} ${byId[e.to].band}`} style={`--i:${i}`} tabindex="0">
+          <path class="lmap__hit" d={curve(byId[e.from], byId[e.to])} />
+          <path class="lmap__line" d={curve(byId[e.from], byId[e.to])} />
+        </g>
       ))}
     </g>
     <g class="lmap__nodes">
       {map.nodes.map((n) => (
         <a href={n.href} data-node={n.id} data-band={n.band} class:list={['lmap__node', { 'is-isolated': !degree[n.id] }]}>
           <circle cx={n.x} cy={nodeY(n.id)} r={degree[n.id] ? 6 + Math.min(degree[n.id], 5) * 1.4 : 5.5} />
-          <text x={n.x} y={labelAbove(n) ? nodeY(n.id) - 16 : nodeY(n.id) + 24} text-anchor={anchor(n.x)}>{n.label}</text>
+          <text x={n.x} y={labelAbove(n) ? nodeY(n.id) - 16 : nodeY(n.id) + 25} text-anchor={anchor(n.x)}>{n.label}</text>
         </a>
       ))}
     </g>
   </svg>
-  <figcaption class="lmap__caption" data-map-caption aria-live="polite">
-    Seven layers, from the floor to the people who use the result. Each curve is one piece of work that joined two fields. Point at a field or a layer. A hollow point is a field I have studied but not yet built in.
-  </figcaption>
+  <div class="lmap__foot">
+    <p class="lmap__key" aria-hidden="true"><span class="k k--built"></span> built <span class="k k--about"></span> wrote or taught about <span class="k k--studied"></span> studied</p>
+    <p class="lmap__caption" data-map-caption aria-live="polite">Point at a field, a layer, or a curve.</p>
+  </div>
   <ul class="visually-hidden">
     {map.edges.map((e) => (
       <li>{byId[e.from].label} and {byId[e.to].label}: <a href={e.href}>{e.label}</a></li>
@@ -84,19 +105,36 @@ const anchor = (x: number) => (x < 140 ? 'start' : x > 860 ? 'end' : 'middle');
     controller = new AbortController();
     const { signal } = controller;
     const nodes = [...root.querySelectorAll<SVGElement>('[data-node]')];
-    const bands = [...root.querySelectorAll<SVGElement>('[data-band].lmap__band')];
-    const edges = [...root.querySelectorAll<SVGPathElement>('path[data-from]')];
+    const bands = [...root.querySelectorAll<SVGElement>('.lmap__band')];
+    const edges = [...root.querySelectorAll<SVGGElement>('.lmap__edge')];
     const caption = root.querySelector<HTMLElement>('[data-map-caption]')!;
     const idle = caption.textContent;
     const labelOf = (id: string) => root.querySelector(`[data-node="${id}"] text`)?.textContent ?? id;
-    const bandLabel = (id: string) => root.querySelector(`[data-band="${id}"].lmap__band text`)?.textContent ?? id;
+    const bandLabel = (id: string) => root.querySelector(`[data-band="${id}"].lmap__band .lmap__bandlabel`)?.textContent ?? id;
 
-    const paint = (hotEdges: SVGPathElement[], hotNodes: Set<string>, on: boolean) => {
+    // Arrival: each curve draws itself from one end, floor first, using its real length so the
+    // dashed style of the "about" curves survives once the drawing is done.
+    if (root.classList.contains('is-drawing') && 'animate' in Element.prototype) {
+      edges.forEach((e, i) => {
+        const line = e.querySelector<SVGPathElement>('.lmap__line')!;
+        const L = line.getTotalLength();
+        const wasDashed = e.classList.contains('is-about');
+        line.style.strokeDasharray = String(L);
+        line.style.strokeDashoffset = String(L);
+        const anim = line.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], { duration: 650, delay: 140 + i * 55, easing: 'ease-out', fill: 'forwards' });
+        anim.onfinish = () => { anim.cancel(); line.style.strokeDasharray = ''; line.style.strokeDashoffset = ''; if (wasDashed) e.classList.add('is-about'); };
+      });
+      setTimeout(() => root.classList.remove('is-drawing'), 140 + edges.length * 55 + 700);
+    } else {
+      root.classList.remove('is-drawing');
+    }
+
+    const paint = (hotEdges: SVGGElement[], hotNodes: Set<string>, on: boolean) => {
       root.classList.toggle('is-focused', on);
       edges.forEach((e) => e.classList.toggle('is-hot', on && hotEdges.includes(e)));
       nodes.forEach((n) => n.classList.toggle('is-hot', on && hotNodes.has(n.dataset.node!)));
     };
-    const list = (lead: string, mine: SVGPathElement[], relativeTo?: string) => {
+    const list = (lead: string, mine: SVGGElement[], relativeTo?: string) => {
       caption.replaceChildren();
       const strong = document.createElement('strong');
       strong.textContent = lead;
@@ -128,6 +166,16 @@ const anchor = (x: number) => (x < 140 ? 'start' : x > 860 ? 'end' : 'middle');
       if (!mine.length) { caption.textContent = `${bandLabel(id)}: studied, nothing built through this layer yet.`; return; }
       list(bandLabel(id), mine);
     };
+    const focusEdge = (e: SVGGElement) => {
+      paint([e], new Set([e.dataset.from!, e.dataset.to!]), true);
+      caption.replaceChildren();
+      const a = document.createElement('a');
+      a.href = e.dataset.href!;
+      a.textContent = e.dataset.label!;
+      const span = document.createElement('span');
+      span.textContent = `, ${labelOf(e.dataset.from!)} and ${labelOf(e.dataset.to!)}.`;
+      caption.append(a, span);
+    };
     const clear = () => { paint([], new Set(), false); caption.textContent = idle; };
 
     nodes.forEach((n) => {
@@ -141,6 +189,14 @@ const anchor = (x: number) => (x < 140 ? 'start' : x > 860 ? 'end' : 'middle');
       b.addEventListener('pointerleave', clear, { signal });
       b.addEventListener('focus', () => focusBand(b.dataset.band!), { signal });
       b.addEventListener('blur', clear, { signal });
+    });
+    edges.forEach((e) => {
+      e.addEventListener('pointerenter', () => focusEdge(e), { signal });
+      e.addEventListener('pointerleave', clear, { signal });
+      e.addEventListener('focus', () => focusEdge(e), { signal });
+      e.addEventListener('blur', clear, { signal });
+      e.addEventListener('click', () => { location.href = e.dataset.href!; }, { signal });
+      e.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') location.href = e.dataset.href!; }, { signal });
     });
   }
   init();
