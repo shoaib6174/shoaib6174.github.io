@@ -219,7 +219,7 @@ Article URLs (from the RSS feed, 2026-10-09):
 | 2021 | Architecting with Google Compute Engine Specialization | Google |
 | 2020 | Google IT Support Professional Certificate | Google |
 | 2020 | Complete Web Development Course with Jhankar Mahbub | Programming Hero |
-| 2022 | Microsoft Certified: Azure Data Scientist Associate + Data Analyst Associate | Microsoft |
+| 2021 | Microsoft Certified: Azure Data Scientist Associate + Data Analyst Associate | Microsoft |
 | Jul 2014 – Jun 2016 | HSC, GPA 5.00/5.00 | Rajuk Uttara Model College |
 
 **Why textiles.** The first choice was mechanical engineering at IUT (Islamic University of Technology). Got admitted, but without a scholarship, and the family could not afford the fees. BUTEX is public, and its Industrial & Production Engineering department was the closest affordable route to the same material: it had a robotics group `[?]` (club? lab?), and courses in mechanical and electrical engineering, product design, SolidWorks, and CATIA. The textile half of the curriculum never clicked; the engineering half did.
@@ -349,7 +349,7 @@ Things a resume never captures, but a branding site should. Add anything that ap
 ## Facts to verify before publishing
 
 - Site says MLSA "2021 – Present"; resume says 2021 – 2024. Which is right?
-- Microsoft certifications: Shoaib said on 2026-10-10 "both in 2022". The inventory rows above and the two Medium posts (Jul 2021, "How I became Azure Data Scientist Associate", "How to become Azure Data Analyst Associate") point to 2021. The home page says 2022 on his word; confirm which year the exams were passed.
+- Microsoft certifications: Shoaib said on 2026-10-10 "both in 2022". The inventory rows above and the two Medium posts (Jul 2021, "How I became Azure Data Scientist Associate", "How to become Azure Data Analyst Associate") point to 2021. Resolved 2026-10-10: Shoaib confirmed both were 2021.
 - Year TEXBIZ was first held.
 - Was the BUTEX IPE "robotics" a club, a lab, or a course track?
 
