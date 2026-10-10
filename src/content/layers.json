@@ -3,18 +3,22 @@
     "id": "floor",
     "order": 1,
     "layer": "The floor",
-    "bring": "Textile and industrial engineering: manufacturing processes, instrumentation and control, product design, ergonomics, an industrial attachment. Studied for six years, not yet applied in work, apart from a factory robot concept.",
+    "bring": "Textile and industrial engineering: manufacturing processes, instrumentation and control, product design, ergonomics, an internship on a factory floor. Not a layer I build in, but the one I design for: it is why I knew what to tag at NITEX and what a factory robot has to watch for.",
     "proof": [
       {
         "label": "BUTEX, 2017 to 2022",
         "href": "/route/2017-butex/"
       },
       {
+        "label": "Trend platform",
+        "href": "/work/nitex-trend-platform/"
+      },
+      {
         "label": "Factory security robot, concept",
         "href": "/work/security-robot/"
       }
     ],
-    "status": "studied"
+    "status": "applied"
   },
   {
     "id": "economics",

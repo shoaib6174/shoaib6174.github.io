@@ -118,7 +118,7 @@ const layers = defineCollection({
     order: z.number(),
     layer: z.string(),
     bring: z.string(),
-    status: z.enum(['built', 'studied']),
+    status: z.enum(['built', 'applied', 'studied']),
     proof: z.array(link).min(1, 'every layer needs proof'),
   }),
 });

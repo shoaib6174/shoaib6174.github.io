@@ -16,7 +16,7 @@ const layers = (await getCollection('layers')).sort((a, b) => a.data.order - b.d
 
   <section class="section" aria-labelledby="column">
     <h2 id="column" class="section__label">From the floor to the customer</h2>
-    <p class="column__intro">A problem in the physical world passes through seven layers on its way to a customer. I have built in five of them and studied the other two. Each layer says which.</p>
+    <p class="column__intro">A problem in the physical world passes through seven layers on its way to a customer. I have built in five of them, I design for one, and I have studied one without building in it yet. Each layer says which.</p>
     <ol class="column">
       {layers.map((l) => (
         <li class:list={['layer', `is-${l.data.status}`]}>

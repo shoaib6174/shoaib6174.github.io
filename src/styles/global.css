@@ -180,6 +180,7 @@ ul, ol { margin: 0; padding: 0; }
 .layer__name { font-size: var(--fs-4); margin-bottom: 4px; }
 .layer__status { font-size: var(--fs-tiny); font-weight: 500; color: var(--graphite); margin-left: 8px; }
 .layer.is-studied::before { background: var(--paper); border-color: var(--graphite); }
+.layer.is-applied::before { background: var(--signal); border-color: var(--signal); }
 .layer__bring { margin-bottom: 4px; }
 .layer__proof { font-family: var(--display); font-size: var(--fs-small); color: var(--graphite); }
 .layer__proof a { color: var(--ink); }
