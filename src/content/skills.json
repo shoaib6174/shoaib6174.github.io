@@ -266,6 +266,7 @@
     "home": true,
     "group": "Supply chain and its finance, studied",
     "tools": [
+      "MicroMasters in Supply Chain Management, five graduate-level courses",
       "demand forecasting",
       "inventory policy",
       "transportation planning",
@@ -281,7 +282,7 @@
     ],
     "proof": [
       {
-        "label": "MITx MicroMasters, 2020 to 2021",
+        "label": "The five courses, with topics",
         "href": "/route/2020-take-it-seriously/"
       }
     ]

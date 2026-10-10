@@ -2,82 +2,55 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import WorkCard from '../components/WorkCard.astro';
 import { frontmatter as home } from '../content/home.md';
 import headshot from '../assets/photos/headshot.jpeg';
-import booksPhoto from '../assets/photos/gonit-olympiad-books.jpg';
 import { formatDate, sortKey } from '../lib/dates';
 
-const work = (await getCollection('work', ({ data }) => data.featured)).sort(
-  (a, b) => a.data.order - b.data.order,
-);
-const skills = (await getCollection('skills', ({ data }) => data.home)).sort(
-  (a, b) => a.data.order - b.data.order,
-);
-const books = (await getCollection('books')).sort((a, b) => a.data.year - b.data.year);
+const layers = (await getCollection('layers')).sort((a, b) => a.data.order - b.data.order);
 const route = (await getCollection('journey', ({ data }) => data.onRoute)).sort(
   (a, b) => sortKey(a.data.date) - sortKey(b.data.date),
 );
-const tiles = [
-  { label: 'Robots, at NSU Intelligent Robotics Lab', href: '/work/?area=robots', kind: 'ph', w: 2, h: 2 },
-  { label: 'Mohammad Shoaib, Dhaka', href: '/route/', kind: 'img', image: headshot, h: 2 },
-  { label: 'Four math books for school students', href: '/writing/#books', kind: 'img', image: booksPhoto },
-  { label: 'Qiskit Advocate, a year of quantum computing', href: '/route/2022-quantum/', kind: 'ph' },
-  { label: 'Kunming, and learning Chinese', href: '/route/2024-kunming/', kind: 'ph', h: 2 },
-  { label: 'Articles, written after learning each thing', href: '/writing/#articles', kind: 'ink', big: '21' },
-  { label: 'Textile and industrial engineering, BUTEX', href: '/route/2017-butex/', kind: 'ph' },
-  { label: 'Annapurna Base Camp, alone', href: '/route/2025-annapurna/', kind: 'ph' },
-  { label: 'Supply chain and its finance, MITx', href: '/route/2020-take-it-seriously/', kind: 'ph' },
-  { label: 'Best speaker, debate, 2017', href: '/route/2017-debate-and-club/', kind: 'ph' },
-  { label: 'FenloAI, co-founder', href: '/route/2025-fenloai/', kind: 'ink' },
-  { label: 'A book on C, at 16', href: '/route/2014-c-book/', kind: 'ink' },
-  { label: 'Video Swin Transformer, GSoC 2022', href: '/work/video-swin-tf2/', kind: 'sig', big: '2,636', small: 'downloads' },
-];
-const series = [
-  { id: 'ros-2', label: 'ROS 2', line: 'Five articles in June 2026, plus the version-matching guide.' },
-  { id: 'casadi', label: 'CasADi', line: 'Four articles on optimal control, April 2025.' },
-  { id: 'qiskit', label: 'Qiskit', line: 'QUBO, Grover, and the certification, 2023.' },
-];
+const work = (await getCollection('work', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 4);
+const statusWord: Record<string, string> = { built: 'built', applied: 'applied', studied: 'studied' };
 ---
 
 <Base title="Mohammad Shoaib" description={home.masthead} bodyClass="home">
-  <script is:inline>
-    // Before first paint: let the tiles assemble once per session, never under reduced motion.
-    try {
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && sessionStorage.getItem('mosaic-played') !== '1') {
-        document.currentScript.nextElementSibling.classList.add('is-animating');
-        sessionStorage.setItem('mosaic-played', '1');
-      }
-    } catch (e) {}
-  </script>
-  <section class="mosaic" aria-labelledby="name">
-    <div class="mosaic__head">
-      <h1 id="name" class="mosaic__name">{home.name}</h1>
-      <p class="mosaic__who">{home.masthead}</p>
-    </div>
-    <ul class="tiles" aria-label="The worlds I have worked in">
-      {tiles.map((t, i) => (
-        <li class:list={['tile', t.kind, { 'tile--w2': t.w === 2, 'tile--h2': t.h === 2 }]} style={`--i:${i}`}>
-          <a href={t.href}>
-            {t.image && <Image src={t.image} alt="" widths={[400, 800]} sizes="(max-width: 760px) 50vw, 400px" class="tile__img" />}
-            {t.big && <span class="tile__big" aria-hidden="true">{t.big}{t.small && <small>{t.small}</small>}</span>}
-            <span class="tile__label">{t.label}</span>
-          </a>
-        </li>
+  <section class="who" aria-labelledby="name">
+    <Image class="who__photo" src={headshot} alt="Mohammad Shoaib" width="224" height="280" densities={[1, 2]} />
+    <h1 id="name" class="who__name">{home.name}</h1>
+    <div class="who__statement">
+      {home.statement.map((line: string, i: number) => (
+        <p class:list={{ 'who__claim': i === home.statement.length - 1 }}>{line}</p>
       ))}
-    </ul>
-    <p class="mosaic__action"><a href="/route/">Read the route</a><span>What I did, in order, and why. 2014 to now.</span></p>
+    </div>
   </section>
 
-  <section class="section" aria-labelledby="now">
-    <h2 id="now" class="section__label">Now</h2>
-    <ul class="now">
-      {home.now.map((n: string) => <li>{n}</li>)}
-    </ul>
+  <section class="stack" aria-labelledby="stack-h" data-stack>
+    <h2 id="stack-h" class="stack__label">From the floor to the customer</h2>
+    <p class="stack__intro">A problem in the physical world passes through seven layers on its way to a customer. I have built in five of them, I design for one, and I have studied one without building in it yet.</p>
+    <ol class="stack__list">
+      {layers.map((l, i) => (
+        <li class:list={['stage', `is-${l.data.status}`]} style={`--i:${i}`}>
+          <div class="stage__m">
+            <span class="stage__status">{statusWord[l.data.status]}</span>
+          </div>
+          <div class="stage__body">
+            <h3 class="stage__name">{l.data.layer}</h3>
+            <p class="stage__bring">{l.data.bring}</p>
+            <p class="stage__proof">
+              {l.data.proof.map((p, j) => (<><a href={p.href}>{p.label}</a>{j < l.data.proof.length - 1 ? ', ' : ''}</>))}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="stack__more"><a href="/skills/">Every skill, with proof</a></p>
   </section>
 
   <section class="section" aria-labelledby="roles">
-    <h2 id="roles" class="section__label">What I do</h2>
+    <h2 id="roles" class="section__label">Three things I do</h2>
     <div class="roles" data-roles>
       {home.roles.map((r: { key: string; title: string; text: string }) => (
         <div class="role" data-role={r.key}>
@@ -88,14 +61,11 @@ const series = [
     </div>
   </section>
 
-  <section class="section" aria-labelledby="meets">
-    <h2 id="meets" class="section__label">Where the fields meet</h2>
-    <ul class="meets">
-      {home.meets.map((m: { text: string; label: string; href: string }) => (
-        <li><span>{m.text}</span> <a href={m.href}>{m.label}</a></li>
-      ))}
+  <section class="section" aria-labelledby="now">
+    <h2 id="now" class="section__label">Now</h2>
+    <ul class="now">
+      {home.now.map((n: string) => <li>{n}</li>)}
     </ul>
-    <p class="section__more"><a href="/skills/">The whole column, from the floor to the customer</a></p>
   </section>
 
   <section class="section" aria-labelledby="route">
@@ -108,62 +78,19 @@ const series = [
         </li>
       ))}
     </ol>
-    <p class="section__more"><a href="/route/">The full account, with the decisions</a></p>
+    <p class="mosaic__action"><a href="/route/">Read the route</a><span>What I did, in order, and why. 2014 to now.</span></p>
   </section>
 
-  <section class="section" aria-labelledby="selected">
-    <h2 id="selected" class="section__label">Selected work</h2>
-    <div class="rows" data-dimmable>
-      {work.map((item) => <WorkCard item={item} />)}
-    </div>
+  <section class="section" aria-labelledby="work-h">
+    <h2 id="work-h" class="section__label">Work</h2>
+    <ul class="worklinks">
+      {work.map((w) => (
+        <li><a href={`/work/${w.id}/`}>{w.data.title}</a><span>{w.data.summary}</span></li>
+      ))}
+    </ul>
     <p class="section__more"><a href="/work/">All work</a></p>
   </section>
 
-  <section class="section" aria-labelledby="skills">
-    <h2 id="skills" class="section__label">Skills, with proof</h2>
-    <div class="skills skills--compact">
-      {skills.map((s) => (
-        <div class="skill" data-role={s.id === 'writing' ? 'explain' : 'build'}>
-          <h3 class="skill__group">{s.data.group}</h3>
-          <p class="skill__tools">{s.data.tools.join(', ')}</p>
-          <p class="skill__proof">
-            {s.data.proof.map((p, i) => (
-              <>
-                <a href={p.href}>{p.label}</a>{i < s.data.proof.length - 1 ? ', ' : ''}
-              </>
-            ))}
-          </p>
-        </div>
-      ))}
-    </div>
-    <p class="section__more"><a href="/skills/">All skills</a></p>
-  </section>
-
-  <section class="section" aria-labelledby="writing" data-role="explain">
-    <h2 id="writing" class="section__label">Writing</h2>
-    <ul class="books">
-      {books.map((b) => (
-        <li class="book">
-          <a href={b.data.url}>
-            <span class="book__title">{b.data.title}</span>
-            <span class="book__meta">{b.data.year}, {b.data.audience}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-    <ul class="series">
-      {series.map((s) => (
-        <li><a href={`/writing/#${s.id}`}>{s.label}</a> <span>{s.line}</span></li>
-      ))}
-    </ul>
-    <p class="section__more"><a href="/writing/">All writing</a></p>
-  </section>
-
-  <section class="section" aria-labelledby="offclock">
-    <h2 id="offclock" class="section__label">Off the clock</h2>
-    <p class="prose">{home.offclock}</p>
-    <p class="section__more"><a href="/shelf/">Books, films, trips</a></p>
-  </section>
-
   <script src="../scripts/roles.ts"></script>
+  <script src="../scripts/stack.ts"></script>
 </Base>

@@ -24,10 +24,10 @@
     "id": "economics",
     "order": 2,
     "layer": "The economics",
-    "bring": "Supply chain and its finance: forecasting, inventory policy, transportation, network design, activity-based costing, working capital, cash-to-cash, discounted cash flow, system dynamics. Studied in a MicroMasters. I have not built in this layer yet.",
+    "bring": "Supply chain and its finance: forecasting, inventory policy, transportation, network design, activity-based costing, working capital, cash-to-cash, discounted cash flow, system dynamics. Studied in the MicroMasters in Supply Chain Management, five graduate-level courses from MITx. I have not built in this layer yet.",
     "proof": [
       {
-        "label": "MITx MicroMasters, 2020 to 2021",
+        "label": "MicroMasters in Supply Chain Management, five graduate-level courses",
         "href": "/route/2020-take-it-seriously/"
       }
     ],

@@ -2,6 +2,11 @@
 name: "Mohammad Shoaib"
 location: "Dhaka, Bangladesh"
 masthead: "Research assistant at NSU Intelligent Robotics Lab, where I put language and vision-language models on robots. Co-founder of FenloAI, where we build AI systems for small businesses on contract."
+statement:
+  - "I am an AI and robotics engineer in Dhaka."
+  - "Before that I trained as a textile and industrial engineer, studied supply chains and their finance in five graduate-level courses from MITx, organised a business club and campus teams across fifty universities, and wrote four math books for children."
+  - "Now I put language and vision-language models on robots at NSU Intelligent Robotics Lab, and build AI systems for small businesses at FenloAI."
+  - "The combination means I can take a problem from a factory floor to a working machine to a product someone uses, and explain it on the way."
 masthead2: "Robots are where an AI system has to work end to end in the physical world. That is what I wanted to build before university. Four math books for school students and twenty-one technical articles along the way."
 roles:
   - key: build
