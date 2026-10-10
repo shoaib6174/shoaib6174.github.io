@@ -11,7 +11,11 @@ function init() {
   controller = new AbortController();
   const { signal } = controller;
   const entries = [...root.querySelectorAll<HTMLElement>('.entry')];
-  const buttons = [...root.querySelectorAll<HTMLButtonElement>('[data-thread]')];
+  const buttons = [...root.querySelectorAll<HTMLButtonElement>('button[data-thread]')];
+  const dots = [...root.querySelectorAll<SVGAElement>('.rmap__dot')];
+  const lanes = [...root.querySelectorAll<SVGGElement>('.rmap__lane')];
+  const caption = root.querySelector<HTMLElement>('[data-rmap-caption]');
+  const idleCaption = caption?.textContent ?? '';
 
   let ticking = false;
   const update = () => {
@@ -23,6 +27,7 @@ function init() {
     }));
     const id = activeYear(tops, line);
     entries.forEach((e) => e.classList.toggle('is-active', e.id === id));
+    dots.forEach((d) => d.classList.toggle('is-active', d.dataset.entry === id));
   };
   const onScroll = () => {
     if (!ticking) {
@@ -50,10 +55,23 @@ function init() {
           const mine = (e.dataset.threads ?? '').split(' ');
           e.classList.toggle('is-dim', active !== null && !mine.includes(active));
         });
+        lanes.forEach((l) => l.classList.toggle('is-dim', active !== null && l.dataset.thread !== active));
+        dots.forEach((d) => {
+          const mine = (document.getElementById(d.dataset.entry ?? '')?.dataset.threads ?? '').split(' ');
+          d.classList.toggle('is-dim', active !== null && !mine.includes(active));
+        });
       },
       { signal },
     ),
   );
+  dots.forEach((d) => {
+    const show = () => { if (caption) caption.textContent = d.dataset.title ?? ''; };
+    const hide = () => { if (caption) caption.textContent = idleCaption; };
+    d.addEventListener('pointerenter', show, { signal });
+    d.addEventListener('pointerleave', hide, { signal });
+    d.addEventListener('focus', show, { signal });
+    d.addEventListener('blur', hide, { signal });
+  });
 }
 
 init();

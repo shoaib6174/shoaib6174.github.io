@@ -15,7 +15,7 @@ const more = await getEntry('details', entry.id);
 const More = more ? (await render(more)).Content : null;
 ---
 
-<Base title={d.title} description={`${formatDate(d.date)}. ${d.result ?? d.chose ?? ''}`}>
+<Base title={d.title} description={`${formatDate(d.date)}. ${d.summary ?? ''}`}>
   <article class="detail detail--journey">
     <div class="entries">
       <JourneyEntry entry={entry} linked={false} headingLevel="h1" />

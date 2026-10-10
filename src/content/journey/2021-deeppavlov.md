@@ -3,8 +3,7 @@ date: "2021-12"
 title: "Research intern, DeepPavlov.ai"
 threads:
   - "build"
-chose: "A research internship in natural language processing, my first research role."
-result: "Dialogue graphs from the MultiWOZ dataset using tf-idf, topic modeling, x-means, and DBSCAN."
+summary: "First research role. Dialogue graphs from the MultiWOZ corpus."
 proof:
   - label: "Intent classification"
     href: "https://github.com/shoaib6174/MultiWOZ-Intent-Classification"
@@ -12,4 +11,4 @@ proof:
     href: "https://github.com/shoaib6174/MultiWOZ-Clustering"
 ---
 
-The task was to build dialogue graphs from the MultiWOZ corpus: cluster utterances, find intents, connect the states. I also compared LaBSE and BERT on intent classification and tested both on Russian translations without retraining.
+My first research role, in natural language processing. The task was dialogue graphs from the MultiWOZ corpus: cluster the utterances, find the intents, connect the states. I also compared LaBSE and BERT on intent classification, including on Russian translations without retraining.

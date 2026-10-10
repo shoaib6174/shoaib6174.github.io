@@ -3,8 +3,7 @@ date: "2022"
 title: "Chotoder Gonit Olympiad, three volumes"
 threads:
   - "explain"
-chose: "A three-book series for classes 2 to 7."
-result: "Published by Tamralipi Prokashoni. One of the best sellers in the math olympiad category on Rokomari."
+summary: "A three-volume math olympiad series for classes 2 to 7, a best seller in its category on Rokomari."
 proof:
   - label: "Volume 1"
     href: "https://www.rokomari.com/book/275698/chotoder-gonit-olympiad-1"
@@ -16,4 +15,4 @@ imageSlots:
   - "Photo: the three volumes"
 ---
 
-*Children's Math Olympiad.* The second book was for younger students than the first, and it needed three volumes to do it properly.
+The second book was for younger students, classes 2 to 7, and needed three volumes to do properly. Tamralipi Prokashoni published *Children's Math Olympiad*. It is one of the best sellers in its category on Rokomari.

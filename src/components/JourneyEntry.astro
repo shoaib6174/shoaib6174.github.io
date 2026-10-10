@@ -34,12 +34,6 @@ const hasDetail = Boolean(more) || d.images.length > 0 || d.imageSlots.length > 
         <Content />
       </div>
     )}
-    <dl class="entry__facts">
-      {d.startedBy && (<><dt>Started by</dt><dd>{d.startedBy}</dd></>)}
-      {d.chose && (<><dt>Chose</dt><dd>{d.chose}</dd></>)}
-      {d.ruledOut && (<><dt>Ruled out</dt><dd>{d.ruledOut}</dd></>)}
-      {d.result && (<><dt>Result</dt><dd>{d.result}</dd></>)}
-    </dl>
     {d.images.length > 0 && (
       <div class="entry__figures">
         {d.images.map((im) => <Figure src={im.src} alt={im.alt} caption={im.caption} />)}

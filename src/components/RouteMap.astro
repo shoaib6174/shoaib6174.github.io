@@ -1,0 +1,89 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../lib/dates';
+
+interface Props { entries: CollectionEntry<'journey'>[] }
+const { entries } = Astro.props;
+
+const THREADS = [
+  { key: 'build', label: 'Built' },
+  { key: 'explain', label: 'Wrote' },
+  { key: 'organise', label: 'Organised' },
+  { key: 'studied', label: 'Studied' },
+  { key: 'life', label: 'Life' },
+];
+const W = 1000;
+const LEFT = 92;
+const RIGHT = 988;
+const TOP = 34;
+const ROW = 40;
+const H = TOP + THREADS.length * ROW + 6;
+const T0 = 2014;
+const T1 = 2026.95;
+// A year-only date sits mid-year; a month sits mid-month.
+const when = (d: string) => {
+  const [y, m] = d.split('-');
+  return Number(y) + (m ? (Number(m) - 0.5) / 12 : 0.5);
+};
+const x = (t: number) => LEFT + ((t - T0) / (T1 - T0)) * (RIGHT - LEFT);
+const laneY = (key: string) => TOP + THREADS.findIndex((t) => t.key === key) * ROW + ROW / 2;
+const years = Array.from({ length: 2026 - T0 + 1 }, (_, i) => T0 + i);
+const dots = entries.map((e, i) => ({
+  id: e.id,
+  i,
+  x: x(when(e.data.date)),
+  lanes: e.data.threads.map(laneY),
+  label: e.data.short,
+  below: false,
+  title: e.data.title,
+  date: formatDate(e.data.date),
+}));
+// Two labels in the same row within 70 units of each other: the later one goes under its dot.
+for (const d of dots) {
+  if (!d.label) continue;
+  const prev = dots.find((o) => o !== d && o.label && !o.below && o.lanes[0] === d.lanes[0] && o.x < d.x && d.x - o.x < 70);
+  if (prev) d.below = true;
+}
+---
+
+<figure class="rmap" data-rmap>
+  <script is:inline>
+    try {
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && sessionStorage.getItem('route-drawn') !== '1') {
+        document.currentScript.parentElement.classList.add('is-drawing');
+        sessionStorage.setItem('route-drawn', '1');
+      }
+    } catch (e) {}
+  </script>
+  <svg class="rmap__svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="rmap-title rmap-desc">
+    <title id="rmap-title">Every entry on the route, 2014 to now, by year and by kind</title>
+    <desc id="rmap-desc">Five rows, one per kind of thing: built, wrote, organised, studied, life. Each dot is an entry at its date. Point at a dot to see which, or follow it to the entry.</desc>
+    <g class="rmap__grid" aria-hidden="true">
+      {years.map((y) => (
+        <g>
+          <line x1={x(y)} x2={x(y)} y1={TOP - 6} y2={H - 6} />
+          <text x={x(y)} y={TOP - 14} text-anchor="middle">{y}</text>
+        </g>
+      ))}
+    </g>
+    <g class="rmap__lanes">
+      {THREADS.map((t, i) => (
+        <g class="rmap__lane" data-thread={t.key}>
+          <line class="rmap__axis" x1={LEFT - 8} x2={RIGHT} y1={laneY(t.key)} y2={laneY(t.key)} pathLength="1" style={`--i:${i}`} />
+          <text x={LEFT - 16} y={laneY(t.key) + 4} text-anchor="end" class="rmap__lanelabel">{t.label}</text>
+        </g>
+      ))}
+    </g>
+    <g class="rmap__dots">
+      {dots.map((d) => (
+        <a href={`#${d.id}`} class="rmap__dot" data-entry={d.id} data-title={`${d.date}. ${d.title}`} style={`--i:${d.i}`}>
+          {d.lanes.length > 1 && <line class="rmap__tie" x1={d.x} x2={d.x} y1={Math.min(...d.lanes)} y2={Math.max(...d.lanes)} />}
+          {d.lanes.map((y) => <circle cx={d.x} cy={y} r="6.5" />)}
+          {d.label && <text x={d.x} y={d.below ? d.lanes[0] + 22 : d.lanes[0] - 12} text-anchor="middle" class="rmap__label">{d.label}</text>}
+          <title>{d.date}. {d.title}</title>
+        </a>
+      ))}
+    </g>
+  </svg>
+  <figcaption class="rmap__caption" data-rmap-caption aria-live="polite">Point at a dot, or press a row name above the entries to show one kind.</figcaption>
+</figure>

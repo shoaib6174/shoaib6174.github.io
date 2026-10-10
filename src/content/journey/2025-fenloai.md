@@ -4,13 +4,15 @@ title: "Co-founder, FenloAI"
 threads:
   - "organise"
   - "build"
-chose: "To co-found a company for contract AI work."
-result: "An AI chatbot and voice-agent platform, a workforce management platform, a data-collection tool for LinkedIn. All for clients."
+short: "FenloAI"
+summary: "A company for contract AI work: automation, custom software, and AI agents for small businesses, at fixed prices."
 proof:
   - label: "fenloai.com"
     href: "https://fenloai.com"
   - label: "BotForge"
     href: "/work/botforge/"
+  - label: "Jonvexa"
+    href: "/work/jonvexa/"
 ---
 
-We build automation, custom software, and AI agents for small businesses, at fixed prices. Research alone does not keep me in contact with people who need something built by Friday.
+With a co-founder I started FenloAI for contract AI work: automation, custom software, and AI agents for small businesses, at fixed prices. So far, an AI chatbot and voice-agent platform, a workforce-management platform, a generative imaging product, and a data-collection tool for LinkedIn, all for clients. Research alone does not keep me in contact with people who need something built by Friday.

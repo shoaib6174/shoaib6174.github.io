@@ -44,6 +44,8 @@ const journey = defineCollection({
     z.object({
       date: dateStr,
       title: z.string(),
+      short: z.string().optional(),
+      summary: z.string().optional(),
       threads: z.array(z.enum(THREADS)).min(1),
       chose: z.string().optional(),
       ruledOut: z.string().optional(),

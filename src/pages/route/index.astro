@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import JourneyEntry from '../../components/JourneyEntry.astro';
+import RouteMap from '../../components/RouteMap.astro';
 import { sortKey } from '../../lib/dates';
 
 const entries = (await getCollection('journey')).sort(
@@ -16,15 +17,16 @@ const threads = [
 ];
 ---
 
-<Base title="Route" description="What Mohammad Shoaib did, in order, and why. 2014 to now." wide>
+<Base title="Route" description="What Mohammad Shoaib did, in order. 2014 to now." wide>
   <header class="page-head">
     <p class="page-head__span">2014 to now</p>
     <h1>Route</h1>
-    <p class="page-head__lead">What I did, in order, and why. Each entry says what I chose, what I ruled out, and what came of it.</p>
+    <p class="page-head__lead">What I did, in order. I wanted to build robots before university, took a textile degree that was mostly engineering, tried to learn programming three times on the side, and in 2020 made it the main thing. Machine learning in 2021, Google Summer of Code in 2022, a year of quantum computing, and since 2025 a robotics lab and a company.</p>
   </header>
 
   <div class="journey" data-journey>
-    <div class="chips journey__threads" role="group" aria-label="Show one thread">
+    <RouteMap entries={entries} />
+    <div class="chips journey__threads" role="group" aria-label="Show one kind">
       {threads.map((t) => (
         <button type="button" data-thread={t.key} aria-pressed="false">{t.label}</button>
       ))}

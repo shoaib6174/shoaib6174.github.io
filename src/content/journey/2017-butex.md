@@ -1,14 +1,13 @@
 ---
 date: "2017"
-title: "Textile Engineering at BUTEX, majoring in Industrial and Production Engineering"
+title: "Textile Engineering at BUTEX, on the Industrial and Production track"
 threads:
   - "studied"
 onRoute: true
-chose: "The IPE track at Bangladesh University of Textiles, for its mechanical, electrical, automation, and product design courses."
-ruledOut: "The textile side of the degree. Yarn, fabric, wet processing, apparel. Not the engineering I had wanted."
-result: "Graduated in 2022. Tried JavaScript, Java, C++, and competitive programming along the way, then CS50 after reading Life 3.0. None of it held yet."
+short: "BUTEX"
+summary: "A textile degree that was mostly engineering: 73 of 166 credits in industrial engineering and management. Read Life 3.0 in first year."
 ---
 
-Every term mixed two kinds of courses. One side was engineering: programming, electrical, mechanical, automation and control, instrumentation, product design, SolidWorks and CATIA, operations research, simulation. The other was textiles. Of 166 credits, 73 were industrial engineering and management and 48 were textile. I liked the first side.
+I chose the Industrial and Production track for its engineering: programming, electrical, mechanical, automation and control, product design, SolidWorks and CATIA, operations research, simulation. The textile side, yarn, fabric, wet processing, apparel, never clicked. Of 166 credits, 73 were industrial engineering and management and 48 were textile.
 
-In first year I read *Life 3.0*. That is where the interest in AI started.
+In first year I read *Life 3.0*, and that is where the interest in AI started. Over the degree I tried JavaScript, Java, C++, competitive programming, and CS50. None of it held yet.
