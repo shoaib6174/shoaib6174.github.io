@@ -348,7 +348,7 @@ Things a resume never captures, but a branding site should. Add anything that ap
 
 ## Facts to verify before publishing
 
-- Site says MLSA "2021 – Present"; resume says 2021 – 2024. Which is right?
+- MLSA dates: 2021 to 2024, confirmed by Shoaib 2026-10-10.
 - Microsoft certifications: Shoaib said on 2026-10-10 "both in 2022". The inventory rows above and the two Medium posts (Jul 2021, "How I became Azure Data Scientist Associate", "How to become Azure Data Analyst Associate") point to 2021. Resolved 2026-10-10: Shoaib confirmed both were 2021.
 - Year TEXBIZ was first held.
 - Was the BUTEX IPE "robotics" a club, a lab, or a course track?

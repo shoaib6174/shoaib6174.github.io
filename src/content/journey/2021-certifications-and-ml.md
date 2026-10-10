@@ -13,4 +13,4 @@ proof:
     href: "https://medium.com/@shoaib6174/build-a-web-app-to-extract-text-from-image-using-flask-and-azures-computer-vision-api-1ee470b66050"
 ---
 
-Microsoft Learn Student Ambassador from 2021, and IBM Z Ambassador for a term the same year. The ambassador program came with an exam voucher. I spent it on data analytics, the skill closest to the supply chain work I was studying. Machine learning followed from Andrew Ng's course and a lot of YouTube, then the Data Scientist exam. I wrote up each one as I went, which became a habit.
+Microsoft Learn Student Ambassador from 2021 to 2024, and IBM Z Ambassador for a term the same year. The ambassador program came with an exam voucher. I spent it on data analytics, the skill closest to the supply chain work I was studying. Machine learning followed from Andrew Ng's course and a lot of YouTube, then the Data Scientist exam. I wrote up each one as I went, which became a habit.
