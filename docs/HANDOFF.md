@@ -45,6 +45,7 @@ git checkout master && git merge --no-ff redesign && git push
 
 | Item | Where it goes |
 |---|---|
+| Ultrasound-to-baby-photo generator, a FenloAI client product, 2026 | Not on the site yet. Send the product name, whether the client can be named, shipped or prototype, input, output, how the generation works, your role, stack, and any link. It becomes `src/content/work/<slug>.md` and a line in the Platforms group in `src/content/pitch.json`. |
 | Photos: debate award, TEXBIZ, Business Club, Annapurna, Kunming, a lab robot | Drop files in `src/assets/photos/`, then reference them in the matching entry's `images:` list. The detail pages already show a labelled slot for each. The home page has no photo at the moment; the headshot is in `src/assets/photos/headshot.jpeg` if you want one back. |
 | A demo GIF or video of the task planner | `cover:` on `src/content/work/llm-robot-task-planner.md` |
 | The five article URLs | `src/content/articles.json` |

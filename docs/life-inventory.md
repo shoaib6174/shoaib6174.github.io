@@ -91,7 +91,7 @@ Two co-founders. Site: https://fenloai.com, tagline "AI That Actually Works for 
 |---|---|
 | BotForge | Omni-channel AI chatbot and voice-agent platform: RAGChat, VoiceBot Pro (Twilio/Vapi), WhatsApp, Telegram, web widget, Zapier. https://botforge.fenloai.com/ |
 | Jonvexa | Workforce-management platform for a Canadian care and staffing group, delivered live 2026-10-10. See the Jonvexa section below. Client not named publicly until they confirm. |
-| Ultrasound-to-baby-photo generator | Generative imaging product, client project. `[?]` name, link if public |
+| Ultrasound-to-baby-photo generator | Generative imaging product for a FenloAI client, 2026 (confirmed 2026-10-10). Not on the site yet. `[?]` Shoaib will supply: product name, whether the client can be named, shipped or prototype, what the input and output are and how the generation works, his role, stack, link if public |
 | Intelligent LinkedIn scraper | Data-collection tool, client project. |
 
 #### Jonvexa (2026), sole developer and delivery lead
