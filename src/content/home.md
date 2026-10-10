@@ -14,7 +14,7 @@ roles:
     title: "I bring people together."
     text: "A company I co-founded, and a Qiskit Advocate role since 2023. Before that, a university business club from its first year to vice president, a national competition, and campus teams across fifty universities."
 meets:
-  - text: "Apparel and vision-language models. At NITEX I tagged clothing categories and attributes from photos with a locally deployed model. Six years of studying garments is why I knew what to tag."
+  - text: "Apparel and vision-language models. At NITEX I tagged clothing categories and attributes from photos with a locally deployed model. Before that, six years of studying garments."
     label: "Trend platform"
     href: "/work/nitex-trend-platform/"
   - text: "Hardware and AI. A face recogniser on a Raspberry Pi in 2019, models on Jetson boards now, and the AI payload of a CubeSat."
@@ -23,10 +23,10 @@ meets:
   - text: "Business and models. FenloAI builds AI systems for small businesses, at fixed prices, for real clients."
     label: "FenloAI"
     href: "/route/2025-fenloai/"
-  - text: "Factories and robots. A patrol robot with fire and gas hazard detection for factory floors, built on the task planner's stack. An internship on a factory floor is why I can design for one. A concept, waiting for funding."
+  - text: "Factories and robots. A patrol robot with fire and gas hazard detection for factory floors, built on the task planner's stack. Before that, an internship on a factory floor. A concept, waiting for funding."
     label: "Security robot"
     href: "/work/security-robot/"
-  - text: "Supply chain and machine learning. The MicroMasters is where I got the probability and optimisation, and its fifth course is what pointed me at machine learning. I have not built in that layer yet."
+  - text: "Supply chain and machine learning. The MicroMasters gave me the probability and optimisation. Its fifth course had a lecture on machine learning in supply chains. I have not built in that layer yet."
     label: "The 2020 entry"
     href: "/route/2020-take-it-seriously/"
 now:
