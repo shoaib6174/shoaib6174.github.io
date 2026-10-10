@@ -1,0 +1,50 @@
+{
+  "groups": [
+    {
+      "id": "ai",
+      "phrase": "AI and robotics engineer",
+      "label": "AI and robotics",
+      "side": "left",
+      "items": [
+        { "title": "NSU Intelligent Robotics Lab", "meta": "Research assistant, 2025 to now", "href": "/route/2025-niro-lab/" },
+        { "title": "MSc in Computer Science and Engineering", "meta": "North South University, 2023 to now", "href": "/route/2023-nsu-msc/" },
+        { "title": "Google Summer of Code with TensorFlow", "meta": "2022. Video Swin Transformer, 2,636 downloads", "href": "/work/video-swin-tf2/" },
+        { "title": "Jonvexa, a workforce platform for a care group", "meta": "Sole developer, six weeks, 2026", "href": "/work/jonvexa/" },
+        { "title": "Co-founder, FenloAI", "meta": "2025 to now. AI systems for small businesses", "href": "/route/2025-fenloai/" }
+      ]
+    },
+    {
+      "id": "floor",
+      "phrase": "the factory floor",
+      "label": "The factory floor",
+      "side": "right",
+      "items": [
+        { "title": "BSc Textile Engineering, BUTEX", "meta": "2017 to 2023. 73 of 166 credits in industrial engineering and management", "href": "/route/2017-butex/" },
+        { "title": "Internship on a factory floor", "meta": "During the degree", "href": "/route/2017-butex/" },
+        { "title": "Jr. AI Engineer, NITEX", "meta": "2023 to 2024. Two platforms for a fashion company", "href": "/route/2023-nitex/" }
+      ]
+    },
+    {
+      "id": "costs",
+      "phrase": "the costs",
+      "label": "The costs",
+      "side": "left",
+      "items": [
+        { "title": "MITx MicroMasters in Supply Chain Management", "meta": "2020 to 2021. Five graduate-level courses", "href": "/route/2020-take-it-seriously/" },
+        { "title": "Forecasting, inventory, network design, costing, cash-to-cash", "meta": "and system dynamics" }
+      ]
+    },
+    {
+      "id": "people",
+      "phrase": "the people",
+      "label": "The people",
+      "side": "right",
+      "items": [
+        { "title": "BUTEX Business Club, first year to Vice President", "meta": "2017 to 2022. TEXBIZ, a national competition", "href": "/route/2017-debate-and-club/" },
+        { "title": "Campus teams across fifty universities, YSI", "meta": "2018 to 2019", "href": "/route/2018-ysi/" },
+        { "title": "Four math books for children", "meta": "2018 and 2022", "href": "/writing/#books" },
+        { "title": "Teaching assistant, computer architecture", "meta": "2024", "href": "/route/2024-back-to-nsu/" }
+      ]
+    }
+  ]
+}

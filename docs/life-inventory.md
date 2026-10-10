@@ -90,9 +90,22 @@ Two co-founders. Site: https://fenloai.com, tagline "AI That Actually Works for 
 | Product | What it is |
 |---|---|
 | BotForge | Omni-channel AI chatbot and voice-agent platform: RAGChat, VoiceBot Pro (Twilio/Vapi), WhatsApp, Telegram, web widget, Zapier. https://botforge.fenloai.com/ |
-| Jonvexa | Workforce management platform, client project. `[?]` link if public |
+| Jonvexa | Workforce-management platform for a Canadian care and staffing group, delivered live 2026-10-10. See the Jonvexa section below. Client not named publicly until they confirm. |
 | Ultrasound-to-baby-photo generator | Generative imaging product, client project. `[?]` name, link if public |
 | Intelligent LinkedIn scraper | Data-collection tool, client project. |
+
+#### Jonvexa (2026), sole developer and delivery lead
+
+Source: Shoaib's project brief, 2026-10-10. Multi-tenant web platform that replaced a ConnectTeam subscription for a Canadian care and staffing company (one parent company, three operating companies: adult foster care, staffing, cleaning; Vaughan, Ontario). **Client name withheld on the site until the client confirms.** Users: office administrators, field staff on phones, care recipients with their own login. Ontario privacy law applies: PHIPA for care records, PIPEDA and the Electronic Commerce Act for e-signatures. Never write "HIPAA".
+
+- Role: sole developer and delivery lead, trading as FenloAI. Requirements from the client's checklists and process material, design specs, implementation, testing, deployment, documentation, handover. Fixed price, three phases, about six weeks, live 2026-10-10, 54 production deploys.
+- Built: onboarding (requirement lists per group, upload-and-verify documents, fill-then-sign forms with sealed PDFs and hash evidence, courses with quizzes and graded answers, review queue, expiry reminders); scheduling and attendance (shifts and series, open-shift offers and swaps, time off, geofenced clock-in/out with hash-chained events, daily logs, hours reports, CSV); care records (residences, placements, record books incl. medication administration record, files and notes, client-facing who-is-on-shift); communication (announcements with acknowledgements, chat with channels, groups, photos, voice notes, mentions, moderation, retention, audited oversight console, web push); administration (roles, custom roles, multi-company console, super-admin with logged corrections and reversals, account merge, activity trail).
+- Scale: ~650 inventoried controls across four portals, 190 documented user journeys, ~2,900 unit tests, 370 end-to-end browser tests as a deploy gate, emulated-device pass, reproducible screenshot harness from a seeded demo company.
+- Documentation: 15-part feature reference, three manuals (administrator, employee, super admin), walkthrough script, pre-delivery review script, deploy runbook, handover notes.
+- Stack: Next.js 16, React 19 (server actions, PWA), TypeScript, Prisma, PostgreSQL, Tailwind, Playwright, Vitest, nginx with Let's Encrypt on a DigitalOcean droplet, SMTP email, web push. Scripted rsync-build-restart deploys with checksum verification and nginx rollback.
+- Engineering: tenant isolation in every query; sealed documents and clock events append-only with hash chains; sensitive fields encrypted at rest and masked; pre-delivery security audit (SSRF, cross-tenant upload, CSP, cookies); forms built to survive React 19's post-action reset; retention rules exclude care-record conversations pending legal confirmation.
+- Process (his call whether to say publicly; **not on the site**): spec-driven development with an AI coding agent orchestrating parallel implementer and reviewer agents, one gate per release, decisions table.
+- Status: being transferred to the client's own accounts; maintenance contract to follow.
 
 **Why.** Same reason NITEX happened after the first semester: he likes building systems that people use, and the lab alone does not provide that. FenloAI is the standing outlet for it. It also continues the entrepreneurship thread from the BUTEX Business Club and YSI years (facet 5).
 

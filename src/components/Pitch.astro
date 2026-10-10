@@ -1,0 +1,143 @@
+---
+import pitch from '../content/pitch.json';
+
+type Item = { title: string; meta: string; href?: string };
+type Group = { id: string; phrase: string; label: string; side: 'left' | 'right'; items: Item[] };
+const groups = pitch.groups as Group[];
+const byId = Object.fromEntries(groups.map((g) => [g.id, g]));
+const left = groups.filter((g) => g.side === 'left');
+const right = groups.filter((g) => g.side === 'right');
+---
+
+<section class="pitch" data-pitch aria-labelledby="pitch-sentence">
+  <svg class="pitch__leads" aria-hidden="true"></svg>
+  <div class="pitch__col pitch__col--l">
+    {left.map((g) => (
+      <div class="pitch__group" data-group={g.id}>
+        <h2 class="pitch__label">{g.label}</h2>
+        <ul class="pitch__items">
+          {g.items.map((it) => (
+            <li>
+              {it.href ? <a href={it.href}>{it.title}</a> : <span>{it.title}</span>}
+              <small>{it.meta}</small>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <h1 class="pitch__sentence" id="pitch-sentence">
+    <span class="pitch__phrase" data-phrase="ai">{byId.ai.phrase}</span>{' '}<br class="pitch__br" />
+    who also knows{' '}<br class="pitch__br" />
+    <span class="pitch__phrase" data-phrase="floor">{byId.floor.phrase}</span>,{' '}<br class="pitch__br" />
+    <span class="pitch__phrase" data-phrase="costs">{byId.costs.phrase}</span>, and <span class="pitch__phrase" data-phrase="people">{byId.people.phrase}</span>{' '}<br class="pitch__br" />
+    a machine is for.
+  </h1>
+  <div class="pitch__col pitch__col--r">
+    {right.map((g) => (
+      <div class="pitch__group" data-group={g.id}>
+        <h2 class="pitch__label">{g.label}</h2>
+        <ul class="pitch__items">
+          {g.items.map((it) => (
+            <li>
+              {it.href ? <a href={it.href}>{it.title}</a> : <span>{it.title}</span>}
+              <small>{it.meta}</small>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  // Leader lines from each phrase of the sentence to its group of credentials, like the
+  // callouts on a drawing. Positions come from the laid-out text, so they are computed
+  // in the browser and redrawn on resize. Without JS the groups still read as plain lists.
+  const NS = 'http://www.w3.org/2000/svg';
+  let controller: AbortController | null = null;
+
+  function init() {
+    controller?.abort();
+    controller = null;
+    const root = document.querySelector<HTMLElement>('[data-pitch]');
+    if (!root) return;
+    controller = new AbortController();
+    const { signal } = controller;
+    const svg = root.querySelector<SVGSVGElement>('.pitch__leads')!;
+    const sentence = root.querySelector<HTMLElement>('.pitch__sentence')!;
+    const phrases = [...root.querySelectorAll<HTMLElement>('[data-phrase]')];
+    const groups = [...root.querySelectorAll<HTMLElement>('[data-group]')];
+    const groupOf = (id: string) => groups.find((g) => g.dataset.group === id);
+
+    let arrive = false;
+    try {
+      arrive = !matchMedia('(prefers-reduced-motion: reduce)').matches && sessionStorage.getItem('pitch-drawn') !== '1';
+      if (arrive) sessionStorage.setItem('pitch-drawn', '1');
+    } catch {}
+
+    const draw = () => {
+      svg.replaceChildren();
+      if (matchMedia('(max-width: 1000px)').matches) return;
+      const sr = root.getBoundingClientRect();
+      const hr = sentence.getBoundingClientRect();
+      svg.setAttribute('viewBox', `0 0 ${sr.width} ${sr.height}`);
+      phrases.forEach((ph, i) => {
+        const id = ph.dataset.phrase!;
+        const group = groupOf(id);
+        if (!group) return;
+        const label = group.querySelector('.pitch__label')!;
+        const pr = ph.getBoundingClientRect();
+        const lr = label.getBoundingClientRect();
+        const onLeft = group.parentElement!.classList.contains('pitch__col--l');
+        const ax = (onLeft ? pr.left : pr.right) - sr.left;
+        const ay = pr.bottom - sr.top + 2;
+        const dx = (onLeft ? lr.right + 12 : lr.left - 12) - sr.left;
+        const dy = lr.top + lr.height / 2 - sr.top;
+        const gx = onLeft ? hr.left - sr.left - 22 : hr.right - sr.left + 22;
+        const path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', `M${ax},${ay} L${gx},${ay} L${gx},${dy} L${dx},${dy}`);
+        path.dataset.lead = id;
+        svg.append(path);
+        const dot = document.createElementNS(NS, 'circle');
+        dot.setAttribute('cx', String(dx));
+        dot.setAttribute('cy', String(dy));
+        dot.setAttribute('r', '3');
+        dot.dataset.lead = id;
+        svg.append(dot);
+        if (arrive && 'animate' in path) {
+          const L = path.getTotalLength();
+          path.style.strokeDasharray = String(L);
+          path.style.strokeDashoffset = String(L);
+          const anim = path.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], { duration: 650, delay: 250 + i * 150, easing: 'ease-out', fill: 'forwards' });
+          anim.onfinish = () => { anim.cancel(); path.style.strokeDasharray = ''; path.style.strokeDashoffset = ''; };
+        }
+      });
+      arrive = false;
+    };
+
+    const focus = (id: string | null) => {
+      root.classList.toggle('is-focused', id !== null);
+      phrases.forEach((p) => p.classList.toggle('is-hot', p.dataset.phrase === id));
+      groups.forEach((g) => g.classList.toggle('is-hot', g.dataset.group === id));
+      svg.querySelectorAll<SVGElement>('[data-lead]').forEach((e) => e.classList.toggle('is-hot', e.dataset.lead === id));
+    };
+    phrases.forEach((p) => {
+      p.addEventListener('pointerenter', () => focus(p.dataset.phrase!), { signal });
+      p.addEventListener('pointerleave', () => focus(null), { signal });
+    });
+    groups.forEach((g) => {
+      g.addEventListener('pointerenter', () => focus(g.dataset.group!), { signal });
+      g.addEventListener('pointerleave', () => focus(null), { signal });
+      g.addEventListener('focusin', () => focus(g.dataset.group!), { signal });
+      g.addEventListener('focusout', () => focus(null), { signal });
+    });
+
+    document.fonts.ready.then(draw);
+    const ro = new ResizeObserver(() => draw());
+    ro.observe(root);
+    signal.addEventListener('abort', () => ro.disconnect());
+  }
+  init();
+  document.addEventListener('astro:after-swap', init);
+</script>

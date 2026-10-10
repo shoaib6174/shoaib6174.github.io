@@ -15,7 +15,7 @@ A preview server may still be running from last night on the same address. The c
 
 - An Astro 7 static site, six pages plus a detail page for every work item and route entry: Home, Work, Route, Writing, Skills, Shelf.
 - All copy drafted from `docs/life-inventory.md` under `docs/story/portrayal.md`, then put through two review passes against `docs/story/evaluation-guide.md` (reports in `docs/story/review-*.md`). Every number on the site has a line in the inventory naming its source.
-- Design per `docs/superpowers/specs/2026-10-09-design-direction.md`: drafting-paper surface, Bricolage Grotesque and Literata, a margin column, one signal colour used only for lines and underlines, rows instead of cards, a dimension-line rail on Route, a separate phone layout. The home page opens with a layered map, chosen on 2026-10-10: seven bands from the floor to the people, fourteen fields, and a curve for each project that joined two fields. Edit `src/content/map.json` to add a field, move one, or add a project line; no code changes needed.
+- Design per `docs/superpowers/specs/2026-10-09-design-direction.md`: drafting-paper surface, Bricolage Grotesque and Literata, a margin column, one signal colour used only for lines and underlines, rows instead of cards, a dimension-line rail on Route, a separate phone layout. The home page, chosen on 2026-10-10, is one sentence with the credentials hung on it: "AI and robotics engineer who also knows the factory floor, the costs, and the people a machine is for." Each of the four phrases has a leader line to a group of credentials in the margin; hover a phrase or a group and the rest recede. Edit `src/content/pitch.json` to change a group's items, labels, or links. The sentence itself is in `src/components/Pitch.astro`.
 - Lighthouse on the home page, mobile: accessibility 100, best practices 100, SEO 100, no layout shift. Shipped script under 20 KB.
 - Old URLs redirect to the new pages. The Jekyll theme and its sample content are gone; git history keeps them.
 - `npm run build` fails on a broken internal link, a skills row without proof, or a malformed content file. `npm run check` type-checks the pages, `npm test` runs the unit tests. The deploy workflow runs all three before publishing.
@@ -45,7 +45,7 @@ git checkout master && git merge --no-ff redesign && git push
 
 | Item | Where it goes |
 |---|---|
-| Photos: debate award, TEXBIZ, Business Club, Annapurna, Kunming, a lab robot | Drop files in `src/assets/photos/`, then reference them in the matching entry's `images:` list. The detail pages already show a labelled slot for each. The home mosaic uses the same photos: in `src/pages/index.astro`, give a tile `kind: 'img'` and `image: <import>`; the grey tiles are the ones waiting for a photo. |
+| Photos: debate award, TEXBIZ, Business Club, Annapurna, Kunming, a lab robot | Drop files in `src/assets/photos/`, then reference them in the matching entry's `images:` list. The detail pages already show a labelled slot for each. The home page has no photo at the moment; the headshot is in `src/assets/photos/headshot.jpeg` if you want one back. |
 | A demo GIF or video of the task planner | `cover:` on `src/content/work/llm-robot-task-planner.md` |
 | The five article URLs | `src/content/articles.json` |
 | The mobile cover publication link and venue | `src/content/papers.json`, and the 2019 route entry's `proof` |

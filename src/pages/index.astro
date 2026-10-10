@@ -1,33 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import Map from '../components/Map.astro';
+import Pitch from '../components/Pitch.astro';
 import { frontmatter as home } from '../content/home.md';
-import headshot from '../assets/photos/headshot.jpeg';
 
 const now: string[] = home.now.slice(0, 3);
 ---
 
 <Base title="Mohammad Shoaib" description={home.masthead} bodyClass="home" wide>
-  <section class="front" aria-labelledby="name">
-    <Image class="front__photo" src={headshot} alt="Mohammad Shoaib" width="224" height="280" densities={[1, 2]} />
-    <div class="front__text">
-      <h1 id="name" class="front__name">{home.name}</h1>
-      <p class="front__line">{home.statement[0]} {home.statement[2]}</p>
-      <p class="front__claim">{home.statement[3]}</p>
-    </div>
-  </section>
-
-  <Map />
+  <Pitch />
 
   <section class="under">
-    <div class="under__col">
-      <h2>Three things I do</h2>
-      <ul>
-        {home.roles.map((r: { title: string }) => <li>{r.title}</li>)}
-      </ul>
-    </div>
     <div class="under__col">
       <h2>Now</h2>
       <ul>
