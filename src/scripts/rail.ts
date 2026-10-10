@@ -14,8 +14,6 @@ function init() {
   const buttons = [...root.querySelectorAll<HTMLButtonElement>('button[data-thread]')];
   const dots = [...root.querySelectorAll<SVGAElement>('.rmap__dot')];
   const lanes = [...root.querySelectorAll<SVGGElement>('.rmap__lane')];
-  const caption = root.querySelector<HTMLElement>('[data-rmap-caption]');
-  const idleCaption = caption?.textContent ?? '';
 
   let ticking = false;
   const update = () => {
@@ -64,14 +62,6 @@ function init() {
       { signal },
     ),
   );
-  dots.forEach((d) => {
-    const show = () => { if (caption) caption.textContent = d.dataset.title ?? ''; };
-    const hide = () => { if (caption) caption.textContent = idleCaption; };
-    d.addEventListener('pointerenter', show, { signal });
-    d.addEventListener('pointerleave', hide, { signal });
-    d.addEventListener('focus', show, { signal });
-    d.addEventListener('blur', hide, { signal });
-  });
 }
 
 init();
