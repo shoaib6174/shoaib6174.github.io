@@ -1,7 +1,7 @@
 {
   "bands": [
     { "id": "floor", "label": "The floor", "note": "" },
-    { "id": "economics", "label": "The economics", "note": "studied, not yet built in" },
+    { "id": "economics", "label": "The economics", "note": "" },
     { "id": "models", "label": "The data and models", "note": "" },
     { "id": "running", "label": "Running it", "note": "" },
     { "id": "machine", "label": "The machine", "note": "" },

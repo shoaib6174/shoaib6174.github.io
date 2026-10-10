@@ -85,3 +85,5 @@ An engineer who reads his way into things and then learns them properly, who lea
 | journey, chapter, spark | (delete; use dates) |
 | best-selling author | three volumes, a category best seller on Rokomari |
 | I am a X who Y | (delete; state the work) |
+
+**Addendum (2026-10-10).** Do not write "studied, not built" or "not yet built in" about supply chain and finance. State the proof (five graduate-level courses from MITx, the topics) and stop. The absence is for the reader to notice, not for the copy to announce. Also: the lab fundamentals (control theory, optimal control, SLAM, diffusion models, VLM/VLA, hardware) took several months in total. Never describe them as learned in weeks or "the first months".

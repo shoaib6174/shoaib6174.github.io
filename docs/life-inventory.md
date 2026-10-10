@@ -70,7 +70,7 @@ Pattern worth naming: two of the five things he tried in 2020 to 2021 were tried
 
 ### At NIRO Lab (Jun 2025 – present)
 
-Spent a deliberate stretch getting the fundamentals right before building: online courses in control theory and optimal control, reinforcement learning, SLAM, VLM and VLA models, and robot hardware.
+Spent a deliberate stretch getting the fundamentals right before building: online courses in control theory and optimal control, reinforcement learning, SLAM, diffusion models, VLM and VLA models, and robot hardware. Several months in total (his words, 2026-10-10); not to be described as quick.
 
 | Work | Status |
 |---|---|

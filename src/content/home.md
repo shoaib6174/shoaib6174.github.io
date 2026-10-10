@@ -31,7 +31,7 @@ meets:
   - text: "Factories and robots. A patrol robot with fire and gas hazard detection for factory floors, built on the task planner's stack. Before that, an internship on a factory floor. A concept, waiting for funding."
     label: "Security robot"
     href: "/work/security-robot/"
-  - text: "Supply chain and machine learning. The MicroMasters gave me the probability and optimisation. Its fifth course had a lecture on machine learning in supply chains. I have not built in that layer yet."
+  - text: "Supply chain and machine learning. The MicroMasters gave me the probability and optimisation. Its fifth course had a lecture on machine learning in supply chains."
     label: "The 2020 entry"
     href: "/route/2020-take-it-seriously/"
 now:

@@ -154,7 +154,7 @@ const anchor = (x: number) => (x < 160 ? 'start' : x > 840 ? 'end' : 'middle');
       const hot = new Set<string>([id]);
       mine.forEach((e) => { hot.add(e.dataset.from!); hot.add(e.dataset.to!); });
       paint(mine, hot, true);
-      if (!mine.length) { caption.textContent = `${labelOf(id)}: studied, not yet built in.`; return; }
+      if (!mine.length) { caption.textContent = `${labelOf(id)}.`; return; }
       list(labelOf(id), mine, id);
     };
     const focusBand = (id: string) => {
@@ -163,7 +163,7 @@ const anchor = (x: number) => (x < 160 ? 'start' : x > 840 ? 'end' : 'middle');
       mine.forEach((e) => { hot.add(e.dataset.from!); hot.add(e.dataset.to!); });
       nodes.filter((n) => n.dataset.band === id).forEach((n) => hot.add(n.dataset.node!));
       paint(mine, hot, true);
-      if (!mine.length) { caption.textContent = `${bandLabel(id)}: studied, nothing built through this layer yet.`; return; }
+      if (!mine.length) { caption.textContent = `${bandLabel(id)}.`; return; }
       list(bandLabel(id), mine);
     };
     const focusEdge = (e: SVGGElement) => {
