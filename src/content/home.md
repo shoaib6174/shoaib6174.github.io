@@ -13,6 +13,22 @@ roles:
   - key: organise
     title: "I bring people together."
     text: "A company I co-founded, and a Qiskit Advocate role since 2023. Before that, a university business club from its first year to vice president, a national competition, and campus teams across fifty universities."
+meets:
+  - text: "Apparel and vision-language models. At NITEX I tagged clothing categories and attributes from photos with a locally deployed model. I knew what the attributes were because I had studied garments for six years."
+    label: "Trend platform"
+    href: "/work/nitex-trend-platform/"
+  - text: "Factory floors and robots. The security robot patrols for fire and gas hazards on the task planner's stack. I know what a textile floor looks like from the inside."
+    label: "Security robot"
+    href: "/work/security-robot/"
+  - text: "Supply chain and machine learning. A MicroMasters gave me forecasting, inventory, network design, and the finance of a supply chain, and its fifth course pointed me at machine learning. Later, an order-data pipeline for twenty brands."
+    label: "Extraction pipeline"
+    href: "/work/nitex-extraction-pipeline/"
+  - text: "Business and models. FenloAI builds AI systems for small businesses at fixed prices, so the work has to be estimated before it is built."
+    label: "FenloAI"
+    href: "/route/2025-fenloai/"
+  - text: "Hardware and AI. A face recogniser on a Raspberry Pi in 2019, models on Jetson boards now, and the AI payload of a CubeSat."
+    label: "On robot hardware"
+    href: "/work/vlm-perception-edge/"
 now:
   - "LLM robot task planner: four of its five demo scenarios pass in simulation. Next, the physical JetRover."
   - "Vision-language and vision-language-action models on the lab's Jetson boards."

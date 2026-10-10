@@ -200,7 +200,7 @@ Article URLs (from the RSS feed, 2026-10-09):
 |---|---|---|
 | Jan 2017 – Dec 2022 | BSc Textile Engineering, major Industrial & Production Engineering (IPE), CGPA 3.12/4.00. Condensed curriculum: every term mixed textile courses (yarn, fabric, wet processing, apparel) with IPE courses (programming, electrical, mechanical, automation and control, instrumentation, product design, CAD/CAM, operations research, simulation, supply chain). Full list: `docs/butex-courses.md`. He liked the IPE half; the textile half was not the kind of engineering he had wanted | Bangladesh University of Textiles (BUTEX) |
 | 2019 | Product Design course: radiation-protective mobile cover, methodical design process, later published (see facet 3) | BUTEX |
-| 2020 – 2021 | MicroMasters in Supply Chain Management | MITx |
+| 2020 – 2021 | MicroMasters in Supply Chain Management: analytics (probability, statistics, optimisation, simulation), fundamentals (forecasting, inventory, transportation), design (network design, supply chain finance: activity-based costing, working capital, cash-to-cash, discounted cash flow; procurement; S&OP), dynamics (system dynamics, risk, resilience), technology (SQL, ML on supply chain data, ERP/WMS/TMS). Detail: `docs/mitx-micromasters.md` | MITx |
 | 2020 | Lean Six Sigma Yellow Belt | Technical University of Munich |
 | 2021 | Google Project Management Specialization | Google |
 | 2021 | Architecting with Google Compute Engine Specialization | Google |

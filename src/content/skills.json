@@ -159,7 +159,7 @@
   },
   {
     "id": "backend",
-    "order": 7,
+    "order": 8,
     "home": true,
     "group": "Backend and cloud",
     "tools": [
@@ -262,20 +262,31 @@
   },
   {
     "id": "operations",
-    "order": 11,
-    "home": false,
-    "group": "Operations and supply chain",
+    "order": 7,
+    "home": true,
+    "group": "Supply chain, operations, and their finance",
     "tools": [
-      "MITx MicroMasters in Supply Chain Management",
-      "Google Project Management",
-      "Lean Six Sigma Yellow Belt, TUM",
+      "demand forecasting",
+      "inventory policy",
+      "transportation planning",
+      "network design",
+      "activity-based costing",
+      "working capital and cash-to-cash",
+      "discounted cash flow",
+      "system dynamics",
+      "SQL and ML on supply chain data",
       "operations research",
-      "industrial simulation"
+      "Lean Six Sigma Yellow Belt",
+      "Google Project Management"
     ],
     "proof": [
       {
-        "label": "The 2020 entry",
+        "label": "MITx MicroMasters, 2020 to 2021",
         "href": "/route/2020-take-it-seriously/"
+      },
+      {
+        "label": "Order-data pipeline for twenty brands",
+        "href": "/work/nitex-extraction-pipeline/"
       }
     ]
   },

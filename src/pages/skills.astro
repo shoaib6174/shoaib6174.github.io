@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import SkillRow from '../components/SkillRow.astro';
 
 const skills = (await getCollection('skills')).sort((a, b) => a.data.order - b.data.order);
+const layers = (await getCollection('layers')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Base title="Skills" description="What Mohammad Shoaib can do, each group with the work that proves it.">
@@ -12,7 +13,27 @@ const skills = (await getCollection('skills')).sort((a, b) => a.data.order - b.d
     <h1>Skills, with proof</h1>
     <p class="page-head__lead">Each group links to the work that shows it. If there is no proof, it is not listed.</p>
   </header>
+
+  <section class="section" aria-labelledby="column">
+    <h2 id="column" class="section__label">From the floor to the customer</h2>
+    <p class="column__intro">Most of what I have done sits in one of seven layers. A problem in the physical world passes through all of them. I have worked in each.</p>
+    <ol class="column">
+      {layers.map((l) => (
+        <li class="layer">
+          <h3 class="layer__name">{l.data.layer}</h3>
+          <p class="layer__bring">{l.data.bring}</p>
+          <p class="layer__proof">
+            {l.data.proof.map((p, i) => (<><a href={p.href}>{p.label}</a>{i < l.data.proof.length - 1 ? ', ' : ''}</>))}
+          </p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="groups">
+    <h2 id="groups" class="section__label">Groups, with proof</h2>
   <div class="skills">
-    {skills.map((s) => <SkillRow skill={s} headingLevel="h2" />)}
+    {skills.map((s) => <SkillRow skill={s} headingLevel="h3" />)}
   </div>
+  </section>
 </Base>

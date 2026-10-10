@@ -25,8 +25,9 @@ const tiles = [
   { label: 'Qiskit Advocate, a year of quantum computing', href: '/route/2022-quantum/', kind: 'ph' },
   { label: 'Kunming, and learning Chinese', href: '/route/2024-kunming/', kind: 'ph', h: 2 },
   { label: 'Articles, written after learning each thing', href: '/writing/#articles', kind: 'ink', big: '21' },
-  { label: 'Textile engineering, BUTEX', href: '/route/2017-butex/', kind: 'ph' },
-  { label: 'Annapurna Base Camp, alone', href: '/route/2025-annapurna/', kind: 'ph', w: 2 },
+  { label: 'Textile and industrial engineering, BUTEX', href: '/route/2017-butex/', kind: 'ph' },
+  { label: 'Annapurna Base Camp, alone', href: '/route/2025-annapurna/', kind: 'ph' },
+  { label: 'Supply chain and its finance, MITx', href: '/route/2020-take-it-seriously/', kind: 'ph' },
   { label: 'Best speaker, debate, 2017', href: '/route/2017-debate-and-club/', kind: 'ph' },
   { label: 'FenloAI, co-founder', href: '/route/2025-fenloai/', kind: 'ink' },
   { label: 'A book on C, at 16', href: '/route/2014-c-book/', kind: 'ink' },
@@ -85,6 +86,16 @@ const series = [
         </div>
       ))}
     </div>
+  </section>
+
+  <section class="section" aria-labelledby="meets">
+    <h2 id="meets" class="section__label">Where the fields meet</h2>
+    <ul class="meets">
+      {home.meets.map((m: { text: string; label: string; href: string }) => (
+        <li><span>{m.text}</span> <a href={m.href}>{m.label}</a></li>
+      ))}
+    </ul>
+    <p class="section__more"><a href="/skills/">The whole column, from the floor to the customer</a></p>
   </section>
 
   <section class="section" aria-labelledby="route">

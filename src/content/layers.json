@@ -1,0 +1,77 @@
+[
+  {
+    "id": "floor",
+    "order": 1,
+    "layer": "The floor",
+    "bring": "Textile and industrial engineering: how things are made, measured, and kept running. Manufacturing processes, instrumentation and control, product design, ergonomics, an industrial attachment.",
+    "proof": [
+      { "label": "BUTEX, 2017 to 2022", "href": "/route/2017-butex/" },
+      { "label": "Factory security robot", "href": "/work/security-robot/" }
+    ]
+  },
+  {
+    "id": "economics",
+    "order": 2,
+    "layer": "The economics",
+    "bring": "Supply chain and its finance: forecasting, inventory policy, transportation, network design, activity-based costing, working capital, cash-to-cash, discounted cash flow, system dynamics. Fixed-price contract work since 2025.",
+    "proof": [
+      { "label": "MITx MicroMasters, 2020 to 2021", "href": "/route/2020-take-it-seriously/" },
+      { "label": "FenloAI", "href": "/route/2025-fenloai/" }
+    ]
+  },
+  {
+    "id": "models",
+    "order": 3,
+    "layer": "The data and models",
+    "bring": "Computer vision, vision-language models, language-model agents, reinforcement learning, the statistics underneath.",
+    "proof": [
+      { "label": "Trend platform", "href": "/work/nitex-trend-platform/" },
+      { "label": "Task planner", "href": "/work/llm-robot-task-planner/" },
+      { "label": "Pursuit-evasion", "href": "/work/safe-rl-pe/" }
+    ]
+  },
+  {
+    "id": "running",
+    "order": 4,
+    "layer": "Running it",
+    "bring": "Containers, Kubernetes, AWS and Azure, model serving with Triton, pipelines that run every day, inference on edge boards.",
+    "proof": [
+      { "label": "GetAudio", "href": "/work/getaudio/" },
+      { "label": "Extraction pipeline", "href": "/work/nitex-extraction-pipeline/" },
+      { "label": "On robot hardware", "href": "/work/vlm-perception-edge/" }
+    ]
+  },
+  {
+    "id": "machine",
+    "order": 5,
+    "layer": "The machine",
+    "bring": "ROS 2, navigation, control, a robot arm, Jetson and Raspberry Pi boards, a satellite's on-board software.",
+    "proof": [
+      { "label": "NSU Intelligent Robotics Lab", "href": "/route/2025-niro-lab/" },
+      { "label": "NSU AI SAT", "href": "/work/nsu-ai-sat/" },
+      { "label": "TurtleBot3", "href": "/work/turtlebot3-patrolling/" }
+    ]
+  },
+  {
+    "id": "product",
+    "order": 6,
+    "layer": "The product",
+    "bring": "Full-stack software: a backend, a database, an interface someone can use without me in the room.",
+    "proof": [
+      { "label": "BotForge", "href": "/work/botforge/" },
+      { "label": "HSK trainer", "href": "/work/hsk-vocabs/" },
+      { "label": "WebMart, 2021", "href": "https://github.com/shoaib6174/WebMart" }
+    ]
+  },
+  {
+    "id": "people",
+    "order": 7,
+    "layer": "The people",
+    "bring": "Explaining, organising, and selling: books for children, articles for engineers, a club, a national competition, fifty campus teams, a company with clients.",
+    "proof": [
+      { "label": "Four books", "href": "/writing/#books" },
+      { "label": "Debate and the club", "href": "/route/2017-debate-and-club/" },
+      { "label": "YSI Bangladesh", "href": "/route/2018-ysi/" }
+    ]
+  }
+]
