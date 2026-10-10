@@ -5,7 +5,7 @@ threads:
   - "studied"
 onRoute: true
 chose: "The IPE track at Bangladesh University of Textiles, for its mechanical, electrical, automation, and product design courses."
-ruledOut: "The textile half of the degree. Yarn, fabric, wet processing, apparel. Not the engineering I had wanted."
+ruledOut: "The textile side of the degree. Yarn, fabric, wet processing, apparel. Not the engineering I had wanted."
 result: "Graduated in 2022. Tried JavaScript, Java, C++, and competitive programming along the way, then CS50 after reading Life 3.0. None of it held yet."
 ---
 

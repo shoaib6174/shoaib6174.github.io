@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { render } from 'astro:content';
+import { render, getEntry } from 'astro:content';
 import { formatDate } from '../lib/dates';
 import Figure from './Figure.astro';
 
@@ -17,7 +17,8 @@ const H = headingLevel;
 const d = entry.data;
 const { Content } = await render(entry);
 const year = d.date.slice(0, 4);
-const hasDetail = d.images.length > 0 || d.imageSlots.length > 0 || d.proof.length > 0;
+const more = await getEntry('details', entry.id);
+const hasDetail = Boolean(more) || d.images.length > 0 || d.imageSlots.length > 0 || d.proof.length > 0;
 ---
 
 <article class="entry" id={entry.id} data-year={year} data-threads={d.threads.join(' ')}>
