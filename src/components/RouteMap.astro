@@ -5,8 +5,9 @@ import { formatDate } from '../lib/dates';
 interface Props { entries: CollectionEntry<'journey'>[] }
 const { entries } = Astro.props;
 
-// One line through every entry, in order. Stations are evenly spaced, like a transit map:
-// the order is exact, the distances are not. The row says what kind of thing it was.
+// Time runs left to right, to scale. Each row is a kind of thing; what ran for a while is a
+// bar, what happened once is a dot. Overlapping things in a row stack into sub-rows, so the
+// years when several things ran at once show as a thicker row.
 const THREADS = [
   { key: 'build', label: 'Built' },
   { key: 'explain', label: 'Wrote' },
@@ -15,101 +16,110 @@ const THREADS = [
   { key: 'life', label: 'Life' },
 ];
 const W = 1000;
-const LEFT = 118;
-const RIGHT = 960;
-const TOP = 26;
-const ROW = 54;
-const H = TOP + THREADS.length * ROW + 30;
-const n = entries.length;
-const STEP = (RIGHT - LEFT) / (n - 1);
-const laneY = (key: string) => TOP + THREADS.findIndex((t) => t.key === key) * ROW + ROW / 2;
-const stations = entries.map((e, i) => ({
-  id: e.id,
-  i,
-  x: LEFT + i * STEP,
-  y: laneY(e.data.threads[0]),
-  label: e.data.short,
-  title: e.data.title,
-  date: formatDate(e.data.date),
-  year: e.data.date.slice(0, 4),
-  threads: e.data.threads.join(' '),
-  seg: '',
-}));
-// Transit-map geometry: a horizontal run, a rounded corner, a vertical link, a corner, a run.
-for (let i = 1; i < n; i++) {
-  const a = stations[i - 1];
-  const b = stations[i];
-  if (a.y === b.y) { stations[i].seg = `L${b.x},${b.y}`; continue; }
-  const xm = (a.x + b.x) / 2;
-  const down = b.y > a.y;
-  const r = Math.min(11, STEP / 2 - 6, Math.abs(b.y - a.y) / 2);
-  const s1 = down ? 1 : 0;
-  const s2 = down ? 0 : 1;
-  const y1 = down ? a.y + r : a.y - r;
-  const y2 = down ? b.y - r : b.y + r;
-  stations[i].seg = `L${xm - r},${a.y} A${r},${r} 0 0 ${s1} ${xm},${y1} L${xm},${y2} A${r},${r} 0 0 ${s2} ${xm + r},${b.y} L${b.x},${b.y}`;
-}
-const d = `M${stations[0].x},${stations[0].y} ` + stations.slice(1).map((s) => s.seg).join(' ');
-const yearMarks = stations.filter((s, i) => i === 0 || stations[i - 1].year !== s.year);
-// Labels alternate above and below when two labelled stations sit next to each other in one row.
-const labelled = stations.filter((s) => s.label);
-const below = new Set<string>();
-labelled.forEach((s, k) => {
-  const prev = [...labelled.slice(0, k)].reverse().find((o) => o.y === s.y);
-  if (prev && s.x - prev.x < 90 && !below.has(prev.id)) below.add(s.id);
+const LEFT = 104;
+const RIGHT = 986;
+const TOP = 58;
+const SUB = 36;
+const PAD = 12;
+const T0 = 2012;
+const T1 = 2027.05;
+const NOW = 2026.8;
+// The school years between the first code and university carry nothing, so the axis breaks
+// there: 2012 to 2013 at full scale, a short gap, then 2016.5 onward at full scale.
+const GAP_FROM = 2013;
+const GAP_TO = 2016.5;
+const GAP_W = 34;
+const EARLY_W = 44;
+const x = (t: number) => {
+  if (t <= GAP_FROM) return LEFT + ((t - T0) / (GAP_FROM - T0)) * EARLY_W;
+  if (t >= GAP_TO) return LEFT + EARLY_W + GAP_W + ((t - GAP_TO) / (T1 - GAP_TO)) * (RIGHT - LEFT - EARLY_W - GAP_W);
+  return LEFT + EARLY_W + ((t - GAP_FROM) / (GAP_TO - GAP_FROM)) * GAP_W;
+};
+const BREAK_X = LEFT + EARLY_W + GAP_W / 2;
+const startOf = (d: string, until?: string) => {
+  const [y, m] = d.split('-');
+  return m ? Number(y) + (Number(m) - 1) / 12 : until ? Number(y) : Number(y) + 0.5;
+};
+const endOf = (until?: string) => {
+  if (!until) return null;
+  if (until === 'now') return NOW;
+  const [y, m] = until.split('-');
+  return m ? Number(y) + Number(m) / 12 : Number(y) + 1;
+};
+type Item = { id: string; label: string; title: string; threads: string; row: string; s: number; e: number | null; when: string; lane: number; x0: number; x1: number };
+const items: Item[] = entries.map((e) => {
+  const s = startOf(e.data.date, e.data.until);
+  const en = endOf(e.data.until);
+  const when = e.data.until ? `${formatDate(e.data.date)} to ${e.data.until === 'now' ? 'now' : formatDate(e.data.until)}` : formatDate(e.data.date);
+  return { id: e.id, label: e.data.short ?? e.data.title, title: e.data.title, threads: e.data.threads.join(' '), row: e.data.threads[0], s, e: en, when, lane: 0, x0: x(s), x1: en ? x(en) : x(s) };
 });
+const rows = THREADS.map((t) => {
+  const mine = items.filter((i) => i.row === t.key).sort((a, b) => a.s - b.s);
+  const laneEnds: number[] = [];
+  for (const it of mine) {
+    const extent = Math.max(it.x1, it.x0 + it.label.length * 7.6 + 14);
+    let k = laneEnds.findIndex((end) => end + 8 <= it.x0);
+    if (k < 0) { k = laneEnds.length; laneEnds.push(extent); } else laneEnds[k] = extent;
+    it.lane = k;
+  }
+  return { ...t, mine, n: Math.max(laneEnds.length, 1), y: 0 };
+});
+let cursor = TOP;
+for (const r of rows) { r.y = cursor; cursor += r.n * SUB + PAD; }
+const H = cursor + 24;
+const barY = (r: { y: number }, lane: number) => r.y + PAD / 2 + lane * SUB + 22;
+const years = [2012, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 ---
 
-<figure class="rmap" data-rmap>
+<figure class="rmap" data-rmap data-t0={T0} data-t1={T1} data-now={NOW} data-left={LEFT} data-right={RIGHT} data-gap-from={GAP_FROM} data-gap-to={GAP_TO} data-gap-w={GAP_W} data-early-w={EARLY_W}>
   <svg class="rmap__svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="rmap-title rmap-desc">
-    <title id="rmap-title">The route as one line, 2012 to now, station by station</title>
-    <desc id="rmap-desc">One line runs through every entry in order. Its row says what kind of thing the entry was: built, wrote, organised, studied, or life. A marker travels the line and names each station as it passes. Point at a station to pause, or follow it to the entry.</desc>
-    <g class="rmap__years" aria-hidden="true">
-      {yearMarks.map((s) => (
+    <title id="rmap-title">Everything on the route, 2012 to now, to scale in time</title>
+    <desc id="rmap-desc">Time runs left to right. Each row is a kind of thing: built, wrote, organised, studied, life. A bar is something that ran for a while, a dot is something that happened once. A line sweeps across the years and lights what was running at each moment. Point at a bar to hold it, or follow it to its entry.</desc>
+    <g class="rmap__grid" aria-hidden="true">
+      {years.map((y) => (
         <g>
-          <line x1={s.x - STEP / 2} x2={s.x - STEP / 2} y1={H - 30} y2={H - 22} />
-          <text x={s.x - STEP / 2 + 5} y={H - 9}>{s.year}</text>
+          <line x1={x(y)} x2={x(y)} y1={TOP - 10} y2={H - 22} />
+          <text x={x(y) + 4} y={H - 8}>{y}</text>
+        </g>
+      ))}
+      <path class="rmap__break" d={`M${BREAK_X - 5},${H - 14} l4,-7 l-8,-14 l4,-7`} />
+      <path class="rmap__break" d={`M${BREAK_X + 5},${H - 14} l4,-7 l-8,-14 l4,-7`} />
+    </g>
+    <g class="rmap__rows">
+      {rows.map((r, i) => (
+        <g class="rmap__lane" data-thread={r.key}>
+          <rect x={LEFT - 14} y={r.y} width={RIGHT - LEFT + 28} height={r.n * SUB + PAD} rx="6" class:list={['rmap__band', { 'is-alt': i % 2 === 1 }]} />
+          <text x={LEFT - 24} y={r.y + (r.n * SUB + PAD) / 2 + 6} text-anchor="end" class="rmap__lanelabel">{r.label}</text>
+          {r.mine.map((it) => (
+            <a href={`#${it.id}`} class:list={['rmap__dot', { 'is-span': it.e !== null }]} data-entry={it.id} data-threads={it.threads} data-s={it.s} data-e={it.e ?? ''} data-x={it.x0} data-title={`${it.when}. ${it.title}`}>
+              {it.e !== null
+                ? <rect class="rmap__bar" x={it.x0} y={barY(r, it.lane) - 6} width={Math.max(it.x1 - it.x0, 8)} height="12" rx="6" />
+                : <circle class="rmap__bar" cx={it.x0} cy={barY(r, it.lane)} r="6.5" />}
+              <text class="rmap__label" x={it.x0 > 900 ? it.x0 + 10 : it.x0} y={barY(r, it.lane) - 12} text-anchor={it.x0 > 900 ? 'end' : 'start'}>{it.label}</text>
+              <title>{it.when}. {it.title}</title>
+            </a>
+          ))}
         </g>
       ))}
     </g>
-    <g class="rmap__lanes">
-      {THREADS.map((t, i) => (
-        <g class="rmap__lane" data-thread={t.key}>
-          <rect x={LEFT - 18} y={laneY(t.key) - ROW / 2} width={RIGHT - LEFT + 36} height={ROW} rx="6" class:list={{ 'is-alt': i % 2 === 1 }} />
-          <text x={LEFT - 28} y={laneY(t.key) + 6} text-anchor="end" class="rmap__lanelabel">{t.label}</text>
-        </g>
-      ))}
-    </g>
-    <path class="rmap__line" d={d} />
-    <path class="rmap__trail" d={d} data-trail />
-    <g class="rmap__stations">
-      {stations.map((s) => (
-        <a href={`#${s.id}`} class="rmap__dot" data-entry={s.id} data-threads={s.threads} data-seg={s.seg} data-x={s.x} data-y={s.y} data-title={`${s.date}. ${s.title}`}>
-          <circle class="rmap__halo" cx={s.x} cy={s.y} r="14" />
-          <circle class="rmap__station" cx={s.x} cy={s.y} r={s.label ? 8 : 6} />
-          {s.label && (
-            <text x={s.i === n - 1 ? s.x + 16 : s.x} y={s.i === n - 1 ? s.y + 6 : below.has(s.id) ? s.y + 30 : s.y - 17} text-anchor={s.i === n - 1 ? 'start' : 'middle'} class="rmap__label">{s.label}</text>
-          )}
-          <title>{s.date}. {s.title}</title>
-        </a>
-      ))}
-    </g>
-    <g class="rmap__traveller" data-traveller aria-hidden="true">
-      <circle r="13" class="rmap__pulse" />
-      <circle r="7" class="rmap__rider" />
-    </g>
-    <g class="rmap__tag" data-tag aria-hidden="true">
-      <rect rx="5" ry="5" />
-      <text />
+    <g class="rmap__head" data-head aria-hidden="true">
+      <line class="rmap__headline" x1="0" x2="0" y1={TOP - 14} y2={H - 20} />
+      <circle class="rmap__headcap" cx="0" cy={TOP - 14} r="4" />
+      <g class="rmap__tag" data-tag>
+        <rect rx="5" ry="5" />
+        <text />
+      </g>
     </g>
   </svg>
-  <figcaption class="rmap__caption">In order, 2012 to now. The marker stops at each milestone. Point at one to hold it, or follow it to the entry.</figcaption>
+  <figcaption class="rmap__caption">To scale, 2012 to now. The line sweeps the years and lights what was running. Point at a bar to hold it, or follow it to the entry.</figcaption>
 </figure>
 
 <script>
-  // The traveller runs the whole route on a loop. It arrives at a station, stops, and the
-  // station's name appears on it; then it moves on. Hovering a station holds it there.
+  // A sweep line runs 2012 to now on a loop. At each moment the things that were running
+  // turn orange, the things already done turn dark, and the tag on the line says the year
+  // and how many things ran at once. Hovering an item holds the line at its start.
   let controller: AbortController | null = null;
+  const words = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
   function init() {
     controller?.abort();
     controller = null;
@@ -118,94 +128,88 @@ labelled.forEach((s, k) => {
     controller = new AbortController();
     const { signal } = controller;
     const svg = root.querySelector<SVGSVGElement>('svg')!;
-    const trail = root.querySelector<SVGPathElement>('[data-trail]')!;
-    const traveller = root.querySelector<SVGGElement>('[data-traveller]')!;
+    const head = root.querySelector<SVGGElement>('[data-head]')!;
     const tag = root.querySelector<SVGGElement>('[data-tag]')!;
     const tagRect = tag.querySelector('rect')!;
     const tagText = tag.querySelector('text')!;
-    const stations = [...root.querySelectorAll<SVGAElement>('.rmap__dot')];
-    const n = stations.length;
+    const items = [...root.querySelectorAll<SVGAElement>('.rmap__dot')];
+    const T0 = Number(root.dataset.t0);
+    const T1 = Number(root.dataset.t1);
+    const NOW = Number(root.dataset.now);
     const W = svg.viewBox.baseVal.width;
+    const LEFT = Number(root.dataset.left);
+    const RIGHT = Number(root.dataset.right);
+    const GAP_FROM = Number(root.dataset.gapFrom);
+    const GAP_TO = Number(root.dataset.gapTo);
+    const GAP_W = Number(root.dataset.gapW);
+    const EARLY_W = Number(root.dataset.earlyW);
+    const xOf = (t: number) => {
+      if (t <= GAP_FROM) return LEFT + ((t - T0) / (GAP_FROM - T0)) * EARLY_W;
+      if (t >= GAP_TO) return LEFT + EARLY_W + GAP_W + ((t - GAP_TO) / (T1 - GAP_TO)) * (RIGHT - LEFT - EARLY_W - GAP_W);
+      return LEFT + EARLY_W + ((t - GAP_FROM) / (GAP_TO - GAP_FROM)) * GAP_W;
+    };
+    // The sweep moves at constant speed across the drawing, so the gap takes a blink, not years.
+    const tOf = (px: number) => {
+      if (px <= LEFT + EARLY_W) return T0 + ((px - LEFT) / EARLY_W) * (GAP_FROM - T0);
+      if (px >= LEFT + EARLY_W + GAP_W) return GAP_TO + ((px - LEFT - EARLY_W - GAP_W) / (RIGHT - LEFT - EARLY_W - GAP_W)) * (T1 - GAP_TO);
+      return GAP_FROM + ((px - LEFT - EARLY_W) / GAP_W) * (GAP_TO - GAP_FROM);
+    };
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Distance along the line at which each station sits.
-    const NS = 'http://www.w3.org/2000/svg';
-    const probe = document.createElementNS(NS, 'path');
-    let dAcc = `M${stations[0].dataset.x},${stations[0].dataset.y}`;
-    const at = stations.map((s, i) => {
-      if (i > 0) dAcc += ' ' + s.dataset.seg;
-      probe.setAttribute('d', dAcc);
-      return probe.getTotalLength();
-    });
-    const L = trail.getTotalLength();
-    trail.style.strokeDasharray = String(L);
-
-    const showTag = (k: number) => {
-      const s = stations[k];
-      const x = Number(s.dataset.x);
-      const y = Number(s.dataset.y);
-      tagText.textContent = s.dataset.title ?? '';
+    const setTag = (px: number, text: string) => {
+      tagText.textContent = text;
       const box = tagText.getBBox();
-      const padX = 10;
-      const w = box.width + padX * 2;
+      const w = box.width + 20;
       const h = box.height + 10;
-      const label = s.querySelector('.rmap__label');
-      const labelAbove = label ? Number(label.getAttribute('y')) < y : false;
-      const toRight = x < W / 2;
-      const rx = toRight ? x - 14 : x + 14 - w;
-      const bottomRow = y > svg.viewBox.baseVal.height - 70;
-      const ry = labelAbove && !bottomRow ? y + 18 : y - 18 - h;
+      const rx = px < W / 2 ? 8 : -8 - w;
       tagRect.setAttribute('x', String(rx));
-      tagRect.setAttribute('y', String(ry));
+      tagRect.setAttribute('y', String(10));
       tagRect.setAttribute('width', String(w));
       tagRect.setAttribute('height', String(h));
-      tagText.setAttribute('x', String(rx + padX));
-      tagText.setAttribute('y', String(ry + h / 2 + box.height * 0.36));
-      tag.classList.add('is-on');
+      tagText.setAttribute('x', String(rx + 10));
+      tagText.setAttribute('y', String(10 + h / 2 + box.height * 0.36));
     };
-    const place = (len: number, here: number) => {
-      const p = trail.getPointAtLength(len);
-      traveller.setAttribute('transform', `translate(${p.x} ${p.y})`);
-      trail.style.strokeDashoffset = String(L - len);
-      stations.forEach((s, i) => {
-        s.classList.toggle('is-lit', i < here);
-        s.classList.toggle('is-here', i === here);
+    const paint = (t: number, hover: SVGAElement | null) => {
+      const px = xOf(t);
+      head.setAttribute('transform', `translate(${px} 0)`);
+      let running = 0;
+      items.forEach((it) => {
+        const s = Number(it.dataset.s);
+        const e = it.dataset.e ? Number(it.dataset.e) : null;
+        const isRun = e !== null ? s <= t && t <= e : Math.abs(t - s) < 0.3;
+        const done = e !== null ? t > e : t >= s + 0.3;
+        it.classList.toggle('is-running', isRun);
+        it.classList.toggle('is-lit', done);
+        if (isRun) running += 1;
       });
+      if (hover) setTag(px, hover.dataset.title ?? '');
+      else {
+        const year = Math.floor(t);
+        const n = running < words.length ? words[running] : String(running);
+        setTag(px, t >= NOW ? `Now. ${n} things running` : `${year}. ${n} ${running === 1 ? 'thing' : 'things'} at once`);
+      }
     };
 
-    if (reduced) {
-      trail.style.strokeDashoffset = '0';
-      place(L, n - 1);
-      stations.forEach((s) => s.classList.add('is-lit'));
-      showTag(n - 1);
-      return;
-    }
+    if (reduced) { paint(NOW, null); return; }
 
-    // Schedule: stop at a station, then move to the next, with a hold at the end.
-    const T_STOP = 900;
-    const T_MOVE = 650;
-    const HOLD = 2200;
-    const unit = T_STOP + T_MOVE;
-    const period = (n - 1) * unit + T_STOP + HOLD;
-    const ease = (u: number) => (u < 0.5 ? 2 * u * u : 1 - ((-2 * u + 2) ** 2) / 2);
-    let paused = false;
+    const X0 = xOf(T0);
+    const X1 = xOf(NOW);
+    const DUR = 1800 * (NOW - GAP_TO + 1);
+    const HOLD = 2600;
+    const LEAD = 600;
+    const period = LEAD + DUR + HOLD;
+    let paused: SVGAElement | null = null;
     let visible = true;
     let last = performance.now();
     let elapsed = 0;
-    let shown = -1;
     let raf = 0;
     const tick = (now: number) => {
-      // A frame's timestamp can precede the moment the loop was armed; never run backwards.
       if (!paused && visible) elapsed = Math.max(0, elapsed + (now - last));
       last = now;
       if (!paused) {
         const cycle = elapsed % period;
-        const k = Math.min(Math.floor(cycle / unit), n - 1);
-        const into = cycle - k * unit;
-        let len = at[k];
-        if (k < n - 1 && into > T_STOP) len = at[k] + (at[k + 1] - at[k]) * ease((into - T_STOP) / T_MOVE);
-        place(len, k);
-        if (k !== shown) { shown = k; showTag(k); }
+        const u = Math.min(Math.max((cycle - LEAD) / DUR, 0), 1);
+        paint(tOf(X0 + u * (X1 - X0)), null);
       }
       raf = requestAnimationFrame(tick);
     };
@@ -214,13 +218,13 @@ labelled.forEach((s, k) => {
     const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; });
     io.observe(root);
     signal.addEventListener('abort', () => io.disconnect());
-    stations.forEach((s, i) => {
-      const hold = () => { paused = true; place(at[i], i); showTag(i); shown = i; };
-      const release = () => { paused = false; };
-      s.addEventListener('pointerenter', hold, { signal });
-      s.addEventListener('pointerleave', release, { signal });
-      s.addEventListener('focus', hold, { signal });
-      s.addEventListener('blur', release, { signal });
+    items.forEach((it) => {
+      const hold = () => { paused = it; paint(Number(it.dataset.s), it); };
+      const release = () => { paused = null; };
+      it.addEventListener('pointerenter', hold, { signal });
+      it.addEventListener('pointerleave', release, { signal });
+      it.addEventListener('focus', hold, { signal });
+      it.addEventListener('blur', release, { signal });
     });
   }
   init();

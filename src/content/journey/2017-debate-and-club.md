@@ -1,6 +1,8 @@
 ---
 date: "2017"
 title: "Debate, and the BUTEX Business Club"
+until: "2022"
+short: "Business Club"
 threads:
   - "organise"
 summary: "Runner-up in the university debate championship, best speaker twice. Joined the Business Club in its first year, helped run its first national competition, vice president by 2021."

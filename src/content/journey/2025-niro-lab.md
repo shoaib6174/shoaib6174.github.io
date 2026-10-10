@@ -1,6 +1,7 @@
 ---
 date: "2025-06"
 title: "NSU Intelligent Robotics Lab"
+until: "now"
 threads:
   - "build"
 onRoute: true

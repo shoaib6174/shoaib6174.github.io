@@ -1,6 +1,7 @@
 ---
 date: "2018"
 title: "Goniter Mojar Prosno O Uttor"
+short: "First book"
 threads:
   - "explain"
 summary: "A math book for classes 8 to 12, written in second year and published by Oddhoyon Prokashoni."

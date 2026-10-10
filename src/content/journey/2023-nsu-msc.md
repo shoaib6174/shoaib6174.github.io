@@ -1,6 +1,7 @@
 ---
 date: "2023-07"
 title: "MSc in Computer Science and Engineering, North South University"
+until: "now"
 threads:
   - "studied"
 onRoute: true

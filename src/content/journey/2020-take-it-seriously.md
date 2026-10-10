@@ -1,6 +1,7 @@
 ---
-date: "2020"
+date: "2020-01"
 title: "Taking it seriously"
+until: "2021-06"
 threads:
   - "studied"
 onRoute: true

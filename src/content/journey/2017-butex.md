@@ -1,6 +1,7 @@
 ---
-date: "2017"
+date: "2017-01"
 title: "Textile Engineering at BUTEX, on the Industrial and Production track"
+until: "2022-12"
 threads:
   - "studied"
 onRoute: true

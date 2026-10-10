@@ -1,6 +1,7 @@
 ---
 date: "2019"
 title: "Two Product Design projects"
+short: "Product design"
 threads:
   - "build"
 summary: "A face recogniser on a Raspberry Pi, built with a friend's group in their last days before the deadline. And my own project, a phone cover, later published."

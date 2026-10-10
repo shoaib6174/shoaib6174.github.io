@@ -6,6 +6,7 @@ const link = z.object({ label: z.string(), href: z.string() });
 const dateStr = z.string().regex(/^\d{4}(-\d{2})?$/, 'date must be YYYY or YYYY-MM');
 
 export const AREAS = ['robots', 'llm', 'ml', 'infra', 'quantum', 'product'] as const;
+export const PHRASES = ['ai', 'platforms', 'operations', 'supply', 'people', 'other'] as const;
 export const ROLES = ['build', 'explain', 'organise'] as const;
 export const THREADS = ['build', 'explain', 'organise', 'studied', 'life'] as const;
 export const STATUSES = [
@@ -44,6 +45,7 @@ const journey = defineCollection({
     z.object({
       date: dateStr,
       title: z.string(),
+      until: z.string().regex(/^(\d{4}(-\d{2})?|now)$/, 'until must be YYYY, YYYY-MM, or now').optional(),
       short: z.string().optional(),
       summary: z.string().optional(),
       threads: z.array(z.enum(THREADS)).min(1),
@@ -106,6 +108,8 @@ const skills = defineCollection({
   schema: z.object({
     id: z.string(),
     group: z.string(),
+    phrase: z.enum(PHRASES),
+    intro: z.string().optional(),
     tools: z.array(z.string()).min(1),
     proof: z.array(link).min(1, 'every skills row needs proof'),
     order: z.number(),
@@ -116,18 +120,6 @@ const skills = defineCollection({
 const details = defineCollection({
   loader: glob({ base: './src/content/details', pattern: '**/*.md' }),
   schema: z.object({ title: z.string().optional() }),
-});
-
-const layers = defineCollection({
-  loader: file('./src/content/layers.json'),
-  schema: z.object({
-    id: z.string(),
-    order: z.number(),
-    layer: z.string(),
-    bring: z.string(),
-    status: z.enum(['built', 'applied', 'studied']),
-    proof: z.array(link).min(1, 'every layer needs proof'),
-  }),
 });
 
 const shelf = defineCollection({
@@ -144,4 +136,4 @@ const shelf = defineCollection({
   }),
 });
 
-export const collections = { work, journey, articles, books, papers, skills, shelf, layers, details };
+export const collections = { work, journey, articles, books, papers, skills, shelf, details };

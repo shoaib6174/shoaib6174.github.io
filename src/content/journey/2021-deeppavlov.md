@@ -1,6 +1,8 @@
 ---
 date: "2021-12"
 title: "Research intern, DeepPavlov.ai"
+until: "2022-04"
+short: "DeepPavlov"
 threads:
   - "build"
 summary: "First research role. Dialogue graphs from the MultiWOZ corpus."

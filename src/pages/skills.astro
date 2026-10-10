@@ -4,36 +4,38 @@ import Base from '../layouts/Base.astro';
 import SkillRow from '../components/SkillRow.astro';
 
 const skills = (await getCollection('skills')).sort((a, b) => a.data.order - b.data.order);
-const layers = (await getCollection('layers')).sort((a, b) => a.data.order - b.data.order);
+// The five claims of the home-page sentence, in its order, each with what it means here.
+const PHRASES = [
+  { key: 'ai', label: 'AI on robots', intro: 'Language and vision models that run on a machine, and the robot software, control, and hardware around them.' },
+  { key: 'platforms', label: 'The platforms a business runs on', intro: 'Software that real people use every day, built end to end and handed over with tests and documentation.' },
+  { key: 'operations', label: 'Operations', intro: 'Six years of industrial and production engineering, and enough of the textile floor to know what a factory needs.' },
+  { key: 'supply', label: 'Supply chains', intro: 'How goods and money move, from five graduate-level courses, and the analytics to work with the data.' },
+  { key: 'people', label: 'The people who have to use them', intro: 'Explaining things, running things, and the languages I do it in.' },
+  { key: 'other', label: 'Also', intro: 'Fields I studied to working level that the sentence does not claim.' },
+] as const;
 ---
 
-<Base title="Skills" description="What Mohammad Shoaib can do, each group with the work that proves it.">
+<Base title="Skills" description="What Mohammad Shoaib can do, each group with the work that proves it, arranged under the five claims of the home page.">
   <header class="page-head">
     <p class="page-head__span">With proof</p>
     <h1>Skills, with proof</h1>
-    <p class="page-head__lead">Each group links to the work that shows it. If there is no proof, it is not listed.</p>
+    <p class="page-head__lead">The sentence on the home page makes five claims. This page is the evidence for each, group by group, with the tools named. If there is no proof, it is not listed.</p>
+    <nav class="phrases" aria-label="The five claims">
+      {PHRASES.filter((p) => p.key !== 'other').map((p) => (<a href={`#${p.key}`}>{p.label}</a>))}
+    </nav>
   </header>
 
-  <section class="section" aria-labelledby="column">
-    <h2 id="column" class="section__label">From the floor to the customer</h2>
-    <p class="column__intro">A problem in the physical world passes through seven layers on its way to a customer. I have built in five of them, I design for one, and I studied one in five graduate-level courses. Each layer says which.</p>
-    <ol class="column">
-      {layers.map((l) => (
-        <li class:list={['layer', `is-${l.data.status}`]}>
-          <h3 class="layer__name">{l.data.layer} <span class="layer__status">{l.data.status}</span></h3>
-          <p class="layer__bring">{l.data.bring}</p>
-          <p class="layer__proof">
-            {l.data.proof.map((p, i) => (<><a href={p.href}>{p.label}</a>{i < l.data.proof.length - 1 ? ', ' : ''}</>))}
-          </p>
-        </li>
-      ))}
-    </ol>
-  </section>
-
-  <section class="section" aria-labelledby="groups">
-    <h2 id="groups" class="section__label">Groups, with proof</h2>
-  <div class="skills">
-    {skills.map((s) => <SkillRow skill={s} headingLevel="h3" />)}
-  </div>
-  </section>
+  {PHRASES.map((p) => {
+    const mine = skills.filter((s) => s.data.phrase === p.key);
+    if (!mine.length) return null;
+    return (
+      <section class="section" aria-labelledby={p.key} id={p.key}>
+        <h2 id={`${p.key}-label`} class="section__label">{p.label}</h2>
+        <p class="phrase__intro">{p.intro}</p>
+        <div class="skills">
+          {mine.map((s) => <SkillRow skill={s} headingLevel="h3" />)}
+        </div>
+      </section>
+    );
+  })}
 </Base>

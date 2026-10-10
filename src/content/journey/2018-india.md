@@ -1,6 +1,7 @@
 ---
 date: "2018"
 title: "India by land"
+short: "India"
 threads:
   - "life"
 summary: "Shimla, Manali, Agra, Delhi, Kolkata."

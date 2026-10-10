@@ -1,6 +1,8 @@
 ---
 date: "2024"
 title: "Research assistant and TA, North South University"
+until: "2024-12"
+short: "Back to NSU"
 threads:
   - "build"
   - "explain"

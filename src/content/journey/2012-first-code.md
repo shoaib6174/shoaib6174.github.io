@@ -1,6 +1,7 @@
 ---
 date: "2012"
 title: "First code, in class 9"
+short: "First code"
 threads:
   - "life"
 summary: "A first computer, a downloaded book on C, and the whole thing worked through before the board exams took over."

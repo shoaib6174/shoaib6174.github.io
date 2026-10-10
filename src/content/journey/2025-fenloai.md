@@ -1,6 +1,7 @@
 ---
 date: "2025"
 title: "Co-founder, FenloAI"
+until: "now"
 threads:
   - "organise"
   - "build"

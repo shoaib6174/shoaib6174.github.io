@@ -1,6 +1,7 @@
 ---
 date: "2023-12"
 title: "Junior AI engineer, NITEX"
+until: "2024-07"
 threads:
   - "build"
 onRoute: true

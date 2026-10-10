@@ -2,7 +2,7 @@
   {
     "id": "agentic-robots",
     "order": 1,
-    "home": true,
+    "phrase": "ai",
     "group": "Agentic AI on robots",
     "tools": [
       "LLM task planning",
@@ -26,7 +26,7 @@
   {
     "id": "vlm",
     "order": 2,
-    "home": true,
+    "phrase": "ai",
     "group": "Vision-language models and perception",
     "tools": [
       "VLM and VLA models",
@@ -55,7 +55,7 @@
   {
     "id": "robotics",
     "order": 3,
-    "home": true,
+    "phrase": "ai",
     "group": "Robot software",
     "tools": [
       "ROS 2",
@@ -66,7 +66,7 @@
       "Isaac Sim and Isaac Lab",
       "URDF",
       "SLAM",
-      "Behavior trees"
+      "behavior trees"
     ],
     "proof": [
       {
@@ -82,7 +82,7 @@
   {
     "id": "control-rl",
     "order": 4,
-    "home": true,
+    "phrase": "ai",
     "group": "Control and reinforcement learning",
     "tools": [
       "NMPC with CasADi",
@@ -106,7 +106,7 @@
   {
     "id": "edge",
     "order": 5,
-    "home": true,
+    "phrase": "ai",
     "group": "Edge devices",
     "tools": [
       "Jetson Orin",
@@ -131,15 +131,68 @@
     ]
   },
   {
-    "id": "llm-systems",
+    "id": "ml-research",
     "order": 6,
-    "home": true,
+    "phrase": "ai",
+    "group": "Models, trained and ported",
+    "tools": [
+      "transformer ports between frameworks",
+      "weight conversion",
+      "fine-tuning",
+      "NLP: intent classification, clustering, dialogue graphs",
+      "LaBSE and BERT"
+    ],
+    "proof": [
+      {
+        "label": "Video Swin, GSoC 2022",
+        "href": "/work/video-swin-tf2/"
+      },
+      {
+        "label": "DeepPavlov internship",
+        "href": "/route/2021-deeppavlov/"
+      }
+    ]
+  },
+  {
+    "id": "fullstack",
+    "order": 10,
+    "phrase": "platforms",
+    "group": "Web platforms, end to end",
+    "tools": [
+      "Next.js 16",
+      "React 19 with server actions",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Tailwind",
+      "PWA and web push",
+      "Playwright",
+      "Vitest",
+      "nginx and Let's Encrypt",
+      "multi-tenant data isolation",
+      "append-only records with hash chains"
+    ],
+    "proof": [
+      {
+        "label": "Jonvexa",
+        "href": "/work/jonvexa/"
+      },
+      {
+        "label": "GetAudio",
+        "href": "/work/getaudio/"
+      }
+    ]
+  },
+  {
+    "id": "llm-systems",
+    "order": 11,
+    "phrase": "platforms",
     "group": "LLM systems for businesses",
     "tools": [
       "RAG with citations",
       "voice agents over Twilio and Vapi",
       "guard pipelines",
-      "document extraction",
+      "document extraction with OCR",
       "n8n and Make automations"
     ],
     "proof": [
@@ -159,8 +212,8 @@
   },
   {
     "id": "backend",
-    "order": 8,
-    "home": true,
+    "order": 12,
+    "phrase": "platforms",
     "group": "Backend and cloud",
     "tools": [
       "Python",
@@ -173,7 +226,8 @@
       "Docker",
       "Kubernetes",
       "AWS ECS, Fargate, Lambda",
-      "Azure"
+      "Azure",
+      "DigitalOcean"
     ],
     "proof": [
       {
@@ -183,13 +237,213 @@
       {
         "label": "Extraction pipeline",
         "href": "/work/nitex-extraction-pipeline/"
+      },
+      {
+        "label": "Jonvexa",
+        "href": "/work/jonvexa/"
+      }
+    ]
+  },
+  {
+    "id": "delivery",
+    "order": 13,
+    "phrase": "platforms",
+    "group": "Delivering to a client",
+    "tools": [
+      "requirements from the client's own process material",
+      "design specs",
+      "tests as a gate before every deploy",
+      "documentation and manuals",
+      "handover to the client's own accounts",
+      "fixed-price scoping"
+    ],
+    "proof": [
+      {
+        "label": "Jonvexa: 54 deploys, 2,900 tests, 15-part reference",
+        "href": "/work/jonvexa/"
+      },
+      {
+        "label": "Two platforms in seven months, NITEX",
+        "href": "/route/2023-nitex/"
+      }
+    ]
+  },
+  {
+    "id": "industrial",
+    "order": 20,
+    "phrase": "operations",
+    "group": "Industrial and production engineering",
+    "tools": [
+      "manufacturing processes",
+      "instrumentation and control",
+      "product design",
+      "ergonomics",
+      "operations research",
+      "simulation",
+      "SolidWorks",
+      "CATIA",
+      "Lean Six Sigma Yellow Belt",
+      "Google Project Management"
+    ],
+    "proof": [
+      {
+        "label": "BUTEX, 73 of 166 credits",
+        "href": "/route/2017-butex/"
+      },
+      {
+        "label": "Two Product Design projects",
+        "href": "/route/2019-attendance/"
+      },
+      {
+        "label": "Factory security robot, concept",
+        "href": "/work/security-robot/"
+      }
+    ]
+  },
+  {
+    "id": "garments",
+    "order": 21,
+    "phrase": "operations",
+    "group": "Textiles and apparel, as domain knowledge",
+    "tools": [
+      "garment categories and attributes",
+      "fabric and wet processing",
+      "an internship on a factory floor"
+    ],
+    "proof": [
+      {
+        "label": "Trend platform, tagging clothing from photos",
+        "href": "/work/nitex-trend-platform/"
+      },
+      {
+        "label": "BUTEX",
+        "href": "/route/2017-butex/"
+      }
+    ]
+  },
+  {
+    "id": "supply",
+    "order": 30,
+    "phrase": "supply",
+    "group": "Supply chain and its finance",
+    "tools": [
+      "demand forecasting",
+      "inventory policy",
+      "transportation planning",
+      "network design",
+      "activity-based costing",
+      "working capital and cash-to-cash",
+      "discounted cash flow",
+      "system dynamics",
+      "SQL and ML on supply chain data"
+    ],
+    "proof": [
+      {
+        "label": "MicroMasters in Supply Chain Management, five graduate-level courses",
+        "href": "/route/2020-take-it-seriously/"
+      }
+    ]
+  },
+  {
+    "id": "analytics",
+    "order": 31,
+    "phrase": "supply",
+    "group": "Data analytics",
+    "tools": [
+      "Power BI",
+      "data modelling",
+      "Azure Machine Learning"
+    ],
+    "proof": [
+      {
+        "label": "Microsoft Certified: Data Analyst Associate and Azure Data Scientist Associate, 2021",
+        "href": "/route/2021-certifications-and-ml/"
+      }
+    ]
+  },
+  {
+    "id": "writing",
+    "order": 40,
+    "phrase": "people",
+    "group": "Writing and teaching",
+    "tools": [
+      "technical articles",
+      "books for school students",
+      "teaching assistant",
+      "public speaking"
+    ],
+    "proof": [
+      {
+        "label": "Four books",
+        "href": "/writing/#books"
+      },
+      {
+        "label": "Twenty-one articles",
+        "href": "/writing/#articles"
+      },
+      {
+        "label": "Computer architecture, TA",
+        "href": "/route/2024-back-to-nsu/"
+      },
+      {
+        "label": "Debate, 2017",
+        "href": "/route/2017-debate-and-club/"
+      }
+    ]
+  },
+  {
+    "id": "organising",
+    "order": 41,
+    "phrase": "people",
+    "group": "Organising and running things",
+    "tools": [
+      "a university club, first year to vice president",
+      "a national competition",
+      "campus teams across fifty universities",
+      "a company with a co-founder",
+      "community roles: Qiskit Advocate, Microsoft Learn Student Ambassador"
+    ],
+    "proof": [
+      {
+        "label": "Business Club and TEXBIZ",
+        "href": "/route/2017-debate-and-club/"
+      },
+      {
+        "label": "YSI Bangladesh",
+        "href": "/route/2018-ysi/"
+      },
+      {
+        "label": "FenloAI",
+        "href": "/route/2025-fenloai/"
+      }
+    ]
+  },
+  {
+    "id": "languages",
+    "order": 42,
+    "phrase": "people",
+    "group": "Languages",
+    "tools": [
+      "Bengali, native",
+      "English",
+      "Chinese, HSK 1",
+      "Hindi, proficient understanding"
+    ],
+    "proof": [
+      {
+        "label": "HSK vocabulary trainer",
+        "href": "/work/hsk-vocabs/"
+      },
+      {
+        "label": "Yunnan University, 2025",
+        "href": "/route/2025-kunming/"
       }
     ]
   },
   {
     "id": "quantum",
-    "order": 8,
-    "home": false,
+    "order": 50,
+    "phrase": "other",
     "group": "Quantum computing",
     "tools": [
       "Qiskit",
@@ -218,8 +472,8 @@
   },
   {
     "id": "hardware",
-    "order": 9,
-    "home": false,
+    "order": 51,
+    "phrase": "other",
     "group": "Computer architecture",
     "tools": [
       "MIPS",
@@ -231,81 +485,6 @@
       {
         "label": "Teaching assistant, 2024",
         "href": "/route/2024-back-to-nsu/"
-      }
-    ]
-  },
-  {
-    "id": "writing",
-    "order": 10,
-    "home": true,
-    "group": "Writing and teaching",
-    "tools": [
-      "technical articles",
-      "books for school students",
-      "teaching assistant",
-      "public speaking"
-    ],
-    "proof": [
-      {
-        "label": "Four books",
-        "href": "/writing/#books"
-      },
-      {
-        "label": "Twenty-one articles",
-        "href": "/writing/#articles"
-      },
-      {
-        "label": "Debate, 2017",
-        "href": "/route/2017-debate-and-club/"
-      }
-    ]
-  },
-  {
-    "id": "operations",
-    "order": 7,
-    "home": true,
-    "group": "Supply chain and its finance, studied",
-    "tools": [
-      "MicroMasters in Supply Chain Management, five graduate-level courses",
-      "demand forecasting",
-      "inventory policy",
-      "transportation planning",
-      "network design",
-      "activity-based costing",
-      "working capital and cash-to-cash",
-      "discounted cash flow",
-      "system dynamics",
-      "SQL and ML on supply chain data",
-      "operations research",
-      "Lean Six Sigma Yellow Belt",
-      "Google Project Management"
-    ],
-    "proof": [
-      {
-        "label": "The five courses, with topics",
-        "href": "/route/2020-take-it-seriously/"
-      }
-    ]
-  },
-  {
-    "id": "languages",
-    "order": 12,
-    "home": false,
-    "group": "Languages",
-    "tools": [
-      "Bengali, native",
-      "English",
-      "Chinese, HSK 1",
-      "Hindi, proficient understanding"
-    ],
-    "proof": [
-      {
-        "label": "HSK vocabulary trainer",
-        "href": "/work/hsk-vocabs/"
-      },
-      {
-        "label": "Yunnan University, 2025",
-        "href": "/route/2025-kunming/"
       }
     ]
   }

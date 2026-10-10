@@ -1,6 +1,7 @@
 ---
 date: "2022"
 title: "Chotoder Gonit Olympiad, three volumes"
+short: "Olympiad books"
 threads:
   - "explain"
 summary: "A three-volume math olympiad series for classes 2 to 7, a best seller in its category on Rokomari."

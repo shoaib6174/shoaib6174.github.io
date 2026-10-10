@@ -1,6 +1,7 @@
 ---
 date: "2022-08"
 title: "Quantum computing"
+until: "2023-07"
 threads:
   - "studied"
   - "explain"

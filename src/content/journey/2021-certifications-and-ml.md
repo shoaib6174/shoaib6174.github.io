@@ -1,6 +1,8 @@
 ---
-date: "2021"
+date: "2021-01"
 title: "Data analytics, then machine learning"
+until: "2021-12"
+short: "Certifications, ML"
 threads:
   - "studied"
   - "explain"
