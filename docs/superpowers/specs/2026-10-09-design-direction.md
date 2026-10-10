@@ -14,7 +14,7 @@ Shoaib's working world is robot software: a language model deciding, a vision mo
 
 **C. The instruction.** The hero is the thing he actually built: a line of natural language typed in, and a robot's plan assembling under it, step by step, once. Everything else is quiet type on paper. Grounded in the task planner, which is also the emphasis Shoaib asked for. Risk: none of the rest of the page can compete with it, which is the point.
 
-**Chosen: C, with A's paper and rail.** One orchestrated moment on the home page, a drafting-paper surface, and dimension-line years on the Journey. Nothing else animates.
+**Chosen on 2026-10-09: C, with A's paper and rail. Replaced on 2026-10-10.** Shoaib rejected the instruction hero: a project is proof, not identity, and the first screen should carry curiosity over competence, with one action, "Read the route". The home page now opens with a **mosaic**: twelve tiles, one per world he has worked in (the lab, the books, quantum, Kunming, the textile school, Annapurna, the debate, FenloAI, the C book, GSoC), each linking to its page, assembling once per session. The paper surface, the margin column, and the Route rail stay.
 
 ## Tokens
 
@@ -47,7 +47,7 @@ Left-aligned throughout. Two-column skeleton on desktop: a 140 px margin column 
 | Chose  |  The IPE track...                                |
 ```
 
-Home hero:
+Home hero, original (replaced by the mosaic, see above):
 ```
 |        |  > bring the red cube from room A to room B      |  (types in)
 |        |    navigate room_a        done                   |  (steps appear, one per 400 ms)

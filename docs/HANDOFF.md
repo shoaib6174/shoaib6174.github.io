@@ -15,7 +15,7 @@ A preview server may still be running from last night on the same address. The c
 
 - An Astro 7 static site, six pages plus a detail page for every work item and route entry: Home, Work, Route, Writing, Skills, Shelf.
 - All copy drafted from `docs/life-inventory.md` under `docs/story/portrayal.md`, then put through two review passes against `docs/story/evaluation-guide.md` (reports in `docs/story/review-*.md`). Every number on the site has a line in the inventory naming its source.
-- Design per `docs/superpowers/specs/2026-10-09-design-direction.md`: drafting-paper surface, Bricolage Grotesque and Literata, a margin column, one signal colour used only for lines and underlines, rows instead of cards, the robot-instruction hero, a dimension-line rail on Route, a separate phone layout.
+- Design per `docs/superpowers/specs/2026-10-09-design-direction.md`: drafting-paper surface, Bricolage Grotesque and Literata, a margin column, one signal colour used only for lines and underlines, rows instead of cards, a dimension-line rail on Route, a separate phone layout. The home page opens with a mosaic of twelve tiles, one per world you have worked in, chosen on 2026-10-10 after you asked for curiosity to lead and "Read the route" to be the one action.
 - Lighthouse on the home page, mobile: accessibility 100, best practices 100, SEO 100, no layout shift. Shipped script under 20 KB.
 - Old URLs redirect to the new pages. The Jekyll theme and its sample content are gone; git history keeps them.
 - `npm run build` fails on a broken internal link, a skills row without proof, or a malformed content file. `npm run check` type-checks the pages, `npm test` runs the unit tests. The deploy workflow runs all three before publishing.
@@ -45,7 +45,7 @@ git checkout master && git merge --no-ff redesign && git push
 
 | Item | Where it goes |
 |---|---|
-| Photos: debate award, TEXBIZ, Business Club, Annapurna, Kunming, a lab robot | Drop files in `src/assets/photos/`, then reference them in the matching entry's `images:` list. The detail pages already show a labelled slot for each. |
+| Photos: debate award, TEXBIZ, Business Club, Annapurna, Kunming, a lab robot | Drop files in `src/assets/photos/`, then reference them in the matching entry's `images:` list. The detail pages already show a labelled slot for each. The home mosaic uses the same photos: in `src/pages/index.astro`, give a tile `kind: 'img'` and `image: <import>`; the grey tiles are the ones waiting for a photo. |
 | A demo GIF or video of the task planner | `cover:` on `src/content/work/llm-robot-task-planner.md` |
 | The five article URLs | `src/content/articles.json` |
 | The mobile cover publication link and venue | `src/content/papers.json`, and the 2019 route entry's `proof` |

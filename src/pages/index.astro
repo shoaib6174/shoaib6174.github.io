@@ -5,6 +5,7 @@ import Base from '../layouts/Base.astro';
 import WorkCard from '../components/WorkCard.astro';
 import { frontmatter as home } from '../content/home.md';
 import headshot from '../assets/photos/headshot.jpeg';
+import booksPhoto from '../assets/photos/gonit-olympiad-books.jpg';
 import { formatDate, sortKey } from '../lib/dates';
 
 const work = (await getCollection('work', ({ data }) => data.featured)).sort(
@@ -17,6 +18,20 @@ const books = (await getCollection('books')).sort((a, b) => a.data.year - b.data
 const route = (await getCollection('journey', ({ data }) => data.onRoute)).sort(
   (a, b) => sortKey(a.data.date) - sortKey(b.data.date),
 );
+const tiles = [
+  { label: 'Robots, at NSU Intelligent Robotics Lab', href: '/work/?area=robots', kind: 'ph', w: 2, h: 2 },
+  { label: 'Mohammad Shoaib, Dhaka', href: '/route/', kind: 'img', image: headshot, h: 2 },
+  { label: 'Four math books for school students', href: '/writing/#books', kind: 'img', image: booksPhoto },
+  { label: 'Qiskit Advocate, a year of quantum computing', href: '/route/2022-quantum/', kind: 'ph' },
+  { label: 'Kunming, and learning Chinese', href: '/route/2024-kunming/', kind: 'ph', h: 2 },
+  { label: 'Articles, written after learning each thing', href: '/writing/#articles', kind: 'ink', big: '21' },
+  { label: 'Textile engineering, BUTEX', href: '/route/2017-butex/', kind: 'ph' },
+  { label: 'Annapurna Base Camp, alone', href: '/route/2025-annapurna/', kind: 'ph', w: 2 },
+  { label: 'Best speaker, debate, 2017', href: '/route/2017-debate-and-club/', kind: 'ph' },
+  { label: 'FenloAI, co-founder', href: '/route/2025-fenloai/', kind: 'ink' },
+  { label: 'A book on C, at 16', href: '/route/2014-c-book/', kind: 'ink' },
+  { label: 'Video Swin Transformer, GSoC 2022', href: '/work/video-swin-tf2/', kind: 'sig', big: '2,636', small: 'downloads' },
+];
 const series = [
   { id: 'ros-2', label: 'ROS 2', line: 'Five articles in June 2026, plus the version-matching guide.' },
   { id: 'casadi', label: 'CasADi', line: 'Four articles on optimal control, April 2025.' },
@@ -26,31 +41,31 @@ const series = [
 
 <Base title="Mohammad Shoaib" description={home.masthead} bodyClass="home">
   <script is:inline>
-    // Before first paint: hide the plan so the typed sequence does not flash its finished state.
+    // Before first paint: let the tiles assemble once per session, never under reduced motion.
     try {
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && sessionStorage.getItem('hero-played') !== '1') {
-        document.currentScript.nextElementSibling.classList.add('is-animating', 'is-pre');
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && sessionStorage.getItem('mosaic-played') !== '1') {
+        document.currentScript.nextElementSibling.classList.add('is-animating');
+        sessionStorage.setItem('mosaic-played', '1');
       }
     } catch (e) {}
   </script>
-  <section class="hero" data-hero aria-label="An instruction and the robot's plan">
-    <p class="hero__m">One instruction, in simulation</p>
-    <p class="hero__prompt"><span class="hero__ghost" aria-hidden="true">bring the red cube from room A to room B</span><span class="hero__live"><span data-typed>bring the red cube from room A to room B</span><span class="hero__caret" aria-hidden="true"></span></span></p>
-    <ol class="hero__plan" aria-label="Plan">
-      <li><span class="act">navigate</span><span>room A</span><span class="ok">done</span></li>
-      <li><span class="act">detect</span><span>red cube</span><span class="ok">found</span></li>
-      <li><span class="act">pick up</span><span>red cube</span><span class="ok">done</span></li>
-      <li><span class="act">navigate</span><span>doorway, then room B</span><span class="ok">done</span></li>
-      <li><span class="act">place</span><span>room B</span><span class="ok">done</span></li>
-    </ol>
-    <p class="hero__note">What a local language model did with that sentence as the planner for a mobile robot with an arm. <a href="/work/llm-robot-task-planner/">The task planner</a>.</p>
-  </section>
-
-  <section class="masthead" aria-labelledby="name">
-    <Image class="masthead__photo" src={headshot} alt="Mohammad Shoaib" width="224" height="280" densities={[1, 2]} />
-    <h1 id="name" class="masthead__name">{home.name}</h1>
-    <p class="masthead__lead">{home.masthead}</p>
-    <p class="masthead__sub">{home.masthead2} {home.location}.</p>
+  <section class="mosaic" aria-labelledby="name">
+    <div class="mosaic__head">
+      <h1 id="name" class="mosaic__name">{home.name}</h1>
+      <p class="mosaic__who">{home.masthead}</p>
+    </div>
+    <ul class="tiles" aria-label="The worlds I have worked in">
+      {tiles.map((t, i) => (
+        <li class:list={['tile', t.kind, { 'tile--w2': t.w === 2, 'tile--h2': t.h === 2 }]} style={`--i:${i}`}>
+          <a href={t.href}>
+            {t.image && <Image src={t.image} alt="" widths={[400, 800]} sizes="(max-width: 760px) 50vw, 400px" class="tile__img" />}
+            {t.big && <span class="tile__big" aria-hidden="true">{t.big}{t.small && <small>{t.small}</small>}</span>}
+            <span class="tile__label">{t.label}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="mosaic__action"><a href="/route/">Read the route</a><span>What I did, in order, and why. 2014 to now.</span></p>
   </section>
 
   <section class="section" aria-labelledby="now">
@@ -139,6 +154,5 @@ const series = [
     <p class="section__more"><a href="/shelf/">Books, films, trips</a></p>
   </section>
 
-  <script src="../scripts/hero.ts"></script>
   <script src="../scripts/roles.ts"></script>
 </Base>
