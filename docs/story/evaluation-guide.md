@@ -10,6 +10,7 @@ Used by every review pass. Score each criterion 1–5 and quote the offending te
 - Adjectives about his own character (persistent, curious, broad, entrepreneurial, analytical, passionate, dedicated) stated rather than shown. See the traits table in `portrayal.md` for how each is shown instead.
 - A number that is not in the inventory, or a number without a source.
 - A broken or unverified link (see the Link check section of the inventory).
+- A causal claim ("is why", "led to", "because", "is what pointed") that Shoaib did not state himself. Facts may sit side by side; the site does not connect them for the reader.
 
 ## Criteria
 

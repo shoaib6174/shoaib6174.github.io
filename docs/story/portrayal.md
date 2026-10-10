@@ -76,6 +76,7 @@ An engineer who reads his way into things and then learns them properly, who lea
 
 | Avoid | Use |
 |---|---|
+| X is why Y, X led to Y (when Shoaib did not say so) | X. Then Y. (two facts, no connector) |
 | startup, founder | FenloAI, co-founder, contract work |
 | published at CoRL | paper in preparation for CoRL 2026 |
 | failed, rejected | did not hold; outside that year's funded slots |
