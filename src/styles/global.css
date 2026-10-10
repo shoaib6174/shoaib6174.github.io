@@ -370,7 +370,7 @@ ul, ol { margin: 0; padding: 0; }
   .pitch { grid-template-columns: 1fr; row-gap: 28px; }
   .pitch__sentence { font-size: clamp(30px, 8.6vw, 36px); max-width: none; }
   .pitch__col { display: contents; }
-  .pitch__group[data-group="robots"] { order: 1; } .pitch__group[data-group="platforms"] { order: 2; } .pitch__group[data-group="operations"] { order: 3; } .pitch__group[data-group="supply"] { order: 4; } .pitch__group[data-group="people"] { order: 5; }
+  .pitch__group[data-group="ai"] { order: 1; } .pitch__group[data-group="platforms"] { order: 2; } .pitch__group[data-group="operations"] { order: 3; } .pitch__group[data-group="supply"] { order: 4; } .pitch__group[data-group="people"] { order: 5; }
   .under { grid-template-columns: 1fr; gap: 22px; }
   .under__col--cta { justify-self: start; text-align: left; }
   .under__col--cta .cta, .under__links { justify-content: flex-start; }
