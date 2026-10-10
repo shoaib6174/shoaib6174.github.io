@@ -393,3 +393,5 @@ Full audit with keep / archive / delete verdicts: `docs/github-audit.md`. Lab pr
 - No-Code ML covers Azure ML Designer and AutoML: `No-Code-ML` README.
 - LinkedIn XR essay URL returns 200.
 - Still open, from Shoaib: FenloAI founding month; whether the GetAudio cluster is still down; the HSK app motive line; when Chinese study started relative to the Kunming trip.
+- **Correction (2026-10-10, from Shoaib):** the NITEX order-data pipeline is OCR and information extraction from order PDFs. It is not supply chain work and must not be used as evidence for the supply chain or economics layer. The economics layer is studied (MicroMasters), not yet built.
+- **Unverified inferences removed from the site:** that garment knowledge shaped the NITEX attribute taxonomy; that the security robot targets factories because of the textile attachment; that Shoaib does FenloAI's estimating. `[?]` any of these can return if he confirms it.

@@ -16,11 +16,11 @@ const layers = (await getCollection('layers')).sort((a, b) => a.data.order - b.d
 
   <section class="section" aria-labelledby="column">
     <h2 id="column" class="section__label">From the floor to the customer</h2>
-    <p class="column__intro">Most of what I have done sits in one of seven layers. A problem in the physical world passes through all of them. I have worked in each.</p>
+    <p class="column__intro">A problem in the physical world passes through seven layers on its way to a customer. I have built in five of them and studied the other two. Each layer says which.</p>
     <ol class="column">
       {layers.map((l) => (
-        <li class="layer">
-          <h3 class="layer__name">{l.data.layer}</h3>
+        <li class:list={['layer', `is-${l.data.status}`]}>
+          <h3 class="layer__name">{l.data.layer} <span class="layer__status">{l.data.status}</span></h3>
           <p class="layer__bring">{l.data.bring}</p>
           <p class="layer__proof">
             {l.data.proof.map((p, i) => (<><a href={p.href}>{p.label}</a>{i < l.data.proof.length - 1 ? ', ' : ''}</>))}

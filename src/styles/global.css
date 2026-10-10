@@ -176,8 +176,10 @@ ul, ol { margin: 0; padding: 0; }
 .column { list-style: none; display: grid; }
 .layer { padding: 16px 0 16px 22px; border-left: 2px solid var(--rule); position: relative; }
 .layer::before { content: ''; position: absolute; left: -6px; top: 24px; width: 10px; height: 10px; border-radius: 50%; background: var(--paper); border: 2px solid var(--ink); }
-.layer:first-child::before, .layer:last-child::before { background: var(--signal); border-color: var(--signal); }
+.layer.is-built::before { background: var(--ink); }
 .layer__name { font-size: var(--fs-4); margin-bottom: 4px; }
+.layer__status { font-size: var(--fs-tiny); font-weight: 500; color: var(--graphite); margin-left: 8px; }
+.layer.is-studied::before { background: var(--paper); border-color: var(--graphite); }
 .layer__bring { margin-bottom: 4px; }
 .layer__proof { font-family: var(--display); font-size: var(--fs-small); color: var(--graphite); }
 .layer__proof a { color: var(--ink); }

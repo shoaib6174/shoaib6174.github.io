@@ -264,7 +264,7 @@
     "id": "operations",
     "order": 7,
     "home": true,
-    "group": "Supply chain, operations, and their finance",
+    "group": "Supply chain and its finance, studied",
     "tools": [
       "demand forecasting",
       "inventory policy",
@@ -283,10 +283,6 @@
       {
         "label": "MITx MicroMasters, 2020 to 2021",
         "href": "/route/2020-take-it-seriously/"
-      },
-      {
-        "label": "Order-data pipeline for twenty brands",
-        "href": "/work/nitex-extraction-pipeline/"
       }
     ]
   },
