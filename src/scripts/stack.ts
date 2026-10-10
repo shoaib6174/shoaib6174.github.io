@@ -29,6 +29,8 @@ function init() {
     { rootMargin: '0px 0px -18% 0px', threshold: 0.2 },
   );
   stages.forEach((s) => io?.observe(s));
+  // Safety: whatever the observer does, nothing stays hidden for long.
+  setTimeout(() => { stages.forEach((s) => s.classList.add('is-in')); root.classList.add('is-done'); }, 2500);
 }
 
 init();

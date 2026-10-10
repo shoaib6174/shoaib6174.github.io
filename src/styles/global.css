@@ -146,6 +146,10 @@ ul, ol { margin: 0; padding: 0; }
 .stack__more { font-family: var(--display); font-size: var(--fs-small); }
 .stack__more a { text-decoration-color: var(--signal); }
 
+.cta { margin: 18px 0 0; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.cta a { font-family: var(--display); font-weight: 600; font-size: var(--fs-4); text-decoration-color: var(--signal); text-decoration-thickness: 2px; }
+.cta span { color: var(--graphite); font-size: var(--fs-small); }
+
 .worklinks { list-style: none; display: grid; gap: 12px; }
 .worklinks li { display: grid; gap: 2px; }
 .worklinks a { font-family: var(--display); font-weight: 600; text-decoration: none; }
