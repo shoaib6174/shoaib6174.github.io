@@ -1,23 +1,35 @@
 {
+  "bands": [
+    { "id": "floor", "label": "The floor" },
+    { "id": "economics", "label": "The economics" },
+    { "id": "models", "label": "The data and models" },
+    { "id": "running", "label": "Running it" },
+    { "id": "machine", "label": "The machine" },
+    { "id": "product", "label": "The product" },
+    { "id": "people", "label": "The people" }
+  ],
   "nodes": [
-    { "id": "textile", "label": "Textile and industrial engineering", "x": 120, "y": 300, "href": "/route/2017-butex/" },
-    { "id": "supply", "label": "Supply chain and finance", "x": 150, "y": 470, "href": "/route/2020-take-it-seriously/" },
-    { "id": "math", "label": "Mathematics", "x": 170, "y": 130, "href": "/writing/#books" },
-    { "id": "writing", "label": "Writing and teaching", "x": 330, "y": 80, "href": "/writing/" },
-    { "id": "business", "label": "Business and organising", "x": 330, "y": 540, "href": "/route/2025-fenloai/" },
-    { "id": "quantum", "label": "Quantum computing", "x": 500, "y": 60, "href": "/route/2022-quantum/" },
-    { "id": "vision", "label": "Computer vision", "x": 480, "y": 250, "href": "/work/?area=ml" },
-    { "id": "llm", "label": "Language models", "x": 610, "y": 360, "href": "/work/?area=llm" },
-    { "id": "rl", "label": "Reinforcement learning and control", "x": 700, "y": 190, "href": "/work/safe-rl-pe/" },
-    { "id": "robotics", "label": "Robotics software", "x": 850, "y": 300, "href": "/work/?area=robots" },
-    { "id": "hardware", "label": "Hardware and edge devices", "x": 870, "y": 480, "href": "/work/vlm-perception-edge/" },
-    { "id": "cloud", "label": "Cloud and DevOps", "x": 640, "y": 530, "href": "/work/?area=infra" },
-    { "id": "fullstack", "label": "Full-stack software", "x": 470, "y": 560, "href": "/work/?area=product" }
+    { "id": "textile", "label": "Textile and industrial engineering", "band": "floor", "x": 430, "href": "/route/2017-butex/" },
+    { "id": "supply", "label": "Supply chain and finance", "band": "economics", "x": 560, "href": "/route/2020-take-it-seriously/" },
+    { "id": "math", "label": "Mathematics", "band": "models", "x": 130, "href": "/writing/#books" },
+    { "id": "cs", "label": "Computer science", "band": "models", "x": 270, "href": "/route/2023-nsu-msc/" },
+    { "id": "vision", "label": "Computer vision", "band": "models", "x": 430, "href": "/work/?area=ml" },
+    { "id": "llm", "label": "Language models", "band": "models", "x": 600, "href": "/work/?area=llm" },
+    { "id": "rl", "label": "Reinforcement learning and control", "band": "models", "x": 770, "href": "/work/safe-rl-pe/" },
+    { "id": "quantum", "label": "Quantum computing", "band": "models", "x": 920, "href": "/route/2022-quantum/" },
+    { "id": "cloud", "label": "Cloud and DevOps", "band": "running", "x": 560, "href": "/work/?area=infra" },
+    { "id": "robotics", "label": "Robotics software", "band": "machine", "x": 430, "href": "/work/?area=robots" },
+    { "id": "hardware", "label": "Hardware and edge devices", "band": "machine", "x": 770, "href": "/work/vlm-perception-edge/" },
+    { "id": "fullstack", "label": "Full-stack software", "band": "product", "x": 600, "href": "/work/?area=product" },
+    { "id": "writing", "label": "Writing and teaching", "band": "people", "x": 300, "href": "/writing/" },
+    { "id": "business", "label": "Business and organising", "band": "people", "x": 700, "href": "/route/2025-fenloai/" }
   ],
   "edges": [
     { "from": "textile", "to": "vision", "label": "Fashion trend research platform", "href": "/work/nitex-trend-platform/" },
     { "from": "textile", "to": "robotics", "label": "Factory security robot, concept", "href": "/work/security-robot/" },
     { "from": "math", "to": "writing", "label": "Four math books for school students", "href": "/writing/#books" },
+    { "from": "cs", "to": "writing", "label": "Teaching assistant, computer architecture", "href": "/route/2024-back-to-nsu/" },
+    { "from": "cs", "to": "robotics", "label": "TurtleBot3 patrolling, the course project", "href": "/work/turtlebot3-patrolling/" },
     { "from": "writing", "to": "quantum", "label": "Qiskit articles and a card game", "href": "/work/qiskit-treasure-hunt/" },
     { "from": "writing", "to": "robotics", "label": "ROS 2 series, five articles", "href": "/writing/#ros-2" },
     { "from": "writing", "to": "rl", "label": "CasADi series on optimal control", "href": "/writing/#casadi" },
@@ -26,11 +38,11 @@
     { "from": "vision", "to": "robotics", "label": "Vision-language models on robot hardware", "href": "/work/vlm-perception-edge/" },
     { "from": "vision", "to": "hardware", "label": "A face recogniser on a Raspberry Pi", "href": "/work/attendance-pi-2019/" },
     { "from": "vision", "to": "cloud", "label": "Order-data extraction pipeline", "href": "/work/nitex-extraction-pipeline/" },
+    { "from": "vision", "to": "llm", "label": "Video Swin Transformer, GSoC 2022", "href": "/work/video-swin-tf2/" },
     { "from": "llm", "to": "robotics", "label": "LLM robot task planner", "href": "/work/llm-robot-task-planner/" },
     { "from": "llm", "to": "fullstack", "label": "GuardShield", "href": "/work/guard-shield/" },
     { "from": "rl", "to": "robotics", "label": "Multi-agent pursuit-evasion", "href": "/work/safe-rl-pe/" },
     { "from": "robotics", "to": "hardware", "label": "NSU AI SAT, a CubeSat's AI payload", "href": "/work/nsu-ai-sat/" },
-    { "from": "cloud", "to": "fullstack", "label": "GetAudio on Kubernetes", "href": "/work/getaudio/" },
-    { "from": "vision", "to": "llm", "label": "Video Swin Transformer, GSoC 2022", "href": "/work/video-swin-tf2/" }
+    { "from": "cloud", "to": "fullstack", "label": "GetAudio on Kubernetes", "href": "/work/getaudio/" }
   ]
 }

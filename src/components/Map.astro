@@ -2,44 +2,70 @@
 import map from '../content/map.json';
 
 const W = 1000;
-const H = 620;
+const BAND = 92;
+const TOP = 10;
+const H = TOP + map.bands.length * BAND + 10;
+const bandIndex = Object.fromEntries(map.bands.map((b, i) => [b.id, i]));
 const byId = Object.fromEntries(map.nodes.map((n) => [n.id, n]));
+// Bands are drawn top to bottom in reverse order, so the floor sits at the bottom.
+const bandY = (id: string) => TOP + (map.bands.length - 1 - bandIndex[id]) * BAND;
+const nodeY = (id: string) => bandY(byId[id].band) + BAND / 2 + 6;
 const degree: Record<string, number> = {};
 for (const e of map.edges) {
   degree[e.from] = (degree[e.from] ?? 0) + 1;
   degree[e.to] = (degree[e.to] ?? 0) + 1;
 }
-const anchor = (n: { x: number }) => (n.x < 230 ? 'start' : n.x > 770 ? 'end' : 'middle');
-const labelY = (n: { y: number }) => (n.y < 120 ? n.y - 18 : n.y + 26);
+const path = (a: { x: number; id: string }, b: { x: number; id: string }) => {
+  const y1 = nodeY(a.id);
+  const y2 = nodeY(b.id);
+  if (y1 === y2) {
+    const lift = 22;
+    return `M${a.x},${y1} C${a.x},${y1 - lift} ${b.x},${y2 - lift} ${b.x},${y2}`;
+  }
+  const my = (y1 + y2) / 2;
+  return `M${a.x},${y1} C${a.x},${my} ${b.x},${my} ${b.x},${y2}`;
+};
+// Labels alternate above and below in crowded bands.
+const labelAbove = (n: { id: string; band: string; x: number }) => {
+  const siblings = map.nodes.filter((m) => m.band === n.band);
+  if (siblings.length < 4) return false;
+  return siblings.indexOf(n) % 2 === 1;
+};
+const anchor = (x: number) => (x < 140 ? 'start' : x > 860 ? 'end' : 'middle');
 ---
 
-<figure class="map" data-map>
-  <svg class="map__svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="map-title map-desc">
-    <title id="map-title">Thirteen fields, and the work that joined them</title>
-    <desc id="map-desc">Each line between two fields is one project. Hover or focus a field to see its projects.</desc>
-    <g class="map__edges">
-      {map.edges.map((e) => {
-        const a = byId[e.from];
-        const b = byId[e.to];
-        return (
-          <line
-            x1={a.x} y1={a.y} x2={b.x} y2={b.y}
-            data-from={e.from} data-to={e.to} data-label={e.label} data-href={e.href}
-          />
-        );
-      })}
+<figure class="lmap" data-map>
+  <svg class="lmap__svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="map-title map-desc">
+    <title id="map-title">Fourteen fields in seven layers, joined by the work that connected them</title>
+    <desc id="map-desc">Each curve between two fields is one project. Hover or focus a field or a layer to see its projects.</desc>
+    <g class="lmap__bands">
+      {map.bands.map((b, i) => (
+        <g class="lmap__band" data-band={b.id} tabindex="0">
+          <rect x="0" y={bandY(b.id)} width={W} height={BAND - 4} rx="6" class:list={{ 'is-alt': i % 2 === 1 }} />
+          <text x="14" y={bandY(b.id) + 20} class="lmap__bandlabel">{b.label}</text>
+        </g>
+      ))}
     </g>
-    <g class="map__nodes">
+    <g class="lmap__edges">
+      {map.edges.map((e) => (
+        <path
+          d={path(byId[e.from], byId[e.to])}
+          data-from={e.from} data-to={e.to} data-label={e.label} data-href={e.href}
+          data-bands={`${byId[e.from].band} ${byId[e.to].band}`}
+        />
+      ))}
+    </g>
+    <g class="lmap__nodes">
       {map.nodes.map((n) => (
-        <a href={n.href} data-node={n.id} class:list={['map__node', { 'is-isolated': !degree[n.id] }]}>
-          <circle cx={n.x} cy={n.y} r={degree[n.id] ? 7 + Math.min(degree[n.id], 5) * 1.5 : 6} />
-          <text x={n.x} y={labelY(n)} text-anchor={anchor(n)}>{n.label}</text>
+        <a href={n.href} data-node={n.id} data-band={n.band} class:list={['lmap__node', { 'is-isolated': !degree[n.id] }]}>
+          <circle cx={n.x} cy={nodeY(n.id)} r={degree[n.id] ? 6 + Math.min(degree[n.id], 5) * 1.4 : 5.5} />
+          <text x={n.x} y={labelAbove(n) ? nodeY(n.id) - 16 : nodeY(n.id) + 24} text-anchor={anchor(n.x)}>{n.label}</text>
         </a>
       ))}
     </g>
   </svg>
-  <figcaption class="map__caption" data-map-caption aria-live="polite">
-    Each line is one piece of work that joined two fields. Point at a field to see which. A field with no line is one I have studied but not yet built in.
+  <figcaption class="lmap__caption" data-map-caption aria-live="polite">
+    Seven layers, from the floor to the people who use the result. Each curve is one piece of work that joined two fields. Point at a field or a layer. A hollow point is a field I have studied but not yet built in.
   </figcaption>
   <ul class="visually-hidden">
     {map.edges.map((e) => (
@@ -58,42 +84,63 @@ const labelY = (n: { y: number }) => (n.y < 120 ? n.y - 18 : n.y + 26);
     controller = new AbortController();
     const { signal } = controller;
     const nodes = [...root.querySelectorAll<SVGElement>('[data-node]')];
-    const edges = [...root.querySelectorAll<SVGLineElement>('line[data-from]')];
+    const bands = [...root.querySelectorAll<SVGElement>('[data-band].lmap__band')];
+    const edges = [...root.querySelectorAll<SVGPathElement>('path[data-from]')];
     const caption = root.querySelector<HTMLElement>('[data-map-caption]')!;
     const idle = caption.textContent;
     const labelOf = (id: string) => root.querySelector(`[data-node="${id}"] text`)?.textContent ?? id;
+    const bandLabel = (id: string) => root.querySelector(`[data-band="${id}"].lmap__band text`)?.textContent ?? id;
 
-    const focus = (id: string | null) => {
-      root.classList.toggle('is-focused', id !== null);
-      const hot = new Set<string>();
-      edges.forEach((e) => {
-        const on = id !== null && (e.dataset.from === id || e.dataset.to === id);
-        e.classList.toggle('is-hot', on);
-        if (on) { hot.add(e.dataset.from!); hot.add(e.dataset.to!); }
-      });
-      nodes.forEach((n) => n.classList.toggle('is-hot', id !== null && hot.has(n.dataset.node!)));
-      if (id === null) { caption.textContent = idle; return; }
-      const mine = edges.filter((e) => e.dataset.from === id || e.dataset.to === id);
-      if (!mine.length) { caption.textContent = `${labelOf(id)}: studied, not yet built in.`; return; }
+    const paint = (hotEdges: SVGPathElement[], hotNodes: Set<string>, on: boolean) => {
+      root.classList.toggle('is-focused', on);
+      edges.forEach((e) => e.classList.toggle('is-hot', on && hotEdges.includes(e)));
+      nodes.forEach((n) => n.classList.toggle('is-hot', on && hotNodes.has(n.dataset.node!)));
+    };
+    const list = (lead: string, mine: SVGPathElement[], relativeTo?: string) => {
       caption.replaceChildren();
       const strong = document.createElement('strong');
-      strong.textContent = labelOf(id);
+      strong.textContent = lead;
       caption.append(strong, ': ');
       mine.forEach((e, i) => {
-        const other = e.dataset.from === id ? e.dataset.to! : e.dataset.from!;
         const a = document.createElement('a');
         a.href = e.dataset.href!;
         a.textContent = e.dataset.label!;
         const span = document.createElement('span');
-        span.textContent = ` with ${labelOf(other)}`;
+        const other = relativeTo ? (e.dataset.from === relativeTo ? e.dataset.to! : e.dataset.from!) : null;
+        span.textContent = other ? ` with ${labelOf(other)}` : ` (${labelOf(e.dataset.from!)}, ${labelOf(e.dataset.to!)})`;
         caption.append(a, span, i < mine.length - 1 ? '; ' : '.');
       });
     };
+    const focusNode = (id: string) => {
+      const mine = edges.filter((e) => e.dataset.from === id || e.dataset.to === id);
+      const hot = new Set<string>([id]);
+      mine.forEach((e) => { hot.add(e.dataset.from!); hot.add(e.dataset.to!); });
+      paint(mine, hot, true);
+      if (!mine.length) { caption.textContent = `${labelOf(id)}: studied, not yet built in.`; return; }
+      list(labelOf(id), mine, id);
+    };
+    const focusBand = (id: string) => {
+      const mine = edges.filter((e) => (e.dataset.bands ?? '').split(' ').includes(id));
+      const hot = new Set<string>();
+      mine.forEach((e) => { hot.add(e.dataset.from!); hot.add(e.dataset.to!); });
+      nodes.filter((n) => n.dataset.band === id).forEach((n) => hot.add(n.dataset.node!));
+      paint(mine, hot, true);
+      if (!mine.length) { caption.textContent = `${bandLabel(id)}: studied, nothing built through this layer yet.`; return; }
+      list(bandLabel(id), mine);
+    };
+    const clear = () => { paint([], new Set(), false); caption.textContent = idle; };
+
     nodes.forEach((n) => {
-      n.addEventListener('pointerenter', () => focus(n.dataset.node!), { signal });
-      n.addEventListener('pointerleave', () => focus(null), { signal });
-      n.addEventListener('focus', () => focus(n.dataset.node!), { signal });
-      n.addEventListener('blur', () => focus(null), { signal });
+      n.addEventListener('pointerenter', () => focusNode(n.dataset.node!), { signal });
+      n.addEventListener('pointerleave', clear, { signal });
+      n.addEventListener('focus', () => focusNode(n.dataset.node!), { signal });
+      n.addEventListener('blur', clear, { signal });
+    });
+    bands.forEach((b) => {
+      b.addEventListener('pointerenter', () => focusBand(b.dataset.band!), { signal });
+      b.addEventListener('pointerleave', clear, { signal });
+      b.addEventListener('focus', () => focusBand(b.dataset.band!), { signal });
+      b.addEventListener('blur', clear, { signal });
     });
   }
   init();
