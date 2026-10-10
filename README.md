@@ -19,7 +19,7 @@ Everything on the site comes from `src/content/`. Edit a file, rebuild, done.
 |---|---|---|
 | Home page copy | `src/content/home.md` | Masthead, the three roles, the Now list, the off-the-clock paragraph. |
 | A system you built | `src/content/work/<slug>.md` | One file per item. Frontmatter: title, years, area, role, status, summary, why, stack, links, featured, order. The body is the detail page. Add `cover: ./../../assets/photos/x.jpg` and `coverAlt` for a photo. |
-| A dated entry on the Route page | `src/content/journey/<slug>.md` | Frontmatter: date (`2024` or `2024-10`), title, threads, chose, ruledOut, result, startedBy, proof, onRoute, images, imageSlots. The body is what happened. |
+| A dated entry on the Route page | `src/content/journey/<slug>.md` | Frontmatter: date (`2024` or `2024-10`), title, threads, short, summary, proof, imageSlots. Was: chose, ruledOut, result, startedBy, proof, onRoute, images, imageSlots. The body is what happened. |
 | Articles | `src/content/articles.json` | Leave `url` out for a piece whose link you do not have yet; it renders as text with "link to follow". |
 | Books, papers | `books.json`, `papers.json` | |
 | Skills | `skills.json` | Every row must have at least one proof link or the build fails. |

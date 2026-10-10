@@ -261,30 +261,37 @@ ul, ol { margin: 0; padding: 0; }
    Route: dimension-line rail
    ------------------------------------------------------------------ */
 /* The route map: one line through every entry, a traveller running it on a loop. */
-.rmap { grid-column: 1 / -1; margin: 10px 0 0; }
+.rmap { grid-column: 1 / -1; margin: 12px 0 0; }
 .rmap__svg { width: 100%; height: auto; display: block; overflow: visible; }
 .rmap__years line { stroke: var(--graphite); stroke-opacity: 0.5; stroke-width: 1; }
-.rmap__years text { font-family: var(--display); font-size: 13px; fill: var(--graphite); }
-.rmap__lane line { stroke: var(--rule); stroke-width: 1; }
-.rmap__lanelabel { font-family: var(--display); font-size: 14.5px; font-weight: 600; fill: var(--graphite); }
+.rmap__years text { font-family: var(--display); font-size: 14px; fill: var(--graphite); }
+.rmap__lane rect { fill: none; }
+.rmap__lane rect.is-alt { fill: var(--paper-deep); }
+.rmap__lanelabel { font-family: var(--display); font-size: 16px; font-weight: 600; fill: var(--ink); }
 .rmap__lane { transition: opacity 0.25s ease; }
 .rmap__lane.is-dim { opacity: 0.3; }
-.rmap__line { fill: none; stroke: var(--ink); stroke-opacity: 0.16; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-.rmap__trail { fill: none; stroke: var(--signal); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.rmap__line { fill: none; stroke: var(--rule); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.rmap__trail { fill: none; stroke: var(--signal); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
 .rmap__dot { text-decoration: none; outline: none; transition: opacity 0.25s ease; }
 .rmap__dot.is-dim { opacity: 0.2; }
 .rmap__halo { fill: transparent; }
-.rmap__station { fill: var(--paper); stroke: var(--ink); stroke-opacity: 0.45; stroke-width: 2.5; transition: stroke 0.2s ease, fill 0.2s ease; }
-.rmap__dot.is-lit .rmap__station { stroke: var(--signal); stroke-opacity: 1; }
-.rmap__dot.is-here .rmap__station, .rmap__dot:hover .rmap__station, .rmap__dot:focus-visible .rmap__station { fill: var(--signal); stroke: var(--signal); stroke-opacity: 1; }
-.rmap__dot.is-active .rmap__station { fill: var(--ink); stroke: var(--ink); stroke-opacity: 1; }
-.rmap__label { font-family: var(--display); font-size: 14.5px; font-weight: 500; fill: var(--graphite); paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; transition: fill 0.2s ease; }
+.rmap__station { fill: var(--paper); stroke: var(--graphite); stroke-width: 3; transition: stroke 0.2s ease, fill 0.2s ease, r 0.2s ease; }
+.rmap__dot.is-lit .rmap__station { stroke: var(--signal); }
+.rmap__dot.is-here .rmap__station { r: 10; fill: var(--signal); stroke: var(--paper); }
+.rmap__dot:hover .rmap__station, .rmap__dot:focus-visible .rmap__station { fill: var(--signal); stroke: var(--paper); }
+.rmap__dot.is-active .rmap__station { fill: var(--ink); stroke: var(--ink); }
+.rmap__label { font-family: var(--display); font-size: 16px; font-weight: 500; fill: var(--graphite); paint-order: stroke; stroke: var(--paper); stroke-width: 5px; stroke-linejoin: round; transition: fill 0.2s ease; }
 .rmap__dot.is-lit .rmap__label, .rmap__dot:hover .rmap__label { fill: var(--ink); }
+.rmap__dot.is-here .rmap__label { fill: var(--ink); font-weight: 600; }
 .rmap__traveller { pointer-events: none; }
-.rmap__rider { fill: var(--signal); stroke: var(--paper); stroke-width: 2; }
+.rmap__rider { fill: var(--signal); stroke: var(--paper); stroke-width: 2.5; }
 .rmap__pulse { fill: var(--signal); opacity: 0.18; animation: rmap-pulse 1.6s ease-out infinite; transform-box: fill-box; transform-origin: center; }
-@keyframes rmap-pulse { from { transform: scale(0.5); opacity: 0.3; } to { transform: scale(1.4); opacity: 0; } }
-.rmap__caption { font-family: var(--display); font-size: var(--fs-body); color: var(--ink); margin-top: 4px; min-height: 1.6em; }
+@keyframes rmap-pulse { from { transform: scale(0.5); opacity: 0.3; } to { transform: scale(1.5); opacity: 0; } }
+.rmap__tag { opacity: 0; transition: opacity 0.2s ease; pointer-events: none; }
+.rmap__tag.is-on { opacity: 1; }
+.rmap__tag rect { fill: var(--ink); }
+.rmap__tag text { font-family: var(--display); font-size: 15px; font-weight: 500; fill: var(--paper); }
+.rmap__caption { font-family: var(--display); font-size: var(--fs-tiny); color: var(--graphite); margin-top: 8px; }
 
 .journey { display: grid; grid-template-columns: var(--margin) minmax(0, var(--measure)); column-gap: var(--gap); padding-top: 16px; }
 .journey__threads { grid-column: 2; }

@@ -8,4 +8,4 @@ short: "MSc"
 summary: "Enrolled for quantum research. Left the quantum track after one semester, stayed for the degree."
 ---
 
-I enrolled to work with a faculty member doing quantum computing research. The quantum track lasted one semester. Learning quantum computing had been the best part; doing the theoretical research, I found I wanted to build systems instead. I stayed for the degree.
+I enrolled to work with a faculty member doing quantum computing research. One semester was enough to learn something I had not expected: learning quantum computing had been the best year of my life as a student, and doing the theoretical research was not what I wanted to spend the next five on. I wanted to build systems. I left the quantum track and stayed for the degree.

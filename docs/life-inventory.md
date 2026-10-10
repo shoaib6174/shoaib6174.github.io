@@ -33,7 +33,7 @@ Three questions every facet should eventually answer:
 **Why AI, and how it started.**
 | When | What |
 |---|---|
-| ~2014, age 16 | First contact with code. Grew up in a small town in Bangladesh; had seen only a handful of computers before getting his own. A few months after getting it, wanted to learn programming because programmers seemed cool. Downloaded a book on C over a thin connection and worked through the whole thing. Then HSC board exams took over and it stopped. |
+| 2012, class 9 (corrected by Shoaib 2026-10-10; was logged as ~2014, age 16) | First contact with code. Grew up in a small town in Bangladesh; had seen only a handful of computers before getting his own. A few months after getting it, wanted to learn programming because programmers seemed cool. Downloaded a book on C over a thin connection and worked through the whole thing. Then HSC board exams took over and it stopped. |
 | 2017 | Read Max Tegmark's *Life 3.0* in first year. That was the spark for AI. |
 | 2017 – 2019 | Several attempts to learn coding and AI, all of which fizzled: JavaScript, Java, C++, and competitive programming before *Life 3.0*; CS50 after it. |
 | 2019 | First thing that actually worked: a facial-recognition attendance system on a Raspberry Pi. Not even his own assignment. A friend's group had it as their Product Design project and was stuck, so he built it with them at the last minute. `[?]` photo or repo? |
@@ -277,7 +277,7 @@ Pattern: this is the same move as reading *Life 3.0* in 2017 or Feynman in 2022.
 | When | Where | Notes |
 |---|---|---|
 | 2018 | India: Shimla, Manali, Agra, Delhi, Kolkata | First trip abroad `[?]` |
-| Oct 2024 | China: Kunming, Yunnan University, two-week China-South Asia Bridge program | See facet 6. |
+| Oct 2025 (corrected by Shoaib 2026-10-10; was logged as Oct 2024) | China: Kunming, Yunnan University, two-week China-South Asia Bridge program | See facet 6. |
 | May 2025 | Nepal: trekked **solo, without a guide, to Annapurna Base Camp**. Also bungee jumping and the canyon swing. `[photo]` | |
 
 ### Reading
