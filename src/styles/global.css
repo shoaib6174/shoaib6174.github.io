@@ -286,10 +286,27 @@ ul, ol { margin: 0; padding: 0; }
 .detail__stack span { font-family: var(--display); font-weight: 600; color: var(--graphite); margin-right: 10px; }
 .detail__links { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--display); font-size: var(--fs-small); }
 .detail__next, .detail__back { font-family: var(--display); font-size: var(--fs-small); }
+.detail__back { margin-top: 12px; }
 .detail--journey { row-gap: 0; }
 .detail--journey .entries { grid-column: 1 / -1; margin-top: 0; }
 .detail--journey .entries::before { display: none; }
 .detail--journey .entry__date::after, .detail--journey .entry__date::before { display: none; }
+
+/* Detail pages: the "more" section and the credit split bar */
+.more { margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--rule); }
+.more__title { font-size: var(--fs-4); margin-bottom: 14px; }
+.more p { margin-bottom: 0.9em; }
+.split { margin: 0 0 22px; }
+.split__bar { display: flex; gap: 2px; height: 56px; }
+.split__seg { display: flex; flex-direction: column; justify-content: center; padding: 0 10px; min-width: 0; color: #fff; font-family: var(--display); font-weight: 600; font-size: var(--fs-small); line-height: 1.15; overflow: hidden; }
+.split__seg:first-child { border-radius: 4px 0 0 4px; }
+.split__seg:last-child { border-radius: 0 4px 4px 0; }
+.split__seg small { display: block; font-size: 11.5px; font-weight: 500; opacity: .95; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.split__seg--ipe { background: #e8630f; }
+.split__seg--tex { background: #2b9a62; }
+.split__seg--fun { background: #2f5f96; }
+.split figcaption { font-family: var(--display); font-size: var(--fs-tiny); color: var(--graphite); margin-top: 8px; }
+@media (max-width: 760px) { .split__seg small { white-space: normal; } .split__bar { height: 72px; } }
 
 /* ------------------------------------------------------------------
    Writing

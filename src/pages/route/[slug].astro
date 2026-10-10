@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import JourneyEntry from '../../components/JourneyEntry.astro';
 import Figure from '../../components/Figure.astro';
@@ -11,6 +11,8 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const d = entry.data;
+const more = await getEntry('details', entry.id);
+const More = more ? (await render(more)).Content : null;
 ---
 
 <Base title={d.title} description={`${formatDate(d.date)}. ${d.result ?? d.chose ?? ''}`}>
@@ -18,6 +20,12 @@ const d = entry.data;
     <div class="entries">
       <JourneyEntry entry={entry} linked={false} headingLevel="h1" />
     </div>
+    {More && (
+      <section class="more prose" aria-label="More">
+        {more?.data.title && <h2 class="more__title">{more.data.title}</h2>}
+        <More />
+      </section>
+    )}
     {d.imageSlots.length > 0 && (
       <div class="entry__figures">
         {d.imageSlots.map((s) => <Figure alt={s} slot={s} />)}

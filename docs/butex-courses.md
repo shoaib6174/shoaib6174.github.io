@@ -1,5 +1,16 @@
 # BUTEX curriculum — BSc Textile Engineering, major Industrial & Production Engineering (2017 – 2022)
 
+## Credits by category (Shoaib's grouping, 2026-10-10)
+
+| Category | Credits | Share | Hours at 45 per credit |
+|---|---|---|---|
+| IPE and management (industrial engineering, mechanical, automation, product design, CAD/CAM, operations, management, supply chain, attachment, project) | 73 | 44% | 3,285 |
+| Textile (fibres, yarn, fabric, wet processing, apparel, polymer, testing) | 48 | 29% | 2,160 |
+| Fundamentals (maths, physics, chemistry, programming, electrical, statistics, English, economics, sociology) | 45 | 27% | 2,025 |
+| **Total** | **166** | | **7,470** |
+
+The resume says 165 credits; the course list sums to 166. The site uses 166. The hours figure is Shoaib's own conversion rule, one credit = 45 hours.
+
 Source: Shoaib, 2026-10-09. Prefixes: IPE = industrial & production, MDM = multidisciplinary (programming, electrical), YE/FE/WPE/AE = yarn, fabric, wet processing, apparel (the textile half), TEM = textile management, MS/PHY/CHEM/HSS = basic science and humanities.
 
 ## The engineering half (what he wanted)

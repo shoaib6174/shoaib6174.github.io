@@ -9,6 +9,6 @@ ruledOut: "The textile half of the degree. Yarn, fabric, wet processing, apparel
 result: "Graduated in 2022. Tried JavaScript, Java, C++, and competitive programming along the way, then CS50 after reading Life 3.0. None of it held yet."
 ---
 
-Every term mixed two kinds of courses. One half was engineering: programming, electrical, mechanical, automation and control, instrumentation, product design, SolidWorks and CATIA, operations research, simulation. The other half was textiles. I liked the first half.
+Every term mixed two kinds of courses. One side was engineering: programming, electrical, mechanical, automation and control, instrumentation, product design, SolidWorks and CATIA, operations research, simulation. The other was textiles. Of 166 credits, 73 were industrial engineering and management and 48 were textile. I liked the first side.
 
 In first year I read *Life 3.0*. That is where the interest in AI started.

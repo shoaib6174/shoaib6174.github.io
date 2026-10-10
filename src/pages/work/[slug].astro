@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Figure from '../../components/Figure.astro';
 import StatusTag from '../../components/StatusTag.astro';
@@ -11,6 +11,8 @@ export async function getStaticPaths() {
 const { item } = Astro.props;
 const d = item.data;
 const { Content } = await render(item);
+const more = await getEntry('details', item.id);
+const More = more ? (await render(more)).Content : null;
 const all = await getCollection('work');
 const next = d.ledTo ? all.find((w) => w.id === d.ledTo) : undefined;
 ---
@@ -27,6 +29,12 @@ const next = d.ledTo ? all.find((w) => w.id === d.ledTo) : undefined;
     <div class="prose">
       <Content />
     </div>
+    {More && (
+      <section class="more prose" aria-label="More">
+        {more?.data.title && <h2 class="more__title">{more.data.title}</h2>}
+        <More />
+      </section>
+    )}
     {d.stack.length > 0 && (
       <p class="detail__stack"><span>Stack</span> {d.stack.join(', ')}</p>
     )}

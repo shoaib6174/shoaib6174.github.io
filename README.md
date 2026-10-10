@@ -24,6 +24,8 @@ Everything on the site comes from `src/content/`. Edit a file, rebuild, done.
 | Books, papers | `books.json`, `papers.json` | |
 | Skills | `skills.json` | Every row must have at least one proof link or the build fails. |
 | Shelf | `shelf.json` | Books, films, trips, lines, and the Currently learning list. |
+| Skills column | `layers.json` | The seven layers, each with a status (built, applied, studied) and proof. |
+| Longer text for a detail page | `src/content/details/<slug>.md` | Optional. Rendered under the entry on `/route/<slug>/` or `/work/<slug>/`, with an optional `title`. Markdown, and inline HTML is allowed, which is how the BUTEX credit bar is made. |
 
 Photos go in `src/assets/photos/` and are referenced from frontmatter; Astro resizes and converts them. PDFs go in `public/files/`.
 

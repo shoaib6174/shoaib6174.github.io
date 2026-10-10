@@ -111,6 +111,11 @@ const skills = defineCollection({
   }),
 });
 
+const details = defineCollection({
+  loader: glob({ base: './src/content/details', pattern: '**/*.md' }),
+  schema: z.object({ title: z.string().optional() }),
+});
+
 const layers = defineCollection({
   loader: file('./src/content/layers.json'),
   schema: z.object({
@@ -137,4 +142,4 @@ const shelf = defineCollection({
   }),
 });
 
-export const collections = { work, journey, articles, books, papers, skills, shelf, layers };
+export const collections = { work, journey, articles, books, papers, skills, shelf, layers, details };

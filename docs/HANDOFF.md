@@ -51,7 +51,7 @@ git checkout master && git merge --no-ff redesign && git push
 | The mobile cover publication link and venue | `src/content/papers.json`, and the 2019 route entry's `proof` |
 | Year TEXBIZ was first held | `src/content/journey/2017-debate-and-club.md` |
 | BotForge's live URL | Fix the DNS first (see the Link check section of the inventory: the hostname points at a Kubernetes API server). Then add the link to `src/content/work/botforge.md`. |
-| Longer accounts for any route entry or work item | Edit the markdown body. It becomes the detail page. |
+| Longer accounts for any route entry or work item | Create `src/content/details/<slug>.md`. It renders under the entry on its detail page only, so the Route and Work lists stay short. `2017-butex.md` is the example, with the credit bar. |
 
 ## Open items outside the site
 
