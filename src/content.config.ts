@@ -6,7 +6,6 @@ const link = z.object({ label: z.string(), href: z.string() });
 const dateStr = z.string().regex(/^\d{4}(-\d{2})?$/, 'date must be YYYY or YYYY-MM');
 
 export const AREAS = ['robots', 'llm', 'ml', 'infra', 'quantum', 'product'] as const;
-export const PHRASES = ['ai', 'platforms', 'operations', 'supply', 'people', 'other'] as const;
 export const ROLES = ['build', 'explain', 'organise'] as const;
 export const THREADS = ['build', 'explain', 'organise', 'studied', 'life'] as const;
 export const STATUSES = [
@@ -103,17 +102,23 @@ const papers = defineCollection({
   }),
 });
 
+export const PLACES = ['butex', 'mitx', 'microsoft', 'deeppavlov', 'gsoc', 'quantum', 'nsu', 'nitex', 'lab', 'fenloai', 'writing', 'own'] as const;
+const mark = z.object({ place: z.enum(PLACES), kind: z.enum(['built', 'learned']), label: z.string(), href: z.string() });
+const skillLine = z.object({
+  id: z.string(),
+  name: z.string(),
+  since: z.number(),
+  tools: z.string(),
+  marks: z.array(mark).min(1, 'every skill line needs at least one mark'),
+});
 const skills = defineCollection({
   loader: file('./src/content/skills.json'),
   schema: z.object({
     id: z.string(),
-    group: z.string(),
-    phrase: z.enum(PHRASES),
-    intro: z.string().optional(),
-    tools: z.array(z.string()).min(1),
-    proof: z.array(link).min(1, 'every skills row needs proof'),
     order: z.number(),
-    home: z.boolean().default(false),
+    group: z.string(),
+    claim: z.string(),
+    skills: z.array(skillLine).min(1),
   }),
 });
 

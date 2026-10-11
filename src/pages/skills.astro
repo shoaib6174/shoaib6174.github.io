@@ -1,41 +1,51 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import SkillRow from '../components/SkillRow.astro';
+import SkillGrid from '../components/SkillGrid.astro';
 
-const skills = (await getCollection('skills')).sort((a, b) => a.data.order - b.data.order);
-// The five claims of the home-page sentence, in its order, each with what it means here.
-const PHRASES = [
-  { key: 'ai', label: 'AI on robots', intro: 'Language and vision models that run on a machine, and the robot software, control, and hardware around them.' },
-  { key: 'platforms', label: 'The platforms a business runs on', intro: 'Software that real people use every day, built end to end and handed over with tests and documentation.' },
-  { key: 'operations', label: 'Operations', intro: 'Six years of industrial and production engineering, and enough of the textile floor to know what a factory needs.' },
-  { key: 'supply', label: 'Supply chains', intro: 'How goods and money move, from five graduate-level courses, and the analytics to work with the data.' },
-  { key: 'people', label: 'The people who have to use them', intro: 'Explaining things, running things, and the languages I do it in.' },
-  { key: 'other', label: 'Also', intro: 'Fields I studied to working level that the sentence does not claim.' },
-] as const;
+const groups = (await getCollection('skills')).sort((a, b) => a.data.order - b.data.order);
+const PLACE_NAMES: Record<string, string> = {
+  butex: 'BUTEX', mitx: 'MITx', microsoft: 'Microsoft', deeppavlov: 'DeepPavlov', gsoc: 'Google Summer of Code',
+  quantum: 'the quantum year', nsu: 'NSU', nitex: 'NITEX', lab: 'the lab', fenloai: 'FenloAI', writing: 'writing', own: 'my own time',
+};
+const setAside = [
+  { what: 'Frontend work', when: '2020', why: 'Finished a web development bootcamp and found I did not enjoy it.', href: '/route/2020-take-it-seriously/' },
+  { what: 'DevOps as a career', when: '2020', why: 'Finished a cloud specialisation because DevOps was in demand; finishing it told me it was not for me.', href: '/route/2020-take-it-seriously/' },
+  { what: 'Theoretical research', when: '2023', why: 'One semester on a quantum track. Learning it was the best part; I wanted to build systems.', href: '/route/2023-nsu-msc/' },
+];
 ---
 
-<Base title="Skills" description="What Mohammad Shoaib can do, each group with the work that proves it, arranged under the five claims of the home page.">
+<Base title="Skills" description="What Mohammad Shoaib can do, as a grid of skills against the places they were used, every mark a link to the proof." wide>
   <header class="page-head">
     <p class="page-head__span">With proof</p>
     <h1>Skills, with proof</h1>
-    <p class="page-head__lead">The sentence on the home page makes five claims. This page is the evidence for each, group by group, with the tools named. If there is no proof, it is not listed.</p>
-    <nav class="phrases" aria-label="The five claims">
-      {PHRASES.filter((p) => p.key !== 'other').map((p) => (<a href={`#${p.key}`}>{p.label}</a>))}
-    </nav>
+    <p class="page-head__lead">Five groups, in order of how much work sits behind them. Across the top, the places I have worked and studied, in the order I reached them. A mark is a skill used at a place, and every mark links to the thing that proves it. Depth is the count.</p>
   </header>
 
-  {PHRASES.map((p) => {
-    const mine = skills.filter((s) => s.data.phrase === p.key);
-    if (!mine.length) return null;
-    return (
-      <section class="section" aria-labelledby={p.key} id={p.key}>
-        <h2 id={`${p.key}-label`} class="section__label">{p.label}</h2>
-        <p class="phrase__intro">{p.intro}</p>
-        <div class="skills">
-          {mine.map((s) => <SkillRow skill={s} headingLevel="h3" />)}
-        </div>
-      </section>
-    );
-  })}
+  <SkillGrid groups={groups} />
+
+  {groups.map((g) => (
+    <section class="section" id={g.id} aria-labelledby={`${g.id}-label`}>
+      <h2 id={`${g.id}-label`} class="section__label">{g.data.group}</h2>
+      <p class="phrase__intro">{g.data.claim}</p>
+      <ul class="slines">
+        {g.data.skills.map((s) => (
+          <li class="sline" id={`${g.id}-${s.id}`}>
+            <p class="sline__head"><strong>{s.name}.</strong> Since {s.since}. {s.marks.map((m, i) => (<><a href={m.href}>{m.label}</a>{i < s.marks.length - 1 ? '; ' : '.'}</>))}</p>
+            <p class="sline__tools">{s.tools}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <section class="section" id="set-aside" aria-labelledby="set-aside-label">
+    <h2 id="set-aside-label" class="section__label">Tried, and set aside</h2>
+    <p class="phrase__intro">So the list above is not inflated.</p>
+    <ul class="slines">
+      {setAside.map((x) => (
+        <li class="sline"><p class="sline__head"><strong>{x.what}.</strong> {x.when}. {x.why} <a href={x.href}>The entry</a>.</p></li>
+      ))}
+    </ul>
+  </section>
 </Base>

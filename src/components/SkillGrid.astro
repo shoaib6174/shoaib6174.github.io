@@ -1,0 +1,125 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { PLACES } from '../content.config';
+
+interface Props { groups: CollectionEntry<'skills'>[] }
+const { groups } = Astro.props;
+
+// Columns are the places, in the order they were reached. A mark is a skill used at a place,
+// and every mark is a link to the thing that proves it.
+const COLS: Record<(typeof PLACES)[number], { label: string; year: string }> = {
+  butex: { label: 'BUTEX', year: '2017' },
+  mitx: { label: 'MITx', year: '2020' },
+  microsoft: { label: 'Microsoft', year: '2021' },
+  deeppavlov: { label: 'DeepPavlov', year: '2021' },
+  gsoc: { label: 'GSoC', year: '2022' },
+  quantum: { label: 'Quantum', year: '2022' },
+  nsu: { label: 'NSU', year: '2023' },
+  nitex: { label: 'NITEX', year: '2023' },
+  lab: { label: 'The lab', year: '2025' },
+  fenloai: { label: 'FenloAI', year: '2025' },
+  writing: { label: 'Writing', year: '' },
+  own: { label: 'Own time', year: '' },
+};
+let serial = 0;
+---
+
+<figure class="sgrid" data-sgrid>
+  <script is:inline>
+    try {
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && sessionStorage.getItem('skills-drawn') !== '1') {
+        document.currentScript.parentElement.classList.add('is-drawing');
+        sessionStorage.setItem('skills-drawn', '1');
+      }
+    } catch (e) {}
+  </script>
+  <div class="sgrid__scroll">
+    <table class="sgrid__table">
+      <caption class="visually-hidden">Skills by the places they were used. A filled mark is something built or shipped there, a hollow mark is something learned there. Each mark links to the proof.</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="sgrid__corner"><span class="sgrid__key"><i class="k k--built"></i> built with <i class="k k--learned"></i> learned</span></th>
+          {PLACES.map((p, c) => (
+            <th scope="col" class="sgrid__col" data-col={c}><span class="sgrid__colname">{COLS[p].label}</span>{COLS[p].year && <span class="sgrid__colyear">{COLS[p].year}</span>}</th>
+          ))}
+        </tr>
+      </thead>
+      {groups.map((g) => (
+        <tbody class="sgrid__group" data-group={g.id}>
+          <tr class="sgrid__grouprow">
+            <th scope="rowgroup" colspan={PLACES.length + 1}><a href={`#${g.id}`}>{g.data.group}</a></th>
+          </tr>
+          {g.data.skills.map((s) => (
+            <tr class="sgrid__row" data-skill={s.id}>
+              <th scope="row" class="sgrid__name"><a href={`#${g.id}-${s.id}`}>{s.name}</a></th>
+              {PLACES.map((p, c) => {
+                const m = s.marks.find((x) => x.place === p);
+                return (
+                  <td class="sgrid__cell" data-col={c}>
+                    {m && (
+                      <a href={m.href} class:list={['sgrid__mark', `is-${m.kind}`]} data-label={m.label} style={`--i:${serial++}`} aria-label={`${s.name} at ${COLS[p].label}: ${m.label}`}><span></span></a>
+                    )}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      ))}
+    </table>
+  </div>
+  <p class="sgrid__tag" data-sgrid-tag aria-hidden="true" hidden></p>
+</figure>
+
+<script>
+  // Row and column highlighting, and a tag at the mark that names the proof.
+  let controller: AbortController | null = null;
+  function init() {
+    controller?.abort();
+    controller = null;
+    const root = document.querySelector<HTMLElement>('[data-sgrid]');
+    if (!root) return;
+    controller = new AbortController();
+    const { signal } = controller;
+    const tag = root.querySelector<HTMLElement>('[data-sgrid-tag]')!;
+    const table = root.querySelector<HTMLTableElement>('table')!;
+    const cols = [...root.querySelectorAll<HTMLElement>('[data-col]')];
+    const rows = [...root.querySelectorAll<HTMLElement>('.sgrid__row')];
+    const marks = [...root.querySelectorAll<HTMLAnchorElement>('.sgrid__mark')];
+    const setCol = (c: string | null) => cols.forEach((el) => el.classList.toggle('is-hot', el.dataset.col === c));
+    const setRow = (r: HTMLElement | null) => rows.forEach((el) => el.classList.toggle('is-hot', el === r));
+    const focusOn = (on: boolean) => root.classList.toggle('is-focused', on);
+
+    root.querySelectorAll<HTMLElement>('th.sgrid__col').forEach((th) => {
+      th.addEventListener('pointerenter', () => { setCol(th.dataset.col!); focusOn(true); }, { signal });
+      th.addEventListener('pointerleave', () => { setCol(null); focusOn(false); }, { signal });
+    });
+    rows.forEach((tr) => {
+      tr.addEventListener('pointerenter', () => { setRow(tr); focusOn(true); }, { signal });
+      tr.addEventListener('pointerleave', () => { setRow(null); focusOn(false); }, { signal });
+    });
+    const show = (m: HTMLAnchorElement) => {
+      const cell = m.closest<HTMLElement>('[data-col]')!;
+      setCol(cell.dataset.col!);
+      tag.textContent = m.dataset.label ?? '';
+      tag.hidden = false;
+      const r = m.getBoundingClientRect();
+      const base = root.getBoundingClientRect();
+      const left = r.left + r.width / 2 - base.left;
+      tag.style.left = `${Math.min(Math.max(left, 0), base.width)}px`;
+      tag.style.top = `${r.top - base.top - 10}px`;
+      tag.classList.toggle('is-flip', left > base.width * 0.6);
+    };
+    const hide = () => { tag.hidden = true; setCol(null); };
+    marks.forEach((m) => {
+      m.addEventListener('pointerenter', () => show(m), { signal });
+      m.addEventListener('pointerleave', hide, { signal });
+      m.addEventListener('focus', () => show(m), { signal });
+      m.addEventListener('blur', hide, { signal });
+    });
+    table.addEventListener('scroll', hide, { signal, passive: true });
+    setTimeout(() => root.classList.remove('is-drawing'), 2600);
+  }
+  init();
+  document.addEventListener('astro:after-swap', init);
+</script>

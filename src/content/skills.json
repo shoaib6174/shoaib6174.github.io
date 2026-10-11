@@ -1,490 +1,469 @@
 [
   {
-    "id": "agentic-robots",
+    "id": "machine",
     "order": 1,
-    "phrase": "ai",
-    "group": "Agentic AI on robots",
-    "tools": [
-      "LLM task planning",
-      "tool-calling agents",
-      "LangChain",
-      "local models with Ollama",
-      "ROS 2 integration",
-      "replanning on failure"
-    ],
-    "proof": [
+    "group": "Putting AI on a machine",
+    "claim": "Language and vision models running on a robot, with the software and the boards that carry them.",
+    "skills": [
       {
-        "label": "LLM robot task planner",
-        "href": "/work/llm-robot-task-planner/"
+        "id": "agents",
+        "name": "Language-model agents for robots",
+        "since": 2025,
+        "tools": "LLM task planning, tool calling, replanning on failure, local models with Ollama",
+        "marks": [
+          {
+            "place": "lab",
+            "kind": "built",
+            "label": "LLM robot task planner",
+            "href": "/work/llm-robot-task-planner/"
+          }
+        ]
       },
       {
-        "label": "ROS 2 series",
-        "href": "/writing/#ros-2"
+        "id": "vlm",
+        "name": "Vision-language models on hardware",
+        "since": 2024,
+        "tools": "VLM and VLA models, DeepSeek-VL, YOLO, NVIDIA Triton, on-board inference",
+        "marks": [
+          {
+            "place": "nitex",
+            "kind": "built",
+            "label": "Trend platform, a locally deployed VLM",
+            "href": "/work/nitex-trend-platform/"
+          },
+          {
+            "place": "lab",
+            "kind": "built",
+            "label": "Vision-language models on Jetson boards",
+            "href": "/work/vlm-perception-edge/"
+          }
+        ]
+      },
+      {
+        "id": "ros",
+        "name": "Robot software",
+        "since": 2024,
+        "tools": "ROS 2, Nav2, MoveIt, ros2_control, Gazebo, Isaac Sim and Isaac Lab, URDF, SLAM, behavior trees",
+        "marks": [
+          {
+            "place": "nsu",
+            "kind": "built",
+            "label": "TurtleBot3 patrolling, the course project",
+            "href": "/work/turtlebot3-patrolling/"
+          },
+          {
+            "place": "lab",
+            "kind": "built",
+            "label": "The task planner's ROS 2 stack",
+            "href": "/work/llm-robot-task-planner/"
+          },
+          {
+            "place": "writing",
+            "kind": "built",
+            "label": "ROS 2 series, five articles",
+            "href": "/writing/#ros-2"
+          }
+        ]
+      },
+      {
+        "id": "edge",
+        "name": "Edge boards and payloads",
+        "since": 2019,
+        "tools": "Jetson Orin, Jetson Xavier NX, Raspberry Pi, OpenCR",
+        "marks": [
+          {
+            "place": "butex",
+            "kind": "built",
+            "label": "A face recogniser on a Raspberry Pi, 2019",
+            "href": "/work/attendance-pi-2019/"
+          },
+          {
+            "place": "lab",
+            "kind": "built",
+            "label": "NSU AI SAT, a CubeSat's AI payload",
+            "href": "/work/nsu-ai-sat/"
+          }
+        ]
       }
     ]
   },
   {
-    "id": "vlm",
+    "id": "models",
     "order": 2,
-    "phrase": "ai",
-    "group": "Vision-language models and perception",
-    "tools": [
-      "VLM and VLA models",
-      "DeepSeek-VL",
-      "YOLO",
-      "Video Swin",
-      "PyTorch",
-      "TensorFlow",
-      "NVIDIA Triton"
-    ],
-    "proof": [
+    "group": "Training and evaluating models",
+    "claim": "The craft underneath: porting, fine-tuning, learning from interaction, and testing it properly.",
+    "skills": [
       {
-        "label": "On robot hardware",
-        "href": "/work/vlm-perception-edge/"
+        "id": "porting",
+        "name": "Porting and fine-tuning transformers",
+        "since": 2022,
+        "tools": "PyTorch, TensorFlow, weight conversion, fine-tuning",
+        "marks": [
+          {
+            "place": "gsoc",
+            "kind": "built",
+            "label": "Video Swin Transformer in TensorFlow 2, 2,636 downloads",
+            "href": "/work/video-swin-tf2/"
+          }
+        ]
       },
       {
-        "label": "Trend platform",
-        "href": "/work/nitex-trend-platform/"
+        "id": "rl",
+        "name": "Reinforcement learning and control",
+        "since": 2025,
+        "tools": "Stable-Baselines3, Gymnasium, PettingZoo, self-play, ablation studies, NMPC with CasADi",
+        "marks": [
+          {
+            "place": "lab",
+            "kind": "built",
+            "label": "Pursuit-evasion, paper in preparation",
+            "href": "/work/safe-rl-pe/"
+          },
+          {
+            "place": "writing",
+            "kind": "built",
+            "label": "CasADi series on optimal control",
+            "href": "/writing/#casadi"
+          }
+        ]
       },
       {
-        "label": "Video Swin in TF2",
-        "href": "/work/video-swin-tf2/"
+        "id": "nlp",
+        "name": "NLP on a corpus",
+        "since": 2021,
+        "tools": "intent classification, clustering, dialogue graphs, LaBSE and BERT",
+        "marks": [
+          {
+            "place": "deeppavlov",
+            "kind": "built",
+            "label": "Dialogue graphs from MultiWOZ",
+            "href": "/route/2021-deeppavlov/"
+          }
+        ]
+      },
+      {
+        "id": "mlfound",
+        "name": "Machine learning foundations",
+        "since": 2021,
+        "tools": "probability and statistics, optimisation, Azure Machine Learning",
+        "marks": [
+          {
+            "place": "mitx",
+            "kind": "learned",
+            "label": "The MicroMasters' analytics courses",
+            "href": "/route/2020-take-it-seriously/"
+          },
+          {
+            "place": "microsoft",
+            "kind": "learned",
+            "label": "Azure Data Scientist Associate, 2021",
+            "href": "/route/2021-certifications-and-ml/"
+          }
+        ]
       }
     ]
   },
   {
-    "id": "robotics",
+    "id": "products",
     "order": 3,
-    "phrase": "ai",
-    "group": "Robot software",
-    "tools": [
-      "ROS 2",
-      "Nav2",
-      "MoveIt",
-      "ros2_control",
-      "Gazebo",
-      "Isaac Sim and Isaac Lab",
-      "URDF",
-      "SLAM",
-      "behavior trees"
-    ],
-    "proof": [
+    "group": "Building software people use",
+    "claim": "Platforms that run for a business every day, built end to end and handed over.",
+    "skills": [
       {
-        "label": "TurtleBot3 patrolling",
-        "href": "/work/turtlebot3-patrolling/"
+        "id": "web",
+        "name": "Web platforms, end to end",
+        "since": 2026,
+        "tools": "Next.js 16, React 19, TypeScript, Prisma, PostgreSQL, Tailwind, PWA and web push, Playwright, Vitest",
+        "marks": [
+          {
+            "place": "fenloai",
+            "kind": "built",
+            "label": "Jonvexa, a workforce platform, sole developer",
+            "href": "/work/jonvexa/"
+          }
+        ]
       },
       {
-        "label": "Task planner",
-        "href": "/work/llm-robot-task-planner/"
+        "id": "llmsys",
+        "name": "LLM systems for businesses",
+        "since": 2023,
+        "tools": "RAG with citations, voice agents over Twilio and Vapi, guard pipelines, document extraction with OCR, n8n and Make",
+        "marks": [
+          {
+            "place": "nitex",
+            "kind": "built",
+            "label": "Order-data extraction pipeline for twenty-plus brands",
+            "href": "/work/nitex-extraction-pipeline/"
+          },
+          {
+            "place": "fenloai",
+            "kind": "built",
+            "label": "BotForge, chatbots and voice agents",
+            "href": "/work/botforge/"
+          },
+          {
+            "place": "own",
+            "kind": "built",
+            "label": "GuardShield",
+            "href": "/work/guard-shield/"
+          }
+        ]
+      },
+      {
+        "id": "cloud",
+        "name": "Backend and cloud",
+        "since": 2023,
+        "tools": "Python, C++, CUDA, TypeScript, FastAPI, Docker, Kubernetes, AWS ECS, Fargate and Lambda, Azure, DigitalOcean, nginx",
+        "marks": [
+          {
+            "place": "nitex",
+            "kind": "built",
+            "label": "The extraction pipeline on AWS",
+            "href": "/work/nitex-extraction-pipeline/"
+          },
+          {
+            "place": "own",
+            "kind": "built",
+            "label": "GetAudio on a Kubernetes cluster I built to learn Kubernetes",
+            "href": "/work/getaudio/"
+          },
+          {
+            "place": "fenloai",
+            "kind": "built",
+            "label": "Jonvexa's deployment and rollback",
+            "href": "/work/jonvexa/"
+          }
+        ]
+      },
+      {
+        "id": "delivery",
+        "name": "Delivering to a client",
+        "since": 2023,
+        "tools": "requirements from the client's own material, design specs, tests as a gate before every deploy, manuals, handover, fixed-price scoping",
+        "marks": [
+          {
+            "place": "nitex",
+            "kind": "built",
+            "label": "Two platforms in seven months",
+            "href": "/route/2023-nitex/"
+          },
+          {
+            "place": "fenloai",
+            "kind": "built",
+            "label": "Jonvexa: 54 deploys, 2,900 tests, a fifteen-part reference",
+            "href": "/work/jonvexa/"
+          }
+        ]
       }
     ]
   },
   {
-    "id": "control-rl",
+    "id": "floor",
     "order": 4,
-    "phrase": "ai",
-    "group": "Control and reinforcement learning",
-    "tools": [
-      "NMPC with CasADi",
-      "Stable-Baselines3",
-      "Gymnasium",
-      "PettingZoo",
-      "self-play",
-      "ablation studies"
-    ],
-    "proof": [
+    "group": "The floor and the money",
+    "claim": "What makes the machine and the software useful in a factory: how it runs, and what it costs.",
+    "skills": [
       {
-        "label": "Pursuit-evasion",
-        "href": "/work/safe-rl-pe/"
+        "id": "ie",
+        "name": "Industrial and production engineering",
+        "since": 2017,
+        "tools": "manufacturing processes, instrumentation and control, product design, ergonomics, operations research, simulation, SolidWorks, CATIA, Lean Six Sigma Yellow Belt",
+        "marks": [
+          {
+            "place": "butex",
+            "kind": "built",
+            "label": "73 of 166 credits, and two Product Design projects",
+            "href": "/route/2017-butex/"
+          },
+          {
+            "place": "lab",
+            "kind": "built",
+            "label": "A patrol robot for factory floors, concept",
+            "href": "/work/security-robot/"
+          }
+        ]
       },
       {
-        "label": "CasADi series",
-        "href": "/writing/#casadi"
+        "id": "garments",
+        "name": "Textiles and garments",
+        "since": 2017,
+        "tools": "garment categories and attributes, fabric and wet processing, an internship on a factory floor",
+        "marks": [
+          {
+            "place": "butex",
+            "kind": "learned",
+            "label": "The textile side of the degree",
+            "href": "/route/2017-butex/"
+          },
+          {
+            "place": "nitex",
+            "kind": "built",
+            "label": "Tagging clothing categories and attributes from photos",
+            "href": "/work/nitex-trend-platform/"
+          }
+        ]
+      },
+      {
+        "id": "supply",
+        "name": "Supply chain and its finance",
+        "since": 2020,
+        "tools": "forecasting, inventory policy, transportation, network design, activity-based costing, working capital and cash-to-cash, discounted cash flow, system dynamics",
+        "marks": [
+          {
+            "place": "mitx",
+            "kind": "learned",
+            "label": "MicroMasters in Supply Chain Management, five graduate-level courses",
+            "href": "/route/2020-take-it-seriously/"
+          }
+        ]
+      },
+      {
+        "id": "analytics",
+        "name": "Data analytics",
+        "since": 2021,
+        "tools": "Power BI, data modelling",
+        "marks": [
+          {
+            "place": "microsoft",
+            "kind": "learned",
+            "label": "Data Analyst Associate, 2021",
+            "href": "/route/2021-certifications-and-ml/"
+          }
+        ]
       }
     ]
   },
   {
-    "id": "edge",
+    "id": "people",
     "order": 5,
-    "phrase": "ai",
-    "group": "Edge devices",
-    "tools": [
-      "Jetson Orin",
-      "Jetson Xavier NX",
-      "Raspberry Pi",
-      "OpenCR",
-      "on-board inference"
-    ],
-    "proof": [
+    "group": "Explaining and organising",
+    "claim": "Writing it down, teaching it, and running the things that need running.",
+    "skills": [
       {
-        "label": "On robot hardware",
-        "href": "/work/vlm-perception-edge/"
+        "id": "writing",
+        "name": "Writing and teaching",
+        "since": 2018,
+        "tools": "books for school students, technical articles, a semester as teaching assistant, public speaking",
+        "marks": [
+          {
+            "place": "writing",
+            "kind": "built",
+            "label": "Four books and twenty-one articles",
+            "href": "/writing/"
+          },
+          {
+            "place": "nsu",
+            "kind": "built",
+            "label": "Teaching assistant, computer architecture",
+            "href": "/route/2024-back-to-nsu/"
+          },
+          {
+            "place": "quantum",
+            "kind": "built",
+            "label": "Qiskit articles and a card game for teaching gates",
+            "href": "/work/qiskit-treasure-hunt/"
+          },
+          {
+            "place": "butex",
+            "kind": "built",
+            "label": "Debate: runner-up, best speaker twice",
+            "href": "/route/2017-debate-and-club/"
+          }
+        ]
       },
       {
-        "label": "NSU AI SAT",
-        "href": "/work/nsu-ai-sat/"
+        "id": "organising",
+        "name": "Running things",
+        "since": 2017,
+        "tools": "a club from its first year to vice president, a national competition, campus teams across fifty universities, a company",
+        "marks": [
+          {
+            "place": "butex",
+            "kind": "built",
+            "label": "BUTEX Business Club and TEXBIZ",
+            "href": "/route/2017-debate-and-club/"
+          },
+          {
+            "place": "own",
+            "kind": "built",
+            "label": "YSI campus teams across fifty universities",
+            "href": "/route/2018-ysi/"
+          },
+          {
+            "place": "microsoft",
+            "kind": "built",
+            "label": "Microsoft Learn Student Ambassador, 2021 to 2024",
+            "href": "/route/2021-certifications-and-ml/"
+          },
+          {
+            "place": "quantum",
+            "kind": "built",
+            "label": "Qiskit Advocate since 2023",
+            "href": "/route/2022-quantum/"
+          },
+          {
+            "place": "fenloai",
+            "kind": "built",
+            "label": "Co-founded FenloAI",
+            "href": "/route/2025-fenloai/"
+          }
+        ]
       },
       {
-        "label": "2019 attendance system",
-        "href": "/work/attendance-pi-2019/"
+        "id": "languages",
+        "name": "Languages",
+        "since": 2024,
+        "tools": "Bengali, native; English; Chinese, HSK 1; Hindi, proficient understanding",
+        "marks": [
+          {
+            "place": "own",
+            "kind": "built",
+            "label": "HSK vocabulary trainer",
+            "href": "/work/hsk-vocabs/"
+          },
+          {
+            "place": "nsu",
+            "kind": "learned",
+            "label": "Two weeks at Yunnan University, 2025",
+            "href": "/route/2025-kunming/"
+          }
+        ]
       }
     ]
   },
   {
-    "id": "ml-research",
+    "id": "kept",
     "order": 6,
-    "phrase": "ai",
-    "group": "Models, trained and ported",
-    "tools": [
-      "transformer ports between frameworks",
-      "weight conversion",
-      "fine-tuning",
-      "NLP: intent classification, clustering, dialogue graphs",
-      "LaBSE and BERT"
-    ],
-    "proof": [
+    "group": "Studied, and kept",
+    "claim": "Real credentials that the sentence on the home page does not claim.",
+    "skills": [
       {
-        "label": "Video Swin, GSoC 2022",
-        "href": "/work/video-swin-tf2/"
+        "id": "quantum",
+        "name": "Quantum computing",
+        "since": 2022,
+        "tools": "Qiskit, QSVM, VQE and QAOA, Grover's algorithm; IBM Certified Associate Developer",
+        "marks": [
+          {
+            "place": "quantum",
+            "kind": "built",
+            "label": "QMLHEP evaluation tasks and a QSVM feature-map study",
+            "href": "https://github.com/shoaib6174/QMLHEP-tasks-2023"
+          }
+        ]
       },
       {
-        "label": "DeepPavlov internship",
-        "href": "/route/2021-deeppavlov/"
-      }
-    ]
-  },
-  {
-    "id": "fullstack",
-    "order": 10,
-    "phrase": "platforms",
-    "group": "Web platforms, end to end",
-    "tools": [
-      "Next.js 16",
-      "React 19 with server actions",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL",
-      "Tailwind",
-      "PWA and web push",
-      "Playwright",
-      "Vitest",
-      "nginx and Let's Encrypt",
-      "multi-tenant data isolation",
-      "append-only records with hash chains"
-    ],
-    "proof": [
-      {
-        "label": "Jonvexa",
-        "href": "/work/jonvexa/"
-      },
-      {
-        "label": "GetAudio",
-        "href": "/work/getaudio/"
-      }
-    ]
-  },
-  {
-    "id": "llm-systems",
-    "order": 11,
-    "phrase": "platforms",
-    "group": "LLM systems for businesses",
-    "tools": [
-      "RAG with citations",
-      "voice agents over Twilio and Vapi",
-      "guard pipelines",
-      "document extraction with OCR",
-      "n8n and Make automations"
-    ],
-    "proof": [
-      {
-        "label": "BotForge",
-        "href": "/work/botforge/"
-      },
-      {
-        "label": "GuardShield",
-        "href": "/work/guard-shield/"
-      },
-      {
-        "label": "Extraction pipeline",
-        "href": "/work/nitex-extraction-pipeline/"
-      }
-    ]
-  },
-  {
-    "id": "backend",
-    "order": 12,
-    "phrase": "platforms",
-    "group": "Backend and cloud",
-    "tools": [
-      "Python",
-      "C++",
-      "CUDA",
-      "TypeScript",
-      "FastAPI",
-      "PostgreSQL",
-      "Elasticsearch",
-      "Docker",
-      "Kubernetes",
-      "AWS ECS, Fargate, Lambda",
-      "Azure",
-      "DigitalOcean"
-    ],
-    "proof": [
-      {
-        "label": "GetAudio",
-        "href": "/work/getaudio/"
-      },
-      {
-        "label": "Extraction pipeline",
-        "href": "/work/nitex-extraction-pipeline/"
-      },
-      {
-        "label": "Jonvexa",
-        "href": "/work/jonvexa/"
-      }
-    ]
-  },
-  {
-    "id": "delivery",
-    "order": 13,
-    "phrase": "platforms",
-    "group": "Delivering to a client",
-    "tools": [
-      "requirements from the client's own process material",
-      "design specs",
-      "tests as a gate before every deploy",
-      "documentation and manuals",
-      "handover to the client's own accounts",
-      "fixed-price scoping"
-    ],
-    "proof": [
-      {
-        "label": "Jonvexa: 54 deploys, 2,900 tests, 15-part reference",
-        "href": "/work/jonvexa/"
-      },
-      {
-        "label": "Two platforms in seven months, NITEX",
-        "href": "/route/2023-nitex/"
-      }
-    ]
-  },
-  {
-    "id": "industrial",
-    "order": 20,
-    "phrase": "operations",
-    "group": "Industrial and production engineering",
-    "tools": [
-      "manufacturing processes",
-      "instrumentation and control",
-      "product design",
-      "ergonomics",
-      "operations research",
-      "simulation",
-      "SolidWorks",
-      "CATIA",
-      "Lean Six Sigma Yellow Belt",
-      "Google Project Management"
-    ],
-    "proof": [
-      {
-        "label": "BUTEX, 73 of 166 credits",
-        "href": "/route/2017-butex/"
-      },
-      {
-        "label": "Two Product Design projects",
-        "href": "/route/2019-attendance/"
-      },
-      {
-        "label": "Factory security robot, concept",
-        "href": "/work/security-robot/"
-      }
-    ]
-  },
-  {
-    "id": "garments",
-    "order": 21,
-    "phrase": "operations",
-    "group": "Textiles and apparel, as domain knowledge",
-    "tools": [
-      "garment categories and attributes",
-      "fabric and wet processing",
-      "an internship on a factory floor"
-    ],
-    "proof": [
-      {
-        "label": "Trend platform, tagging clothing from photos",
-        "href": "/work/nitex-trend-platform/"
-      },
-      {
-        "label": "BUTEX",
-        "href": "/route/2017-butex/"
-      }
-    ]
-  },
-  {
-    "id": "supply",
-    "order": 30,
-    "phrase": "supply",
-    "group": "Supply chain and its finance",
-    "tools": [
-      "demand forecasting",
-      "inventory policy",
-      "transportation planning",
-      "network design",
-      "activity-based costing",
-      "working capital and cash-to-cash",
-      "discounted cash flow",
-      "system dynamics",
-      "SQL and ML on supply chain data"
-    ],
-    "proof": [
-      {
-        "label": "MicroMasters in Supply Chain Management, five graduate-level courses",
-        "href": "/route/2020-take-it-seriously/"
-      }
-    ]
-  },
-  {
-    "id": "analytics",
-    "order": 31,
-    "phrase": "supply",
-    "group": "Data analytics",
-    "tools": [
-      "Power BI",
-      "data modelling",
-      "Azure Machine Learning"
-    ],
-    "proof": [
-      {
-        "label": "Microsoft Certified: Data Analyst Associate and Azure Data Scientist Associate, 2021",
-        "href": "/route/2021-certifications-and-ml/"
-      }
-    ]
-  },
-  {
-    "id": "writing",
-    "order": 40,
-    "phrase": "people",
-    "group": "Writing and teaching",
-    "tools": [
-      "technical articles",
-      "books for school students",
-      "teaching assistant",
-      "public speaking"
-    ],
-    "proof": [
-      {
-        "label": "Four books",
-        "href": "/writing/#books"
-      },
-      {
-        "label": "Twenty-one articles",
-        "href": "/writing/#articles"
-      },
-      {
-        "label": "Computer architecture, TA",
-        "href": "/route/2024-back-to-nsu/"
-      },
-      {
-        "label": "Debate, 2017",
-        "href": "/route/2017-debate-and-club/"
-      }
-    ]
-  },
-  {
-    "id": "organising",
-    "order": 41,
-    "phrase": "people",
-    "group": "Organising and running things",
-    "tools": [
-      "a university club, first year to vice president",
-      "a national competition",
-      "campus teams across fifty universities",
-      "a company with a co-founder",
-      "community roles: Qiskit Advocate, Microsoft Learn Student Ambassador"
-    ],
-    "proof": [
-      {
-        "label": "Business Club and TEXBIZ",
-        "href": "/route/2017-debate-and-club/"
-      },
-      {
-        "label": "YSI Bangladesh",
-        "href": "/route/2018-ysi/"
-      },
-      {
-        "label": "FenloAI",
-        "href": "/route/2025-fenloai/"
-      }
-    ]
-  },
-  {
-    "id": "languages",
-    "order": 42,
-    "phrase": "people",
-    "group": "Languages",
-    "tools": [
-      "Bengali, native",
-      "English",
-      "Chinese, HSK 1",
-      "Hindi, proficient understanding"
-    ],
-    "proof": [
-      {
-        "label": "HSK vocabulary trainer",
-        "href": "/work/hsk-vocabs/"
-      },
-      {
-        "label": "Yunnan University, 2025",
-        "href": "/route/2025-kunming/"
-      }
-    ]
-  },
-  {
-    "id": "quantum",
-    "order": 50,
-    "phrase": "other",
-    "group": "Quantum computing",
-    "tools": [
-      "Qiskit",
-      "QSVM",
-      "VQE and QAOA",
-      "Grover's algorithm"
-    ],
-    "proof": [
-      {
-        "label": "QMLHEP tasks",
-        "href": "https://github.com/shoaib6174/QMLHEP-tasks-2023"
-      },
-      {
-        "label": "Qiskit Treasure Hunt",
-        "href": "/work/qiskit-treasure-hunt/"
-      },
-      {
-        "label": "Qiskit articles",
-        "href": "/writing/#qiskit"
-      },
-      {
-        "label": "QSVM feature-map study",
-        "href": "https://github.com/shoaib6174/QOSF-Cohort-7"
-      }
-    ]
-  },
-  {
-    "id": "hardware",
-    "order": 51,
-    "phrase": "other",
-    "group": "Computer architecture",
-    "tools": [
-      "MIPS",
-      "assembly",
-      "Verilog",
-      "CPU design"
-    ],
-    "proof": [
-      {
-        "label": "Teaching assistant, 2024",
-        "href": "/route/2024-back-to-nsu/"
+        "id": "arch",
+        "name": "Computer architecture",
+        "since": 2024,
+        "tools": "MIPS, assembly, Verilog, CPU design",
+        "marks": [
+          {
+            "place": "nsu",
+            "kind": "built",
+            "label": "Teaching assistant, 2024",
+            "href": "/route/2024-back-to-nsu/"
+          }
+        ]
       }
     ]
   }

@@ -22,7 +22,7 @@ Everything on the site comes from `src/content/`. Edit a file, rebuild, done.
 | A dated entry on the Route page | `src/content/journey/<slug>.md` | Frontmatter: date (`2024` or `2024-10`), title, threads, short, summary, proof, imageSlots. Was: chose, ruledOut, result, startedBy, proof, onRoute, images, imageSlots. The body is what happened. |
 | Articles | `src/content/articles.json` | Leave `url` out for a piece whose link you do not have yet; it renders as text with "link to follow". |
 | Books, papers | `books.json`, `papers.json` | |
-| Skills | `skills.json` | Every row must have at least one proof link or the build fails. |
+| Skills | `skills.json` | Five groups of skill lines; each line needs at least one mark (a place, built or learned, a label, a link) or the build fails. Places are the columns of the grid. |
 | Shelf | `shelf.json` | Books, films, trips, lines, and the Currently learning list. |
 | Home map | `map.json` | Bands, fields with their band and x position, and the project lines between fields. |
 | Longer text for a detail page | `src/content/details/<slug>.md` | Optional. Rendered under the entry on `/route/<slug>/` or `/work/<slug>/`, with an optional `title`. Markdown, and inline HTML is allowed, which is how the BUTEX credit bar is made. |
